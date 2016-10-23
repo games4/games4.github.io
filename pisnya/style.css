@@ -1,9 +1,36 @@
-.page-header {
+.page-header,
+.page-footer {
     padding: 10px;
     background-color: #eeeeee;
 }
 
 .page-footer {
-    padding: 10px;
-    background-color: #eeeeee;
+    margin-top: 20px;
+}
+
+.short-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.short-list th {
+    font-weight: normal;
+		text-align: left;
+}
+
+.short-list td {
+    border: 1px solid #333333;
+}
+
+.short-list td, 
+.short-list th {
+		padding: 5px 10px;
+}
+
+.short-list .list-number {
+		text-align: center;
+}
+
+.short-list .list-name {
+		font-weight: bold;
 }
