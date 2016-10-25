@@ -34,3 +34,8 @@
 .short-list .list-name {
 		font-weight: bold;
 }
+
+.feedback-form-group {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
