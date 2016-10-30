@@ -7,13 +7,13 @@
   </head>
   <body>
 		<div class="page-header">
-			<div class="footer-top">
-				<div class="footer-logo">
+			<div class="header-top">
+				<div class="header-logo">
 					<img src="img/logo.png" width="140" height="76">
 				</div>
 			</div>
-			<div class="footer-middle">
-				<div class="footer-menyu">
+			<div class="header-middle">
+				<div class="header-menyu">
 					<ul>
 						<li><a href="#">История</a></li>
 						<li><a href="#">Производство</a></li>
@@ -21,7 +21,7 @@
 						<li><a href="#">Где купить</a></li>
 					</ul>
 				</div>
-				<div class="footer-bottom">
+				<div class="header-bottom">
 					<p>Крафтовый квас<br>
 					всему голова!
 					</p>
@@ -170,12 +170,72 @@
 		</div>
 
 		<div class="order-block">
-			
-		
+			<h2>Заказать</h2>
+			<p>Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.</p>
+			<form class="order-block-form">
+				<div class="order-block-form-group">
+					<label id="fulname">Представьтесь: </label>
+					<input type="text" name="fulname" id="fulname"></input>
+				</div>
+				<div class="order-block-form-group">
+					<label id="phone">Номер телефона: </label>
+					<input type="text" name="phone" id="phone"></input>
+				</div>
+				<div class="order-block-form-group">
+					<label id="secondaryphone">Доп. номер:</label>
+					<input type="text" name="secondaryphone" id="secondaryphone"></input>
+				</div>
+				<div class="order-block-form-group">
+					<label id="emeil">Email:</label>
+					<input type="email" name="email" id="email"></input>
+				</div>
+				<div class="order-block-form-group">
+					<label for="">Объем заказа:</label>
+					<select>
+						<option value="">От 5 до 10 баррелей в неделю</option>
+					</select>
+				</div>
+				<div class="order-block-form-group">
+					<label id="">Доп. комментарий:</label>
+					<textarea rows="10" cols="95" name="comment" id="comment"></textarea>
+				</div>
+				<div class="order-block-form-group">
+					<label>
+						<input type="checkbox" name="subscription">
+						Я согласен получать квасную рассылку
+					</label>
+				</div>
+				<input type="submit" class="bottom" value="Отправить заказ">
+			</form>
 		</div>
 
 		<div class="page-footer">
-		
+			<div class="footer-top">
+				<div class="footer-logo">
+					<img src="img/logo.png" width="140" height="76">
+				</div>
+			</div>
+			<div class="footer-middle">
+				<div class="footer-menyu">
+					<ul>
+						<li><a href="#">История</a></li>
+						<li><a href="#">Производство</a></li>
+						<li><a href="#">Ассортимент</a></li>
+						<li><a href="#">Где купить</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="footer-social">
+          <a class="social-btn" href="https://instagram.com/#">Инстаграм</a>
+          <a class="social-btn" href="https://facebook.com/#">Фейсбук</a>
+          <a class="social-btn" href="https://vk.com/#">Вконтакте</a>
+				</div>
+				<div class="footer-copyright">
+					<p>При перепечатке материалов ссылка на сайт обязательна!</p>
+					<p><img src="img/htmlacademy.png" width="27" height="34"> <b>Разработчик: </b><a href="#">HTML Academy</a></p>
+				</div>
+			</div>
 		</div>
   </body>
 </html>
