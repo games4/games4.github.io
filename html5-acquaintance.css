@@ -86,7 +86,7 @@ footer.page-footer {
     font-size: 14px;
     color: black;
     background-color: #f1c40f;
-    background-image: 
+    background-image:
         linear-gradient(45deg, transparent 50%, white 50%),
         linear-gradient(-45deg, transparent 50%, white 50%),
         linear-gradient(135deg, transparent 50%, #2c3e50 50%),
@@ -94,4 +94,28 @@ footer.page-footer {
     background-repeat: repeat-x;
     background-position: 0 0, 0 0, 0 100%, 0 100%;
     background-size: 10px 12px;
+}
+
+.page-footer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.page-footer .info {
+    float: left;
+}
+
+.page-footer .info img {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    border: 2px solid white;
+    box-shadow: 0 0 4px #c0392b;
+    transform: rotate(-5deg);
+}
+
+.page-footer .copyright {
+    float: right;
+    padding-top: 20px;
+    font-size: 12px;
 }
