@@ -84,6 +84,31 @@ main::after {
     box-shadow: 0 0 3px #cccccc;
 }
 
+.about-me::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.profile {
+    float: left;
+    width: 51%;
+    min-height: 100px;
+    padding: 2%;
+    background-color: rgba(243, 156, 18, 0.1);
+    border-radius: 5px;
+}
+
+.last-actions {
+    float: right;
+    width: 40%;
+    min-height: 100px;
+    background: #f1c40f;
+    border: 5px solid white;
+    border-bottom-width: 15px;
+    box-shadow: 0 0 8px -1px #f39c12;
+}
+
 .posts {
     min-height: 50px;
     margin: 20px 0;
