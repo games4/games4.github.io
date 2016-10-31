@@ -25,6 +25,14 @@ a:active {
     color: #c0392b;
 }
 
+code {
+    padding: 0.2em 0.4em;
+    font-weight: bold;
+    color: #c0392b;
+    background: white;
+    box-shadow: 0 0 2px #cccccc;
+}
+
 /* Header */
 header.page-header {
     position: relative;
@@ -41,6 +49,7 @@ header.page-header {
     background-size: 20px 20px;
     box-shadow: 0 0 5px 0 #333333;
 }
+
 .logo {
     position: absolute;
     top: 10px;
@@ -104,6 +113,15 @@ main::after {
     border-radius: 5px;
 }
 
+.profile h1 {
+    margin: 0;
+    font-size: 1.7em;
+}
+
+.profile p {
+    margin: 0.5em 0;
+}
+
 .last-actions {
     float: right;
     width: 40%;
@@ -112,6 +130,24 @@ main::after {
     border: 5px solid white;
     border-bottom-width: 15px;
     box-shadow: 0 0 8px -1px #f39c12;
+}
+
+.last-actions ul {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+.last-actions li {
+    margin-bottom: 0.5em;
+    font-size: 14px;
+    font-family: "Courier New";
+}
+
+.last-actions time {
+    display: block;
+    font-size: 11px;
+    color: #666666;
 }
 
 .posts {
@@ -134,11 +170,10 @@ footer.page-footer {
     font-size: 14px;
     color: black;
     background-color: #f1c40f;
-    background-image:
-        linear-gradient(45deg, transparent 50%, white 50%),
-        linear-gradient(-45deg, transparent 50%, white 50%),
-        linear-gradient(135deg, transparent 50%, #2c3e50 50%),
-        linear-gradient(-135deg, transparent 50%, #2c3e50 50%);
+    background-image: linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(-45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, transparent 50%, #2c3e50 50%),
+    linear-gradient(-135deg, transparent 50%, #2c3e50 50%);
     background-repeat: repeat-x;
     background-position: 0 0, 0 0, 0 100%, 0 100%;
     background-size: 10px 12px;
