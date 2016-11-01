@@ -5,7 +5,7 @@
     src:
         local("Roboto Regular"),
         local("Roboto-Regular"),
-        url("/assets/course73/roboto.woff") format("woff");
+        url("https://htmlacademy.ru/assets/course73/roboto.woff") format("woff");
 }
 
 html,
@@ -129,12 +129,27 @@ main::after {
     font-size: 18px;
 }
 
+.post .example {
+    height: 150px;
+    background-color: silver;
+    background-image:
+        radial-gradient(circle at 100% 150%, silver 40%, transparent 40%, transparent),
+        radial-gradient(circle at 0 150%, silver 40%, transparent 40%, transparent),
+        radial-gradient(circle at 50% 100%, white 71%, transparent 71%,   transparent),
+        radial-gradient(circle at 100% 50%, silver 49%, transparent 50%,  transparent),
+        radial-gradient(circle at 0 50%, silver 49%, transparent 50%, transparent);
+    background-repeat: repeat;
+    background-size: 50px 25px;
+}
+
 /* Footer */
 footer.page-footer {
     min-height: 50px;
     padding: 20px;
+
     font-size: 14px;
     color: black;
+
     background-color: #f1c40f;
     background-image:
         linear-gradient(45deg, transparent 50%, white 50%),
