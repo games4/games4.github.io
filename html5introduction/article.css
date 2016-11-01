@@ -94,6 +94,7 @@ main::after {
 }
 
 .post header {
+    min-height: 50px;
     margin-bottom: 1em;
 }
 
@@ -140,6 +141,30 @@ main::after {
         radial-gradient(circle at 0 50%, silver 49%, transparent 50%, transparent);
     background-repeat: repeat;
     background-size: 50px 25px;
+}
+
+.post figure {
+    position: relative;
+    width: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #999999;
+}
+
+.post figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 15px 5%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.post img {
+    display: block;
+    max-width: 100%;
 }
 
 /* Footer */
