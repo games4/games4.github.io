@@ -16,3 +16,15 @@ body {
 /*	padding: 5px;*/
 /*	border: 1px dashed gray;	*/
 }
+
+.main-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+/*	text-align: center;*/
+}
+
+.main-menu li {
+	display: inline-block;	
+}
+
