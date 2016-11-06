@@ -1,14 +1,38 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src:
+      local("Roboto Regular"),
+      local("Roboto-Regular"),
+      url("fonts/roboto.woff") format("woff");
+/*      url("https://htmlacademy.ru/assets/course73/roboto.woff") format("woff");*/
+}
+
+@font-face {
+    font-family: "PTSansRegular";
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot");
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/PTSansRegular.woff") format("woff"),
+    url("../fonts/PTSansRegular/PTSansRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
 body {
-	padding: 0px;
-	margin: 0px;
-	font-family: "PT Sans", "Arial", sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: "Arial", sans-serif;
+	font-family: "Roboto";
+	font-family: "PTSansRegular";
 }
 
 .page-header {
-	background-color: whitesmoke;
-
+/*	background-color: whitesmoke;*/
 /*	background-color: deepskyblue;
 	padding: 25px;*/
+  background-color: rgba(0, 200, 202,0.5);
 }
 
 .logo {
@@ -25,5 +49,17 @@ body {
 
 .main-menu li {
 	display: inline-block;	
+}
+
+main {
+  background-color: rgba(0, 200, 202,0.4);
+}
+
+.title-song h1 {
+}
+
+.page-footer {
+  background-color: #16a085;
+  background-color: rgba(0, 200, 202,0.3);
 }
 
