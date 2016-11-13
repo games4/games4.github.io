@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Кнопка сброса введенных значений</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма логина. Кнопка сброса введенных данных формы: input type="reset"</header>
+        <main>
+            <form action="/echo" method="post">
+                <label for="name">Имя</label> 
+                <input type="text" id="name" name="name" value="Кексик">
+                <label for="password">Пароль</label> 
+                <input type="password" id="password" name="password">
+                <label><input type="checkbox" name="allow">Разрешать гладить</label>
+                <div class="buttons">
+                    <!-- Кнопка отправки данных формы -->
+                    <input type="submit" value="Войти">
+                    <!-- Кнопка сброса -->
+                    <input type="reset" value="Сбросить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

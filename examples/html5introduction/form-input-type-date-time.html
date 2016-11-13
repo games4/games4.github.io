@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Кнопка-изображение</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма доставки. Поля ввода даты и времени input type="date" и input type="time" </header>
+        <main>
+            <form action="/echo" method="post">
+                <label for="name">Имя</label> 
+                <input type="text" id="name" name="name" value="Кекс" required>
+                <label for="address">Адрес доставки</label>
+                <textarea id="address" name="address" rows="2" required>ул. Хвостенко, д. 1</textarea>
+                <div class="half-width">
+                    <label for="date">Дата доставки</label> 
+                    <input type="date" id="date" name="date" value="2014-12-12">
+                </div>
+                <div class="half-width">
+                    <label for="time">Время доставки</label> 
+                    <!-- Поле для выбора времени -->
+                    <input type="time" name="time">
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Заказать">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

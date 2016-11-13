@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Простая кнопка</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма логина. Простая кнопка type="button" </header>
+        <main>
+            <form action="/echo" method="post">
+                <label for="name">Имя</label> 
+                <input type="text" id="name" name="name" value="Кексик">
+                <label for="password">Пароль</label> 
+                <input type="password" id="password" name="password">
+                <label><input type="checkbox" name="allow">Разрешать гладить</label>
+                <div class="buttons">
+                    <!-- Кнопка - отправить данные формы -->
+                    <input type="submit" value="Войти">
+                    <!-- Простая кнопка type="button" -->
+                    <input type="button" value="Кнопка">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

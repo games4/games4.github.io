@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Область для вывода результата</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма бронирования отеля. Область для вывода результата</header>
+        <main>
+            <form action="/echo" method="post" oninput="daysoutput.value=dayscount.value">
+							<fieldset>
+								<legend></legend>
+                <label for="search">Название города</label> 
+                <input type="search" id="search" name="search" value="Осло, Норвегия">
+                <div class="one-third-width">
+                    <label for="day">Число</label> 
+                    <!-- Поле для выбора числа -->
+                    <input type="number" min="1" max="31" name="day">
+                </div>
+                <div class="two-third-width">
+                    <label for="month">Месяц</label> 
+                    <!-- Поле для выбора месяца -->
+                    <input type="month" name="month">
+                </div>
+                <div class="half-width">
+                    <label for="dayscount">Количество дней</label>
+                    1 <input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1"> 14
+                </div>								
+								<div class="half-width output-area">
+									<!-- Область для вывода значения -->
+									<output name="daysoutput"></output>
+								</div>
+                <div class="buttons">
+                    <input type="submit" value="Забронировать">
+                </div>
+							</fieldset>
+            </form> 
+        </main>
+       <footer class="page-footer"></footer>
+    </body>
+</html>
