@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Паттерны значений полей</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Паттерны значений полей. Поле для ввода текста и номера по шаблону</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы</legend>
+                    <label for="passport">Номер котопаспорта</label>
+                    <!-- Текстовое поле ввода c паттерном -->
+                    <input type="text" id="passport" name="passport" pattern="[0-9]{3}-[0-9]{5}" placeholder="Формат номера XXX-XXXXX" required>
+										<label for="tel">Номер телефона</label>
+                    <!-- Поле ввода номера -->
+										<input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}" placeholder="Формат номера X-XXX-XXX" required>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

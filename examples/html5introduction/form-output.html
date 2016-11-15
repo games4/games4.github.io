@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Область для вывода результата</title>
+        <title>Область для вывода результата. Группировка полей формы</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="keksik-style.css">
     </head>
     <body>
-        <header class="page-header">Форма бронирования отеля. Область для вывода результата</header>
+        <header class="page-header">Форма бронирования отеля. Область для вывода результата. Группировка полей формы</header>
         <main>
             <form action="/echo" method="post" oninput="daysoutput.value=dayscount.value">
 							<fieldset>
-								<legend></legend>
+								<legend>Поиск отеля</legend>
                 <label for="search">Название города</label> 
                 <input type="search" id="search" name="search" value="Осло, Норвегия">
                 <div class="one-third-width">
