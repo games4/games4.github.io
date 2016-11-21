@@ -1,0 +1,103 @@
+/*
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src:
+      local("Roboto Regular"),
+      local("Roboto-Regular"),
+      url("fonts/roboto.woff") format("woff");
+      url("https://htmlacademy.ru/assets/course73/roboto.woff") format("woff");
+}
+*/
+/*
+@font-face {
+    font-family: "PTSansRegular";
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot");
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PTSansRegular/PTSansRegular.ttf") format("truetype");
+    url("fonts/PTSansRegular.woff") format("woff"),
+    font-style: normal;
+    font-weight: normal;
+}
+*/
+
+@font-face {
+	font-family: "PTSansRegular";
+    src: 
+			url("../fonts/PTSansRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+	
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Arial", sans-serif;
+	font-family: "Roboto";
+	font-family: "PTSansRegular";
+  background-color: rgba(255, 200, 255, 0.5);
+
+}
+
+.page-header {
+/*	background-color: whitesmoke;*/
+/*	background-color: deepskyblue;
+	padding: 25px;*/
+  background-color: rgba(200, 255, 200, 1.0);
+}
+
+.logo {
+/*	padding: 5px;*/
+/*	border: 1px dashed gray;	*/
+}
+
+.main-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+/*	text-align: center;*/
+}
+
+.main-menu li {
+	display: inline-block;	
+}
+
+main {
+  background-color: rgba(255, 100, 225, 1.0);
+}
+
+.title-song h1 {
+}
+
+.page-footer {
+  background-color: rgba(200, 255, 200, 1.0);
+  background-color: #16a085;
+}
+
+.left-block {
+  background-color: rgba(200, 225, 255, 1.0);
+	width: 20%;
+	float: left;
+}
+
+.composition {
+/*	padding: 10px;*/
+  background-color: rgba(200, 255, 255, 1.0);
+	width: 45%;
+	float: left;
+/*	float: right;*/
+}
+
+ .right-block {
+  background-color: rgba(225, 255, 200, 1.0);
+	width: 35%;
+/*	float: left;*/
+	float: right;
+}
+ 
+ .page-footer {
+	clear: both; 
+/*	float: left;*/
+/*	float: right;*/
+}
