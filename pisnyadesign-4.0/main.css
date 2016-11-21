@@ -26,6 +26,7 @@
 	font-family: "PTSansRegular";
     src: 
 			url("../fonts/PTSansRegular.woff") format("woff");
+/*			url("fonts/PTSansRegular.woff") format("woff");*/
   font-style: normal;
   font-weight: normal;
 }
@@ -64,15 +65,10 @@ body {
 }
 
 main {
-  background-color: rgba(255, 100, 225, 1.0);
 }
 
-.title-song h1 {
-}
-
-.page-footer {
-  background-color: rgba(200, 255, 200, 1.0);
-  background-color: #16a085;
+.wrapper {
+  background-color: rgba(255, 200, 255, 1.0);
 }
 
 .left-block {
@@ -96,9 +92,13 @@ main {
 	float: right;
 }
 
-.clearfix {
-	clear: both; 
-}
- 
- .page-footer {
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+
+.page-footer {
+  background-color: rgba(200, 255, 200, 1.0);
+  background-color: #16a085;
 }
