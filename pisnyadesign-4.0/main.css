@@ -25,7 +25,7 @@
 @font-face {
 	font-family: "PTSansRegular";
     src: 
-			url("../2fonts/PTSansRegular.woff") format("woff");
+			url("../fonts/PTSansRegular.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
@@ -95,9 +95,10 @@ main {
 /*	float: left;*/
 	float: right;
 }
+
+.clearfix {
+	clear: both; 
+}
  
  .page-footer {
-	clear: both; 
-/*	float: left;*/
-/*	float: right;*/
 }
