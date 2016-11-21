@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+       <title>Свойство autocomplete</title>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных. Поля ввода адресов сайтов и email. Свойство autocomplete</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Введите адрес сайта и email</legend>
+                    <div class="full-width">
+                        <!-- Поле ввода электронной почты -->
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" value="ya@ua" autocomplete="on">
+                    </div>
+                    <div class="full-width">
+                        <!-- Поле ввода адреса сайта -->
+                        <label for="url">Личный сайт</label>
+                        <input type="url" name="url" id="url" value="http://ya.ru" autocomplete="off">
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

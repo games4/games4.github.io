@@ -159,15 +159,18 @@ textarea {
 
 input,
 textarea,
-output {
+output,
+select {
     padding: 2px 5px;
     font-family: "Roboto", sans-serif;
     border: 1px solid #cccccc;
     border-radius: 5px;
     vertical-align: middle;
+    margin-bottom: 10px;
 }
 
-input {
+input,
+select {
     height: 24px;
 }
 
@@ -220,6 +223,10 @@ button > img {
     width: 50%;
 }
 
+.full-width {
+    width: 90%;
+}
+
 .one-third-width,
 .two-third-width,
 .half-width {
@@ -230,6 +237,10 @@ button > img {
 .one-third-width input,
 .two-third-width input {
     width: 80%;
+}
+
+.two-third-width select[id="food"] {
+    width: 95%;
 }
 
 .half-width input {
@@ -243,7 +254,6 @@ button > img {
 .output-area {
     vertical-align: top;
 }
-
 
 .buttons {
     margin-top: 10px;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+       <title>Запрет редактирования. Свойство readonly / disabled</title>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных. Запрет редактирования. Свойство readonly / disabled</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы</legend>
+                    <label for="passport">Номер котопаспорта</label>
+                    <input type="text" id="passport" name="passport" pattern="[0-9]{3}-[0-9]{5}" placeholder="Формат номера XXX-XXXXX">
+                    <label for="tel">Номер телефона</label>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}" placeholder="Формат номера X-XXX-XXX">
+	                  <div class="two-third-width">
+                        <label for="food">Любимая еда</label> 
+                        <select id="food" name="food" disabled>
+                            <optgroup label="Вкуснятина">
+                                <option value="meat">Мясо</option>
+                                <option value="fish">Рыба</option>
+                                <option value="chi">Курочка</option>
+                                <option value="ind">Индейка</option>
+                                <option value="mice">Мыши</option>
+                            </optgroup>
+                            <optgroup label="Сойдёт">
+                                <option value="milk">Молоко</option>
+                                <option value="kef">Кефир</option>
+                                <option value="water">Вода</option>
+                                <option value="smet">Сметана</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="full-width">
+                        <!-- Поле ввода электронной почты -->
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" value="ya@ua" readonly>
+                    </div>
+                    <div class="full-width">
+                        <!-- Поле ввода адреса сайта -->
+                        <label for="url">Личный сайт</label>
+                        <input type="url" name="url" id="url" value="http://ya.ru" disabled>
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

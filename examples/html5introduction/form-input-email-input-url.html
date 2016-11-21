@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+       <title>Поля ввода адресов сайтов и email</title>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="keksik-style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных. Поля ввода адресов сайтов и email</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы</legend>
+                    <label for="passport">Номер котопаспорта</label>
+                    <input type="text" id="passport" name="passport" pattern="[0-9]{3}-[0-9]{5}" placeholder="Формат номера XXX-XXXXX">
+                    <label for="tel">Номер телефона</label>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}" placeholder="Формат номера X-XXX-XXX">
+                    <div class="full-width">
+                        <!-- Поле ввода электронной почты -->
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="full-width">
+                        <!-- Поле ввода адреса сайта -->
+                        <label for="url">Личный сайт</label>
+                        <input type="url" name="url" id="url" required>
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>
