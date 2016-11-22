@@ -24,9 +24,7 @@
 
 @font-face {
 	font-family: "PTSansRegular";
-    src: 
-			url("fonts/PTSansRegular.woff") format("woff");
-/*			url("fonts/PTSansRegular.woff") format("woff");*/
+  src: url("fonts/PTSansRegular.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
@@ -74,6 +72,7 @@ main {
 .left-block {
   background-color: rgba(200, 225, 255, 1.0);
 	width: 20%;
+	min-width: 200px;
 	float: left;
 }
 
@@ -81,6 +80,7 @@ main {
 /*	padding: 10px;*/
   background-color: rgba(200, 255, 255, 1.0);
 	width: 45%;
+	min-width: 400px;
 	float: left;
 /*	float: right;*/
 }
@@ -88,8 +88,8 @@ main {
  .right-block {
   background-color: rgba(225, 255, 200, 1.0);
 	width: 35%;
-/*	float: left;*/
-	float: right;
+	float: left;
+/*	float: right;*/
 }
 
 .clearfix::after {
