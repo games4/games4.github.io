@@ -1,0 +1,61 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    min-width: 550px;
+    min-height: 250px;
+    padding: 10px;
+}
+
+.cards {
+    width: 500px;
+}
+
+.cards li::before {
+    font-family: "Courier", monospace;
+}
+
+li.ace,
+li.king,
+li.queen,
+li.jack,
+li.ten,
+li.seven,
+li.eight
+ {
+    margin-left: -15px;
+}
+
+li.six,
+li.seven,
+li.eight,
+li.ten,
+li.jack,
+li.queen,
+li.king,
+li.ace
+{
+    width: 36px;
+    height: 54px;
+}
+
+li.nine {
+    margin-right: 30px;
+    margin-left: 15px;
+}
+
+ul:not(:last-of-type) li.diamond:not(.nine) {
+    background-color: #0099ff;
+}
+
+ul:not(:nth-of-type(2)) li:nth-of-type(2)  {
+    background-color: #ff3300;
+}
+
+ul:last-of-type li:nth-of-type(3n) {
+    background-color: #339933;
+}
