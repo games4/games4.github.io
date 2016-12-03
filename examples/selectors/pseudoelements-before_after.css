@@ -1,0 +1,44 @@
+.card {
+    position: relative;
+    width: 160px;
+    height: 240px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background: url("heart.svg") no-repeat 50% 50%;		
+    background-size: 50px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+/*
+Кстати, мы перевернули нижнюю иконку с помощью CSS-свойства transform, 
+которое будет рассмотрено в курсе про двумерные трансформации.
+Также для управления размером фонового изображения мы использовали свойство background-size, 
+которое рассмотрим в продвинутом курсе про рамки и фоны.
+*/
+
+.card::before {
+    content: "A";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #e50000;
+    background: url("heart.svg") no-repeat 50% 100%;
+    background-size: 25px auto;
+}
+
+.card::after {
+    content: "A";
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #e50000;
+    background: url("heart.svg") no-repeat 50% 100%;
+    background-size: 25px auto;
+    transform: rotate(180deg);
+}
