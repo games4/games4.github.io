@@ -1,0 +1,63 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    min-width: 550px;
+    min-height: 250px;
+    padding: 10px;
+}
+
+.cards {
+    position: relative;
+    width: 380px;
+    text-align: left;
+}
+
+.cards li {
+    width: 37px;
+    height: 55px;
+}
+
+.cards li::before {
+    font-family: "Courier", monospace;
+}
+
+.cards li:not(:first-child) {
+    margin-left: -20px;
+}
+
+ul::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 37px;
+    height: 55px;
+    border: 1px dashed #33bb33;
+    border-radius: 5px;
+}
+
+li:nth-child(4n+1) {
+    background-color: #ffcc33;
+}
+
+ul:not(:first-of-type) li:nth-child(4n+2)  {
+    background-color: #0099ff;
+}
+
+ul:nth-of-type(even) li:nth-child(4n+4)  {
+    background-color: #ff3300;
+}
+
+ul.cards:nth-of-type(3) .ace.spade + li {
+    background: #339933;
+}
+
+ul:first-of-type li:nth-child(2n) {
+    background-color: #996666;
+}
