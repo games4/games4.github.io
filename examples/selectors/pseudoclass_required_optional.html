@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Псевдокласс :required и :optional</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+				<style type="text/css">
+					input:required {
+							border: 1px solid #e74c3c;    
+					}
+
+					input[required] {
+							border: 1px solid #e74c3c;    
+					}
+
+					input[required] {
+							background: url("../img/required.png") no-repeat 100% 50%;
+					}
+
+					input:required {
+							background: url("../img/required.png") no-repeat 100% 50%;
+					}	
+					input:required {
+							background: url('../img/required.png') no-repeat right 50%;
+							border: 1px solid #e74c3c;
+					}
+
+					input[type="text"]:optional {
+							background: url("../img/optional.png") no-repeat 100% 50%;
+							border: 1px solid #3498db;
+					}					
+				</style>
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных / Селекторы, часть 3 / Псевдоклассы :required и :optional</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы на кухню</legend>
+                    <label>Имя кота</label>
+                    <input type="text" name="name" value="Кексик"> 
+                    <label>Номер котопаспорта</label>
+                    <input type="text" name="passport" pattern="[0-9]{3}-[0-9]{5}" placeholder="Формат номера XXX-XXXXX" required> 
+                    <div class="half-width">
+                        <label>Дата рождения</label>
+                        <input type="text" name="birthday" >
+                    </div>
+                    <div class="half-width">
+                        <label>Посещения</label>
+                        <select name="type">
+                            <option value="Каждый час">Каждый час</option>
+                            <option value="Каждые 3 часа">Каждые 3 часа</option>
+                            <option value="2 раза в день" selected>2 раза в день</option>
+                            <option value="1 раз в день">1 раз в день</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form> 
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>
