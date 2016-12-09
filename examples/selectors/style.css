@@ -27,7 +27,7 @@ header.page-header {
     width: 90px;
     height: 90px;
     content: '';
-    background: url(../html5introduction/img/logo.svg);
+    background: url(../img/logo.svg);
 }
 
 main {
@@ -66,7 +66,7 @@ footer.page-footer {
     border: 2px solid white;
     box-shadow: 0 0 4px #c0392b;
     content: 'Кекс, keks@htmlacademy.ru';
-    background: url(../html5introduction/img/keks.jpg) no-repeat 0 0;
+    background: url(../img/keks.jpg) no-repeat 0 0;
     background-size: 50px;
     width: 50px;
     height: 45px;

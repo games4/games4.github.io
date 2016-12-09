@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Псевдоклассы :in-range и :out-of-range</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css?3">
+				<style type="text/css">
+					input:in-range {
+							border-color: #2ecc71;
+					}
+
+					input:out-of-range {
+							border-color: #e74c3c;
+					}				
+				</style>
+				</head>
+    <body>
+        <header class="page-header">Форма личных данных / Псевдоклассы :in-range и :out-of-range</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы на кухню</legend>
+                    <div class="half-width">
+                        <label>Имя кота</label>
+                        <input type="text" name="name" value="Кексик">
+                    </div>
+                    <div class="half-width">
+                        <label>Котопаспорт</label>
+                        <input type="text" name="passport" value="PASPORT KEKSA" pattern="[A-z]{4}-[0-9]{5}" placeholder="ABCD-12345"> 
+                    </div>
+                    <div class="half-width">
+                        <label>Обедов в день</label>
+                        <input type="number" min="1" max="3" value="4">
+                    </div>
+                    <div class="half-width">
+                        <label>Количество блюд</label>
+                        <input type="number" min="1" max="5" value="2">
+                    </div>
+                    <div class="half-width">
+                        <label>Дата заявления</label>
+                        <input type="datetime" name="date" value="02-06-2014">
+                    </div>
+                    <div class="half-width">
+                        <label>Подпись</label>
+                        <input type="datetime" name="sign" value="Здесь был Кекс">
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form>
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

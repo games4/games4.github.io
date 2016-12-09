@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Испытание: UI-кит для формы</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="exam.css">
+				<link rel="stylesheet" href="styles/part3-test.css">
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных / Испытание: UI-кит для формы</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Примеры полей</legend>
+                    <div class="half-width">
+                        <label>Радио-переключатели</label>
+                        <input id="radio-1" name="radio" type="radio" checked>
+                        <label for="radio-1">Активный</label>
+                        <input id="radio-2" name="radio" type="radio">
+                        <label for="radio-2">Неактивный</label>
+                        <input id="radio-3" name="radio" type="radio" disabled>
+                        <label for="radio-3">Заблокированный</label>
+                    </div>
+                    <div class="half-width">
+                        <label>Чекбоксы</label>
+                        <input id="checkbox-1" type="checkbox" checked>
+                        <label for="checkbox-1">Активный</label>
+                        <input id="checkbox-2" type="checkbox">
+                        <label for="checkbox-2">Неактивный</label>
+                        <input id="checkbox-3" type="checkbox" disabled>
+                        <label for="checkbox-3">Заблокированный</label>
+                    </div>
+                    <label>Текстовые поля</label>
+                    <input type="text" value="Обычное">
+                    <input type="text" value="Обязательное" required>
+                    <input type="text" value="Заблокированное" disabled>
+                    <input type="text" value="Неверные данные" pattern="[0-9]{8}">
+                </fieldset>
+            </form>
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>

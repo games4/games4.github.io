@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Псевдоклассы :invalid и :valid</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css?3">
+				<style type="text/css">
+					input:valid {
+							color: #2ecc71;
+					}
+
+					input:invalid {
+							color: #e74c3c;
+					}				
+				</style>
+    </head>
+    <body>
+        <header class="page-header">Форма личных данных / Псевдоклассы :invalid и :valid</header>
+        <main>
+            <form action="/echo" method="post">
+                <fieldset>
+                    <legend>Заявление на получение визы на кухню</legend>
+                    <div class="half-width">
+                        <label>Имя кота</label>
+                        <input type="text" name="name" value="Кексик">
+                    </div>
+                    <div class="half-width">
+                        <label>Котопаспорт</label>
+                        <input type="text" name="passport" value="PASPORT KEKSA" pattern="[A-z]{4}-[0-9]{5}" placeholder="ABCD-12345"> 
+                    </div>
+                    <label>E-mail</label>
+                    <input type="email" name="birthday" value="Кекс Собака HtmlAcademy.ru">
+                    <label>Адрес сайта</label>
+                    <input type="url" name="birthday" value="HTMLAcademy">
+                    </div>
+                    <div class="half-width">
+                        <label>Дата заявления</label>
+                        <input type="datetime" name="date" value="02-06-2014">
+                    </div>
+                    <div class="half-width">
+                        <label>Подпись</label>
+                        <input type="datetime" name="sign" value="Здесь был Кекс">
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" value="Оформить">
+                </div>
+            </form>
+        </main>
+        <footer class="page-footer"></footer>
+    </body>
+</html>
