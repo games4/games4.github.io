@@ -1,0 +1,19 @@
+#father:checked ~ .cat-in-box[title^="Отец"]:before {
+    display:none;
+}
+
+#rudolf:checked ~ .cat-in-box[title$="Рудольф"]:before {
+    display:none;
+}
+
+#snow:checked ~ .cat-in-box[title$="Снежок"]:before {
+    display:none;
+}
+
+.boxes {
+    margin-top: 100px;
+}
+
+.boxes label {
+    margin-right: 15px;
+}
