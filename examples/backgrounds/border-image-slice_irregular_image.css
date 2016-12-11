@@ -1,0 +1,21 @@
+.portrait {
+    width: 270px;
+    height: 270px;
+    margin: 50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 50px solid rgba(0, 0, 0, 0.4);
+    border-image-source: url("../img/border-img-irregular.png");
+    border-image-slice: 50;
+    border-image-slice: 50 50 65 40;
+    border-image-slice: 50 50 65 40 fill;
+    border-image-slice: 50 50 65 40;
+    background: url("../img/border-img-irregular.png") no-repeat #ffffff;
+    background-clip: padding-box;
+    background-origin: content-box;
+    outline: 10px solid white;
+}
+
+
+		
+		

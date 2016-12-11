@@ -1,0 +1,26 @@
+.portrait {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 40px solid rgba(255, 255, 0, 0.5);
+    background-color:  #ffffff;
+    background-image:
+        url("../img/glasses.svg"),
+        url("../img/keks2.jpg");
+    background-repeat: no-repeat;
+    background-position:
+        75px 125px,
+        center;
+    background-origin: border-box;
+    background-clip: padding-box;
+    background-size:
+        150px,
+        cover;
+        
+    outline: 20px solid silver;
+    outline-style: ridge;
+    outline-offset: 10px;
+    outline-offset: -40px;
+}

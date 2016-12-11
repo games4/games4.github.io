@@ -1,0 +1,18 @@
+.portrait {
+    width: 270px;
+    width: 350px;
+    height: 270px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 50px solid rgba(0, 0, 0, 0.4);
+    border-image-source: url("../img/border-img.png");
+    border-image-slice: 50;
+    border-image-repeat: stretch;
+		/* горизонтальные стороны заполняються растянутыми картинками — режим stretch, вертикальные заполняються повторяющимися — режим repeat */
+    border-image-repeat: stretch repeat;
+    background: url("../img/border-img.png") no-repeat center #ffffff;
+    background-clip: padding-box;
+    outline: 10px solid white;
+}

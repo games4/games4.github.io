@@ -1,0 +1,19 @@
+.portrait {
+    width: 400px;
+    width: 500px;
+    height: 400px;
+    height: 550px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    background-image: url("../img/keks2.jpg");
+    background-repeat: no-repeat;
+		/* повторение фона repeat по горизонтали и вертикали */
+    background-repeat: repeat;
+		/* повторение фона repeat по горизонтали и round по вертикали */
+    background-repeat: repeat round;
+		/* повторение фона round по горизонтали и repeat по вертикали */
+    background-repeat: round repeat;
+    background-repeat: round round;
+    background-repeat: round;
+    background-size: 150px;
+}

@@ -1,0 +1,12 @@
+.portrait {
+    width: 400px;
+    width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    background-image: url("../img/keks2.jpg");
+    background-repeat: repeat;
+    background-repeat: repeat space;
+    background-repeat: space;
+    background-size: 150px;
+}

@@ -1,0 +1,22 @@
+.portrait {
+    width: 270px;
+    width: 340px;
+    height: 270px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 50px solid rgba(0, 0, 0, 0.4);
+    border-image-source: url("../img/border-img.png");
+    border-image-slice: 50;
+    border-image-repeat: stretch repeat;
+		/* Зададим блоку .portrait заполнение рамок повторяющимися картинками по горизонтали и по верикали с помощью значений repeat repeat. */
+    border-image-repeat: repeat repeat;
+		/* Зададим заполнение рамок по горизонтали повторяющимися, но не обрезающимися картинками с помощью значения round. */
+    border-image-repeat: round repeat;
+		/* Зададим заполнение рамок по горизонтали повторяющимися, не обрезающимися картинками с пространством между картинками с помощью значения space */
+    border-image-repeat: space repeat;
+    background: url("../img/border-img.png") no-repeat center #ffffff;
+    background-clip: padding-box;
+    outline: 10px solid white;
+}

@@ -1,0 +1,19 @@
+.portrait {
+    width: 270px;
+    height: 270px;
+    margin: 50px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 50px solid rgba(0, 0, 0, 0.4);
+    border-image-source: url("../img/border-img.png");
+    background: url("../img/border-img.png") no-repeat #ffffff;
+    background-clip: padding-box;
+    background-origin: content-box;
+    outline: 10px solid white;
+    /* задайте свойство border-image-slice со значением 120 */
+    border-image-slice: 120; 
+    /* измените значение на 80 */
+    border-image-slice: 80; 
+    /* измените значение на 50 */
+    border-image-slice: 50; 
+}

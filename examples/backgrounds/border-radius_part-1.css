@@ -1,0 +1,25 @@
+.portrait {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 40px solid rgba(255, 255, 255, 0.4);
+    background-color:  #ffffff;
+    background-image:
+        url("../img/glasses.svg"),
+        url("../img/keks2.jpg");
+    background-repeat: no-repeat;
+    background-position:
+        75px 125px,
+        center;
+    background-origin: border-box;
+    background-clip: padding-box;
+    background-size:
+        150px,
+        cover;
+    /*Поочерёдно задайте портрету следующие скругления углов:*/
+    border-radius: 150px;
+    border-radius: 150px 50px;
+    border-radius: 50%;
+}
