@@ -1,0 +1,18 @@
+.portrait {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 20px solid rgba(255, 255, 0, 0.4);
+    background: url("../img/keks2.jpg") no-repeat #ffffff;
+    background-origin: padding-box;
+    background-size: 100% 100%;
+}
+
+.portrait-content-box {
+    background-origin: content-box;
+}
+
+.portrait-border-box {
+    background-origin: border-box;
+}

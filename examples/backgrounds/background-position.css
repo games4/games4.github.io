@@ -1,0 +1,21 @@
+.portrait {
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 40px;
+    width: 400px;
+    height: 400px;
+    border: 40px solid rgba(255, 255, 0, 0.4);
+    background-color:  #ffffff;
+    background-image:
+        url("../img/mustache.svg"),
+        url("../img/keks2.jpg");
+    background-repeat: no-repeat;
+    background-position:
+        bottom 170px right 205px,
+        center;
+    background-clip: padding-box;
+    background-origin: border-box;
+    background-size:
+        110px,
+        cover;
+}

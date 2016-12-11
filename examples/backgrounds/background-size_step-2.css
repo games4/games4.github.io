@@ -1,0 +1,30 @@
+[class^="portrait"] {
+    background: url("../img/keks2.jpg") no-repeat #ffffff;
+    background-size: 100px auto;
+}
+
+.portrait-vertical {
+    width: 150px;
+    height: 200px;
+}
+
+.portrait-horizontal {
+    width: 200px;
+    height: 150px;
+}
+
+.portrait-1 {
+    background-size: contain;
+}
+
+.portrait-2 {
+    background-size: cover;
+}
+
+.portrait-3 {
+    background-size: contain;
+}
+
+.portrait-4 {
+    background-size: cover;
+}

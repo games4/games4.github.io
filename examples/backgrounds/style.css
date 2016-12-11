@@ -1,1 +1,85 @@
+body {
+  background: url("../img/purty_wood.png") repeat;
+}
 
+header {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding: 10px;
+	font-size: 12px;
+	font-family: "Courier New", monospace;
+	color: #ffffff;
+	background: #e74c3c;
+	opacity: 0.5;
+}
+
+.portrait {
+  position: relative;
+  box-sizing: border-box;
+}
+.set {
+  margin-top: 30px;
+  text-align: center;
+}
+.set .portrait, .set [class^="portrait"] {
+  display: inline-block;
+  margin: 0 30px 30px 0;
+}
+.set .portrait:nth-child(2n), .set .portrait:last-child {
+  margin-right: 0;
+}
+.exam {
+  margin: 0;
+  padding: 0;
+  width: 550px;
+  height: 310px;
+}
+.sea-wood {
+  background: url("img/sea-wood.jpg") repeat;
+}
+.geometry {
+  background: url("img/skulls.png") repeat;
+}
+.wall {
+  background: url("img/ravenna.png") repeat;
+}
+.goods {
+  padding: 10px;
+}
+.goods p {
+  margin: 0 0 40px 10px;
+  text-align: left;
+  font-size: 20px;
+}
+.goods a {
+  font-size: 16px;
+}
+.goods ul {
+  margin: 0 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.goods li {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 50px 50px 0;
+  padding: 10% 10px;
+  width: 140px;
+  outline: 10px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  vertical-align: top;
+  text-align: center;
+}
+.chest {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 30px;
+  width: 300px;
+  height: 270px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.3);
+}
