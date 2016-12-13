@@ -1,0 +1,19 @@
+.portrait {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    border: 50px solid transparent;
+		/* Для .portrait зададим скругление углов 50%. */
+		border-radius: 50%;
+    border-image-source: url("../img/leafs-frame.png");
+    border-image-slice: 180 fill;
+    background: url("../img/keks3.jpg") center no-repeat rgba(255, 255, 255, 0.4);
+    background-size: cover;
+		/* Обрежем фон по краю области содержимого. */
+    background-clip: content-box;
+    background-repeat: no-repeat;
+		/* И уберем рамку outline. */
+    /* outline: 5px solid white; */
+}
+
+

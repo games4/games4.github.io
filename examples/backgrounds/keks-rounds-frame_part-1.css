@@ -1,0 +1,21 @@
+.portrait {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    border: 50px solid transparent;
+		/* Для .portrait зададим скругление углов 50%. */
+		/* Зададим фоновое изображение рамки. */
+    border-image-source: url("../img/leafs-frame.png");
+		/* «Нарежем» рамку, задав свойство border-image-slice: 180. */
+	  border-image-slice: 180;
+		/* Расположим рамку над рисунком, добавим в свойство border-image-slice значение fill. */
+    border-image-slice: 180 fill;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-image: url("../img/keks3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: 5px solid white;
+}
+
+

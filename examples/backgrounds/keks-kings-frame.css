@@ -1,0 +1,25 @@
+.portrait {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 40px solid rgba(0, 0, 0, 0.4);
+		/* Зададим фоновое изображение рамки для .portrait. */
+    border-image-source: url("../img/frame.png");
+		/* «Нарежем» рамку, задав свойство border-image-slice: 100. */
+    border-image-slice: 100;
+		/* Расположим рамку над рисунком, добавив в свойство border-image-slice значение fill. */
+    border-image-slice: fill 100;
+		/* А также зададим отступ для рамки 10px. */
+    border-image-outset: 10px;
+    background: 
+        url("../img/glasses.svg") no-repeat 75px 125px, 
+        url("../img/keks2.jpg") no-repeat center #ffffff;
+    background-clip: padding-box;
+    background-origin: border-box;
+    background-size: 
+        150px,
+        cover;
+}
+

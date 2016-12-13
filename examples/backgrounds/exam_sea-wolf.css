@@ -1,0 +1,18 @@
+/* 
+Пути к изображениям
+
+img/rope-frame.png
+img/keks-2.jpg
+img/eye-patch.svg
+
+*/
+
+.portrait {
+    width: 200px;
+    height:200px;
+    margin: 10px auto;
+    background-image: url("img/keks-2.jpg");
+    background-size: 200px;
+    background-repeat: no-repeat;
+    
+}

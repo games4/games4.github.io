@@ -1,0 +1,23 @@
+.portrait {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 40px solid rgba(0, 0, 0, 0.4);
+		/* Зададим фоновое изображение рамки и «нарежем» его. */
+    border-image-source: url("../img/eco-frame.png");
+    border-image-slice: 60;
+		/* Зададим повторяющееся отображение рамки по вертикали и по горизонтали. */ 
+    border-image-repeat: repeat;
+		/* Изменим его на повторяющееся без обрезания.*/
+    border-image-repeat: round;
+    background:
+        url("../img/glasses.svg") no-repeat 75px 125px,
+        url("../img/keks2.jpg") no-repeat center #ffffff;
+    background-clip: padding-box;
+    background-origin: border-box;
+    background-size: 
+        150px,
+        cover;
+}
