@@ -6,14 +6,30 @@ img/eye-patch.svg
 */
 
 .portrait {
-    width: 170px;
-    height:170px;
-    margin: 50px auto;
-    padding: 0px;
-    background-image: url("img/keks-2.jpg");
-    background-size: 200px;
+    width: 275px;
+    height: 275px;
+    margin: 0 auto;
+    background-image: 
+			url("../img/eye-patch.svg"), 
+			url("../img/keks-22.jpg") ;
+    background-size: 80px, cover;
     background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50% 50%;
-    
+    background-position: 35px 35px, center;
+    background-clip: content-box ;
+    border-width: 50px;
+    border-style: solid;
+/*    border-color: rgba(255, 255, 0, 0.4);*/
+/*    background-color: #ffffff;*/
+    border-radius: 50%;
+    border-image-source: url("../img/rope-frame.png");
+    border-image-slice: 90 fill;
+/*    outline: 10px solid rgba(0, 0, 0, 0.4);   */
+}
+
+.exam {
+	width: auto;
+}
+
+.sea-wood {
+  background: url("../img/sea-wood.jpg") repeat;
 }

@@ -36,10 +36,10 @@ header {
   height: 310px;
 }
 .sea-wood {
-  background: url("img/sea-wood.jpg") repeat;
+  background: url("../img/sea-wood.jpg") repeat;
 }
 .geometry {
-  background: url("img/skulls.png") repeat;
+  background: url("../img/skulls.png") repeat;
 }
 .wall {
   background: url("img/ravenna.png") repeat;

@@ -1,0 +1,27 @@
+body {
+	    margin: 50px auto;
+	
+}
+
+[class^="arrow"] {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 30px;
+
+}
+
+.arrow-bottom {
+    border: 100px solid #ffffff;
+		/* Зададим цвет верхней стороны рамки блока .arrow-bottom. */
+    border-top-color: #0074d9;
+		/* Толщину нижней стороны рамки 0. */
+    border-bottom-width: 0;
+		/* И прозрачные правую и левую стороны. */ 
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;    
+}
+
+.arrow-left {
+    border: 100px solid #ffffff;
+}
