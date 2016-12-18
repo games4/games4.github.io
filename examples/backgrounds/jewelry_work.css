@@ -1,0 +1,120 @@
+.exam {
+	margin: 50px auto;
+}
+
+.stone {
+    position: absolute;
+}
+
+.hexa::after,
+.hexa::before,
+.penta::before,
+.penta::after,
+.rhomba::after,
+.rhomba::before,
+.octa::after,
+.octa::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+}
+
+.rhomba {
+    bottom: 70px;
+    left: 50px;
+}
+
+.penta {
+    top: 20px;
+    right: 40px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.hexa {
+    top: 50px;
+    left: 40px;
+    width: 80px;
+    height: 40px;
+}
+
+.octa {
+    right: 45px;
+    bottom: 50px;
+    width: 90px;
+    height: 35px;
+}
+
+.octa {
+    background-color: #7fdbff;
+}
+
+.hexa {
+    background-color: #2ecc40;
+}
+
+.octa::before,
+.octa::after {
+    width: 30px;
+    border-color: #7fdbff transparent;
+}
+
+.penta::before,
+.penta::after {
+    border-color: #ff4136 transparent;
+}
+
+.hexa::before,
+.hexa::after {
+    border-color: #2ecc40 transparent;
+}
+
+
+.octa::after {
+    top: -30px;
+    border-width: 0 30px 30px;
+}
+
+.penta::before {
+    border-width: 0 50px 50px;
+}
+
+.hexa::before {
+    bottom: -30px;
+    border-width: 30px 40px 0;
+}
+
+.hexa::after {
+    top: -30px;
+    border-width: 0 40px 30px;
+}
+
+
+
+.rhomba::before,
+.rhomba::after {
+    border-width: 50px 30px;
+    border-color: #ffdc00 transparent;
+}
+
+.penta::after {
+    top: 50px;
+    border-width: 100px 50px 0;
+}
+
+.rhomba::before {
+    top: 0;
+    border-bottom: 0;
+}
+
+
+.octa::before {
+    bottom: -30px;
+    border-width: 30px 30px 0;
+}
+
+.rhomba::after {
+    bottom: 0;
+    border-top: 0;
+}

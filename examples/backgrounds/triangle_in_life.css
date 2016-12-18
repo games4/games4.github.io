@@ -1,0 +1,23 @@
+a.arrow {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 0;
+}
+
+.arrow::before {
+    content: "";
+    display: inline-block;
+    border: 20px solid #0074d9;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.arrow-up::before {
+    border-top-width: 0;
+}
+
+.arrow-down::before {
+    border-bottom-width: 0;
+}

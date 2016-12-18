@@ -1,6 +1,5 @@
 body {
 	    margin: 50px auto;
-	
 }
 
 [class^="arrow"] {
@@ -8,7 +7,6 @@ body {
     width: 0;
     height: 0;
     margin: 30px;
-
 }
 
 .arrow-bottom {
@@ -24,4 +22,10 @@ body {
 
 .arrow-left {
     border: 100px solid #ffffff;
+}
+
+.geometry_forms {
+	margin: 50px auto;
+	width: 600px;
+
 }

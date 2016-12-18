@@ -1,0 +1,30 @@
+.arrow-round {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    background-color: white;
+		/* Зададим сплошную рамку для .arrow-round. */
+    border: 50px solid #0074d9;
+		/* Сделаем ее круглой. */
+    border-radius: 50%;
+		/* А правую часть рамки сделаем прозрачной. */
+    border-right-color: transparent;
+}
+
+
+.arrow-round::after {
+    content: "";
+    position: absolute;
+		/* Зададим сплошную рамку для псевдоэлемента .arrow-round::after и зададим цвет нижней части рамки. */
+    border: 100px solid #ffffff;
+    border-bottom-color: #0074d9;
+		/* Укажем положение псевдоэлемента. */
+    top: -45px;
+    left: 130px;
+		/* Обнулим толщину верхней и правой частей рамки. */
+    border-right-width: 0;
+    border-top-width: 0;
+		/*Сделаем левую часть рамки прозрачной. */
+    border-left-color: transparent;
+}

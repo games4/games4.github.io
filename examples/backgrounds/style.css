@@ -45,6 +45,8 @@ header {
   background: url("img/ravenna.png") repeat;
 }
 .goods {
+	margin: 50px auto;
+	width: 500px;
   padding: 10px;
 }
 .goods p {

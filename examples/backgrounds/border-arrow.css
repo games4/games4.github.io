@@ -1,0 +1,23 @@
+.arrow-right-long {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    margin: 150px auto;
+    background: #0074d9;
+}
+
+.arrow-right-long::after {
+    content: "";
+    position: absolute;
+		/* Псевдоэлементу .arrow-right-long::after зададим сплошную рамку. */ 
+    border: 40px solid #ffffff;
+		/* Обнулим толщину правой стороны рамки, а левой стороне зададим цвет. */
+    border-left-color: #0074d9;
+    border-right-width: 0;
+		/* Сделаем вернюю и нижнюю стороны рамки прозрачными. */
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+		/* Укажем позицию псевдоэлемента */
+    top: -25px;
+    right: -30px;
+}
