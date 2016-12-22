@@ -1,0 +1,36 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: url("../img/bg.jpg");
+}
+
+.btn {
+    width: 150px;
+    margin: 50px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #3498db;
+    cursor: pointer;
+}
+
+.btn1 {
+		/* 1.	Цель 1 Задайте первой кнопке размытие 6px, растяжение -2px.*/
+    box-shadow: 0 0 6px -2px #34495e;
+}
+
+.btn2 {
+		/* 2.	Цель 2 Второй кнопке размытие 6px. */
+    box-shadow: 0 0 6px 0 #34495e;
+}
+
+.btn3 {
+		/* 3.	Цель 3 Третьей кнопке размытие 6px, растяжение 3px. */
+    box-shadow: 0 0 6px 3px #34495e;
+}
+
+.btn4 {
+		/* 4.	Цель 4 Четвёртой кнопке размытие 3px, растяжение 6px. */
+    box-shadow: 0 0 3px 6px #34495e;
+}

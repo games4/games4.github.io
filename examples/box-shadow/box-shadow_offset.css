@@ -1,0 +1,25 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: url("../img/bg.jpg");
+}
+
+.btn {
+    width: 150px;
+    margin: 100px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #3498db;
+    box-shadow: 0 0 0 0 #34495e;
+		/* Для смещения влево необходимо изменить первое значение свойства box-shadow у .btn на -5px. */
+    box-shadow: -5px 0 0 0 #34495e;
+		/* Снова изменим первое значение свойства box-shadow на 5px. */
+    box-shadow: 5px 0 0 0 #34495e;
+		/* Сместите исходную тень вниз на 10px, Изменим второе значение свойства box-shadow на 10px. */
+    box-shadow: 5px 10px 0 0 #34495e;		
+		/* Сместите исходную тень вверх на 10px, Изменим второе значение свойства box-shadow на -10px. */
+    box-shadow: 5px -10px 0 0 #34495e;
+    cursor: pointer;
+}

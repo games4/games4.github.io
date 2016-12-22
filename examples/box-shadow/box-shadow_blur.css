@@ -1,0 +1,20 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: url("../img/bg.jpg");
+}
+
+.btn {
+    width: 150px;
+    margin: 100px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #3498db;
+		/* Добавим для тени растяжение, изменив четвертое значение свойства box-shadow на 5px.
+		Сместим тень вниз, изменив второе значение свойства box-shadow на 70px.
+		Уменьшим растяжение, снова изменив четвертое значение свойства box-shadow на -5px. */
+    box-shadow: 0 70px 0 -5px #34495e;
+    cursor: pointer;
+}
