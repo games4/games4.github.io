@@ -1,0 +1,28 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    height: 100%;
+    background-color: yellow;
+    background-image: none;
+    /* Цвета градиента: yellow, green */
+    /* слева направо */ 
+    background-image: linear-gradient(to right, yellow, green);
+    /* справа налево */
+    background-image: linear-gradient(to left, yellow, green);
+    /* сверху вниз */
+    background-image: linear-gradient(to bottom, yellow, green);
+    /* снизу вверх */ 
+    background-image: linear-gradient(to top, yellow, green);
+}
+
+h1 {
+    margin: 0;
+    padding-top: 250px;
+    font-size: 30px;
+    font-family: "Georgia", serif;
+    text-align: center;
+}
