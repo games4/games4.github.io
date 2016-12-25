@@ -1,0 +1,21 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: url("../img/bg.jpg");
+}
+
+.btn {
+    width: 150px;
+    margin: 100px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #34495e;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 
+        0 0 0 5px #e74c3c,
+        0 0 0 10px #f1c40f,
+        0 0 0 15px #2ecc71;
+}

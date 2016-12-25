@@ -1,0 +1,40 @@
+.btn1 {
+    box-shadow: 0 0 5px;
+		/* Зададим тени кнопки .btn1 нулевое растяжение и цвет white, добавив в конец для свойства box-shadow значения 0 white. */
+    box-shadow: 0 0 5px 0 white;
+}
+
+.btn2 {
+    box-shadow: 0 0 5px;
+		/* Для свойства box-shadow кнопки .btn2 добавим в конец значения 0 #2c3e50. */
+    box-shadow: 0 0 5px 0 #2c3e50;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+}
+
+.light {
+    padding: 50px 0;
+    background: #2c3e50;
+}
+
+.dark {
+    padding: 50px 0;
+}
+
+.btn {
+    width: 150px;
+    margin: 50px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: yellow;
+    background: #3498db;
+    cursor: pointer;
+}
+

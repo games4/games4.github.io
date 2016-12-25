@@ -1,0 +1,49 @@
+body {
+    padding: 20px;
+    background: white;
+}
+
+.logo {
+    width: 280px;
+    margin: 50px auto;
+} 
+
+.logo div {
+    position: absolute;
+}
+
+.logo .c1 {
+    margin-left: 0;
+}
+
+.logo .c2 {
+    margin-left: 60px;
+}
+
+.logo .c3 {
+    margin-left: 120px;
+}
+
+.logo .c4 {
+    margin-left: 180px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    box-shadow:
+				/* И внутреннюю тень со смещением по горизонтали 2px, по вертикали 2px, размытием 2px и цветом white. */
+        inset 2px 2px 2px 0 white,
+				/* Внутреннюю тень с растяжением 4px и цветом #4f5054. */
+        inset 0 0 0 4px #4f5054,
+        /* Добавим внутреннюю тень с растяжением 5px и цветом black. */
+				inset 0 0 0 5px black,
+				/* И внутреннюю тень со смещением по горизонтали -5px, по вертикали -5px, размытием 5px, растяжением 3px и цветом white. */
+        inset -5px -5px 5px 3px white,
+				/* Добавим внутреннюю тень с растяжением 9px и цветом #6c6d70. */
+        inset 0 0 0 9px #6c6d70,
+				/* Для .circle зададим внутреннюю тень с растяжением 10px и цветом black, добавив свойство box-shadow. */
+        inset 0 0 0 10px black;
+}

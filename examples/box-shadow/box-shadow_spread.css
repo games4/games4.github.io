@@ -12,6 +12,9 @@ body {
     text-transform: uppercase;
     color: white;
     background: #3498db;
-    box-shadow: 0 70px 10px 0 #34495e;
+		/* Добавим для тени растяжение, изменив четвертое значение свойства box-shadow на 5px.
+		Сместим тень вниз, изменив второе значение свойства box-shadow на 70px.
+		Уменьшим растяжение, снова изменив четвертое значение свойства box-shadow на -5px. */
+    box-shadow: 0 70px 0 -5px #34495e;
     cursor: pointer;
-}}
+}

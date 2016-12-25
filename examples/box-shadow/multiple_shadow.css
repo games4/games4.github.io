@@ -1,0 +1,19 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: black;
+}
+
+.btn {
+    width: 150px;
+    margin: 100px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #34495e;
+    cursor: pointer;
+    box-shadow:
+        0 -5px 10px -3px #3498db,
+        0 5px 10px -3px #2ecc71;
+}

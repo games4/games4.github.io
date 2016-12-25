@@ -1,0 +1,28 @@
+.btn1 {
+    box-shadow: 5px 5px 0 0 #34495e inset;
+}
+
+.btn2 {
+    box-shadow: 0 0 5px 0 #34495e inset;
+}
+
+.btn3 {
+    box-shadow: 0 0 5px 3px #34495e inset;
+}
+
+body {
+    font-family: "Tahoma", sans-serif;
+    font-size: 18px;
+    background: url("../img/bg.jpg");
+}
+
+.btn {
+    width: 150px;
+    margin: 50px auto;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: #3498db;
+    cursor: pointer;
+}
