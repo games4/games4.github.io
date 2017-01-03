@@ -1,0 +1,46 @@
+.leaf-top-left {
+    background-image: linear-gradient(135deg, #ff0000, #000000);
+}
+
+.leaf-top-right {
+    /*градиент от #00ff00 к #000000*/
+    background-image: linear-gradient(225deg, #00ff00, #000000);
+}
+
+.leaf-bottom-right {
+    /*градиент от #ffff00 к #000000*/
+    background-image: linear-gradient(315deg, #ffff00, #000000);
+}
+
+.leaf-bottom-left {
+    /*градиент от #ff00ff к #000000*/
+    background-image: linear-gradient(45deg, #ff00ff, #000000);
+}
+
+.leaf-top-left, .leaf-bottom-right {
+    border-radius: 0 50%;
+}
+
+.leaf-top-right, .leaf-bottom-left {
+    border-radius: 50% 0;
+}
+
+.leaf {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    float: left;
+    background-color: #dfdfdf;
+}
+
+.flower {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
