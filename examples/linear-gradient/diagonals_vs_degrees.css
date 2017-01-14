@@ -1,0 +1,30 @@
+html,
+body {
+    margin: 0;
+}
+
+.content {
+    width: 350px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.gradient {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 3px #333333;
+}
+
+.gradient-diagonal {
+    float: left;
+    height: 300px;
+    background-image: linear-gradient(green, yellow, green);
+    background-image: linear-gradient(to right top, green, yellow, green);
+}
+
+.gradient-degrees {
+    float: right;
+    height: 300px;
+    background-image: linear-gradient(green, yellow, green);
+    background-image: linear-gradient(45deg, green, yellow, green);
+}

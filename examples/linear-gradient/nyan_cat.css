@@ -1,0 +1,22 @@
+body {
+    background-image: url("../img/nyan-cat-bg.png");
+}
+
+.rainbow {
+    position: absolute;
+    top: 105px;
+    left: 0;
+    width: 205px;
+    height: 100px;
+    background-image: none;
+    background-image: linear-gradient(to bottom, #ff4136, #ff851b, #ffdc00, #2ecc40, #7fdbff, #0074d8, #b10dc9);
+		/* Зададим блоку .rainbow линейный градиент с указанными в задании цветами в направлении сверху вниз (стандартное направление).*/
+    background-image: linear-gradient(#ff4136, #ff851b, #ffdc00, #2ecc40, #7fdbff, #0074d8, #b10dc9);
+}
+
+.cat {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    z-index: 10;
+}

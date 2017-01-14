@@ -1,0 +1,44 @@
+.leaf-top-left {
+    background-image: linear-gradient(-45deg, #f00000 30px, #000000 30px, #000000 40px, #ff0000 40px, #ff0000 70px, #000000 70px);
+}
+
+.leaf-top-right {
+    /* цвета: #00ff00, #000000, #00ff00, #000000 */
+    background-image: linear-gradient(45deg, #00ff00 30px, #000000 30px, #000000 40px, #00ff00 40px,  #00ff00 70px,  #000000 70px);
+}
+
+.leaf-bottom-right {
+    /* цвета: #ffff00, #000000, #ffff00, #000000 */
+    background-image: linear-gradient(135deg, #ffff00 30px, #000000 30px, #000000 40px, #ffff00 40px, #ffff00 70px, #000000 70px);
+}
+
+.leaf-bottom-left {
+    /* цвета: #ff00ff, #000000, #ff00ff, #000000 */
+    background-image: linear-gradient(225deg, #ff00ff 30px, #000000 30px, #000000 40px, #ff00ff 40px, #ff00ff 70px, #000000 70px);
+}
+
+.leaf-top-left, .leaf-bottom-right {
+    border-radius: 0 50%;
+}
+
+.leaf-top-right, .leaf-bottom-left {
+    border-radius: 50% 0;
+}
+
+.leaf {
+    float: left;
+    width: 150px;
+    height: 150px;    
+    background-color: #dfdfdf;
+}
+
+.flower {
+    width: 300px;
+    margin: 70px auto;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}

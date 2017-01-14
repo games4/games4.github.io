@@ -1,0 +1,39 @@
+body {
+    font-family: "PT Sans", sans-serif;
+}
+
+.columns {
+    background-image: none;
+    background-image: linear-gradient(to right, #e74c3c, #e74c3c 45%, transparent 45%,transparent 55%, #3498db 55%, #3498db);
+}
+
+.container {
+    width: 400px;
+    min-height: 380px;
+    margin: 20px auto;
+    color: white;
+    box-shadow: 1px 1px 3px #333333;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left {
+    float: left;
+    width: 45%;
+    background-color: #e74c3c;
+}
+
+.right {
+    float: right;
+    width: 45%;
+    background-color: #3498db;
+}
+
+p {
+    margin: 10px 0;
+    padding: 0 10px;
+}

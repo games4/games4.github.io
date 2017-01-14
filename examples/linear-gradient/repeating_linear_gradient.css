@@ -1,0 +1,40 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 440px;
+    height: 440px;
+    margin: 20px auto;
+}
+
+.box {
+    float: left;
+    width: 200px;
+    height: 200px; 
+    margin: 10px;
+    box-shadow: 0 0 3px #666666;
+}
+
+/* Простейший вариант, при повторении будут резкие границы */
+.gradient-1 {
+    background-image: repeating-linear-gradient(black 0px, green 25px, yellow 50px);
+}
+
+/* Добавили резкие переходы внутрь градиента.
+   При повторении получим полоски */
+.gradient-2 {
+    background-image: repeating-linear-gradient(black 0px, black 17px, green 17px, green 33px, yellow 33px, yellow 50px);
+}
+
+/* Избавимся от резких переходов при повторении */
+.gradient-3 {
+    background-image: repeating-linear-gradient(black 0px, green 25px, yellow 50px, black 75px);
+}
+
+/* Колорстопы в процентах, в блоке независимо от его размера всегда будет помещаться два повторения  */
+.gradient-4 {
+    background-image: repeating-linear-gradient(black 0, green 25%, yellow 50%);
+}

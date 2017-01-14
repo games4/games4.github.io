@@ -1,0 +1,14 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.flag {
+    width: 360px;
+    height: 240px;
+    margin: 100px auto;
+    background-image: none;
+    background-image: linear-gradient(180deg, #ffffff 25%, #1199ff 50%, #0039a6 75%, #d52b1e 100%);
+    background-image: linear-gradient(180deg, #ffff00 40%, dodgerblue 65%);
+    background-image: linear-gradient(180deg, yellow 50%, dodgerblue 50%);
+   box-shadow: 1px 1px 3px #333333;
+}
