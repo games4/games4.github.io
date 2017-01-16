@@ -1,0 +1,44 @@
+.simple-gray {
+    color: #333333;
+    background-image: none;
+		/* Для .simple-gray зададим линейный градиент с цветами #ffffff и #dddddd. */ 
+    background-image: linear-gradient(to bottom, #ffffff, #dddddd);
+}
+
+.strong-brown {
+    color: #ffffff;
+    background-image: none;
+		/* Для кнопки .strong-brown задайте градиент в направлении сверху вниз с цветами #cc0630, #8f0222, #6d0019 и колорстопами 0%, 75%, 100%. */
+    background-image: linear-gradient(to bottom, #cc0630 0%, #8f0222 75%, #6d0019 100%);		
+}
+
+.glossy-blue {
+    color: #ffffff;
+    background-image: none;
+		/* Для кнопки .glossy-blue задайте градиент в направлении сверху вниз с цветами #b8e1fc, #90bcea, #90bff0, #6ba8e5, #bdf3fd и колорстопами 0%, 35%, 50%, 51%, 100% */
+    background-image: linear-gradient(#b8e1fc 0%, #90bcea 35%, #90bff0 50%, #6ba8e5 51%, #bdf3fd 100% );
+}
+
+.button {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px 50px;
+    font-size: 24px;
+    font-family: "Lucida Grande", Arial, sans-serif;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+        0 1px 3px #aaaaaa;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+/*
+Используемые цвета: #000000 и #555555
+Используемые значения background-position для частей сюрикенов:
+
+70px -45px, 
+-45px -80px, 
+35px 70px, 
+-80px 35px, 
+35px -45px, 
+-45px 35px
+*/
+
+.pattern {
+    height: 100%;
+    background-size: 115px 115px;
+    background-repeat: repeat;
+    background-image: 
+        linear-gradient(45deg, #555555 25px, transparent 25px),
+        linear-gradient(315deg, #555555 25px, transparent 25px),
+        linear-gradient(135deg, #555555 25px, transparent 25px),
+        linear-gradient(225deg, #555555 25px, transparent 25px),
+        linear-gradient(45deg, #000000 25px, transparent 25px),
+        linear-gradient(225deg, #000000 25px, transparent 25px)
+        ;
+    background-position: 
+        70px -45px, 
+        -45px -80px, 
+        35px 70px, 
+        -80px 35px, 
+        35px -45px, 
+        -45px 35px;
+}
+
+body {
+    background: url("../img/bamboo.jpg");
+    min-width: 555px;
+    min-height: 298px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}

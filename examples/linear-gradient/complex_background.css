@@ -1,22 +1,43 @@
 .pattern {
-    width: 100px;
-    height: 100px;
+		/* Увеличим ширину и высоту блока .pattern до 200px, изменив значения свойств width и height. */
+    width: 200px;
+		width: auto;
+    height: 200px;
+    height: 100%;
     margin: 100px auto;
+    margin: 0 0; 
     background-image:
         none,
         none;
+		/* Блоку .pattern зададим первый градиент от белого цвета к прозрачному под углом 135 градусов. И второй градиент, тоже от белого к прозрачному, но под углом 225 градусов. */	
     background-image: 
-				/* Блоку .pattern зададим первый градиент от белого цвета к прозрачному под углом 135 градусов. */
         linear-gradient(135deg, white 25%, transparent 25%),
-				/* И второй градиент, тоже от белого к прозрачному, но под углом 225 градусов. */
-        linear-gradient(225deg, white 25%, transparent 25%)
-    ;
+        linear-gradient(225deg, white 25%, transparent 25%),
+        linear-gradient(45deg, white 25%, transparent 25%),
+        linear-gradient(315deg, white 25%, transparent 25%);
+		/* Зададим расположение 0 25px для первых двух фонов. */
+		background-position: 
+				25px 0,
+				25px 0,
+				0 0,
+				0 0;
     background-color: #333333;
-    box-shadow: 1px 1px 3px #333333;
+		/* Зададим размер фоновых изображений, добавив для .pattern свойство background-size: 100px 100px. */
+    background-size: 100px 100px;
+		/* У блока .pattern изменим ширину и высоту фоновых изображений, поменяв значение свойства background-size на 50px 50px. */
+    background-size: 50px 50px;
+		/* И отключим повторение фона, добавив свойство background-repeat: no-repeat. */
+    background-repeat: no-repeat;
+		/* Изменим значение свойства background-repeat на repeat-x. */
+		background-repeat: repeat-x;
+		/* А затем на repeat. */
+		background-repeat: repeat;
+    box-shadow: 1px 1px 3px #333333; 
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
+		height: 100%;
 }
