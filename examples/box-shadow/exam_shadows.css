@@ -20,8 +20,8 @@ body {
     background: #2c3e50;
     cursor: pointer;
     box-shadow: 
-        inset 0px 5px 0 0px #2ecc71,
-        inset 0px -5px 0 0px #16a085,
+        inset 0px -10px 0 -5px #2ecc71,
+        inset 0px 10px 0 -5px #16a085,
         0px -20px 0 -10px #c0392b,
         0px -40px 0 -20px #e74c3c,
         0px 20px 0 -10px #2980b9,
@@ -37,7 +37,7 @@ body {
     width: 125px;
     height: 60px;
     box-shadow: 
-        inset 0px -10px 0 -5px #2ecc71,
-        inset 0px 10px 0 -5px #16a085;
+        inset 0px 5px 0 0px #2ecc71,
+        inset 0px -5px 0 0px #16a085;
     
 }
