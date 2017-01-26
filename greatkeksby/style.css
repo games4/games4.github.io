@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #404040;
+    background-color: white;
+}
+
+.page-header,
+.page-footer {
+    padding: 10px;
+    background-color: #eeeeee;
+}
+
+.page-header {
+    background-color: #363636;
+    color: #c3c3c3;
+}
+
+.main-nav {
+    list-style: none;    
+}
+
+.main-nav li {
+    text-transform: uppercase;    
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.main-nav a:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    color: #a38b70;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    color: #8d745a;
+}
+
+.btn:active {
+    color: rgba(141, 116, 90, 0.3)    
+}
+
+.promo {
+    text-align: center;
+}
+
+.promo a {
+    color: rgba(255, 255, 255, 1.0);
+    text-decoration: none;
+}
+
+.page-footer {
+    margin-top: 20px;
+}
+
+.price-list {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.price-list th {
+    font-weight: normal;
+    text-align: left;
+}
+
+.price-list td {
+    border: 1px solid #333333;
+}
+
+.price-list th,
+.price-list td {
+    padding: 5px 10px;
+}
+
+.price-list .price-number {
+    text-align: center;
+}
+
+.price-list .price-name {
+    font-weight: bold;
+}
+
+.feedback-form-group {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
