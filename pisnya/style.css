@@ -55,7 +55,11 @@ body {
 }
 
 .promo {
-    text-align: center;
+    font-family: Georgia;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 55px;
+    text-align: center;    
 }
 
 .promo a {
@@ -63,8 +67,60 @@ body {
     text-decoration: none;
 }
 
-.page-footer {
-    margin-top: 20px;
+.features ul {
+    list-style: none;    
+}
+
+.feature-item {
+    text-align: center;
+    border-left: 1px solid #d9d9d9;
+}
+
+.feature-title {
+    font-family: "Georgia", serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #a38b70;
+}
+
+.feature-item:first-child {
+    border-left: 0;    
+}
+
+.feature-item p {
+    font-size: 16px;    
+}
+
+/* reference - довідка */ 
+.song-reference {
+    background-color: #f2f2f2;    
+}
+
+.song-reference dd {
+    font-size: 16px;
+}
+
+.song-reference img {
+    border-radius: 5px;
+}
+
+.section-title {
+    font-family: "Georgia", serif;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: bold;
+    color: #a38b70;
+}
+
+.reference-title {
+    font-size: 24px;    
+}
+
+.reference-source {
+    font-size: 16px;
+    font-style: italic;
+    color: #666666;
 }
 
 .short-list {
@@ -98,3 +154,8 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.page-footer {
+    margin-top: 20px;
+}
+
