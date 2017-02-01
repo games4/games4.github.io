@@ -123,6 +123,41 @@ body {
     color: #666666;
 }
 
+.reference-source a {
+    color: #a38b70;    
+}
+
+.reference-source a:hover {
+    color: #8d745a;    
+}
+
+.reference-source a:active {
+    color: rgba(141, 116, 90, 0.3);    
+}
+
+.review-item {
+    border-left: 3px solid #a38b70;  
+    font-size: 16px;    
+}
+
+.review-author {
+    font-style: italic; 
+    font-weight:  bold;
+}
+
+.hit-and-rating {
+		background-color: #f2f2f2;
+}
+
+.category-item {
+		font-size: 16px;
+}
+
+.category-item h3 {
+		font-size: 16px;
+		color: #000000;
+}
+
 .short-list {
     width: 100%;
     border-collapse: collapse;
