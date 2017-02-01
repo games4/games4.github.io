@@ -101,7 +101,7 @@ body {
     font-size: 16px;
 }
 
-.cat-reference img {
+.cat-reference dd img {
     border-radius: 5px;
 }
 
@@ -121,6 +121,42 @@ body {
     font-size: 16px;
     font-style: italic;
     color: #666666;
+}
+
+.reference-source a {
+    color: #a38b70;    
+}
+
+.reference-source a:hover {
+    color: #8d745a;    
+}
+
+.reference-source a:active {
+    color: rgba(141, 116, 90, 0.3);    
+}
+
+.review-item {
+    border-left: 3px solid #a38b70;  
+    font-size: 16px;    
+}
+
+.review-author {
+    font-style: italic; 
+    font-weight:  bold;
+}
+
+.popular-and-price {
+		background-color: #f2f2f2;
+}
+
+.catalog-item {
+		font-size: 16px;
+}
+
+.catalog-item h3 {
+		font-size: 16px;
+		color: #000000;
+	
 }
 
 .price-list {
