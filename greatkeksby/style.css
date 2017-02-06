@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif;
     font-size: 18px;
     line-height: 24px;
+    font-family: "Arial", sans-serif;
     color: #404040;
     background-color: white;
 }
@@ -11,24 +11,20 @@ body {
 .page-header,
 .page-footer {
     padding: 10px;
-    background-color: #eeeeee;
-}
-
-.page-header {
     background-color: #363636;
     color: #c3c3c3;
 }
 
 .main-nav {
-    list-style: none;    
+    list-style: none;
 }
 
 .main-nav li {
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 .main-nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -42,8 +38,8 @@ body {
 
 .btn {
     color: #a38b70;
-    text-decoration: none;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -51,24 +47,24 @@ body {
 }
 
 .btn:active {
-    color: rgba(141, 116, 90, 0.3)    
+    color: rgba(141, 116, 90, 0.3);
 }
 
 .promo {
-    font-family: Georgia;
-    font-size: 45px;
     font-weight: bold;
+    font-size: 45px;
     line-height: 55px;
-    text-align: center;    
+    font-family: "Georgia", serif;
+    text-align: center;
 }
 
 .promo a {
-    color: rgba(255, 255, 255, 1.0);
+    color: #ffffff;
     text-decoration: none;
 }
 
 .features ul {
-    list-style: none;    
+    list-style: none;
 }
 
 .feature-item {
@@ -77,24 +73,32 @@ body {
 }
 
 .feature-item:first-child {
-    border-left: 0;    
-}
-
-.feature-item p {
-    font-size: 16px;    
+    border-left: none;
 }
 
 .feature-title {
-    font-family: "Georgia", serif;
+    font-weight: bold;
     font-size: 30px;
     line-height: 30px;
-    font-weight: bold;
+    font-family: "Georgia", serif;
     color: #a38b70;
+}
+
+.feature-item p {
+    font-size: 16px;
 }
 
 /* reference - довідка */ 
 .cat-reference {
-    background-color: #f2f2f2;    
+    background-color: #f2f2f2;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 55px;
+    font-family: "Georgia", serif;
+    color: #a38b70;
 }
 
 .cat-reference dd {
@@ -105,44 +109,36 @@ body {
     border-radius: 5px;
 }
 
-.section-title {
-    font-family: "Georgia", serif;
-    font-size: 45px;
-    line-height: 55px;
-    font-weight: bold;
-    color: #a38b70;
-}
-
 .reference-title {
-    font-size: 24px;    
+    font-size: 24px;
 }
 
 .reference-source {
     font-size: 16px;
-    font-style: italic;
     color: #666666;
+    font-style: italic;
 }
 
 .reference-source a {
-    color: #a38b70;    
+    color: #a38b70;
 }
 
 .reference-source a:hover {
-    color: #8d745a;    
+    color: #8d745a;
 }
 
 .reference-source a:active {
-    color: rgba(141, 116, 90, 0.3);    
+    color: rgba(141, 116, 90, 0.3);
 }
 
 .review-item {
-    border-left: 3px solid #a38b70;  
-    font-size: 16px;    
+    font-size: 16px;
+    border-left: 3px solid #a38b70;
 }
 
 .review-author {
-    font-style: italic; 
-    font-weight:  bold;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .popular-and-price {
@@ -156,25 +152,25 @@ body {
 .catalog-item h3 {
 		font-size: 16px;
 		color: #000000;
-	
 }
 
 .price-list {
     width: 100%;
-    border-spacing: 0;
     border-collapse: collapse;
+		line-height: 30px;
 }
 
 .price-list th {
     font-weight: normal;
     text-align: left;
+		font-size: 14px;
+		text-transform: uppercase;
 }
 
 .price-list td {
     border: 1px solid #333333;
+		border-color: #d8d8d8;
 }
-
-.features 
 
 .price-list th,
 .price-list td {
@@ -187,14 +183,104 @@ body {
 
 .price-list .price-name {
     font-weight: bold;
+		color: #000000;
+}
+
+.feedback-tip {
+		font-size: 16px;
 }
 
 .feedback-form-group {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
+}
+
+.feedback-form-group label {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.feedback-form input[type="text"],
+.feedback-form select,
+.feedback-form textarea {
+    font: inherit; /* наследование текстовых свойств родителя: цвет, параметры шрифта. в нашем случае БОДИ */
+    color: inherit;
+    border: 2px solid #d5d5d5;
+}
+
+.feedback-form input[type="text"]:hover,
+.feedback-form select:hover,
+.feedback-form textarea:hover {
+    border-color: #bebebe;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #8d745a;
+}
+
+.checkbox-area {
+    border-bottom: 1px solid  #d5d5d5;   
 }
 
 .page-footer {
     margin-top: 20px;
 }
 
+.footer-middle,
+.footer-bottom {
+    border-top: 1px solid #5e5e5e;    
+}
+
+.footer-menu h3 {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Georgia", serif;
+    color: #a38b70;
+}
+
+.footer-menu ul {
+    list-style: none;
+}
+
+.footer-menu a {
+    font-size: 16px;
+    color: #c3c3c3;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #ffffff;    
+}
+
+.footer-menu a:active {
+    color: rgba(255, 255, 255, 0.3);    
+}
+
+.footer-social b {
+    font-size: 24px;
+    font-family: "Georgia", serif;
+    color: #a38b70;
+}
+
+.social-btn {
+    color: #ffffff;
+}
+
+.footer-copyright {
+    color: #ffffff; 
+    text-transform: uppercase;
+}
+
+.footer-copyright a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: underline;    
+}
+
+.footer-copyright a:active {
+    color: rgba(255, 255, 255, 0.3);    
+}
