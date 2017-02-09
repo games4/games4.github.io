@@ -8,6 +8,13 @@ body {
     background-color: white;
 }
 
+.page-header {
+    background-image: url("img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
 .page-header,
 .page-footer {
     padding: 10px;
@@ -63,17 +70,31 @@ body {
     text-decoration: none;
 }
 
+/* features - особливості (інше - переваги) */ 
 .features ul {
     list-style: none;
 }
 
 .feature-item {
+    padding-top: 90px;    
     text-align: center;
     border-left: 1px solid #d9d9d9;
 }
 
 .feature-item:first-child {
     border-left: none;
+}
+
+.feature-choice {
+  background: url("img/feature-1.png") top center no-repeat;
+}
+
+.feature-quality {
+  background: url("img/feature-2.png") top center no-repeat;
+}
+
+.feature-safety {
+  background: url("img/feature-3.png") top center no-repeat;
 }
 
 .feature-title {
@@ -188,6 +209,13 @@ body {
 
 .feedback-tip {
 		font-size: 16px;
+}
+
+.feedback-form {
+    padding-right: 390px;
+    background-image: url("img/write.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% 40px;
 }
 
 .feedback-form-group {
