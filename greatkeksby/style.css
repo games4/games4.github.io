@@ -347,12 +347,34 @@ body {
 }
 
 .page-footer {
-    margin-top: 20px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+}
+
+.footer-top {
+    margin-bottom: 45px;
+}
+
+.footer-logo {
+    float: left;
+    width: 205px;
+    height: 55px;
+}
+
+.footer-middle {
+    margin-bottom: 50px;
+    padding-top: 50px;
 }
 
 .footer-middle,
 .footer-bottom {
     border-top: 1px solid #5e5e5e;    
+}
+
+.footer-menu {
+    float: left;
+    width: 150px;
+    margin-right: 20px;
 }
 
 .footer-menu h3 {
@@ -376,8 +398,17 @@ body {
     color: #ffffff;    
 }
 
+.footer-bottom {
+    padding-top: 50px;
+}
+
 .footer-menu a:active {
     color: rgba(255, 255, 255, 0.3);    
+}
+
+.footer-social {
+    float: left;
+    width: 490px;
 }
 
 .footer-social b {
@@ -391,6 +422,8 @@ body {
 }
 
 .footer-copyright {
+		float: right;
+		width: 236px;
     color: #ffffff; 
     text-transform: uppercase;
 }
