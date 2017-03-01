@@ -1,0 +1,32 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.deck {
+    position: relative;
+    top: 150px;
+    left: 50%;
+    width: 110px;
+    margin-left: -55px;    
+}
+
+.deck img {
+    position: absolute;
+    transition: all 0.1s linear;
+    transform-origin: 0 0;
+}
+
+.queen {
+    transform: rotate(-10deg);
+}
+
+.jack {
+    transform: rotate(-20deg);
+}
+
+.ten {
+    transform: rotate(-30deg);
+}

@@ -1,0 +1,12 @@
+.hippo {
+    transform: scale(0.25);
+}
+
+.mouse {
+    transform: scale(3);		
+}
+
+.wizard {
+    top: 244px;
+    left: 10px;
+}

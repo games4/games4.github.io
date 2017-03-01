@@ -1,0 +1,29 @@
+html,
+body {
+		width: 600px;
+    margin: 40px auto;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.deck {
+    list-style: none;
+}
+
+.deck > li {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+.deck img {
+    width: 100px;
+    transition: all 0.1s linear;
+}
+
+.deck img:hover {
+		/* Сделаем, чтобы карты становились на 40% прозрачными при наведении с помощью свойства opacity. Наводите курсор на карты для проверки! */
+    opacity: 0.6;
+		/* И немного увеличивались, при помощи трасформации scale. Наводите курсор на карты для проверки! */
+    transform: scale(1.1);
+}

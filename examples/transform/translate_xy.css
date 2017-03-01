@@ -1,0 +1,15 @@
+.wizard {
+    top: 244px;
+    left: 30px;
+    transform: translatex(250px) translatex(-250px);
+    transform: translatex(250px);
+    transform: translatey(-200px); 
+    transform: translatey(-200px) translatex(280px); 
+    transform: translatey(-200px) translatex(280px) translatey(200px); 
+
+}
+
+.tree {
+    top: 178px;
+    right: 30px;
+}

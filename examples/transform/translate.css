@@ -1,0 +1,16 @@
+.fireball-1 {
+    transform: translatex(310px);   
+}
+
+.fireball-2 {
+    transform: translatey(-190px);
+}
+
+.fireball-3 {
+    transform: translate(290px, -190px);
+}
+
+.wizard {
+    top: 244px;
+    left: 30px;
+}

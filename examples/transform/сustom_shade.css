@@ -1,0 +1,41 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: "Arial Narrow", "Arial", sans-serif;
+}
+
+.shadow-box {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    margin: 50px auto;
+    padding: 100px 0;
+    text-align: center;
+    background: white;
+    box-shadow: 0 0 3px #cccccc;
+}
+
+.shadow-box::before,
+.shadow-box::after {
+    content: "";
+    position: absolute;
+    top: 80%;
+    bottom: 15px;
+    z-index: -1;
+    width: 45%;
+    max-width: 300px;
+    background: #dddddd;
+    box-shadow: 0 15px 10px #555555;
+}
+
+.shadow-box::before {
+    left: 10px;
+    transform: rotate(-6deg);
+}
+
+.shadow-box::after {
+    right: 10px;
+    transform: rotate(6deg);
+}

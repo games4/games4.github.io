@@ -1,0 +1,21 @@
+.wizard {
+    top: 244px;
+    left: 30px;
+}
+
+/* 		Призовем двойника, задав для свойства visibility значение visible, и развернем его, используя трансформацию масштабирования по X scaleX(-1). */
+.doppelganger {
+    visibility: hidden;
+    visibility: visible;
+    transform: scalex(-1);
+}
+
+/* С помощью scale перевернем и уменьшим кристалл, и переместим его в паз с помощью трансформации перемещения translate. */
+.diamond {
+    transform: scale(0.6, -0.6) translate(-330px, 350px) ;
+		  visibility: visible;
+}
+
+.world {
+    min-width: 570px;
+}
