@@ -1,0 +1,20 @@
+.square {
+    left: 0;
+    transition-duration: 3s;
+    transition-property: left, border-radius;
+		/* Зададим для .square форму перехода через функцию cubic-bezier со значениями 1, 0, 1, 1, соответствующими форме linear. */
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+
+.square-active {
+    left: 75%;
+    border-radius: 50%;
+}
+
+.square-experimental {
+    background-color: #e74c3c;
+		/* Для .square-experimental зададим форму перехода через cubic-bezier, напоминающую более резкую форму ease-in-out. */
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		/* А затем изменим значения функции cubic-bezier так, чтобы получилась похожая на ease-out форма. */
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}

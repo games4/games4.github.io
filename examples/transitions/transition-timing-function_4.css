@@ -1,0 +1,17 @@
+.square {
+    left: 0;
+    transition: all linear 3s;
+}
+
+.square-active {
+    left: 75%;
+    border-radius: 50%;
+}
+
+.square-experimental {
+    background-color: #e74c3c;
+		/* Для .square-experimental зададим форму перехода, при которой первый шаг будет выполняться одновременно с началом перехода, а переход будет выполнен за 5 шагов. */
+    transition-timing-function: steps(5, start);
+		/* А затем изменим на форму, при которой последний шаг будет выполнен вместе с завершением перехода. */
+    transition-timing-function: steps(5, end);
+}

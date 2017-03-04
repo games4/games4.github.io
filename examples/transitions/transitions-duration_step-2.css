@@ -1,0 +1,20 @@
+.btn {
+    background-color: #ffffff;
+    transition-duration: 1s;
+		/* Уменьшим длительность перехода до 200ms. */
+    transition-duration: 2000ms;
+}
+
+.btn:active {
+    background-color: #ff5252;
+    /*  Активному состоянию кнопки зададим белый цвет текста и трансформацию поворота 45deg. */
+    color: #ffffff;
+    transform: rotate(45deg);		
+}
+
+.btn:hover {
+    background-color: #ff5252;
+    /*  Активному состоянию кнопки зададим белый цвет текста и трансформацию поворота 45deg. */
+    color: #ffffff;
+    transform: rotate(45deg);		
+}

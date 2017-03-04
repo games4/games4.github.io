@@ -1,0 +1,15 @@
+.square {
+    left: 0;
+		/* Для .square зададим плавный переход для всех свойств длительностью 3s. */
+    transition-duration: 3s;
+}
+
+.square-active {
+    left: 75%;
+    border-radius: 50%;
+}
+
+.square-experimental {
+		/* Изменим форму перехода на линейную для .square-experimental. */ 
+    transition-timing-function: linear;
+}

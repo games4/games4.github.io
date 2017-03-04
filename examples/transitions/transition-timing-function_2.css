@@ -1,0 +1,21 @@
+.square {
+    left: 0;
+		/* Для .square зададим плавный переход для всех свойств длительностью 3s. */
+    transition-duration: 3s;
+}
+
+.square-active {
+    left: 75%;
+    border-radius: 50%;
+}
+
+.square-experimental {
+		/* Изменим форму перехода на линейную для .square-experimental. */ 
+    transition-timing-function: linear;
+		/* Для .square-experimental зададим медленно начинающуюся, а к концу ускоряющуюся форму перехода ease-in. */ 
+    transition-timing-function: ease-in;
+		/* Изменим на быстро начинающуюся, а в конца замедляющуюся форму перехода ease-out. */
+    transition-timing-function: ease-out;
+		/* И еще раз изменим на медленно начинающуюся и медленно заканчивающуюся форму перехода ease-in-out, которая немного интенсивнее, чем обычная ease. */	
+		transition-timing-function: ease-in-out;
+}

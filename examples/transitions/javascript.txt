@@ -1,0 +1,153 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var taskProcessor = new TaskProcessor(2);
+
+    taskProcessor.on = function(eventType) {
+        if ('browser_updated' == eventType) {
+            var btns = $('.btn', taskProcessor.getPreviewDocument());
+
+            btns.on('click', function() {
+                btns.toggleClass('btn-active');
+                return false;
+            });
+
+            this.checkGoals();
+        }
+    }
+
+    taskProcessor.checkGoal1 = function() {
+        var result = false;
+        var el = $('.btn', this.getPreviewDocument());
+        var elBgColor = el.css('background-color');
+        var matrix = el.css('transform') || el.css('-webkit-transform');
+
+
+        $('body', this.getPreviewDocument()).append('<div class="btn btn-active btn-test"></div>');
+        
+        var elActive = $('.btn-test', this.getPreviewDocument());
+        var matrixActive = elActive.css('transform') || elActive.css('-webkit-transform');
+
+        if (matrixActive === 'none' || matrix !== 'none') {
+            $('.btn-test', this.getPreviewDocument()).remove();
+            return false;
+        }
+
+
+        if ((el.css('transition-duration') === '1s' || el.css('-webkit-transition-duration') === '1s') &&
+             elBgColor === 'rgb(255, 255, 255)' &&
+             elActive.css('background-color') === 'rgb(255, 82, 82)' &&
+             elActive.css('color') === 'rgb(255, 255, 255)' &&
+             this.getAngle(matrixActive).angle === 45)
+        {
+            result = true;
+        }
+
+        $('.btn-test', this.getPreviewDocument()).remove();
+
+        return result;
+    }
+
+    taskProcessor.checkGoal2 = function() {
+        var result = false;
+        var el = $('.btn', this.getPreviewDocument());
+
+        $('body', this.getPreviewDocument()).append('<div class="btn btn-active btn-test"></div>');
+        
+        var elActive = $('.btn-test', this.getPreviewDocument());
+        var matrix = elActive.css('transform') || elActive.css('-webkit-transform');
+
+        if (matrix === 'none') {
+            $('.btn-test', this.getPreviewDocument()).remove();
+            return false;
+        }
+
+        if ((el.css('transition-duration') === '0.2s' || 
+             Number(parseFloat(el.css('-webkit-transition-duration')).toFixed(1)) === 0.2) &&
+             el.css('background-color') === 'rgb(255, 255, 255)' &&
+             elActive.css('background-color') === 'rgb(255, 82, 82)' &&
+             elActive.css('color') === 'rgb(255, 255, 255)' &&
+             this.getAngle(matrix).angle === 45)
+        {
+            result = true;
+        }
+
+        $('.btn-test', this.getPreviewDocument()).remove();
+
+        return result;
+    };
+
+    taskProcessor.getAngle = function (transform) {
+        var values = transform.split('(')[1];
+        
+        values = values.split(')')[0];
+        values = values.split(',');
+        
+        var a = values[0],
+            b = values[1],
+            c = values[2],
+            d = values[3],
+            e = values[4], 
+            f = values[5];
+
+
+        return  {
+            angle : Math.round(Math.atan2(b, a) * (180/Math.PI)),
+            leftCoord: Math.round(parseFloat(e)),
+            topCoord: Math.round(parseFloat(f))
+        }
+    }
+
+    HtmlacademyTask.setTaskProcessor(taskProcessor);
+    HtmlacademyTask.enableReloadButton();
+    HtmlacademyTask.enablePrefixFree();
+
+    var taskAnswers = [{
+        goal: 1,
+        editor: 'css',
+        data: {
+            tooltip: 'Активному состоянию кнопки зададим белый цвет текста и трансформацию поворота <code>45deg</code>.',
+            actions: [{
+                action: 'addLine',
+                cursorPosition: {
+                    row: 7,
+                    column: 4
+                },
+                to: 'color: #ffffff;'
+            }, {
+                action: 'addLine',
+                cursorPosition: {
+                    row: 8,
+                    column: 4
+                },
+                to: 'transform: rotate(45deg);'
+            }]
+        }
+    }, {
+        goal: 2,
+        editor: 'css',
+        data: {
+            tooltip: 'Уменьшим длительность перехода до <code>200ms</code>.',
+            actions: [{
+                action: 'delete',
+                cursorPosition: {
+                    row: 1,
+                    column: 25
+                },
+                from: '1s'
+            }, {
+                action: 'add',
+                cursorPosition: {
+                    row: 1,
+                    column: 25
+                },
+                to: '200ms'
+            }]
+        }
+    }];
+
+    HtmlacademyTask.addAnswers(taskAnswers);
+
+});
+
+</script>				

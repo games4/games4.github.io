@@ -1,0 +1,13 @@
+.btn {
+    background-color: #ffffff;
+		/* Для .btn зададим длительность перехода 2s. */
+    transition-duration: 2s;
+}
+
+.btn:active {
+		background-color: #ff5252;
+}
+
+.btn:hover {
+		background-color: #ff5252;
+}

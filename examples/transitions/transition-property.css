@@ -1,0 +1,23 @@
+.btn {
+    color: #ffffff;
+    background-color: #00e676;
+    transition-duration: 1s;
+		/* Зададим плавный переход только для свойства background-color. */
+		/* Потом зададим плавный переход только для свойства transform. */
+		/* А затем — для обоих свойств одновременно. */
+    transition-property: background-color, transform;
+		/* Изменим длительность перехода на 1s, 3s. */
+    transition-duration: 1s, 2s;
+}
+
+.btn:hover {
+    font-size: 60px;
+    background-color: #ff5252;
+    transform: rotate(180deg);
+}
+
+.btn-active {
+    font-size: 60px;
+    background-color: #ff5252;
+    transform: rotate(180deg);
+}

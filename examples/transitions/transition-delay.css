@@ -1,0 +1,30 @@
+.square-active {
+    transform: scale(0);
+}
+
+.square {
+    transition-property: transform;
+    transition-duration: 500ms;
+}
+
+.square:hover {
+    transform: scale(0);
+		transition-duration: 1s;
+}
+
+
+.square:nth-child(1) {
+    transition-delay: 50ms;
+}
+
+.square:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.square:nth-child(3) {
+    transition-delay: 150ms;
+}
+
+.square:nth-child(4) {
+    transition-delay: 200ms;
+}
