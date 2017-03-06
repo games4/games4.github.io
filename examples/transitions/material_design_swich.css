@@ -1,0 +1,56 @@
+label {
+    position: relative;
+    display: inline-block;
+    max-width: 100px;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+label::before,
+label::after{
+    content: "";
+    position: absolute;
+    display: block;
+}
+
+label::before {
+		/* И координаты top: 7px и left: 108px. */
+    top: 7px;
+    left: 108px;
+		/* Для псевдоэлементов подписей к чекбоксам зададим ширину и высоту. */
+    width: 32px;
+    height: 1px;
+		/* Также зададим сплошную верхнюю рамку. */
+    border-top: 1px solid #5a5a5a;
+}
+
+label::after {
+		/* Координаты top: 0 и left: 100px. */
+    top: 0;
+    left: 100px;
+		/* Псевдоэлементу label::after зададим ширину и высоту. */
+    width: 12px;
+    height: 12px;
+		/* А также белый цвет фона. */
+    background-color: #ffffff;
+		/* Сплошную круглую рамку. */
+    border: 2px solid #5a5a5a;
+    border-radius: 50%;
+		/* Псевдоэлементу подписи after зададим плавный переход для всех свойств длительностью 200ms с формой ease-in. */
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+		
+}
+
+input[type="checkbox"] {
+		/* Скроем все чекбоксы. */
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ label::after {
+		/* Псевдоэлементу подписи after при активном состоянии чекбокса зададим трансформацию горизонтального перемещения 32px. */
+    transform: translateX(32px);
+		/* Цвет фона и цвет рамок. */
+    background-color: #0f9d58;
+    border-color: #0f9d58;
+}

@@ -1,0 +1,36 @@
+label {
+    position: relative;
+    cursor: pointer;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -44px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #5a5a5a;
+		/* А затем для псевдоэлемента подписи зададим плавный переход для всех свойств длительностью 0.3s и формой ease-in-out. */
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;		
+}
+
+input[type="checkbox"] {
+		/* Скроем все чекбоксы. */
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ label::before {
+    /* Для псевдоэлемента подписи при выделенном состоянии чекбокса зададим ширину и высоту. */
+		width: 21px;
+    height: 10px;
+		/* Цвет рамки. */
+    border-color: #00bad2;
+		/* И стиль верхней и правой рамки none. */
+    border-top-style: none;
+    border-right-style: none;
+		/* Для псевдоэлемента подписи у выделенного чекбокса зададим трансформацию поворота -45deg. */
+    transform: rotate(-45deg);
+}

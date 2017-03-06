@@ -1,0 +1,58 @@
+.menu-icon span {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;		
+		/* Для .menu-icon span зададим высоту и цвет фона. */
+    height: 12px;
+    background-color: #40d47e;
+		/* Для .menu-icon span зададим плавный переход длительностью 0.7s с формой ease-in-out. */
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+    content: "";
+    display: block;
+    width: 100%;
+		/* Зададим высоту и цвет фона для псевдоэлементов. */
+    height: 12px;
+    background-color: #40d47e;
+		/* Псевдоэлементам этого спана зададим такой же плавный переход. */
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-icon span::before {
+		/* Псевдоэлементу ::before зададим трансформацию перемещения 0, -24px. */
+    transform: translate(0, -24px);
+}
+
+.menu-icon span::after {
+		/* А псевдоэлементу ::after — трансформацию перемещения 0, 12px. */
+    transform: translate(0, 12px);
+}
+
+.menu-icon-open span {
+		/* А иконку в открытом состоянии перевернем на 180deg. */
+    transform: rotate(180deg);
+}
+
+.menu-icon-open span::before,
+.menu-icon-open span::after {
+		/* Для псевдоэлементов открытого состояния нашей будущей стрелки зададим ширину 60%. */
+    width: 60%;
+}
+
+.menu-icon-open span::before {
+		/* Псевдоэлементу ::before открытого состояния иконки зададим траенсформацию перемещения со значением 45px, -14px.
+		А также трансформацию поворота на 45deg. */
+    transform: translate(45px, -14px) rotate(45deg);
+}
+
+.menu-icon-open span::after {
+		/* Псевдоэлементу ::after открытого состояния иконки зададим траенсформацию перемещения со значением 45px, 2px.
+		А также трансформацию поворота на -45deg. */
+    transform: translate(45px, 2px) rotate(-45deg);
+}

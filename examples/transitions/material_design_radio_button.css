@@ -1,0 +1,44 @@
+label {
+    position: relative;
+    cursor: pointer;
+}
+
+label::before,
+label::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -42px;
+    border-radius: 50%;
+}
+
+label::before {
+    width: 12px;
+    height: 12px;
+    border: solid 2px #5a5a5a;
+}
+
+label::after {
+		/* Для псевдоэлемента after подписей зададим ширину и высоту. */
+    width: 16px;
+    height: 16px;
+		/* Также зададим цвет фона. */
+    background-color: #00bad2;
+		/* И трансформацию масштабирования scale(1.1). */
+    transform: scale(1.1);
+		/* В правиле label::after изменим значение трансформации масштабирования на 0. */
+    transform: scale(0);
+		/* Для псевдоэлемента подписей after зададим плавный переход для свойства transform длительностью 0.28s. */
+    transition-property: transform;
+    transition-duration: 0.28s;		
+}
+
+input[type="radio"] {
+		/* Скроем все радио-кнопки. */
+    display: none;
+}
+
+input[type="radio"]:checked ~ label::after {
+		/* Псевдоэлементу подписи after при активном состоянии радио-кнопки зададим трансформацию масштабирования со значением 1.1. */
+    transform: scale(1.1);
+}
