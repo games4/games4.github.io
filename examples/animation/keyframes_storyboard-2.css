@@ -1,0 +1,19 @@
+.platform {
+    animation-name: lift-up;
+    animation-duration: 3s;
+}
+
+@keyframes lift-up {
+		/* Добавим начальный кадр from с трансформацией translateY(0px). */ 
+    from {
+        transform: translateY(0px);
+    }
+		/* Кадр 50% с трансформацией translateY(-250px). */
+    50% {
+        transform: translateY(-250px);
+    }
+		/* И кадр 100% с трансформацией translateY(-300px). */
+    100% {
+        transform: translateY(-300px);
+    }
+}

@@ -1,0 +1,24 @@
+/* Создадим анимацию с названием rotate и опишем в ней ключевой кадр с трансформацией поворота. */
+@keyframes rotate {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Создадим анимацию move с двумя ключевыми кадрами. */
+@keyframes move {
+    50% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -50px;
+    }
+}
+
+
+/* Применим эту анимацию к блоку .stone-wheel. */
+/* Блоку .stone-wheel добавим вторую анимацию move длительностью 6s. */
+.stone-wheel {
+    animation-name: rotate, move;
+    animation-duration: 6s, 6s;
+}

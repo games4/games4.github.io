@@ -1,0 +1,24 @@
+.platform {
+    animation-name: lift-up;
+    animation-duration: 10s;
+}
+
+@keyframes lift-up {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(250px);
+    }
+    /* Изменим значение кадра 50% на 50%, 80%. */
+    50%, 80% {
+        transform: translateY(-250px);
+    }
+		/* Изменим значение трансформации перемещения в этом кадре на -50px. */
+    50%, 80% {
+        transform: translateY(-150px);
+    }
+    100% {
+        transform: translateY(-300px);
+    }
+}

@@ -1,0 +1,13 @@
+.barrow-wheel {
+    animation-name: rotate;
+    animation-duration: 5s;
+}
+
+@keyframes rotate {
+    50% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

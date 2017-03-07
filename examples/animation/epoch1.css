@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+}
+
+.ancient {
+    background: url(back-1.svg) 0 0 repeat; 
+    background-size: cover;
+}
+
+.ancient-world {
+    min-width: 570px; 
+    background-color: #166B7E;
+    margin: 0;
+    overflow: hidden;
+}
+
+.ancient-world > div {
+    position: relative;
+    width: 570px;
+    height: 345px;
+    padding-top: 100px;
+    background: #80CDC6 url(wrld1.svg?1) 0px 102px no-repeat;
+}
+
+.stone {
+    background: url(stone.svg) 0 0 no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 150px auto;
+    position: relative;
+}
+
+.wood-wheel {
+    background: url(wood-wheel.svg) 0 0 no-repeat;
+    width: 235px;
+    height: 235px;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+}
+
+.barrow-wheel {
+    background: url(barrow-wheel.svg) 0 0 no-repeat;
+    width: 235px;
+    height: 235px;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+}
+
+.lift-top {
+    position: relative;
+    height: 500px;
+    width: 95px;
+    margin: 0 auto;
+    top: -10px;
+}
+
+.lift-top::before, .lift-top::after {
+    content: '';
+    background: url(rope-top.svg) 0 0 no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    top: 0px;
+}
+
+.lift-top::before {
+    left: 0px;
+}
+
+.lift-top::after  {
+    right: 0px;
+}
+
+.lift-bottom {
+    position: relative;
+    height: 200px;
+    width: 95px;
+    margin: 0 auto;
+}
+
+.lift-bottom::before {
+    content: '';
+    background: url(rope-bottom.svg) 0 0 no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    top: 0px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+.lift-bottom .stone-wheel {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    left: -5px;
+}
+
+.platform {
+    background: url(lift-platform.svg) 0 0 no-repeat;
+    width: 149px;
+    height: 50px;
+    position: absolute;
+    left: -27px;
+    top: 420px;
+    z-index: 1;
+}
+ 
+.platform .stone-wheel {
+    left: 37px;
+    bottom: 50px;
+    width: 75px;
+    height: 75px;
+}
+
+.stone-wheel {
+    background: url(stone-wheel.svg) 0 0 no-repeat;
+    position: absolute;
+}
+
+.sun-small {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: -100px;
+    top: 200px;
+    z-index: 1;
+    background: url(sun-small.svg) 0px 0px no-repeat; 
+}
+
+.clouds {
+    position: absolute;
+    width: 350px;
+    height: 260px;
+    right: 0px;
+    top: 0px;
+    background: url(clouds.svg) 0px 0px no-repeat; 
+}
+
+.ship {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    left: 20px;
+    bottom: 35px;
+    background: url(wooden-ship.svg) 0px 0px no-repeat;
+}
+
+.water {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    bottom: -5px;
+    background: url(water.svg) 0px 0px no-repeat;
+    z-index: 1;
+}
+
+/* secret*/
+.comet {
+    position: absolute; 
+    background: url(comet.svg) no-repeat 0 0;  
+    width: 100px;
+    height: 50px;
+    left: 200px;
+    top: -100px;
+}
