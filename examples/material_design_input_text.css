@@ -1,0 +1,69 @@
+.label-box {
+    position: relative;
+    width: 270px;
+}
+
+.label-box::before,
+.label-box::after {
+		/* Псевдоэлементу .label-box::before зададим пустое содержимое, чтобы он стал видимым, 
+		абсолютное позиционирование, ширину, высоту и цвет фона. */
+		/* Псевдоэлементу .label-box::after зададим пустое содержимое, 
+		абсолютное позиционирование, ширину, высоту и цвет фона. */
+    content: "";
+    position: absolute;
+    width: 50%;
+		/* Изменим ширину псевдоэлементов на 0. */
+    width: 0;
+    height: 2px;
+    background-color: #757575;
+		/* А затем координаты снизу */
+    bottom: 1px;
+		/* Псевдоэлементам зададим плавный переход для свойства width длительностью 0.2s. */
+    transition-property: width;
+    transition-duration: 0.2s;
+}
+
+.label-box::before {
+		/* А затем координаты слева. */
+    left: 50%;
+}
+
+.label-box::after {
+		/* А затем координаты справа. */
+    right: 50%;
+}
+
+input:focus ~ .label-box::before,
+input:focus ~ .label-box::after {
+		/* А при сфокусированном состоянии поля ввода зададим псевдоэлементам ширину 50%. */
+    width: 50%;
+}
+
+input {
+    width: 270px;
+    padding: 5px;
+    font-size: 18px;
+	/* Уберем рамки у поля ввода и зададим сплошную нижнюю рамку. */
+    border: none;
+    border-bottom: 1px solid #757575;
+    box-sizing: border-box;
+}
+
+label {
+	/* Для подписи зададим абсолютное позиционирование и координату сверху. */
+    position: absolute;
+    top: -36px;
+    font-size: 18px;
+    color: #757575;
+		/* Для подписи зададим плавный переход длительностью 0.2s. */
+		transition-duration: 0.2s ease all;
+    pointer-events: none;
+
+}
+
+input:focus ~ .label-box label,
+input:valid ~ .label-box label {
+	/* При сфокусированном или валидном состоянии поля ввода зададим для подписи размер шрифта 14px и трансформацию вертикального перемещения -20px. */
+    font-size: 14px;
+    transform: translateY(-20px);
+}
