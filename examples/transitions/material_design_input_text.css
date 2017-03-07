@@ -11,10 +11,10 @@
 		абсолютное позиционирование, ширину, высоту и цвет фона. */
     content: "";
     position: absolute;
+    height: 2px;
     width: 50%;
 		/* Изменим ширину псевдоэлементов на 0. */
     width: 0;
-    height: 2px;
     background-color: #757575;
 		/* А затем координаты снизу */
     bottom: 1px;
@@ -56,7 +56,7 @@ label {
     font-size: 18px;
     color: #757575;
 		/* Для подписи зададим плавный переход длительностью 0.2s. */
-		transition-duration: 0.2s ease all;
+		transition: 0.2s ease all;
     pointer-events: none;
 
 }
