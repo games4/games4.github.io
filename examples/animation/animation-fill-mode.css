@@ -1,0 +1,37 @@
+.bubbles {
+    animation-name: blink;
+    animation-duration: 2s;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes reaction {
+    0% {
+        background-color: #01ff70;
+    }
+
+    100% {
+        background-color: #ff4136;
+    }
+}
+
+/* Для .reagent зададим анимацию reaction длительностью 3s с задержкой 2s. */
+.reagent {
+    animation-name: reaction;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+
+/* Для .experimental-reagent зададим сохранение состояния после анимации
+Количество проигрываний 2.
+И чередующееся направление анимации.
+ */
+.experimental-reagent {
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
+}

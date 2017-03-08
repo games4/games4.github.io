@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+}
+
+.mechanical {
+    background: url(bg-2.svg) 0 0 repeat;
+    background-size: cover;
+}
+
+.mechanical-world {
+    min-width: 570px; 
+    background-color: #037264;
+    margin: 0;
+    overflow: hidden;
+}
+
+.mechanical-world > div {
+    position: relative;
+    width: 570px;
+    height: 345px;
+    padding-top: 90px;
+    background: #490943 url(wrld2.svg) 0px 150px no-repeat;
+}
+
+.clock {
+    background: url(clock.svg) 0 0 no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 150px auto;
+    position: relative;
+}
+
+.arrow {
+    background: url(arrow.svg) 0 0 no-repeat;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 102px;
+    left: 143px;
+    
+    -webkit-transform-origin: 20% 92%;
+            transform-origin: 20% 92%;
+}
+
+.mechanism {
+    background: url(mechanism.svg) 0 0 no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 150px auto;
+    position: relative;
+}
+
+.gear {
+    position: absolute;
+}
+
+.gear-big { 
+    position: absolute;
+    background: url(gear-arrowed-large.svg) 0 0 no-repeat;
+    width: 65px;
+    height: 65px;
+    top: 100px;
+    left: 75px;
+}
+
+.gear-small { 
+    position: absolute;
+    background: url(gear-arrowed-small.svg) 0 0 no-repeat;
+    width: 50px;
+    height: 50px;
+    top: 165px;
+    left: 90px;
+}
+
+.alarm-clock {
+    background: url(alarm-clock.svg) 0 0 no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 150px auto;
+    position: relative;
+}
+
+.alarm-clock.on-top {
+    margin-top: 30px;
+}
+
+.bell, .arrow-small {
+    position: absolute;
+}
+
+.bell {
+    background: url(bell.svg) 0 0 no-repeat;
+    width: 55px;
+    height: 55px;
+    left: 127px;
+    top: 50px;
+}
+
+.arrow-small {
+    background: url(arrow-sm.svg) 0 0 no-repeat;
+    width: 45px;
+    height: 45px;
+    top: 137px;
+    left: 144px;
+    -webkit-transform-origin: 20% 80%;
+            transform-origin: 20% 80%; 
+}
+
+.birds {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 20px;
+    top: 30px;
+    background: url(birds.svg) 0px 0px no-repeat; 
+}
+
+.aerostat {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 15px;
+    bottom: 14px;
+    background: url(aerostat.svg) 0px 0px no-repeat;
+}
+
+.wind-mill {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 214px;
+    bottom: 95px;
+    background: url(wind-wheel.svg) 0px 0px no-repeat;
+}
+
+.ufo {
+    position: absolute; 
+    background: url(ufo.svg?a1) no-repeat 0 0;  
+    width: 100px;
+    height: 50px;
+    left: -100px;
+    top: -100px;
+}

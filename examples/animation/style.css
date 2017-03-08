@@ -1,5 +1,13 @@
+.mechanical-world {
+	margin: 55px 0;
+}
+
+.mechanical-world > div {
+	margin: 0 auto;
+}
+
 .ancient-world {
-	margin: 50px 0;
+	margin: 55px 0;
 }
 
 .ancient-world > div {

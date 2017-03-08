@@ -1,0 +1,33 @@
+/* Создадим анимацию rotate. */
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Создадим анимацию ding. */
+@keyframes ding {
+    33% {
+        transform: translateX(-15px);
+    }
+    66% {
+        transform: translateX(15px);
+    }
+}
+
+/* Добавим эту анимацию для .bell */
+.bell {
+    animation-name: ding;
+    /* Зададим для .bell задержку анимации 1s. */
+		animation-duration: 100ms;
+		/* Длительность анимации 100ms. */
+    animation-delay: 1s;
+		/* И количество проигрываний 10. */
+    animation-iteration-count: 10;
+}
+
+/* Добавим эту анимацию для .arrow-small */
+.arrow-small {
+    animation-name: rotate;
+    animation-duration: 1s;
+}

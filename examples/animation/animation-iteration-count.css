@@ -1,0 +1,21 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Применим анимацию rotate к .arrow.
+Зададим 2 проигрывания анимации.
+Изменим количество проигрываний анимации на бесконечное.
+*/
+.arrow {
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}

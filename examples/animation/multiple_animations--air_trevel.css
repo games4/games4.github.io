@@ -1,0 +1,53 @@
+@keyframes move-wheel {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move-aerostat {
+    to {
+        transform: translate(350px, -1000px);
+    }
+}
+
+@keyframes move-birds {
+    to {
+        transform: translateX(1000px);
+    }
+}
+
+@keyframes move-ufo {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(200px, 375px);
+    }
+}
+
+/* Для .birds зададим анимацию move-birds длительностью 30s. */
+.birds {
+    animation-name: move-birds;
+    animation-duration: 35s;
+}
+
+/* Для .wind-mill зададим анимацию move-wheel длительностью 10s и бесконечным числом проигрываний. */
+.wind-mill {
+    animation-name: move-wheel;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+/* Для .aerostat зададим анимацию длительностью 20s с задержкой 5s. */
+.aerostat {
+    animation-name: move-aerostat;
+    animation-duration: 35s;
+    animation-delay: 5s;
+}
+
+.ufo {
+    animation-name: move-ufo;
+    animation-duration: 20s;
+    animation-delay: 20s;
+}

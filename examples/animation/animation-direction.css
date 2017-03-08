@@ -1,0 +1,41 @@
+@keyframes clockwise {
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes anticlockwise {
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+/* Для .gear-big зададим анимацию clockwise. */
+.gear-big {
+    animation-name: clockwise;
+    animation-duration: 2s;
+		/* Изменим направление анимации обеих шестеренок с помощью свойства animation-direction: reverse. */
+    animation-direction: reverse;
+		animation-iteration-count: infinite;
+		/* Зададим шестеренкам количество проигрываний анимации 2. */
+    animation-iteration-count: 8;
+		/* Чередующееся направление анимации с помощью свойства animation-direction: alternate. */
+    animation-direction: alternate;
+		/* Изменим направление анимации у обеих шестеренок на обратное чередующееся с помощью значения alternate-reverse свойства animation-direction.*/
+    animation-direction: alternate-reverse;
+}
+
+/* Для .gear-small зададим анимацию anticlockwise. */
+.gear-small {
+    animation-name: anticlockwise;
+    animation-duration: 2s;
+		/* Изменим направление анимации обеих шестеренок с помощью свойства animation-direction: reverse. */
+    animation-direction: reverse;
+		animation-iteration-count: infinite;
+		/* Зададим шестеренкам количество проигрываний анимации 2. */
+    animation-iteration-count: 4;
+		/* Чередующееся направление анимации с помощью свойства animation-direction: alternate. */
+    animation-direction: alternate;
+		/* Изменим направление анимации у обеих шестеренок на обратное чередующееся с помощью значения alternate-reverse свойства animation-direction.*/
+    animation-direction: alternate-reverse;
+}
