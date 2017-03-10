@@ -1,0 +1,27 @@
+/* Зададим для .robot анимацию move. */
+.robot {
+    animation-name: move;
+    animation-duration: 5s;
+/*    animation-iteration-count: 2; */
+		/* зададим бесконечное число повторений */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+
+}
+
+/* Создадим анимацию move. */
+@keyframes move {
+    to {
+        left: 400px;
+    }
+}
+
+/* Для .robot-paused зададим свойство animation-play-state, ставящее анимацию на паузу. */
+.robot-paused {
+    animation-play-state: paused;
+}
+
+.robot:active {
+    animation-play-state: paused;
+}

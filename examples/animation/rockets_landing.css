@@ -1,0 +1,46 @@
+/* Зададим для .rocket анимацию fly длительностю 1.5s, формой ease-out и сохранением состояния после анимации. */
+.rocket {
+    animation-name: fly;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Зададим для .fuel анимацию fire длительностю 1s с задержкой 1s и сохранением состояния после анимации. */
+.fuel {
+    animation-name: fire;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Зададим для .flag анимацию hoist длительностю 1s с задержкой 2s, формой ease-in и сохранением состояния после анимации. */
+.flag {
+    animation-name: hoist;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+/* Создадим анимацию fly. */
+@keyframes fly {
+    to {
+        transform: translate(240px, 260px) rotate(-45deg);
+    }
+}
+
+/* Создадим анимацию fire. */
+@keyframes fire {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Создадим анимацию hoist. */
+@keyframes hoist {
+    to {
+        top: -25px;
+    }
+}
+

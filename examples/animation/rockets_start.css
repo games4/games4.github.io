@@ -1,0 +1,29 @@
+/* Для .rocket зададим анимацию fly длительностью 1s с задержкой 1s, формой ease-in и сохранением состояния после анимации. */
+.rocket {
+    animation-name: fly;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+/* Для .fuel зададим анимацию fire длительностью 1s и сохранением состояния после анимации. */
+.fuel {
+    animation-name: fire;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* Создадим анимацию fire. */
+@keyframes fire {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Создадим анимацию fly. */
+@keyframes fly {
+    to {
+        transform: rotate(40deg) translate(0px, -500px);
+    }
+}

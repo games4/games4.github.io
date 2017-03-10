@@ -1,0 +1,21 @@
+.robot {
+    animation-name: move;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+/* Для .constructor зададим форму анимации ease-in.
+Изменим форму анимации на ease-out.
+А затем на ease-in-out. */
+.constructor {
+    animation-timing-function: ease-in;    
+    animation-timing-function: ease-out;    
+    animation-timing-function: ease-in-out;    
+}
+
+@keyframes move {
+    to {
+        left: 400px;
+    }
+}

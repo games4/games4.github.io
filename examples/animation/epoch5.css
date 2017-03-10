@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+}
+
+.cosmic {
+    background: url(bg-5.svg) 0 0 repeat;
+}
+
+.earth {
+    position: relative;
+    background: url(earth.svg) no-repeat 0 0; 
+    width: 150px;
+    height: 150px;
+    margin: 250px 50px 0;
+}
+
+.rocket {
+    position: absolute;
+    background: url(rocket-ship.svg) no-repeat 0 0; 
+    width: 20px;
+    height: 70px;
+    z-index: 2;
+    -webkit-transform: rotate(50deg); 
+            transform: rotate(50deg);
+}
+
+.rocket.departure {
+    top: -30px;
+    right: -10px; 
+}
+
+.rocket.departure .fuel {
+    opacity: 0;
+}
+
+.rocket.arrival {
+    left: -50px;
+    top: -50px;
+}
+
+.fuel {
+    position: absolute;
+    background: url(fueeeel.svg) no-repeat 0 0;  
+    width: 100%;
+    height: 45px;
+    z-index: 1;
+    bottom: -40px;
+}
+
+.moon {
+    position: relative;
+    background: url(moon.svg) no-repeat 0 0;  
+    width: 100px;
+    height: 100px;
+    margin: 250px 200px 0;
+}
+
+.flag {
+    position: absolute;
+    background: url(flagg.svg) no-repeat 0 0;  
+    width: 25px;
+    height: 25px;
+    left: 45px;
+    z-index: -1;
+    top: 10px;
+}
+
+.planet {
+    position: relative;
+    background: url(saturn.svg) no-repeat 0 0;  
+    width: 125px;
+    height: 85px;
+    margin: 200px 200px 0;
+}
+
+.station {
+    position: absolute;
+    background: url(station.svg) no-repeat 0 0; 
+    width: 55px;
+    height: 55px;
+    z-index: 2;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+    left: 15px;
+    top: 15px;
+}
+
+.satellite {
+    position: absolute;
+    background: url(satellite.svg) no-repeat 0 0;  
+    width: 40px;
+    height: 20px;
+    z-index: 2;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    left: 45px;
+    bottom: 45px;
+}
+
+.orbit-station, .orbit-satellite {
+    position: absolute;
+    border: 3px solid #373a4d;
+    border-radius: 50%;
+}
+
+.orbit-station {
+    width: 300px;
+    height: 300px;
+    left: 115px;
+    top: 90px;
+}
+
+.orbit-satellite {
+    width: 400px;
+    height: 400px;
+    left: 65px;
+    top: 40px;
+}

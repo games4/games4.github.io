@@ -1,0 +1,20 @@
+.robot {
+    animation-name: move;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+		/* Для .robot зададим форму анимации с помощью кубических кривых Безье. */
+    animation-timing-function: cubic-bezier(0,0,1,1);
+}
+
+.constructor {
+		/* Изменим у .constructor форму анимации. */
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		/* И еще раз. */
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+@keyframes move {
+    to {
+        left: 400px;
+    }
+}

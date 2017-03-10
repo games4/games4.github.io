@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+.technologic {
+    background: url(bg-4.svg) 0 0 repeat;
+    min-width: 550px;
+}
+
+.belt {
+    position: relative;
+    background: url(line.svg) 0 0 no-repeat;    
+    width: 550px;
+    height: 50px;
+    margin: 150px auto 0; 
+}
+
+.robot {
+    position: absolute;
+    background-position: 0 0;
+    background-repeat: no-repeat; 
+    left: 0; 
+    top: -130px;
+    height: 130px;
+    cursor: pointer;
+}
+
+.warrior {
+    background-image: url(robot-war.svg);
+    width: 85px;
+}
+
+.constructor {
+    background-image: url(robot-const.svg);
+    width: 105px;
+}
