@@ -1,0 +1,41 @@
+.energy-logo {
+    animation-name: vibrate;
+    animation-duration: 2s;
+}
+
+/* Для .energy-fill зададим анимацию power длительностью 2s с задержкой 2s. */
+.energy-fill {
+    animation-name: power;
+    animation-duration: 4s;
+    animation-delay: 4s;
+}
+
+/* А для .mega-energy-fill зададим отображение состояния до начала анимации. 
+Для .mega-energy-fill зададим количество повторений анимации 2.
+И чередующееся направление анимации. */
+.mega-energy-fill {
+    animation-fill-mode: backwards;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes vibrate {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes power {
+    0% {
+        background-color: #01ff70;
+        width: 150px;
+    }
+    50% {
+        background-color: #ffdc00;
+    }
+    100% {
+        background-color: #ff4136;
+        width: 30px;
+    }
+}
+

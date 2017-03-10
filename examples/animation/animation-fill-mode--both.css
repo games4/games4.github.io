@@ -1,0 +1,37 @@
+.mega-energy-fill {
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-direction: alternate-reverse;
+}
+
+.energy-fill {
+    animation-name: power;
+    animation-duration: 4s;
+    animation-delay: 4s;
+} 
+
+.energy-logo {
+    animation-name: vibrate;
+    animation-duration: 2s;
+}
+
+@keyframes vibrate {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes power {
+    0% {
+        background-color: #01ff70;
+        width: 150px;
+    }
+    50% {
+        background-color: #ffdc00;
+    }
+    100% {
+        background-color: #ff4136;
+        width: 10px;
+    }
+}
+

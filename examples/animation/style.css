@@ -1,3 +1,11 @@
+.scientific-world {
+	margin: 55px 0;
+}
+
+.scientific-world > div {
+	margin: 0 auto;
+}
+
 .mechanical-world {
 	margin: 55px 0;
 }

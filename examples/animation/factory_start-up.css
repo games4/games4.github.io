@@ -1,0 +1,64 @@
+/* Для .car зададим анимацию move-car длительностью 4s с задержкой 5s и сохранением состояния после анимации. */
+.car {
+    animation-name: move-car;
+    animation-duration: 4s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* Для .fog-1 и .fog-2 зададим анимацию show-fog длительностью 1s, количеством повторений 2 и чередованием направления. */
+.fog-1,
+.fog-2 {
+    animation-name: show-fog;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+
+/* Для .fog-1 укажем задержку анимации 9s, а для .fog-2 – 10s. */
+.fog-1 {
+    animation-delay: 9s;
+}
+
+.fog-2 {
+    animation-delay: 10s;
+}
+
+/* Для .plane зададим анимацию move-plane длительностью 10s. */
+.plane {
+    animation-name: move-plane;
+    animation-duration: 10s;
+}
+
+/* А для .antenna анимацию move-antenna длительностью 2s с задержкой 2s и сохранением своего состояния после анимации. */
+.antenna {
+    animation-name: move-antenna;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-plane {
+    to {
+        transform: translateX(-1000px);
+    }
+}
+
+@keyframes move-antenna {
+    to {
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes move-car {
+    to {
+        transform: translateX(-350px);
+    }
+}
+
+@keyframes show-fog {
+    to {
+        opacity: 1;
+    }
+}
+
