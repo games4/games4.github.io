@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Montserrat Alternates";
+  src:
+    local("MontserratAlternates-Regular"),
+    url("fonts/MontserratAlternates.woff") format("woff");
+}
+
+body {
+    font-size: 12px;
+    font-family: "Arial", sans-serif;
+    color: #333333;
+    background: url("rain.jpg") no-repeat 50% 0;
+}
+
+/*Блоку .square зададим сплошную рамку.
+Шрифт размером 72px.
+И ширину блока 260px.*/
+.square {
+    width: 260px;
+    margin: 150px auto;
+		/* И внутренний отступ слева 24px. */
+    padding-left: 24px;
+    font-size: 72px;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+		/* Зададим для .square свойство word-wrap: break-word, чтобы буквы слова могли переноситься на другую строку. */
+/*    word-wrap: break-word; */
+    overflow-wrap: break-word;
+		/* Зададим расстояние между символами 24px. */
+    letter-spacing: 24px;
+    border: 5px solid #333333;
+}

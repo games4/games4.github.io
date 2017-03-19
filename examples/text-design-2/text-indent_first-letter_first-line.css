@@ -1,0 +1,46 @@
+body {
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    color: #333333;
+    background: url("bokeh.jpg") no-repeat 50% 0;
+}
+
+article {
+		/* установим ширину блока 900 px */
+		margin: 50px auto;
+		width: 900px;
+    padding: 20px;
+    background-color: rgba(240, 240, 240, 0.85);
+}
+
+p {
+    margin: 0;
+    line-height: 22px;
+		/* Зададим отступ для первой строки блока текста 24px. */
+    text-indent: 24px;
+}
+
+/* Для первого абзаца удалим отступ */
+p:first-child {
+    text-indent: 0;
+}
+
+/* Для первой буквы первого параграфа зададим свойство float: left.
+А также шрифт размером 76px и межстрочный интервал 60px. */
+
+p:first-child::first-letter {
+    float: left;
+    font-family: "Georgia", serif;
+    font-size: 76px;
+    line-height: 60px;
+    text-indent: 0px;
+		/* Первой букве первого параграфа зададим цвет #8b3333. */
+    color: #8b3333;		
+}
+
+/* Также для первой строки первого параграфа зададим полужирный шрифт. */
+
+p:first-child::first-line {
+    font-weight: bold;
+}

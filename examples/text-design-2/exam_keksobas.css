@@ -1,0 +1,35 @@
+body {
+    min-width: 570px;
+    height: 300px;
+    margin: 50px auto;
+    font-family: "Arial", sans-serif;
+    color: #ffffff;
+    background: url("football.jpg") 0% 50% no-repeat;
+}
+
+
+h1 {
+    position: relative;
+    width: 320px;
+    margin: 0;
+    padding-left: 40px;
+    font-size: 80px;
+    font-weight: normal;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    letter-spacing: 40px;
+    text-shadow: -5px 5px rgba(0, 0, 0, 0.5);
+    text-indent: 100px; 
+    line-height: 100px;
+}
+
+h1::before {
+    content: "|";
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    top: -5px;
+    left: -55px;
+    text-shadow: 20px 0px 0px white,  40px 0px 0px white;
+}
+

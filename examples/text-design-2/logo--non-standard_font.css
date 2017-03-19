@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Montserrat Alternates";
+  src:
+    local("MontserratAlternates-Regular"),
+    url("fonts/MontserratAlternates.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Glyphter";
+    src: url("fonts/Glyphter.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-size: 12px;
+    font-family: "Arial", sans-serif;
+    background: url("night.jpg") no-repeat 50% 0;
+}
+
+/* Для ссылки зададим шрифт размером 55px. */
+a {
+    display: block;
+    margin: 12px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Зададим ссылке межсимвольное расстояние с помощью свойства letter-spacing. */ 
+    letter-spacing: -3px;
+    color: #ecf0f1;
+}
+
+/* Для этого тега span зададим шрифт Glyphter. */
+a span {
+    /* А также зададим внешний отступ справа и размер шрифта.*/
+    margin-right: 18px;
+    font-size: 78px;
+    font-family: "Glyphter";
+    /* Тегу span внутри ссылки зададим свойство vertical-align, чтобы выровнять по-вертикали. */
+    vertical-align: middle;
+}
+
+h1 {
+    margin: 12px;
+    font-size: 24px;
+    text-align: center;
+    color: #ecf0f1;
+}

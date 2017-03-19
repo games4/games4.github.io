@@ -1,0 +1,36 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+span {
+    display: inline-block;
+    width: 140px;
+    margin-right: 12px;
+    font-size: 150px;
+		transform: scale(1);
+		
+}
+
+span:first-child {
+    color: #ffdc00;
+		transform: scale(2);
+		transition-duration: 2s;
+}
+
+span:nth-child(2) {
+    color: #aaaaaa;
+}
+
+span:nth-child(3) {
+    color: #ff851b;
+}
+
+span:last-child {
+    color: #ff4136;
+}
+
+p {
+    display: inline-block;
+    width: 80%;
+}

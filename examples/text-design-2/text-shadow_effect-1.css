@@ -1,0 +1,23 @@
+body {
+    font-family: "Arial", sans-serif;
+    color: #2b2328;
+/*    background: url("pumpkin.jpg") no-repeat 50% 0; */
+    background: url("pumpkin.jpg") no-repeat 0 0;
+}
+
+/* Заголовку h1 зададим первую тень. И вторую. */
+h1 {
+    margin: 30px;
+    font-size: 100px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 1px #1e181c, 2px 2px 1px #52424d;
+}
+
+span {
+    position: absolute;
+    top: 270px;
+    left: 30px;
+    font-size: 150px;
+    color: #cb454c;
+}

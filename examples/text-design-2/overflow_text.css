@@ -1,0 +1,21 @@
+body {
+    font-size: 12px;
+    font-family: "Arial", sans-serif;
+    color: #333333;
+    background: url("bokeh.jpg") no-repeat 50% 0;
+}
+
+p {
+    width: 50%;
+/*		height: 50px;*/
+    margin: 50px auto;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: rgba(240, 240, 240, 0.85);
+		/* Зададим для p неразрывные пробелы и скроем выпадающее содержимое. */
+    white-space: nowrap;
+    overflow: auto;
+		/* А также режим текстового переполнения, который обрежет невходящий текст и добавит многоточие. */
+    text-overflow: ellipsis;
+}

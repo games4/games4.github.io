@@ -1,0 +1,61 @@
+body {
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    color: #333333;
+    background: url("bokeh.jpg") no-repeat 50% 0;
+}
+
+/* Блоку article зададим высоту 200px */
+article {
+		margin: 50px auto;
+    height: 200px;
+		width: 500px;
+    padding: 20px;
+    line-height: 22px;
+    background-color: rgba(240, 240, 240, 0.85);
+		/* и автоматическое отображение выпадающего содержимого. */
+    overflow: auto;
+		/* Укажем направление текста справа налево. */
+    direction: rtl;
+}
+
+/* И переопределим порядок символов в тексте согласно значению direction с помощью свойства unicode-bidi. */
+p {
+    margin-top: 0;
+    unicode-bidi: bidi-override;
+}
+
+body > div {
+		margin: 0 auto;
+		width: 500px;
+    padding: 10px 20px;
+    background-color: rgba(240, 240, 240, 0.85);
+    font-size: 14px;
+    font-family: "Georgia", sans;
+    color: #333333;
+}
+
+table {
+    border-collapse: collapse;
+		/* Зададим таблице направление текста справа налево. */
+		direction: rtl;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+td { 
+    padding: 10px 15px;
+    border-right: 1px dashed #cccccc;
+}
+
+td:first-child {
+    font-style: italic;
+    text-align: right;
+}
+
+td:last-child {
+    border-right: none;
+}

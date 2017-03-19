@@ -1,0 +1,46 @@
+
+
+/*
+.cosmic {
+	margin: 55px 0;
+}
+
+.cosmic > div {
+	margin: 0 auto;
+}
+*/
+.scientific-world {
+	margin: 55px 0;
+}
+
+.scientific-world > div {
+	margin: 0 auto;
+}
+
+.mechanical-world {
+	margin: 55px 0;
+}
+
+.mechanical-world > div {
+	margin: 0 auto;
+}
+
+.ancient-world {
+	margin: 55px 0;
+}
+
+.ancient-world > div {
+	margin: 0 auto;
+}
+
+header {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding: 10px;
+	font-size: 12px;
+	font-family: "Courier New", monospace;
+	color: #ffffff;
+	background: #3498db;
+	opacity: 0.5;
+}

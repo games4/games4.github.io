@@ -1,0 +1,25 @@
+body {
+    font-family: "Arial", sans-serif;
+    color: #444444;
+/*    background: url("lens.jpg") no-repeat 50% 0;*/
+    background: url("lens.jpg") no-repeat 0 0;
+}
+
+/* Заголовку h1 зададим тень. И добавим перед ней еще одну тень. */
+h1 {
+    margin: 50px;
+    font-size: 55px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0 #e5d4c0,
+        4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+span {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    font-size: 100px;    
+}

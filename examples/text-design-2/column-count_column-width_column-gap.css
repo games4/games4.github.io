@@ -1,0 +1,31 @@
+body {
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    color: #333333;
+    background: url("bokeh.jpg") no-repeat 50% 0;
+}
+
+/* Для блока article зададим количество колонок равное 2. А затем 3. */
+article {
+		/* установим ширину блока 900 px */
+		margin: 50px auto;
+		width: 900px;
+    padding: 20px;
+    background-color: rgba(240, 240, 240, 0.85);
+    /*column-count: 3;*/
+		/* Блоку article зададим ширину колонок 200px. Браузер сам поделит текст на две колонки, даже если не задано свойство column-count.	*/	
+		column-width: 200px;
+		/* Уменьшим ширину колонок до 150px. */
+		column-width: 150px;
+		/* Зададим расстояние между колонками 50px. */
+    column-gap: 50px;
+
+}
+
+p {
+    margin: 0;
+    line-height: 22px;
+    text-align: justify;
+    text-indent: 22px;
+}

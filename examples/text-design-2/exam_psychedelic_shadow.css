@@ -1,0 +1,69 @@
+/*
+    Используемые цвета:
+    #7fdbff, #39cccc, #3d9970, #2ecc40, #01ff70, #ffdc00, #ff851b, 
+    #ff4136, #f012be, #b10dc9
+*/
+
+html, 
+body {
+    min-width: 570px;
+    margin: 0;
+    font-size: 200px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #111111;
+}
+
+p {
+    margin: 0;
+    padding-top: 60px;
+    text-align: center;
+}
+
+span {
+    margin-left: 60px;
+}
+
+span:first-child {
+    margin-left: 0;
+    text-shadow: 
+        5px -5px 0 #7fdbff,
+        10px -10px 0 #39cccc,
+        15px -15px 0 #3d9970,
+        20px -20px 0 #2ecc40, 
+        25px -25px 0 #01ff70, 
+        30px -30px 0 #ffdc00, 
+        35px -35px 0 #ff851b,
+        40px -40px 0 #ff4136,
+        45px -45px 0 #f012be,
+        50px -50px 0 #b10dc9;    
+}
+
+span:nth-child(2) {
+    text-shadow: 
+        0 -5px 0 #7fdbff,
+        0 -10px 0 #39cccc,
+        0 -15px 0 #3d9970,
+        0 -20px 0 #2ecc40, 
+        0 -25px 0 #01ff70, 
+        0 -30px 0 #ffdc00, 
+        0 -35px 0 #ff851b,
+        0 -40px 0 #ff4136,
+        0 -45px 0 #f012be,
+        0 -50px 0 #b10dc9;    
+}
+
+span:nth-child(3) {
+    text-shadow: 
+        -5px -5px 0 #7fdbff,
+        -10px -10px 0 #39cccc,
+        -15px -15px 0 #3d9970,
+        -20px -20px 0 #2ecc40, 
+        -25px -25px 0 #01ff70, 
+        -30px -30px 0 #ffdc00, 
+        -35px -35px 0 #ff851b,
+        -40px -40px 0 #ff4136,
+        -45px -45px 0 #f012be,
+        -50px -50px 0 #b10dc9;    
+}

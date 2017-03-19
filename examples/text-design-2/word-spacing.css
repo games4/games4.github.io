@@ -1,0 +1,34 @@
+body {
+    font-size: 12px;
+    font-family: "Arial", sans-serif;
+    color: #fffbb4;
+    /* margin: 0; */
+    margin: 55px auto;
+    background: url("bokeh.jpg") no-repeat 50% 0;
+		width: 50%;
+    min-width: 570px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+		/* Заголовку зададим расстояние между словами 5px. */
+    word-spacing: 5px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+		/* А списку зададим расстояние между словами 12px.*/
+    word-spacing: 12px;
+}
+
+li {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+img {
+    width: 250px;
+}

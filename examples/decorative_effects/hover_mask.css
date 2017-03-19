@@ -1,0 +1,110 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    text-align: center;
+    background-color: #161616;
+}
+
+section {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.shape {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* правилу .shape .details. зададим для него свойство background-color. */
+.shape .details {
+		/* Скроем содержимое блока .details. */
+    display: none;
+    width: 310px;
+    height: 310px;
+    padding-top: 60px;
+    color: #ffffff;
+    background-color: rgba(75, 90, 120, 0.9);
+}
+
+.details header {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 26px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #cccccc;
+}
+
+.details p {
+    width: 70%;
+    margin: 10px auto;
+    line-height: 1.4;
+}
+
+.button {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #2f3644;
+    border-radius: 20px;
+}
+
+.button:hover {
+    color: #2f3644;
+    background-color: #ffffff;
+}
+
+/*Для правила .shape.techmarkt задидим фоновое изображение, которое будет видно, пока блок .details скрыт. */
+.shape.techmarkt {
+    background: url("techmarkt.jpg") no-repeat 30% 0%;
+}
+
+/* Для правила .shape.nerds зададим неповторяющийся фон. */
+.shape.nerds {
+    background: url("nerds.jpg") no-repeat 30% 0%;
+}
+
+/* При наведении на блок .shape .details покажем его содержимое. */
+.shape:hover .details {
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 310px;
+    height: 310px;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    outline: 0;
+    transition: transform 0.6s ease-out;
+		/* Добавим трансформацию масштабирования для .overlay transform: scale(1). */
+    transform: scale(1);
+}
+
+/* Сделаем, чтобы при наведении на .overlay.octagon наша маска немного увеличивалась. */ 
+.shape:hover .overlay {
+    transform: scale(1.07);		
+}
+
+/* Правилу .overlay.octagon добавим фоновое изображение, которое будет служить нам маской. */
+.overlay.octagon {
+    background-image: url("oct.svg");
+}
+
+/* Для .overlay.round задидим фоновое изображение, которое будет нашей маской.*/
+.overlay.round {
+    background-image: url("round.svg");
+}
