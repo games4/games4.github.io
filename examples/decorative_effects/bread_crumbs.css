@@ -1,0 +1,80 @@
+html,
+body {
+    min-width: 400px;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.breadcrumbs {
+    display: inline-block;
+    margin: 150px 0;
+    color: black;
+    box-shadow: 0 0 2px #aaaaaa;
+    counter-reset: flag;
+}
+
+.breadcrumbs a {
+    position: relative;
+    float: left;
+    padding-right: 10px;
+    padding-left: 60px;
+    text-decoration: none;
+    line-height: 36px;
+    color: black;
+    background-color: white;
+/* Удалим свойство outline у ссылок. */		
+    outline: 1px dotted #3498db;
+		outline: none;
+}
+
+/* Чтобы псевдоэлементы появились, зададим свойство content: "", также зададим абсолютное позиционирование.
+Укажем размеры псевдоэлемента.
+Зададим свойство z-index, чтобы псевдоэлементы не наезжали друг на друга, и зададим цвет фона.
+Укажем положение псевдоэлементов. */
+.breadcrumbs a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -18px;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+/* Заменим красный цвет фона на белый у псевдоэлементов. */
+    background-color: red;
+    background-color: white;
+		/* Скруглим левый верхний угол. */
+		border-radius: 50px 0 0 0;
+		/* Зададим для псевдоэлементов тень. */
+		/* Изменим цвет черной тени на серую #dddddd. */
+    box-shadow: 1px 1px 0 1px black;
+    box-shadow: 1px 1px 0 1px #dddddd;
+		/* Повернем псевдоэлементы на -45deg с помощью трансформации поворота.
+И немного уменьшим их с помощью трансформации масштабирования. */
+    transform: rotate(-45deg) scale(0.73);
+}
+
+/* Для активных ссылок зададим цвет фона #f1c40f. */
+.breadcrumbs a:hover,
+.breadcrumbs a:hover::after,
+.breadcrumbs a.active,
+.breadcrumbs a.active::after {
+    background-color: #f1c40f;
+}
+
+.breadcrumbs a::before {
+		/* Зададим высоту строки. */
+    line-height: 20px;
+		/* Укажем положение номеров. */
+    position: absolute;
+    top: 8px;
+    left: 30px;
+		/*  И тень. */
+    box-shadow: 0 0 2px 0 #cccccc;
+		/* Для псевдоэлемента .breadcrumbs a::before зададим свойства content: counter(flag) и counter-increment: flag. */
+    counter-increment: flag;
+    content: counter(flag);
+}
