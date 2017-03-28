@@ -1,0 +1,28 @@
+.striped-layout article {
+    display: table;
+    margin: auto;
+    background-color: #fffebc;
+    border: 2px solid #323a47;
+		/* Зададим блоку article «схлопнутые» рамки.*/ 
+    border-collapse: collapse;
+		/* А затем «несхлопнутые», с расстоянием между ячейками 20px по горизонтали и 10px по вертикали.*/
+    border-collapse: separate;
+    border-spacing: 20px 10px;
+}
+
+.striped-layout h1 {
+    display: table-caption;
+}
+
+.striped-layout ul {
+    display: table-row;
+}
+
+.striped-layout li {
+    display: table-cell;
+    padding: 10px;
+    background-color: #83c5ff;
+		/* Элементам списка зададим сплошную рамку. */
+    border: 2px solid #323a47;
+}
+

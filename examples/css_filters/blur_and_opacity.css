@@ -1,0 +1,9 @@
+/* Изображению в блоке .blur добавим размытость 5px. */
+.blur img {
+    filter: blur(5px);
+}
+
+/* А изображение в блоке .opacity сделаем прозрачным на 60%. */
+.opacity img {
+    filter: opacity(0.4);
+}

@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+}
+
+/* Блоку .table-layout зададим отображение таблицей.
+А также ширину и высоту 100%. */
+.table-layout {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+	  box-sizing: border-box;
+		border: 1px solid;
+}
+
+/* Блокам header и footer зададим отображение рядами таблицы.
+И высоту 1px. */
+header,
+footer {
+    display: table-row;
+    height: 1px;
+}
+
+/* Блоку main зададим табличное отображение.
+Блоку main зададим ширину и высоту 100%. */
+main {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-spacing: 10px;
+}
+
+/* Блокам .content и .side — отображение ячейкой таблицы. */
+.content,
+.side {
+    display: table-cell;
+}
+
+/* Затем боковым колонкам .side — ширину 100px. */
+.side {
+    width: 100px;
+}
+

@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.wood {
+  background-color: white;
+  background-image: url(img/wood.png);
+  background-repeat: repeat;
+}
+img[src$=".svg"] {
+  width: 60px;
+  height: 60px;
+}
+.checklist {
+  margin: 20px;
+}
+.checklist {
+  padding: 10px;
+}
+.checklist img {
+  vertical-align: middle;
+}
+.checklist h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  font-size: 20px;
+}
+.checklist ul {
+  margin: 0;
+  padding: 20px;
+  list-style-type: none;
+}
+.checklist li {
+  position: relative;
+  top: -15px;
+  padding: 10px 10px 0;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid #a5a5a5;
+  border-left: 20px solid transparent;
+}
+.checklist li img {
+  position: relative;
+  top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}
+.checklist.united {
+  padding-top: 0;
+}
+.checklist.united li {
+  border-right: inherit;
+  border-left: inherit;
+}
+.checklist.united li:first-child {
+  border-left: 20px solid transparent;
+}
+.checklist.united li:last-child {
+  border-right: 20px solid transparent;
+}
+.checklist.united li::before {
+  position: absolute;
+  top: -30px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-bottom-color: #686868;
+  content: "";
+}
+.checklist.united li:first-child::before {
+  content: none;
+}
+.checklist li::after {
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: 10px;
+  background: #686868;
+  content: "";
+}
+.table-layout {
+  background: url(img/wall-2.png) repeat 0 0;
+}
+.table-layout header {
+  position: relative;
+  z-index: 5;
+  background-color: #2c3e50;
+  background-image:
+  -webkit-linear-gradient(45deg, #34495e 25%, transparent 25%), -webkit-linear-gradient(135deg, #34495e 25%, transparent 25%), -webkit-linear-gradient(315deg, #34495e 25%, transparent 25%), -webkit-linear-gradient(225deg, #34495e 25%, transparent 25%);
+  background-image:
+          linear-gradient(45deg, #34495e 25%, transparent 25%),
+  linear-gradient(-45deg, #34495e 25%, transparent 25%),
+  linear-gradient(135deg, #34495e 25%, transparent 25%),
+  linear-gradient(-135deg, #34495e 25%, transparent 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  box-shadow: 0 0 5px 0 #333333;
+  color: white;
+  text-indent: 120px;
+}
+
+.table-layout h1 {
+  margin: 0;
+  padding: 20px 0;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.table-layout header::before {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 90px;
+  height: 90px;
+  background: url(//htmlacademy.ru/assets/course73/logo.svg);
+  background: url(img/logo.svg);
+  content: "";
+}
+.table-layout main {
+  box-sizing: border-box;
+  padding: 40px 10px;
+  color: black;
+  text-align: center;
+}
+.table-layout .content::after{
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.table-layout .sticky-footer {
+  background-color: #f1c40f;
+  color: black;
+  font-size: 14px;
+}
+.table-layout .footer-logo {
+  margin: 20px;
+  width: 50px;
+  height: 45px;
+  border: 2px solid white;
+  box-shadow: 0 0 4px #c0392b;
+  vertical-align: middle;
+}
+.table-layout .copyright {
+  float: right;
+  margin: 37px;
+  font-size: 12px;
+}
+.table-layout .author {
+  display: inline-block;
+  margin: 0;
+}
+.table-layout .side,
+.table-layout .content {
+  border: 1px solid #a1a1a1;
+  background-color: rgba(27, 27, 27, 0.1);
+}
+.table-layout p {
+  margin: 1em;
+}
+.striped-layout {
+  width: 100%;
+  height: 100%;
+}
+.striped-layout li {
+  font-size: 0;
+}
+.striped-layout h1 {
+  text-align: center;
+  font-size: 20px;
+}
+.modal-wrapper,
+.striped-layout {
+  background-color: white;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAABlBMVEX///+pqalTpKl9AAAAAnRSTlMAGovxNEIAAAAdSURBVDjLY2AAAUaG4UYxDDsfjfp91O+jfqfE7wCzpQCw/dq+qQAAAABJRU5ErkJggg==");
+}
+.modal-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 400px;
+  border: 1px solid #cccccc;
+}
+.modal-cell {
+  padding: 10px;
+  background: #eeeeee;
+}
+.modal-wrapper h1 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+.modal-content {
+  display: inline-block;
+  padding: 20px;
+  width: 250px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background: #ffffff;
+  text-align: left;
+}
+.modal-wrapper input {
+  box-sizing: border-box;
+  padding: 8px 5px;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+.modal-wrapper input,
+.modal-wrapper button {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.formula li img {
+  width: 40px;
+  height: 40px;
+}

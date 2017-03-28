@@ -1,0 +1,9 @@
+/* Увеличим яркость вдвое для изображения в блоке .brightness. */
+.brightness img {
+    filter: brightness(2);
+}
+
+/* И увеличим контрастность вдвое для изображения в блоке .contrast.*/
+.contrast img {
+    filter: contrast(2);
+}

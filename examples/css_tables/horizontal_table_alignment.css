@@ -1,0 +1,12 @@
+/* Список ul отцентруем по горизонтали.
+Зададим ширину 200px. */
+.checklist ul {
+    display: table;
+    margin: auto;
+    width: 200px;
+}
+
+/* И отцентруем предметы на полках. */
+.checklist li {
+    text-align: center;    
+}

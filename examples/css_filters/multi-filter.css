@@ -1,0 +1,11 @@
+/* Изображению в блоке .multi-filter-1 зададим фильр hue-rotate(90deg).
+Фильтр saturate(2).
+И фильтр sepia(0.8). */
+.multi-filter-1 img {
+    filter: hue-rotate(90deg) saturate(2) sepia(0.8);
+}
+
+/* А изображению в блоке .multi-filter-2 зададим те же самые фильтры, но в другом порядке. */
+.multi-filter-2 img {
+    filter: sepia(0.8) hue-rotate(90deg) saturate(2);
+}

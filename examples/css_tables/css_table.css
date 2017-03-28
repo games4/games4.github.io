@@ -1,0 +1,21 @@
+/* Блоку .checklist зададим табличное отображение. */
+.checklist {
+    display: table;    
+}
+
+/* Для .checklist ul зададим отображение, соответствующее ряду таблицы. */
+.checklist ul {
+    display: table-row;
+}
+
+/* А для .checklist li отображение, соответствующее ячейке таблицы. */
+.checklist li {
+    display: table-cell;
+}
+
+/* Сделаем этот тег заголовком нашей таблицы на CSS.
+И расположим заголовок снизу таблицы.*/
+.checklist h1 {
+    display: table-caption;
+    caption-side: bottom;
+}

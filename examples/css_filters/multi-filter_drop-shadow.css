@@ -1,0 +1,6 @@
+/* Для блока .bubble добавим фильтр drop-shadow со значением drop-shadow(20px 20px 0px #0074d9). 
+Подвинем тень правее на 200px.
+А затем добавим еще один фильтр drop-shadow, который добавит тени для основного блока и для предыдущей тени .*/
+.bubble {
+    filter: drop-shadow(200px 20px 0px #0074d9) drop-shadow(0px 100px 0px #2ecc40);    
+}

@@ -1,0 +1,16 @@
+/* Блоку .modal-wrapper зададим табличное отображение */
+.modal-wrapper {
+    border: 1px solid;
+    display: table;
+    border-collapse: collapse;
+}
+
+/* , а блоку .modal-cell отображение ячейкой таблицы.  */
+.modal-cell {
+    border: 1px solid;
+    display: table-cell;
+		/* Затем блоку .modal-cell зададим текстовое выравнивание по центру.
+		И вертикальное выравнивание по середине. */
+    text-align: center;
+    vertical-align: middle;
+}

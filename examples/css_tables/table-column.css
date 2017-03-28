@@ -1,0 +1,69 @@
+.checklist {
+    display: table;
+}
+
+.checklist ul {
+    display: table-row;
+}
+
+.checklist li {
+    display: table-cell;
+}
+
+.checklist h1 {
+    display: table-caption;
+}
+
+/* Элементы в .checklist header сгруппируем как верхний ряд таблицы. */
+.checklist header {
+    display: table-header-group;
+}
+
+/* Для верхнго ряда таблицы зададим цвет рамки #3d9970.*/
+.checklist header li {
+    border-color: #3d9970;
+}
+
+/* Сгруппируем элементы блока footer как нижний ряд таблицы.*/
+.checklist footer {
+    display: table-footer-group;
+}
+
+/* И зададим для нижнего ряда цвет рамки #0074d9. */
+.checklist footer li {
+    border-color: #0074d9;
+}
+
+/* Элементы блока .content сгруппируем как обычный ряд таблицы. */
+.checklist .content {
+    display: table-row-group;
+}
+
+/* И зададим для элементов этого ряда цвет рамки #ff851b. */
+.checklist .content li {
+    border-color: #ff851b;
+}
+
+/* Для элементов списка блока .content-important зададим цвет рамки #ff4136. */
+.checklist .content-important li {
+    border-color: #ff4136;
+}
+
+/* Добавим правило, в котором будем стилизовать первую колонку нашей таблицы на CSS. */
+.checklist .column {
+    display: table-column;
+		/* Для элементов первой колонки таблицы зададим фоновое изображение */
+    background-image: url("img/wall-1.png");
+}
+
+/* Сгруппируем три последних столбца. */
+.checklist .column-group {
+    display: table-column-group;
+}
+
+/* И зададим для них фоновое изображение. */
+.checklist .column-group .column {
+    background-image: url("img/wall-2.png");
+}
+
+

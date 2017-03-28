@@ -1,0 +1,9 @@
+/* Изображению в блоке .grayscale зададим полное обесцвечивание. */
+.grayscale img {
+    filter: grayscale(1);
+}
+
+/* Изображению в блоке .sepia зададим полный эффект сепии. */
+.sepia img {
+    filter: sepia(1);
+}

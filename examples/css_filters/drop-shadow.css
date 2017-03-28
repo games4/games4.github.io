@@ -1,0 +1,9 @@
+/* Блоку .shadow-1 зададим черную тень, смещенную вниз и вправо на 15px, с размытием 15px. */
+.shadow-1 {
+    filter: drop-shadow(15px 15px 15px black);
+}
+
+/* А блоку .shadow-2 зададим красную тень с размытием 20px. */
+.shadow-2 {
+    filter: drop-shadow(0px 0px 20px red);
+}

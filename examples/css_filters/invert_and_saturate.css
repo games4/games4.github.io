@@ -1,0 +1,10 @@
+/* Изображению в блоке .invert зададим 30% инверсию цвета. */
+.invert img {
+    filter: invert(0.3);
+    filter: invert(1);
+}
+
+/* Изображение в блоке .saturate сделаем в пять раз насыщеннее. */
+.saturate img {
+    filter: saturate(5);
+}

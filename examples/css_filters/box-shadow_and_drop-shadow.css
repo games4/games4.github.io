@@ -1,0 +1,15 @@
+/* Изображению в блоке .box-shadow зададим красную тень с размытием 10px. */
+.box-shadow img {
+    box-shadow: 0 0 10px red;
+    box-shadow: 10px 10px 0 red;
+		/* Для всех изображений зададим белый цвет фона.  */
+    background-color: white; 
+		
+}
+
+/* Изображению в блоке .filter-shadow добавим фильтр, задающий красную тень со размытием 10px. */
+.filter-shadow img {
+    filter: drop-shadow(0 0 10px red);
+    filter: drop-shadow(10px 10px 0 red);
+    /* background-color: white; */
+}

@@ -1,0 +1,11 @@
+/* Повернем цвет картинки в блоке .hue-rotate вдоль круга на угол 90deg.
+А затем на 270deg. */
+.hue-rotate img {
+    filter: hue-rotate(90deg);
+    filter: hue-rotate(270deg);
+}
+
+/* А картинку в блоке .hue-rotate-reverse повернем на -180deg. */
+.hue-rotate-reverse img {
+    filter: hue-rotate(-180deg);
+}

@@ -1,0 +1,9 @@
+/* Применим фильтр размытия к абзацу в блоке .blur. */
+.blur p {
+    filter: blur(2px);
+}
+
+/* И фильтр тени к абзацу в блоке .shadow. */
+.shadow p {
+    filter: drop-shadow(2px 2px 2px black);
+}

@@ -1,0 +1,10 @@
+/* Зададим бесконечно повторяющуюся анимацию поворота цветов. */
+@keyframes rotate-colors { 
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.hue-animate img {
+    animation: rotate-colors 20s linear infinite;
+}
