@@ -66,15 +66,31 @@ body {
 }
 
 .breadcrumbs a::before {
-		/* Зададим высоту строки. */
-    line-height: 20px;
+    counter-increment: flag;
+    content: counter(flag);
 		/* Укажем положение номеров. */
     position: absolute;
     top: 8px;
     left: 30px;
+		/* Для правила .breadcrumbs a::before зададим размеры и цвет фона.
+А также скругление углов. */
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+		/* Зададим высоту строки. */
+    line-height: 20px;
 		/*  И тень. */
     box-shadow: 0 0 2px 0 #cccccc;
 		/* Для псевдоэлемента .breadcrumbs a::before зададим свойства content: counter(flag) и counter-increment: flag. */
-    counter-increment: flag;
-    content: counter(flag);
+}
+
+/* Первой ссылке зададим свойство padding-left. */
+.breadcrumbs a:first-child {
+    padding-left: 46px;
+}
+
+/* А для псевдоэлемента первой ссылки зададим свойство left. */
+.breadcrumbs a:first-child::before {
+    left: 14px;
 }
