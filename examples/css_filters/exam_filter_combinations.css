@@ -1,11 +1,15 @@
 .combo-1 {
     background-image: url("img/spb-6.jpg");
+    filter: drop-shadow(5px 5px 5px #000000) opacity(0.5);
 }
 
 .combo-2 {
     background-image: url("img/spb-1.jpg");
+    filter: saturate(5) blur(1px);
+    
 }
 
 .combo-3 {
     background-image: url("img/spb-3.jpg");
+    filter: brightness(150%) hue-rotate(-90deg);
 }
