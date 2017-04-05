@@ -1,0 +1,27 @@
+.room {
+    display: flex;
+    height: 150px;
+    justify-content: center;
+}
+
+.room-1 {
+    align-items: center;
+		/* Выровняем элементы блока .room-1 в начале поперечной оси. */
+    align-items: flex-start;
+}
+
+.room-2 {
+    align-items: center;
+		/* А элементы блока .room-2 – по базовой линии текста.*/
+    align-items: baseline;
+}
+
+.rug {
+    min-height: auto;
+}
+
+.rug p {
+    margin: 30px 0;
+    text-align: center;
+    background-color: rgba(69, 185, 244, 0.25);
+}

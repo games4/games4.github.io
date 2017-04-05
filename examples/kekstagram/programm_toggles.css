@@ -1,5 +1,5 @@
 .photo {
-    background-image: url("img/spb-1.jpg");
+    background-image: url("img/spb-5.jpg");
 }
 
 /* Сделаем .walden с помощью функции contrast на 10% менее контрастным, а затем у получившегося изображения увеличим яркость на 20%.
@@ -18,3 +18,10 @@
     filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4);
 }
 
+/* Изображение с классом .kelvin сделаем на 10% контрастнее. 
+Затем на 30% ярче.
+Увеличим насыщенность в 2.4 раза.
+И наконец добавим эффект сепии на 40%. */
+.kelvin {
+    filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4);
+}

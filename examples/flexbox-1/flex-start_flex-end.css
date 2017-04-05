@@ -1,0 +1,24 @@
+.room {
+    display: flex;
+    height: 150px;
+}
+
+.room-1 {
+    flex-direction: row;
+    justify-content: center;
+		/* Расположим элементы обоих флекс-контейнеров в начале главной оси. */
+    justify-content: flex-start;
+		/* Затем элементы первого контейнера расположим в конце главной оси. */
+    justify-content: flex-end;
+}
+
+.room-2 {
+    flex-direction: row;
+		/* В блоке .room-2 развернем главную ось справа налево. */
+    flex-direction: row-reverse;
+    justify-content: center;
+		/* Расположим элементы обоих флекс-контейнеров в начале главной оси. */
+    justify-content: flex-start;
+		/* И элементы второго контейнера также расположим в конце главной оси. */
+    justify-content: flex-end;
+}

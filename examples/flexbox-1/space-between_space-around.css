@@ -1,0 +1,18 @@
+.room {
+    display: flex;
+    height: 150px;
+}
+
+.room-1 {
+    flex-direction: row;
+    justify-content: center;
+		/* Расположим элементы в первом контейнере равномерно вдоль главной оси без отступов по краям. */
+    justify-content: space-between;
+}
+
+.room-2 {
+    flex-direction: row;
+    justify-content: center;
+		/* А элементы во втором контейнере – с отступами. */
+    justify-content: space-around;
+}

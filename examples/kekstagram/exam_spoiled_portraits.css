@@ -1,0 +1,23 @@
+.burst {
+    filter: contrast(2);
+}
+
+.colorize {
+    filter: saturate(2.5) sepia(0.25) hue-rotate(-15deg);
+}
+
+.stylize {
+    filter: contrast(0.7) brightness(2);
+}
+
+.shadow {
+    filter: drop-shadow(10px 10px 5px gray);
+}
+
+.spoil {
+    filter: hue-rotate(270deg);
+}
+
+.invert {
+    filter: invert(0.75);
+}

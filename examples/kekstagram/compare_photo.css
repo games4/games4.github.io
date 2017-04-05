@@ -1,0 +1,58 @@
+.photos {
+    position: relative;
+}
+
+.photo,
+.photo-original {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.photo {
+    z-index: 10;
+    background-image: url("img/spb-1.jpg");
+}
+
+.photo-original {
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    background-image: url("img/spb-1.jpg");
+}
+
+.separator {
+    position: absolute;
+		/* Зададим для него координаты top и left со значением 50%. */
+    top: 50%;
+    left: 50%;
+    z-index: 30;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+		/* И трансформацию перемещения со значением -50%, -50%. */
+    transform: translate(-50%, -50%);
+}
+
+/* Сделаем .walden с помощью функции contrast на 10% менее контрастным, а затем у получившегося изображения увеличим яркость на 20%.
+Затем повернем цвет на -20deg. Увеличим насыщенность на 70%. И под конец применим эффект сепии на 40%.*/
+.walden {
+    filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4);
+}
+
+/* Сделаем .toaster с помощью функции contrast на 33% менее контрастным.
+Затем увеличим насыщенность в 2.5 раза. Повернем цвет на -30deg. И под конец применим эффект сепии на 40%. */
+.toaster {
+    filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4);
+}
+
+/* Изображение с классом .kelvin сделаем на 10% контрастнее. 
+Затем на 30% ярче. Увеличим насыщенность в 2.4 раза. И наконец добавим эффект сепии на 40%. */
+.kelvin {
+    filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4);
+}
+
+.photo-original {
+}

@@ -1,0 +1,9 @@
+.room {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+		/* элементы расположены вдоль главной оси в ее начале */ 
+    justify-content: flex-start;
+		/* Расположим элементы флекс-контейнера по центру главной оси. */
+    justify-content: center;
+}

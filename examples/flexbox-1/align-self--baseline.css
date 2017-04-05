@@ -1,0 +1,15 @@
+.room {
+    display: flex;
+    align-items: center;
+}
+
+/* Коврик Семёна выровняем по базовой линии текста. */
+.text-simeon {
+    align-self: baseline;
+}
+
+
+/* Как и коврик Кекса. */
+.text-keks {
+    align-self: baseline;
+}

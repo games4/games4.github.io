@@ -1,0 +1,12 @@
+/* Блок с классом .room сделаем флекс-контейнером. */
+.room {
+    display: flex;
+		/* значение по умолчанию, главная ось направлена слево направо */
+    flex-direction: row;
+		/* row-reverse — главная ось направлена справа налево. */
+    flex-direction: row-reverse;
+		/* column — главная ось направлена сверху вниз. */
+    flex-direction: column;
+		/* column-reverse — главная ось направлена снизу вверх. */
+    flex-direction: column-reverse;
+}

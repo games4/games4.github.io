@@ -1,0 +1,20 @@
+.room {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Кота Рудольфа, вместе с его ковриком, расположим в начале поперечной оси комнаты. */
+.rudolf {
+    align-self: flex-start;
+}
+
+/* Кекса – в конце.*/ 
+.keks {
+    align-self: flex-end;
+}
+
+/* А Семёна – посередине. */
+.simeon {
+    align-self: center;
+}
