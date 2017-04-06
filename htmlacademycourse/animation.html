@@ -1,0 +1,651 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Анимация</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/dynamic/80.svg" alt="Анимация" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Анимация</h1>
+		<p>Рассмотрим основы анимации на&nbsp;CSS. Нам предстоит пройти путь развития цивилизации и&nbsp;покорить космический простор. Мы&nbsp;будем двигать, поворачивать и&nbsp;видоизменять объекты, попутно осваивая приёмы работы анимации в&nbsp;CSS.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Привет, animation! <small>[1/31]</small></h1>
+          <p>С помощью CSS можно создавать сложные анимации и очень гибко управлять ими. Описание CSS-анимации состоит из двух частей: набора ключевых кадров <code>keyframes</code> и параметров самой анимации.</p>
+<p>Вот пример описания ключевых кадров анимации:</p>
+<pre>@keyframes stretching {
+    0% {
+        width: 100px;
+    }
+    100% {
+        width: 200px;
+    }
+}
+</pre>
+<p>Анимация в примере имеет название <code>stretching</code>, и в ней описывается, как будет меняться стиль блока от начальной до конечной точки. Эту анимацию можно применить к любому элементу, для этого достаточно добавить в CSS два свойства — <code>animation-name</code> (название анимации) и <code>animation-duration</code> (длительность) — и задать им нужные значения. Например:</p>
+<pre>.button {
+    animation-name: stretching;
+    animation-duration: 1s;
+}
+</pre>
+<p>Этот код назначит анимацию <code>stretching</code> элементам с классом <code>button</code>. В результате работы анимации элемент плавно увеличит ширину со <code>100px</code> до <code>200px</code> за <code>1</code> секунду.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Раскомментируйте в CSS:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> описание ключевых кадров анимации <code>@keyframes rotate</code>;</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> правило для класса <code>.wood-wheel</code>.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>@keyframes: раскадровка <small>[2/31]</small></h1>
+          <p>Для каждой анимации нужно задать имя, описать начальный и конечный ключевые кадры, которые задаются с помощью зарезервированных слов <code>from</code> и <code>to</code> или значений <code>0%</code> и <code>100%</code>.</p>
+
+<p>Также можно описать промежуточные ключевые кадры, которые задаются с помощью процентов.</p>
+
+<p>Если не задан начальный ключевой кадр, то анимация будет проигрываться из исходного стилевого состояния элемента к ближайшему шагу из перечисленных в <code>keyframes</code> и далее.</p>
+
+<p>Если не задан конечный кадр, то после достижения последнего промежуточного шага, анимация проиграется в обратном направлении до достижения изначального состояния элемента.</p>
+
+<p>Ключевые кадры внутри <code>keyframes</code> могут быть написаны в произвольном порядке, но лучше их перечислять по хронологии от меньшего к большему.</p>
+
+<p>Длительность анимации <code>animation-duration</code> задаётся в секундах или миллисекундах, например: <code>10s</code>, <code>100ms</code>.</p>
+
+<p>А теперь давайте попробуем создать анимацию без описания начального кадра, используя шаги в <code>50%</code> и <code>100%</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для кадра <code>50%</code> добавьте трансформацию поворота <code>rotate(90deg)</code>, а для кадра <code>100%</code> — поворот до <code>360°</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем для кадра <code>50%</code> измените поворот на <code>-90°</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>@keyframes: from и to <small>[3/31]</small></h1>
+          <p>Как уже говорилось в <a href="2">предыдущем задании</a>, начальный и конечный ключевые кадры задаются с помощью слов <code>from</code> и <code>to</code> или значений <code>0%</code> и <code>100%</code>.</p>
+
+<p>А промежуточные ключевые кадры задаются с помощью процентов. Вот пример анимации из 4 кадров:</p>
+<pre>@keyframes coloring {
+  from { background-color: red; }
+  33%  { background-color: yellow; }
+  66%  { background-color: green; }
+  to   { background-color: blue; }
+}
+</pre>
+<p>Опробуем <code>from</code>, <code>to</code> и промежуточные кадры в деле!</p>
+<hr>
+<div class="ha-task-goals">
+<p>Создайте @-правило с именем <code>lift-up</code>, содержащее ключевые кадры: </p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>from</code> с трансформацией <code>transform: translateY(0px)</code>;</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>50%</code> с трансформацией <code>transform: translateY(-250px)</code>;</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>100%</code> с трансформацией <code>transform: translateY(-300px)</code>.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>@keyframes: группировка кадров <small>[4/31]</small></h1>
+          <p>Ключевые кадры в <code>keyframes</code> можно группировать, для этого нужно перечислить их через запятую. Рассмотрим пример:</p>
+<pre>@keyframes stretching {
+    0%, 50% {
+        width: 100px;
+    }
+    100% {
+        width: 200px;
+    }
+}
+</pre>
+<p>В этом примере первые два кадра сгруппированы. Анимируемый элемент сначала изменит свою ширину до <code>100px</code> и останется в этом состоянии половину времени анимации. А за вторую половину времени он растянется от <code>100px</code> до <code>200px</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Измените значение кадра <code>50%</code> на <code>50%, 80%</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем поменяйте трансформацию перемещения в кадре <code>50%, 80%</code> на <code>transform: translateY(-50px)</code></li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Множественная анимация, шаг 1 <small>[5/31]</small></h1>
+          <p>Одному элементу могут быть одновременно назначены несколько анимаций.</p>
+
+<p>Если в этих анимациях меняются разные свойства элемента, то они будут проигрываться одновременно.</p>
+
+<p>В этом и следующем задании попробуем создать множественную анимацию одного объекта. Сначала давайте создадим и назначим первую анимацию.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>rotate</code> с одним ключевым кадром <code>50%</code>, содержащим трансформацию поворота <code>transform: rotate(360deg)</code>.
+    </li><li id="goal2"><span class="label ha-goal-label">Цель 2</span> Блоку <code>.stone-wheel</code> задайте свойства <code>animation-name: rotate</code> и <code>animation-duration: 3s</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Множественная анимация, шаг 2 <small>[6/31]</small></h1>
+          <p>Теперь разберём, как добавить элементу вторую параллельную анимацию.</p>
+<p> Допустим, у нас есть две анимации:</p>
+<pre>@keyframes move {
+    to { left: 100px; }
+}
+@keyframes stretch {
+    to { width: 100px; }
+}
+</pre>
+<p>Чтобы назначить элементу вторую анимацию, нужно добавить её название и длительность через запятую в свойствах <code>animation-name</code> и <code>animation-duration</code>. Вот так:</p>
+<pre>.element {
+    animation-name: move, stretch;
+    animation-duration: 5s, 5s;
+}
+</pre>
+<p>В этом примере две анимации запустятся одновременно, элемент будет параллельно двигаться и удлиняться в течение 5-ти секунд.</p>
+<p>Множественные анимации задаются так же, как и множественные фоны и тени&nbsp;— с помощью перечисления свойств через запятую.</p>
+<p>Добавим к элементу из <a href="5">прошлого шага</a> вторую анимацию.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Cоздайте анимацию <code>move</code> с ключевыми кадрами: <br>
+      <code>50%</code> со свойством <code>bottom: 0px</code>;<br>
+      <code>100%</code> со свойством <code>bottom: -50px</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Блоку <code>.stone-wheel</code> добавьте вторую анимацию <code>move</code> длительностью <code>6s</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Водное путешествие <small>[7/31]</small></h1>
+          <p>По мере изучения анимаций CSS мы будем наблюдать за развитием цивилизации. И сейчас нам предстоит первое путешествие в новый мир механизмов и шестерёнок. </p>
+<p>Ваша задача — создать нужные кадры анимации и отправить корабль в плавание. Свойства <code>animation-name</code> и <code>animation-duration</code> для объектов уже заданы.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>move-clouds</code>, содержащую кадр <code>to</code> с трансформацией <code>translateX(-1000px)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> анимацию <code>move-sun</code>, содержащую кадр <code>to</code> с трансформацией <code>translate(350px, -400px)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> анимацию <code>move-ship</code>, содержащую кадр <code>to</code> с трансформацией <code>translateX(1000px)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Количество проигрываний анимации: animation-iteration-count <small>[8/31]</small></h1>
+          <p>Во всех предыдущих примерах мы создавали анимации, которые проигрывались один раз, а потом элемент возвращался в исходное состояние. Мы можем определять сколько раз будет повторяться анимация. Для этого используется свойство <code>animation-iteration-count</code>.</p>
+<p>В качестве значения оно принимает положительные числа и ноль: при нуле анимация не будет выполнена, в остальных случаях она повторится указанное число раз.</p>
+<p>Также в качестве значения <code>animation-iteration-count</code> может быть использовано служебное слово <code>infinite</code>. Оно означает, что анимация будет выполняться бесконечно и никогда не завершится.</p>
+<p>Попробуем задавать разное число проигрываний анимации.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Стрелке <code>.arrow</code> задайте анимацию <code>rotate</code> длительностью <code>2s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем задайте <code>2</code> проигрывания анимации,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом поменяйте количество проигрываний на бесконечное.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Направление анимации: animation-direction, шаг 1 <small>[9/31]</small></h1>
+          <p>Помимо количества проигрываний анимации, мы можем определить её направление с помощью свойства <code>animation-direction</code>. По умолчанию анимация имеет прямое направление <code>normal</code>.</p>
+<p>Но можно назначить и обратный порядок анимации, чтобы проигрывание начиналось с конца и шло к началу (то есть за начальную точку считался кадр <code>to</code>, а за конечную — <code>from</code>). Для этого используется значение <code>reverse</code> свойства <code>animation-direction</code>.</p>
+<p>Попробуем сравнить два направления анимации на примере.</p>
+<p class="alert">В браузере Safari 8 и ниже направление анимации <code>reverse</code> работает некорректно. Задание можно выполнить в другом браузере.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Большой шестерёнке <code>.gear-big</code> задайте анимацию <code>clockwise</code> длительностью <code>2s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем маленькой <code>.gear-small</code> анимацию <code>anticlockwise</code> длительностью <code>2s</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом смените направление анимации обеих шестерёнок на обратное.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Направление анимации: animation-direction, шаг 2 <small>[10/31]</small></h1>
+          <p>У свойства <code>animation-direction</code> есть ещё два значения. Они используются, когда количество проигрываний анимации <code>animation-iteration-count</code> больше одного. И оба они определяют чередующееся направление анимации.</p>
+<p>Если задано значение <code>alternate</code>, то нечётные проигрывания будут выполняться в прямом направлении, а чётные — в обратном.</p>
+<pre>.element {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+</pre>
+<p>В примере анимация <code>move</code> выполнится два раза: в первый (нечётный) раз направление будет прямым, а во второй (чётный) — обратным.</p>
+<p>Если задано значение <code>alternate-reverse</code>, то нечётные проигрывания наоборот будут выполняться в обратном направлении, а чётные — в прямом.</p>
+<p>Рассмотрим это на наглядном примере.</p>
+<p class="alert">В браузере Safari 8 и ниже направление анимации <code>alternate-reverse</code> работает некорректно. Задание можно выполнить в другом браузере.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Обеим шестерёнкам задайте количество проигрываний анимации <code>2</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем чередующееся направление анимации,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом смените направление анимации на обратное чередующееся.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Задержка начала анимации: animation-delay, шаг 1 <small>[11/31]</small></h1>
+          <p>Кроме длительности анимации, мы можем управлять задержкой перед началом её выполнения.</p>
+<p>В этом и двух следующих заданиях мы создадим две анимации, которые в итоге будут выполняться последовательно с помощью задержки. Сначала давайте создадим и назначим первую анимацию.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>rotate</code>, содержащую кадр <code>to</code> с трансформацией поворота на <code>360deg</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте эту анимацию стрелке <code>.arrow-small</code> с длительностью <code>1s</code> .</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Задержка начала анимации: animation-delay, шаг 2 <small>[12/31]</small></h1>
+          <p>Теперь подготовим вторую анимацию, для которой на следующем шаге зададим задержку.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>ding</code>, содержащую ключевые кадры: <br>
+      <code>33%</code> с трансформацией <code>translateX(-15px)</code>;<br>
+      <code>66%</code> с трансформацией <code>translateX(15px)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем добавьте эту анимацию колокольчику <code>.bell</code> с длительностью <code>1s</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Задержка начала анимации: animation-delay, шаг 3 <small>[13/31]</small></h1>
+          <p>Синтаксис свойства <code>animation-delay</code>, с помощью которого и назначается задержка начала, идентичен синтаксису свойства <code>animation-duration</code>.</p>
+<p>Например, при задании значения <code>animation-delay: 10s</code> анимация начнётся не сразу, а только через десять секунд.</p>
+<p>Давайте завершим нашу сцену с часами, чтобы колокольчик звонил только после прохождения стрелкой полного круга.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Колокольчику <code>.bell</code> задайте параметры анимации:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> задержку начала <code>1s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> длительность <code>100ms</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> количество проигрываний анимации <code>10</code>.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Воздушное путешествие <small>[14/31]</small></h1>
+          <p>Итак, теперь мы знаем достаточно для второго путешествия уже в индустриальную эру.</p>
+<p>На этот раз для объектов созданы кадры анимации, а ваша задача — задать нужные анимационные свойства и отправить аэростат в воздушное путешествие.</p>
+<p>Полетели!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Птицам <code>.birds</code> задайте анимацию <code>move-birds</code> длительностью <code>30s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем мельнице <code>.wind-mill</code> задайте анимацию <code>move-wheel</code> длительностью <code>10s</code> с бесконечным числом проигрываний,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом воздушному шару <code>.aerostat</code> задайте анимацию <code>move-aerostat</code> длительностью <code>20s</code> с задержкой начала анимации в <code>5s</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Состояние до и после анимации: animation-fill-mode, шаг 1 <small>[15/31]</small></h1>
+          <p>В предыдущих примерах элементы после проигрывания анимации возвращались в исходное состояние. Но есть свойство, которое определяет, будет ли видимым эффект от анимации, когда сама анимация уже закончилась — это <code>animation-fill-mode</code>. При задании свойству значения <code>forwards</code> элемент будет сохранять состояние после завершения анимации.</p>
+
+<p>Рассмотрим, как работает это свойство, на примере: к двум идентичным объектам применим одинаковую анимацию, а потом у одного изменим значение свойства <code>animation-fill-mode</code> и посмотрим, что будет.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Обоим химикатам <code>.reagent</code> задайте анимацию <code>reaction</code> длительностью <code>3s</code> с задержкой начала в <code>2s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем экспериментальному химикату <code>.experimental-reagent</code> задайте сохранение состояния после анимации.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Состояние до и после анимации: animation-fill-mode, шаг 2 <small>[16/31]</small></h1>
+          <p>Сохранение свойств анимации по её завершению <code>animation-fill-mode: forwards</code> работает и в случае нескольких повторов анимации или чередующегося направления. Рассмотрим это экспериментально.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Химикату в экспериментальной колбе <code>.experimental-reagent</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> сохранение своего состояния после анимации,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> количество проигрываний анимации <code>2</code></li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и чередующееся направление анимации.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Состояние до и после анимации: animation-fill-mode, шаг 3 <small>[17/31]</small></h1>
+          <p>Другое значение свойства <code>animation-fill-mode</code> — <code>backwards</code>. Это значение определяет состояние элемента до начала анимации.</p>
+<p>Если элементу назначена анимация с задержкой начала проигрывания и <code>animation-fill-mode: backwards</code>, то стили, описанные в первом ключевом кадре <code>from</code> или <code>0%</code>, будут применены сразу, ещё до начала проигрывания анимации.</p>
+<p>Рассмотрим это на наглядном примере.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Заряду аккумуляторов <code>.energy-fill</code> задайте анимацию <code>power</code> длительностью <code>2s</code> с задержкой начала в <code>2s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем заряду в экспериментальном аккумуляторе <code>.mega-energy-fill</code> задайте отображение состояния до начала анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Состояние до и после анимации: animation-fill-mode, шаг 4 <small>[18/31]</small></h1>
+          <p>Задание начального состояния анимации до начала её выполнения<code>animation-fill-mode: backwards</code> работает и в случае нескольких повторов или чередующихся направлений анимации. Поставим ещё один эксперимент с аккумуляторами.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Заряду в экспериментальном аккумуляторе <code>.mega-energy-fill</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> количество проигрываний анимации <code>2</code></li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и чередующееся направление анимации.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Состояние до и после анимации: animation-fill-mode, шаг 5 <small>[19/31]</small></h1>
+          <p>Третье значение свойства <code>animation-fill-mode</code> — <code>both</code>.</p>
+<p>Оно объединяет действия <code>forwards</code> и <code>backwards</code>. То есть до начала анимации элементу присваивается состояние первого ключевого кадра, а после завершения — конечное состояние анимации сохраняется.</p>
+<p>Действие <code>animation-fill-mode: both</code> распространяется и на многоразовую, и на чередующуюся анимацию.</p>
+<p>Проведём финальный эксперимент!</p>
+<hr>
+<div class="ha-task-goals">
+<p>Заряду в экспериментальном аккумуляторе <code>.mega-energy-fill</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> сохранение состояния до и после анимации,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> количество проигрываний <code>2</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем чередующееся направление анимации.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Запуск фабрики, шаг 1 <small>[20/31]</small></h1>
+          <p>Настало время проверить полученные знания в деле и запустить производство роботов.</p>
+<p>В этом и следующем задании для объектов уже созданы кадры анимации, не хватает только нужных анимационных свойств.</p>
+<p>Начнём с анимации спутниковой тарелки и самолёта, который доставит нужный для производства груз.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Самолёту <code>.plane</code> задайте анимацию <code>move-plane</code> длительностью <code>10s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем спутниковой тарелке <code>.antenna</code> задайте анимацию <code>move-antenna</code> длительностью <code>2s</code> с задержкой начала в <code>2s</code> и c сохранением своего состояния после анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Запуск фабрики, шаг 2 <small>[21/31]</small></h1>
+          <p>Отлично! Теперь остаётся довезти груз в автомобиле на фабрику и запустить производство.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Автомобилю <code>.car</code> задайте анимацию <code>move-car</code>: длительность <code>4s</code>, задержка старта <code>5s</code>, c сохранением состояния после анимации.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Облакам дыма <code>.fog-1</code> и <code>.fog-2</code>&nbsp;— анимацию <code>show-fog</code>: длительность <code>1s</code>, <code>2</code> проигрывания, чередующееся направление.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> У <code>.fog-1</code> задержка старта <code>9s</code>, у <code>.fog-2</code> — <code>10s</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Остановка и запуск анимации:  animation-play-state <small>[22/31]</small></h1>
+          <p>Ещё одно управляющее свойство CSS-анимаций — <code>animation-play-state</code>. С его помощью можно поставить анимацию «на паузу», а потом возобновить с места остановки.</p>
+<p>Свойство принимает два значения <code>running</code> и <code>paused</code>. Как видно из названий, <code>paused</code> приостанавливает анимацию, а <code>running</code> начинает или возобновляет  анимацию, поставленную на паузу. Значение <code>running</code> задано по умолчанию. </p>
+<p>Попробуем создать анимацию и управлять процессом её проигрывания.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>move</code>, с ключевым кадром <code>to</code>, содержащим свойство <code>left: 400px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем назначьте эту анимацию роботам <code>.robot</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Создайте правило <code>.robot-paused</code>, ставящее анимацию на паузу.</li>
+</ol>
+<p>Класс <code>robot-paused</code> переключается при клике на роботов. Пощёлкайте по ним в процессе движения!</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>«Форма» анимации, animation-timing-function <small>[23/31]</small></h1>
+          <p>И, наконец, самое интересное свойство&nbsp;— <code>animation-timing-function</code>. Оно определяет, как именно будет происходить анимация: с какой скоростью и ускорением будут меняться свойства, задействованные в ней.</p>
+<p>В предыдущих примерах анимация проигрывалась с одинаковой динамикой, мы меняли лишь её длительность, но не «форму». Эта «форма» по умолчанию соответствует первому графику, из которого видно, что анимация начинается медленно, затем ускоряется и к концу движения опять замедляется.</p>
+<p>Так ведёт себя значение <code>ease</code> свойства <code>animation-timing-function</code>.</p>
+<ul class="pics">
+    <li>
+        <img src="/assets/course80/img/ease.png" alt="ease">
+        <p>ease</p>
+    </li>
+        <li>
+        <img src="/assets/course80/img/linear.png" alt="linear">
+        <p>linear</p>
+    </li>
+</ul>
+<p>Но мы можем сделать проигрывание анимации равномерным, без ускорений и замедлений. Для этого нужно использовать значение <code>linear</code>. Как видно на втором графике, анимация будет проигрываться с неизменной скоростью.</p>
+<style>
+.pics {
+    list-style: none;
+}
+.pics li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pics li img {
+    width: 180px;
+}
+.pics li p {
+    text-align: center;
+    font-style: italic;
+}
+</style>
+<hr>
+<ol>
+	<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Обоим роботам <code>.robot</code> задайте линейную форму анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>animation-timing-function, шаг 2 <small>[24/31]</small></h1>
+          <p>Вот ещё несколько форм анимации: <code>ease-in</code>, <code>ease-out</code> и <code>ease-in-out</code>.</p>
+<ul class="pics">
+    <li>
+        <img src="/assets/course80/img/ease-in.png" alt="ease-in">
+        <p>ease-in</p>
+    </li><li>
+        <img src="/assets/course80/img/ease-out.png" alt="ease-out">
+        <p>ease-out</p>
+    </li><li>
+        <img src="/assets/course80/img/ease-in-out.png" alt="ease-in-out">
+        <p>ease-in-out</p>
+    </li>
+</ul>
+<p>Из графиков видно, что при значении <code>ease-in</code> анимация медленно начинается, а к концу ускоряется; при <code>ease-out</code> — начинается быстро, а к концу замедляется. Значение <code>ease-in-out</code> похоже на <code>ease</code>, то есть анимация начинается и заканчивается медленно, но происходит это чуть-чуть интенсивнее.</p>
+<p>Испробуем эти значения свойства <code>animation-timing-function</code>.</p>
+
+<style>
+.pics {
+    list-style: none;
+}
+.pics li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pics li img {
+    width: 180px;
+}
+.pics li p {
+    text-align: center;
+    font-style: italic;
+}
+</style>
+<hr>
+<div class="ha-task-goals">
+<p>Роботу <code>.constructor</code> последовательно задайте следующие формы анимации:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>ease-in</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>ease-out</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>ease-in-out</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>animation-timing-function, шаг 3 <small>[25/31]</small></h1>
+          <p>Что же скрывается за названиями <code>linear</code>, <code>ease</code> и других функций? Довольно сложная математика кубических <a target="_blank" href="https://ru.wikipedia.org/wiki/Кривая_Безье">кривых Безье</a>.</p>
+
+<p>По сути, именованные функции <code>ease-in</code>, <code>ease-out</code> и другие являются псевдонимами для универсального описания кривых, например:
+
+</p><pre>cubic-bezier(0, 0, 1, 1)    // это linear
+cubic-bezier(0.42, 0, 1, 1) // это ease
+</pre>
+
+<p>В общем представлении <code>cubic-bezier(x1, y1, x2, y2)</code> значения <code>x</code> и <code>y</code> — это координаты точек кривых на графике. При этом верным считается значение <code>x</code> только в диапазоне от <code>0</code> до <code>1</code>.</p>
+
+<p>Существует <a target="_blank" href="http://cubic-bezier.com/">отличный сервис</a>, помогающий разобраться в функциональном представлении кривых Безье без необходимости штудировать учебники по математике.</p>
+
+<p>А вот по этой <a target="_blank" href="http://easings.net/ru">ссылке</a> можно найти целую коллекцию разных easing-функций на основе кривых Безье.</p>
+
+<p>C помощью кривых Безье мы можем задавать любые формы анимации. Давайте попробуем!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Роботам <code>.robot</code> задайте форму анимации <code>cubic-bezier(0, 0, 1, 1)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем только у <code>.constructor</code> замените её на <code>cubic-bezier(0.785, 0.135, 0.15, 0.86)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем на <code>cubic-bezier(0.175, 0.885, 0.32, 1)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>animation-timing-function, шаг 4 <small>[26/31]</small></h1>
+          <p>Давайте разберёмся с ещё одним возможным классом значений <code>animation-timing-function</code> — это <code>steps</code>.</p>
+<p>Они позволяют задать «ступеньки», по которым будет идти анимация. Синтаксис <code>steps</code> следующий:</p>
+<pre>animation-timing-function: steps(число_шагов, направление);
+</pre>
+<p>Тут всё просто: число шагов — это целое число, за которое будет выполнена вся анимация; направление может принимать значение <code>start</code> или <code>end</code>.</p>
+
+<p>При заданном <code>start</code> первый шаг выполняется одновременно с началом анимации, а в случае c <code>end</code> последний шаг будет выполнен вместе с завершением анимации. То есть при <code>start</code> пошаговая анимация идёт как бы с опережением, а при <code>end</code> — вдогонку.</p>
+
+<p>Разберём это наглядно.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Роботу <code>.constructor</code> задайте форму анимации<br> <code>steps(5, start)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем измените её на <code>steps(5, end)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Ракета на старт, шаг 1 <small>[27/31]</small></h1>
+          <p>Итак, теперь вы знаете об анимациях ровно столько, чтобы смело отправиться в космос.</p>
+<p>Для начала давайте зажжём!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Создайте анимацию <code>fire</code>, содержащую кадр <code>to</code> со свойством <code>opacity: 1</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> затем топливу <code>.fuel</code> задайте эту анимацию длительностью <code>1s</code> и сохранением состояния после анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Ракета на старт, шаг 2 <small>[28/31]</small></h1>
+          <p>Огонь пылает в соплах ракеты, всё готово, можно стартовать. Скоро Земля окажется совсем далеко. </p>
+<p>Поехали!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Создайте анимацию <code>fly</code>, содержащую кадр <code>to</code> с трансформацией<br>
+    <code>transform: rotate(40deg) translate(0px, -500px)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> затем задайте эту анимацию ракете <code>.rocket</code>: длительность <code>1s</code>, задержка начала <code>1s</code>, форма <code>ease-in</code>, с сохранением состояния после анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Посадка, шаг 1 <small>[29/31]</small></h1>
+          <p>Космическое путешествие промелькнуло словно миг. Ура, впереди Луна, заходим на посадку!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>fly</code>, содержащую кадр <code>to</code> с трансформацией<br>
+    <code>transform: translate(240px, 260px) rotate(-45deg)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем задайте эту анимацию ракете <code>.rocket</code>: длительность <code>1.5s</code>, форма <code>ease-out</code>, с сохранением состояния после анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Посадка, шаг 2 <small>[30/31]</small></h1>
+          <p>Посадка произведена успешно, ни один лунатик не пострадал. Глуши мотор, приехали!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>fire</code>, содержащую кадр <code>to</code> со свойством <code>opacity: 0</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем задайте эту анимацию топливу <code>.fuel</code>: длительность <code>1s</code>, задержка начала <code>1s</code>, с сохранением состояния после анимации.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/80">Анимация</a>»</div>
+          <h1>Посадка, шаг 3 <small>[31/31]</small></h1>
+          <p>Выходим на поверхность и поднимаем флаг! Слава покорителям Луны и анимаций CSS!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте анимацию <code>hoist</code>, содержащую кадр <code>to</code> со свойством <code>top: -25px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем задайте эту анимацию флагу <code>.flag</code>: длительность <code>1s</code>, задержка начала <code>2s</code>, форма <code>ease-in</code>, с сохранением состояния после анимации.</li>
+</ol>
+</div>
+
+
+
+		</div>
+<body>

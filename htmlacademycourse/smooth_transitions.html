@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Плавные переходы</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/dynamic/84.svg" alt="Плавные переходы" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Плавные переходы</h1>
+		<p>Научимся плавно менять CSS-свойства, будем создавать красивые и&nbsp;функциональные элементы форм в&nbsp;стиле Material Design и&nbsp;построим мини-викторину об&nbsp;HTML и&nbsp;CSS.</p>
+	</div>
+</div>		
+		
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Длительность перехода, transition-duration <small>[1/29]</small></h1>
+          <p>Плавные переходы в&nbsp;CSS или transitions позволяют изменять значения свойств постепенно, «с&nbsp;нежностью».</p>
+
+<p>Обычно эффект от&nbsp;изменения значений CSS-свойств виден мгновенно, но&nbsp;с&nbsp;помощью плавных переходов можно изменить это поведение и&nbsp;сделать процесс изменения значений достаточно длительным.</p>
+
+<p>В&nbsp;отличие от&nbsp;<a target="_blank" href="/courses/80">анимаций</a>, которые позволяют управлять любым количеством промежуточных состояний, с&nbsp;помощью transitions можно управлять только переходом между двумя состояниями: начальным и&nbsp;конечным.</p>
+
+<p>Чтобы обозначить плавный переход в&nbsp;CSS, достаточно задать одно свойство: <code>transition-duration</code> — длительность перехода. Значения задаются в&nbsp;секундах (<code>10s</code>, <code>3s</code>), долях секунды (<code>0.1s</code>, <code>0.03s</code>) или миллисекундах (<code>100ms</code>, <code>333ms</code>). </p>
+
+<p>Рассмотрим плавный переход на&nbsp;простом примере с&nbsp;кнопкой, у&nbsp;которой по&nbsp;нажатию меняется цвет. Начальное состояние описано в&nbsp;классе <code>.btn</code>, а&nbsp;конечное&nbsp;— в&nbsp;классе <code>.btn-active</code>.</p>
+
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Кнопке <code>.btn</code> задайте <code>transition-duration: 1s</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.btn</code> в мини-браузере, чтобы увидеть плавный переход. При нажатии у кнопки переключается класс <code>btn-active</code>.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Длительность перехода, шаг 2 <small>[2/29]</small></h1>
+          <p>Плавные переходы и&nbsp;анимацию можно применить только к&nbsp;некоторым CSS-свойствам. В&nbsp;основном это свойства, изменяющие размер, цвет, позицию элементов. В&nbsp;<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">статье на&nbsp;MDN</a> приведен перечень анимируемых свойств и&nbsp;характер их&nbsp;анимирования.</p>
+
+<p>Если задана только длительность перехода <code>transition-duration</code>, то&nbsp;по&nbsp;умолчанию плавное изменение затрагивает все свойства элемента и&nbsp;для всех свойств происходит одновременно.</p>
+
+<p>Давайте попробуем задать кнопке ещё несколько свойств и&nbsp;посмотрим, как они будут изменяться.</p>
+
+<p class="alert">В&nbsp;этом и&nbsp;следующих примерах используются CSS-трансформации, которые подробно разбираются в&nbsp;<a href="/courses/71" target="_blank">курсе «Двумерные трансформации»</a>.</p>
+
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Активному состоянию кнопки <code>.btn-active</code> задайте цвет текста <code style="color: #ffffff; background-color: #999999;">#ffffff</code> и поворот <code>transform: rotate(45deg)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем измените у кнопки <code>.btn</code> длительность перехода <code>transition-duration</code> на <code>200ms</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.btn</code> в мини-браузере, чтобы переключать у неё класс <code>btn-active</code> и увидеть плавный переход.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>transition-property: какие свойства изменять плавно? <small>[3/29]</small></h1>
+          <p>По&nbsp;умолчанию плавный переход действует на&nbsp;все анимируемые свойства элемента. Такое поведение соответствует значению <code>all</code> свойства <code>transition-property</code>, это значение по&nbsp;умолчанию.</p>
+
+<p>Такое поведение часто нежелательно, особенно когда в&nbsp;правиле много свойств.</p>
+
+<p>Можно указать, какие именно свойства нужно изменять плавно, перечислив их&nbsp;в&nbsp;<code>transition-property</code> через запятую:</p>
+
+<pre>transition-property: width;         // плавно меняется только ширина
+transition-property: width, height; // плавно меняются только ширина и высота
+</pre>
+
+<p>При этом так же через запятую можно задавать переходам разных свойств разную длительность:</p>
+<pre>transition-property: width, height;
+transition-duration: 1s, 5s; // ширина меняется за 1 секунду, высота за 5
+</pre>
+
+<p>Попробуем применить описанное свойство на&nbsp;практике. В&nbsp;этом примере у&nbsp;кнопки анимируются свойства <code>background-color</code>, <code>transform</code> и <code>font-size</code>.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Кнопке <code>.btn</code> задайте плавный переход только для свойства <code>background-color</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> потом задайте плавный переход только для свойства  <code>transform</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем — для обоих свойств одновременно <code>background-color, transform</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Измените длительность перехода для <code>.btn</code> на <code>1s, 3s</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.btn</code> в мини-браузере, чтобы переключать у неё класс <code>btn-active</code> и увидеть плавный переход.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Задержка перехода, transition-delay <small>[4/29]</small></h1>
+          <p>Ещё одно свойство переходов&nbsp;— <code>transition-delay</code>. Оно определяет задержку перед началом перехода и&nbsp;задаётся в&nbsp;секундах или миллисекундах, как и <code>transition-duration</code>.</p>
+<p>С&nbsp;ним всё просто. Разберёмся на&nbsp;примере.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Квадратам <code>.square</code> задайте плавный переход для свойства <code>transform</code> длительностью <code>transition-duration: 500ms</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Первому квадрату задайте задержку перехода <code>transition-delay: 50ms</code>, а второму — <code>100ms</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> затем третьему квадрату задайте задержку <code>150ms</code>, а четвёртому — <code>200ms</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.fab-play</code>, чтобы переключать класс <code>square-active</code> для квадратов.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>«Форма» перехода, transition-timing-function <small>[5/29]</small></h1>
+          <p>Ещё одно свойство, влияющее на&nbsp;переход&nbsp;— <code>transition-timing-function</code>. Это свойство аналогично свойству <code>animation-timing-function</code>, которое разбирается в&nbsp;<a target="_blank" href="/courses/80/run/23">курсе по&nbsp;анимациям</a>. Свойство <code>transition-timing-function</code> определяет с&nbsp;какой скоростью и&nbsp;ускорением будут меняться свойства во&nbsp;время перехода.</p>
+<p>В&nbsp;предыдущих примерах переходы происходили с&nbsp;одинаковой динамикой. Мы&nbsp;меняли длительность и&nbsp;задержку перехода, но&nbsp;не&nbsp;«форму». Эта «форма» по&nbsp;умолчанию соответствует первому графику, из&nbsp;которого видно, что переход начинается медленно, затем ускоряется и&nbsp;к&nbsp;концу движения опять замедляется.</p>
+<p>Так ведёт себя значение <code>ease</code> свойства <code>transition-timing-function</code>.</p>
+<ul class="pics">
+<li>
+<img src="/assets/course80/img/ease.png" alt="ease">
+<p>ease</p>
+</li>
+<li>
+<img src="/assets/course80/img/linear.png" alt="linear">
+<p>linear</p>
+</li>
+</ul>
+<p>Чтобы сделать переход равномерным, без ускорений и&nbsp;замедлений, используется значение <code>linear</code>. «Форма» линейного перехода приведена на&nbsp;втором графике.</p>
+<style>
+.pics {
+    list-style: none;
+}
+.pics li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pics li img {
+    width: 180px;
+}
+.pics li p {
+    text-align: center;
+    font-style: italic;
+}
+</style>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Квадратам <code>.square</code> задайте плавный переход для всех свойств длительностью <code>3s</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем экспериментальному квадрату <code>.square-experimental</code> линейную форму перехода.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.fab-play</code>, чтобы переключать класс <code>square-active</code> для квадратов.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>transition-timing-function, шаг 2 <small>[6/29]</small></h1>
+          <p>Вот ещё несколько форм переходов: <code>ease-in</code>, <code>ease-out</code> и <code>ease-in-out</code>.</p>
+<ul class="pics">
+<li>
+<img src="/assets/course80/img/ease-in.png" alt="ease-in">
+<p>ease-in</p>
+</li><li>
+<img src="/assets/course80/img/ease-out.png" alt="ease-out">
+<p>ease-out</p>
+</li><li>
+<img src="/assets/course80/img/ease-in-out.png" alt="ease-in-out">
+<p>ease-in-out</p>
+</li>
+</ul>
+<p>Из&nbsp;графиков видно, что при значении <code>ease-in</code> переход медленно начинается, а&nbsp;к&nbsp;концу ускоряется; при <code>ease-out</code> — начинается быстро, а&nbsp;к&nbsp;концу замедляется. Значение <code>ease-in-out</code> похоже на <code>ease</code>, то&nbsp;есть переход начинается и&nbsp;заканчивается медленно, но&nbsp;происходит это чуть-чуть интенсивнее.</p>
+<p>Испробуем эти значения свойства <code>transition-timing-function</code>.</p>
+
+<style>
+.pics {
+    list-style: none;
+}
+.pics li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pics li img {
+    width: 180px;
+}
+.pics li p {
+    text-align: center;
+    font-style: italic;
+}
+</style>
+<hr>
+<div class="ha-task-goals">
+<p>Квадрату <code>.square-experimental</code> последовательно задайте следующие формы перехода:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>ease-in</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>ease-out</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>ease-in-out</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.fab-play</code> для запуска плавного перехода.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>transition-timing-function, шаг 3 <small>[7/29]</small></h1>
+          <p>Названия <code>linear</code>, <code>ease</code>, <code>ease-in</code> и&nbsp;другие&nbsp;— это «псевдонимы» функций кубических <a target="_blank" href="https://ru.wikipedia.org/wiki/Кривая_Безье">кривых Безье</a>:</p>
+
+<pre>cubic-bezier(0, 0, 1, 1)    // это linear
+cubic-bezier(0.42, 0, 1, 1) // это ease
+</pre>
+
+<p>В&nbsp;общем представлении <code>cubic-bezier(x1, y1, x2, y2)</code> значения <code>x</code> и <code>y</code> — это координаты точек кривых на&nbsp;графике. При этом верным считается значение <code>x</code> только в&nbsp;диапазоне от <code>0</code> до <code>1</code>.</p>
+
+<p>Существует <a target="_blank" href="http://cubic-bezier.com/">отличный сервис</a>, помогающий разобраться в&nbsp;функциональном представлении кривых Безье без необходимости штудировать учебники по&nbsp;математике.</p>
+
+<p>А&nbsp;вот по&nbsp;этой <a target="_blank" href="http://easings.net/ru">ссылке</a> можно найти целую коллекцию разных easing-функций на&nbsp;основе кривых Безье.</p>
+
+<p>C&nbsp;помощью функции <code>cubic-bezier</code> мы&nbsp;можем задавать любые формы переходов.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Квадратам <code>.square</code> задайте форму перехода <code>cubic-bezier(0, 0, 1, 1)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем только у <code>.square-experimental</code> замените её на <code>cubic-bezier(0.785, 0.135, 0.15, 0.86)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем на <code>cubic-bezier(0.175, 0.885, 0.32, 1)</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.fab-play</code> для запуска плавного перехода.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>transition-timing-function, шаг 4 <small>[8/29]</small></h1>
+          <p>Ещё один возможный класс значений <code>transition-timing-function</code> — 
+это <code>steps</code>.</p>
+<p>Они позволяют задать «ступеньки», по&nbsp;которым будет идти переход. Синтаксис 
+<code>steps</code> следующий:</p>
+<pre>transition-timing-function: steps(<em>число_шагов</em>, <em>направление</em>);
+</pre>
+<p>Тут всё просто: <em>число_шагов</em>&nbsp;— это целое число, за&nbsp;которое будет 
+выполнен переход; <em>направление</em> может принимать значение 
+<code>start</code> или <code>end</code>.</p>
+
+<p>При заданном <code>start</code> первый шаг выполняется одновременно с&nbsp;началом
+перехода, а&nbsp;в&nbsp;случае c <code>end</code> последний шаг будет выполнен вместе 
+с&nbsp;завершением перехода.</p>
+
+<p>Кстати, переход можно описать в&nbsp;сокращенном виде свойством <code>transition</code>.
+Параметры перехода просто перечисляются через пробел: свойство, длительность, 
+форма и&nbsp;задержка:</p>
+<pre>transition: width 1s ease-in 2s;</pre>
+<p>К&nbsp;примеру, переход тут применяется к&nbsp;ширине элемента, будет длиться 1&nbsp;секунду 
+с&nbsp;формой ease-in и&nbsp;задержкой перед началом в&nbsp;2&nbsp;секунды.</p>
+<p>Описание перехода для квадрата <code>.square</code> в&nbsp;этом задании мы&nbsp;тоже 
+перевели в&nbsp;короткую форму.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Квадрату <code>.square-experimental</code> задайте форму перехода <br> <code>steps(5, start)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем измените её на <code>steps(5, end)</code>.</li>
+</ol>
+<p>Нажимайте на кнопку <code>.fab-play</code> для запуска плавного перехода.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Бумажные кнопки, шаг 1 <small>[9/29]</small></h1>
+          <p>Как вы&nbsp;уже наверное заметили, курс выполнен в&nbsp;общей стилистике Material Design&nbsp;— спецификации дизайна от&nbsp;Google.</p>
+<p>Давайте воспользуемся полученными знаниями о&nbsp;переходах и&nbsp;попробуем изобрести заново базовые элементы формы: текстовые поля, чекбоксы, переключатели и&nbsp;другие. В&nbsp;нашей реализации они будут следовать принципам Material Design и&nbsp;использовать плавные переходы при смене состояний.</p>
+<p>Начнём с&nbsp;«бумажных» кнопок с&nbsp;тенями. Реализуем их&nbsp;двумя парами радио-кнопок и&nbsp;подписей к&nbsp;ним. Создадим радио-кнопки и&nbsp;подписи, а&nbsp;затем визуально скроем радио-кнопки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В блоке <code>.paper-btn-true</code> раскоментируйте радио-кнопку и подпись к ней, в подпись добавьте текст <code>Правда</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем раскомментируйте  радио-кнопку и подпись в блоке <code>.paper-btn-false</code>, в подпись добавьте текст <code>Ложь</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Скройте поля ввода внутри <code>.paper-btn</code> с помощью <code>display: none</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Бумажные кнопки, шаг 2 <small>[10/29]</small></h1>
+          <p>Итак, у&nbsp;нас есть заготовки кнопок. Давайте оживим&nbsp;их.</p>
+<p>Переключаться кнопки будут при помощи трюка с&nbsp;селекторами <code>~</code> и <code>:checked</code>, который описан в&nbsp;<a target="_blank" href="/courses/58/run/17">задании курса «Селекторы. Часть&nbsp;3».</a></p>
+<p>Сначала зададим цвет фона для активного состояния кнопок. Кнопка «Правда» будет менять цвет на&nbsp;зелёный, а&nbsp;кнопка «Ложь»&nbsp;— на&nbsp;красный. Для этого нам нужно будет воспользоваться такими селекторамми:</p>
+<pre>.paper-btn-true input:checked ~ label { ... } // правда
+.paper-btn-false input:checked ~ label { ... }  // ложь
+</pre>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для активного состояния кнопки «Правда» задайте цвет фона <code style="color: #00e676;">#00e676</code>, </li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для активного состояния кнопки «Ложь» — цвет фона <code style="color: #ff5252;">#ff5252</code>.</li>
+</ol>
+<p>Переключайте кнопки «Правда» или «Ложь» для проверки результата.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Бумажные кнопки, шаг 3 <small>[11/29]</small></h1>
+          <p>Отлично! Теперь добавим к&nbsp;активному состоянию кнопок более контрастную тень и&nbsp;изменим цвет текста. Для этого создадим CSS-правило с&nbsp;таким селектором:</p>
+<pre>.paper-btn input:checked ~ label { ... }
+</pre>
+<p>Тень <code>box-shadow</code>, которая появляется в&nbsp;активном состоянии, анимируем с&nbsp;помощью плавного перехода. Cвойства перехода нужно добавить в&nbsp;общее CSS-правило для подписи:</p>
+<pre>.paper-btn label { ... }
+</pre>
+<p>Так тень будет и&nbsp;появляться, и&nbsp;исчезать плавно.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для активного состояния кнопок задайте цвет текста <code style="color: #f1f1f1; background-color: #999;">#f1f1f1</code> и тень <code>0 6px 20px 0 rgba(0, 0, 0, 0.4)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А затем обеим кнопкам задайте плавный переход для свойства <code>box-shadow</code> длительностью <code>0.3s</code> с формой <code>cubic-bezier(0.4, 0, 0.2, 1)</code>.</li>
+</ol>
+<p>Переключайте кнопки «Правда» или «Ложь» для проверки результата.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Выберите правильный ответ на вопрос викторины и нажмите круглую кнопку для проверки.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Чекбоксы, шаг 1 <small>[12/29]</small></h1>
+          <p>Теперь давайте займёмся усовершенствованием чекбоксов. Воспользуемся приёмом с <code>:checked ~</code> из&nbsp;<a target="_blank" href="/courses/58/run/17">задания курса про селекторы</a> снова.</p>
+<p>Для начала добавим в&nbsp;разметку чекбоксы и&nbsp;подписи к&nbsp;ним, а&nbsp;потом спрячем чекбоксы.</p>
+<p>Затем с&nbsp;помощью псевдоэлемента <code>::before</code> у&nbsp;подписей сымитируем чекбосы с&nbsp;нужным внешним видом: маленькие квадраты с&nbsp;тёмной границей. Стили для псевдоэлементов уже заданы в&nbsp;коде.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте чекбоксы и подписи к ним.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В первую подпись добавьте текст <code>absolute</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> во вторую — текст <code>great</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> в третью — текст <code>majestic</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> Спрячьте чекбоксы с помощью <code>display: none</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Чекбоксы, шаг 2 <small>[13/29]</small></h1>
+          <p>Поработаем над выделенным состоянием нашего <code>label::before</code> или «псевдочекбокса».</p>
+<p>Псевдочекбокс при выделении давайте преобразуем в&nbsp;«галочку»&nbsp;— сплющенный блок бирюзового цвета без верхней и&nbsp;правой рамок.</p>
+<p>Для управления выделенным состоянием псевдочекбокса создадим CSS-правило с&nbsp;таким селектором:</p>
+<pre>input[type="checkbox"]:checked ~ label::before { ... }</pre>
+<hr>
+<div class="ha-task-goals">
+<p>Для выделенного состояния «псевдочекбокса» задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> ширину <code>21px</code> и высоту <code>10px</code>, </li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> цвет рамки <code style="color: #00bad2;">#00bad2</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> стиль верхней и правой рамки <code>none</code>.</li>
+</ol>
+<p>Переключайте чекбоксы для проверки результата.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Чекбоксы, шаг 3 <small>[14/29]</small></h1>
+          <p>А&nbsp;теперь последний штрих: будем плавно поворачивать псевдочекбокс в&nbsp;выделенном состоянии на&nbsp;45&nbsp;градусов. Чтобы он&nbsp;стал похож на&nbsp;«галочку».</p>
+
+<p>В&nbsp;правило для выделенного состояния:
+
+</p><pre>input[type="checkbox"]:checked ~ label::before { ... }
+</pre>
+
+мы&nbsp;добавим трансформацию поворота, а&nbsp;свойства для описания плавного перехода добавим в&nbsp;правило:<p></p>
+
+<pre>label::before { ... }
+</pre>
+
+<p>Это нужно для того, чтобы поворот происходил плавно в&nbsp;обе стороны: при выделении и&nbsp;при снятии выделения.</p>
+
+<p>Да, к&nbsp;псевдоэлементам тоже можно запросто применять переходы, как и&nbsp;к&nbsp;обычным элементам!</p>
+
+<p>Далее мы&nbsp;будем интенсивнее использовать трансформации, поэтому вы&nbsp;можете повторить их&nbsp;в&nbsp;<a href="/courses/71" target="_blank">курсе «Двумерные трансформации»</a>.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для выделенного состояния «псевдочекбокса» задайте поворот <code>transform: rotate(-45deg)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А затем для <code>label::before</code> задайте плавный переход для всех свойств длительностью <code>0.3s</code> с формой <code>ease-in-out</code>.</li>
+</ol>
+<p>Переключайте чекбоксы для проверки результата.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Выберите правильный ответ на вопрос викторины и нажмите круглую кнопку для проверки.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Радио-кнопки, шаг 1 <small>[15/29]</small></h1>
+          <p>Давайте теперь займёмся радио-кнопками. С&nbsp;помощью переходов мы&nbsp;можем анимировать момент их&nbsp;выделения.</p>
+<p>Тут мы&nbsp;снова воспользуемся приёмом <code>:checked ~</code>, а&nbsp;также будем задавать переходы для псевдоэлементов.</p>
+<p>Сначала создадим радио-кнопки и&nbsp;подписи к&nbsp;ним, затем скроем радио-кнопки, а&nbsp;подписи оставим. В&nbsp;качестве «кружков» радио-кнопок будут выступать псевдоэлементы подписей <code>label::before</code>. Для них стили уже готовы.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте радио-кнопки и подписи к ним.</li>
+		<li id="goal2"><span class="label ha-goal-label">Цель 2</span> В первую подпись добавьте текст <code>transparency</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> во вторую — текст <code>opacity</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> в третью — текст <code>invisibility</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> Спрячьте радио-кнопки с помощью <code>display: none</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Радио-кнопки, шаг 2 <small>[16/29]</small></h1>
+          <p>Основа радио-кнопок готова. Теперь давайте разберёмся с&nbsp;их&nbsp;выделением.</p>
+<p>В&nbsp;качестве «выделяющего элемента» будем использовать псевдоэлемент подписи <code>label::after</code>.</p>
+<p>Зададим <code>label::after</code> ширину и&nbsp;высоту, цвет и&nbsp;немного увеличим трансформацией.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>label::after</code> задайте ширину и высоту <code>16px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> цвет фона <code style="color: #00bad2;">#00bad2</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> трансформацию <code>transform: scale(1.1)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Радио-кнопки, шаг 3 <small>[17/29]</small></h1>
+          <p>Теперь оживим радио-кнопки.</p>
+
+<p>Для начала уменьшим закрывающий псевдоэлемент <code>label::after</code> или «закрывашку» до&nbsp;нулевого размера с&nbsp;помощью трансформации <code>scale</code>.</p>
+
+<p>А&nbsp;в&nbsp;активном состоянии будем увеличивать «закрывашку» до&nbsp;нужного размера. Для управления активным состоянием «закрывашки» используем CSS-правило с&nbsp;таким селектором:</p>
+
+<pre>input[type="radio"]:checked ~ label::after { ... }
+</pre>
+
+<p>Свойства плавного перехода, как и&nbsp;в&nbsp;предыдущих примерах, добавим в&nbsp;CSS-правило для исходного состояния:</p>
+
+<pre>label::after { ... }
+</pre>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В CSS-правиле <code>label::after</code> измените трансформацию на <code>transform: scale(0)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для активного состояния «закрывашки» задайте трансформацию <code>transform: scale(1.1)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Наконец в правиле <code>label::after</code> задайте плавный переход для свойства <code>transform</code> длительностью <code>0.28s</code>.</li>
+</ol>
+<p>Переключайте радио-кнопки для проверки результата.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Выберите правильный ответ на вопрос викторины и нажмите круглую кнопку для проверки.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Переключатели, шаг 1 <small>[18/29]</small></h1>
+          <p>У&nbsp;ещё одного элемента формы, который мы&nbsp;соберём, нет «нативного» браузерного аналога&nbsp;— это переключатель.</p>
+<p>Переключатели больше распространены в&nbsp;мобильных интерфейсах.</p>
+<p>Для этого нам понадобятся уже полюбившиеся вам чекбоксы, подписи и&nbsp;приём с <code>:checked ~</code>. Давайте как обычно создадим в&nbsp;разметке нужные элементы и&nbsp;скроем «нативные» чекбоксы.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте чекбоксы и подписи к ним.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В первую подпись добавьте текст <code>nextid</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> во вторую — текст <code>bgsound</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> в третью — текст <code>hole</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> Спрячьте чекбоксы с помощью <code>display: none</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Переключатели, шаг 2 <small>[19/29]</small></h1>
+          <p>Используем псевдоэлемент <code>label::before</code> для построения «шкалы» переключателя: зададим ему размеры, цвет рамки и&nbsp;положение в&nbsp;пространстве.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>label::before</code> задайте ширину <code>32px</code> и высоту <code>1px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> сплошную верхнюю рамку с толщиной <code>1px</code> и цветом <code style="color: #5a5a5a;">#5a5a5a</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем координаты <code>top: 7px</code> и <code>left: 108px</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Переключатели, шаг 3 <small>[20/29]</small></h1>
+          <p>Теперь из&nbsp;псевдоэлементов <code>label::after</code> сделаем ползунки переключателей.</p>
+<p>Зададим ползункам размеры, рамки, цвет, положение на&nbsp;экране и&nbsp;скруглим им&nbsp;края.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>label::after</code> задайте ширину и высоту <code>12px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> сплошную рамку с толщиной <code>2px</code> и цветом <code>#5a5a5a</code>, скругление углов <code>border-radius: 50%</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> координаты <code>top: 0</code> и <code>left: 100px</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а затем цвет фона <code style="background-color: #999999; color: #ffffff;">#ffffff</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Переключатели, шаг 4 <small>[21/29]</small></h1>
+          <p>Осталось научить ползунки, которые мы&nbsp;сделали с&nbsp;помощью псевдоэлемента <code>label::after</code>, переключаться.</p>
+
+<p>Для управления активным состоянием ползунка используем CSS-правило с&nbsp;таким селектором:</p>
+<pre>input[type="checkbox"]:checked ~ label::after { ... }
+</pre>
+
+<p>В&nbsp;активном состоянии мы&nbsp;будем смещать ползунок с&nbsp;помощью трансформации <code>translateX</code>, а&nbsp;также менять его цвет.</p>
+
+<p>Свойства плавного перехода, как и&nbsp;в&nbsp;предыдущих примерах, добавим в&nbsp;CSS-правило для исходного состояния ползунка:</p>
+
+<pre>label::after { ... }
+</pre>
+
+<p>В&nbsp;этом случае он&nbsp;будет плавно перемещаться в&nbsp;обоих направлениях.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для активного состояния ползунка задайте трансформацию перемещения <code>translateX(32px)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> цвет фона и цвет рамок <code style="color: #0f9d58;">#0f9d58</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем в правиле <code>label::after</code> задайте переход для всех свойств длительностью <code>200ms</code> с формой <code>ease-in</code>.</li>
+</ol>
+<p>Нажимайте на переключатели для проверки результата.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Выберите правильный ответ на вопрос викторины и нажмите круглую кнопку для проверки.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Иконка-трансформер, шаг 1 <small>[22/29]</small></h1>
+          <p>Давайте немного отдохнём от&nbsp;элементов форм и&nbsp;создадим трансформирующуюся иконку.</p>
+<p>«Иконка-гамбургер»&nbsp;— привычный для мобильных приложений и&nbsp;сайтов глиф, обозначающий меню. Обычно по&nbsp;клику на&nbsp;него появляется меню или меняется текущее отображение экрана. И,&nbsp;чтобы вернуться к&nbsp;прежнему отображению, нужно снова нажать на&nbsp;иконку.</p>
+<p>С&nbsp;помощью трансформаций и&nbsp;переходов можно сделать такую иконку интерактивной: она своим видом будет подсказывать, что повторный клик на&nbsp;неё вернёт прошлое отображение.</p>
+<p>Итак, начнём! Воспользуемся псевдоэлементами <code>.menu-icon span::before</code> и <code>.menu-icon span::after</code> для создания «иконки-гамбургера».</p>
+<p class="alert">В&nbsp;этом и&nbsp;следующих примерах используются трансформации CSS, которые подробно разбираются в&nbsp;<a href="/courses/71" target="_blank">курсе «Двумерные трансформации»</a>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.menu-icon span</code> задайте высоту <code>12px</code> и цвет фона <code style="color: #40d47e;">#40d47e</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем задайте такую же высоту и фоновый цвет для <code>span::before</code> и <code>span::after</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Потом только <code>span::before</code> задайте трансформацию <code>translate(0, -24px)</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а <code>span::after</code> — трансформацию <code>translate(0, 12px)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Иконка-трансформер, шаг 2 <small>[23/29]</small></h1>
+          <p>Гамбургер готов! Теперь давайте поработаем над его открытым состоянием, в&nbsp;котором он&nbsp;будет превращаться в&nbsp;стрелку.</p>
+
+<p>В&nbsp;открытом состоянии мы&nbsp;будем поворачивать иконку, при этом верхнюю и&nbsp;нижнюю полоску немного укоротим, чтобы на&nbsp;следующем шаге превратить их&nbsp;в&nbsp;«указатель» стрелки.</p>
+
+<p>Для перевода в&nbsp;открытое состояние будем добавлять к&nbsp;иконке класс <code>menu-icon-open</code>. Конечно, переключение класса будет сделано с&nbsp;помощью JavaScript по&nbsp;щелчку. Но&nbsp;чтобы процесс создания стрелки был более наглядным, мы&nbsp;добавили в&nbsp;HTML-код вторую иконку уже в&nbsp;открытом состоянии.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.menu-icon-open span::before</code> и <code>.menu-icon-open span::after</code> задайте ширину <code>60%</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для <code>.menu-icon-open span</code> задайте трансформацию <code>rotate(180deg)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Иконка-трансформер, шаг 3 <small>[24/29]</small></h1>
+          <p>Отлично! Теперь с&nbsp;помощью трансформаций сместим и&nbsp;повернём короткие прямоугольники так, чтобы получилась стрелка.</p>
+
+<p>Напоминаем, что к&nbsp;элементам или псевдоэлементам можно применить несколько трансформаций одновременно, для этого их&nbsp;нужно перечислить через пробел, например так:</p>
+
+<pre>.some-class::before {
+    transform: translate(15px, 15px) rotate(90deg);
+}
+</pre>
+
+<p>Порядок следования трансформации важен, так как при разном порядке могут получаться разные результаты.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.menu-icon-open span::before</code> задайте трансформацию <code>translate(45px, -14px)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем дополнительно поверните <code>rotate(45deg)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для <code>.menu-icon-open span::after</code> задайте трансформацию <code>translate(45px, 2px)</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а затем дополнительно поверните <code>rotate(-45deg)</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Иконка-трансформер, шаг 4 <small>[25/29]</small></h1>
+          <p>И, наконец, добавим для элементов иконки переходы, чтобы превращение «гамбургера» в&nbsp;стрелку проходило плавно.</p>
+
+<p>Щёлкайте на&nbsp;иконку и&nbsp;смотрите, какой крутой эффект получился.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Задайте плавный переход для всех свойств длительностью <code>0.7s</code> с формой <code>ease-in-out</code> для:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>.menu-icon span</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>.menu-icon span::before</code> и <code>.menu-icon span::after</code>.</li>
+</ol>
+<p>Нажимайте на иконку, чтобы переключать класс <code>menu-icon-open</code> для неё.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Текстовое поле ввода, шаг 1 <small>[26/29]</small></h1>
+          <p>Вернёмся к&nbsp;формам и&nbsp;последним в&nbsp;этом курсе усовершенствуем «нативное» текстовое поле ввода.</p>
+<p>Для начала создадим само поле ввода и&nbsp;подпись к&nbsp;нему, которая станет в&nbsp;дальнейшем интерактивным плейсхолдером. И&nbsp;начнём стилизовать элементы.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте текстовое поле ввода и подпись к нему.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> У поля ввода уберите все рамки с помощью <code>border: none</code> и задайте сплошную нижнюю рамку толщиной <code>1px</code> и цветом <code style="color: #757575;">#757575</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для <code>label</code> задайте абсолютное позиционирование и координату <code>top: -36px</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Текстовое поле ввода, шаг 2 <small>[27/29]</small></h1>
+          <p>В&nbsp;предыдущих заданиях много раз использовался приём с <code>:checked ~</code>. В&nbsp;этом задании воспользуемся похожим приёмом для селекторов <code>:focus</code> и <code>:valid</code>, которые тоже разбираются в&nbsp;курсе <a target="_blank" href="/courses/58">«Селекторы. Часть&nbsp;3»</a>.</p>
+
+<p>Чтобы наш самодельный плейсхолдер не&nbsp;мешал при вводе текста и&nbsp;не&nbsp;закрывал заполненные поля, сместим его выше и&nbsp;немного уменьшим. Для этого используем CSS-правило с&nbsp;такими селекторами:</p>
+
+<pre>input:focus ~ .label-box label,
+input:valid ~ .label-box label {
+    ...
+}
+</pre>
+
+<p>Первый селектор срабатывает когда в&nbsp;поле находится курсор, а&nbsp;второй селектор когда поле заполнено верно. Это упрощённый пример, поэтому мы&nbsp;не&nbsp;учитываем все варианты, например, когда поле заполнено неверно.</p>
+
+<p>Чтобы подпись смещалась красиво, добавим ей&nbsp;плавный переход.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> При сфокусированном или валидном состоянии поля ввода задайте для <code>label</code> размер шрифта <code>14px</code> и трансформацию <code>translateY(-20px)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем в общее CSS-правило для <code>label</code> добавьте переход для всех свойств длительностью <code>0.2s</code>.
+</li></ol>
+<p>Щелкайте внутри и снаружи поля ввода для проверки результата.</p>
+ </div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Текстовое поле ввода, шаг 3 <small>[28/29]</small></h1>
+          <p>Теперь, когда плейсхолдер готов, сделаем декоративное выделение сфокусированного поля ввода с&nbsp;помощью псевдоэлементов у <code>.label-box</code>.</p>
+
+<p>Это выделение будет выглядеть, как дополнительная нижняя рамка у&nbsp;поля ввода. Рамка будет появляться из&nbsp;центра поля, когда в&nbsp;нём появляется курсор, и&nbsp;исчезать при потере полем фокуса.</p>
+
+<p>Создадим декоративную рамку из&nbsp;двух кусочков. Используем <code>.label-box::before</code> и <code>.label-box::after</code> для каждой части.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементу <code>.label-box::before</code> задайте: содержимое <code>content: ""</code>, абсолютное позиционирование, высоту <code>2px</code>, ширину <code>50%</code> и фоновый цвет <code style="color: #757575;">#757575</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем координаты <code>bottom: 1px</code> и <code>left: 50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Псевдоэлементу <code>.label-box::after</code> задайте: содержимое <code>content: ""</code>, абсолютное позиционирование, высоту <code>2px</code>, ширину <code>50%</code> и фоновый цвет <code style="color: #757575;">#757575</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а затем координаты <code>bottom: 1px</code> и <code>right: 50%</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/84">Плавные переходы</a>»</div>
+          <h1>Текстовое поле ввода, шаг 4 <small>[29/29]</small></h1>
+          <p>Осталось оживить декоративное выделение.</p>
+
+<p>В&nbsp;исходном состоянии выделение отсутствует, поэтому сначала изменим его ширину на&nbsp;нулевую. Чтобы декоративное выделение появлялось, когда поле ввода получает фокус, используем CSS-правило с&nbsp;такими селекторами:</p>
+<pre>input:focus ~ .label-box::before,
+input:valid ~ .label-box::after {
+    ...
+}
+</pre>
+<p>И&nbsp;в&nbsp;этом правиле зададим нужную ширину частей рамки.</p>
+<p>Чтобы выделение появлялось и&nbsp;исчезало плавно, нужно для обоих его частей задать плавный переход в&nbsp;этом правиле:</p>
+<pre>.label-box::before,
+.label-box::after {
+    ...
+}
+</pre>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Измените ширину псевдоэлементов <code>.label-box::before, .label-box::after</code> на <code>0</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а при сфокусированном состоянии поля ввода задайте псевдоэлементам ширину <code>50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> И, наконец, псевдоэлементам <code>.label-box::before, .label-box::after</code> задайте плавный переход для свойства <code>width</code> длительностью <code>0.2s</code>.</li>
+</ol>
+<p>Щелкайте внутри и снаружи поля ввода для проверки результата.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Выберите правильный ответ на вопрос викторины и нажмите круглую кнопку для проверки.</li>
+</ol>
+</div>
+</div>
+
+
+
+		</div>
+<body>

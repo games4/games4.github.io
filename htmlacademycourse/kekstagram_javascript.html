@@ -1,0 +1,741 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Кекстаграм: Эпилог. JavaScript</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/decoration/98.svg" alt="Кекстаграм: Эпилог. JavaScript" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Кекстаграм: Эпилог. JavaScript</h1>
+		<p>В&nbsp;сиквеле курса «Кекстаграм» нам предстоит запрограммировать небольшое фотоприложение с&nbsp;фильтрами на&nbsp;JavaScript.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: разметка <small>[1/27]</small></h1>
+          <p>Теперь вы знаете о фильтрах достаточно, чтобы помочь Кексу в одном маленьком деле. На досуге он ведёт <a href="https://instagram.com/htmlacademy/" target="_blank">аккаунт HTML Academy в Instagram</a>. И вот однажды ему захотелось как настоящему программисту написать свой аналог. Назвать его он решил Кекстаграм.</p>
+
+<p>В этой серии заданий мы будем помогать Кексу с его проектом, применяя полученные знания на практике. В итоге вместе мы построим свой Кекстаграм с помощью HTML, CSS и JavaScript.</p>
+
+<p>В процессе мы создадим несколько фильтров, которые будут применяться к фотографии в блоке <code>.photo</code>. Переключатели фильтров мы разместим в блоке <code>.toggle-controls</code>, а само переключение будет работать на JavaScript.</p>
+
+<p>Cначала подготовим разметку для нашего будущего фотоприложения. Ну и, конечно же, подключим пока пустой файл <code>script.js</code>, который открыт в третьей вкладке.</p>
+
+<p class="alert">Подробно фильтры CSS рассматриваются в предыдущем курсе <a href="/courses/97" target="_blank">«Кекстаграм: Начало. CSS-фильтры»</a>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.photo</code> добавьте второй класс <code>walden</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Первому элементу списка <code>.toggle-controls</code> добавьте классы <code>walden</code> и <code>active</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а внутрь него добавьте текст <code>walden</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Перед закрывающим тегом <code>body</code> подключите скрипт <code>script.js</code>.</li>
+</ol>
+</div>
+
+				
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: первый фильтр <small>[2/27]</small></h1>
+          <p>Теперь давайте создадим первый набор фильтров для класса <code>.walden</code>.
+Набор фильтров применится к большому фото и к переключателю.</p>
+<p>Итоговый фильтр сымитирует у фотографии цвета фотоплёнки: немного сдвинет их
+по цветовому кругу, сделает фото чуть ярче и насыщеннее, а также немного уменьшит контрастность.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для класса <code>.walden</code> задайте фильтр со значением 
+      <code>contrast(0.9) brightness(1.2)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте в фильтр значение <code>hue-rotate(-20deg)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> после него значение <code>saturate(1.7)</code></li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> и <code>sepia(0.4)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: репетируем переключение <small>[3/27]</small></h1>
+          <p>Отлично, у нас есть первый фильтр и первый переключатель.</p>
+<p>Давайте добавим заготовку для ещё одного переключателя. Класс для второго фильтра
+будет называться <code>toaster</code>.</p>
+<p>Затем «отрепетируем» переключение фильтра без использования JavaScript. Для этого пока будем менять HTML-код вручную. При переключении фильтра происходят два события:</p>
+
+<p><em>Первое</em>. В переключателе класс <code>active</code> перемещается на текущий фильтр:</p>
+<pre>Было:
+&lt;ul class="toggle-controls"&gt;
+    &lt;li class="filter1 <strong>active</strong>"&gt;&lt;/li&gt;
+    &lt;li class="filter2"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Стало:
+&lt;ul class="toggle-controls"&gt;
+    &lt;li class="filter1"&gt;&lt;/li&gt;
+    &lt;li class="filter2 <strong>active</strong>"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p><em>Второе</em>. У блока с большим фото меняется класс текущего фильтра:</p>
+<pre>Было:  &lt;div class="photo <strong>filter1</strong>"&gt;&lt;/div&gt;
+Стало: &lt;div class="photo <strong>filter2</strong>"&gt;&lt;/div&gt;
+</pre>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В список <code>.toggle-controls</code> добавьте второй пункт с текстом <code>toaster</code> и с классом <code>toaster</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем удалите класс <code>active</code> у первого пункта в списке и добавьте его второму.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> У большой фотографии замените класс <code>walden</code> на <code>toaster</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: второй фильтр <small>[4/27]</small></h1>
+          <p>Мы «переключили» текущий фильтр, а чтобы увидеть его эффект, зададим его стили.</p>
+<p>Этот фильтр будет делать фото ещё винтажнее, чем <code>walden</code>: сделает его малоконтрастным, с яркими цветами, небольшим поворотом по цветовому кругу и эффектом сепии.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для класса <code>.toaster</code> задайте фильтр со значением 
+      <code>contrast(0.67)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте в фильтр значение <code>saturate(2.5)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> после него значение <code>hue-rotate(-30deg)</code></li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> и <code>sepia(0.4)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: наконец-то JavaScript <small>[5/27]</small></h1>
+          <p>Всё готово для «оживления» интерфейса с помощью JavaScript. HTML-код Кекстаграма приведён в исходное состояние: фильтр ещё не выбран и к фото не применён.</p>
+
+<p>Сначала включим фильтр <code>toaster</code> и применим его к фотографии. Для этого:</p>
+
+<p>1. Найдём элемент списка с классом <code>toaster</code> и сохраним его в переменную <code>control</code>.</p>
+<pre>var control = document.querySelector('li.toaster');</pre>
+
+<p>2. Найдём элемент с классом <code>photo</code> и сохраним его в переменную <code>photo</code>.</p>
+<pre>var photo = document.querySelector('.photo');</pre>
+
+<p>3. Теперь к элементу списка, хранящемуся в переменной <code>control</code>, добавим класс <code>active</code>:</p>
+<pre>control.classList.add('active');</pre>
+
+<p>4. А к блоку большой фотографии, она уже в переменной <code>photo</code>, добавим класс <code>toaster</code>:</p>
+<pre>photo.classList.add('toaster');</pre>
+
+<p>Теперь попробуйте повторить это сами. Обратите внимание, что при добавлении класса с помощью <code>classList.add</code> точка в начале строки <em>не пишется</em>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Найдите и сохраните в переменную <code>control</code> элемент списка с классом <code>.toaster</code> и добавьте ему класс <code>active</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем найдите и сохраните в переменную <code>photo</code> блок <code>.photo</code> и добавьте ему класс <code>toaster</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: играем с классами <small>[6/27]</small></h1>
+          <p>На предыдущем шаге мы «включили» фильтр <code>toaster</code> из исходного состояния, а сейчас переключим его на <code>walden</code>. Для этого:</p>
+        <p>1. Снова найдём элемент списка с классом <code>toaster</code>, сохраним его в переменную <code>toasterControl</code> и удалим у него класс <code>active</code>, добавленный ранее:</p>
+<pre>var toasterControl = document.querySelector('li.toaster');
+toasterControl.classList.remove('active');
+</pre>
+        <p>2. Найдём элемент списка с классом <code>walden</code>, сохраним его в переменную <code>waldenControl</code> и добавим ему класс <code>active</code>:</p>
+<pre>var waldenControl = document.querySelector('li.walden');
+waldenControl.classList.add('active');
+</pre>
+        <p>3. Найдём элемент с классом <code>photo</code> и сохраним его в переменную <code>photo</code>.</p>
+<pre>var photo = document.querySelector('.photo');
+</pre>
+        <p>4. Удалим у фото класс <code>toaster</code> и добавим класс <code>walden</code>:</p>
+<pre>photo.classList.remove('toaster');
+photo.classList.add('walden');
+</pre>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Найдите и сохраните в переменную <code> toasterControl </code> переключатель <code>li.toaster</code> и затем удалите у него класс <code>active</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем сохраните в переменную <code> waldenControl </code> переключатель <code>.walden</code> и добавьте ему класс <code>active</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Сохраните в переменную <code>photo</code> фотографию <code>.photo</code>, удалите у неё класс <code>toaster</code> и добавьте класс <code>walden</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: расшифровка кода <small>[7/27]</small></h1>
+          <p>Разберёмся подробнее в том коде, который мы написали. Вот один из фрагментов:</p>
+
+<pre>var toasterControl = document.querySelector('li.toaster');
+if (toasterControl) {
+    toasterControl.classList.remove('active');
+}</pre>
+
+        <p><code>var toasterControl</code> обозначает, что мы создаём переменную с именем <code>toasterControl</code>.</p>
+
+        <p><code>document</code> – это специальная переменная, в которой хранится корневой элемент HTML-документа, будем называть его просто «документ». В нём хранятся все остальные теги.</p>
+
+        <p><code>querySelector</code> – это <i>метод</i> документа, который по указанному селектору ищет и возвращает первый найденный элемент, подходящий под селектор. В этом методе можно использовать любые CSS-селекторы, уже знакомые вам.</p>
+
+        <p>Метод <code>querySelector</code> не всегда может найти элемент и тогда переменная остаётся пустой. Чтобы проверить, что в переменной есть элемент и с ним можно работать, используется условный оператор <code>if</code>.
+
+        </p><p>У элементов, которые мы находим с помощью <code>querySelector</code>, есть свойство <code>classList</code>, в котором хранится список классов элемента.</p>
+
+        <p>Список классов можно изменять, удаляя или добавляя в него классы с помощью методов <code>add</code> и <code>remove</code> свойства <code>classList</code>.</p>
+
+        <p>Теперь немного отдохнём от JavaScript и создадим ещё один фильтр.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В список <code>.toggle-controls</code> добавьте третий пункт с текстом <code>kelvin</code> и классом <code>kelvin</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем добавьте новому пункту класс <code>active</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а большой фотографии добавьте класс <code>kelvin</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: третий фильтр <small>[8/27]</small></h1>
+          <p>Теперь для класса <code>.kelvin</code> создадим набор фильтров. Эти фильтры будут делать
+фотографию более контрастной, яркой, насыщенной, а также добавят ей небольшой оттенок сепии.</p>
+
+<p>Такой фильтр оживит любую блёклую фотографию, а сепия добавит эффект фотоплёнки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для класса <code>.kelvin</code> задайте фильтр со значением 
+      <code>contrast(1.1)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте в фильтр значение <code>brightness(1.3)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> после него значение <code>saturate(2.4)</code></li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> и <code>sepia(0.4)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Испытание: испорченные портреты <small>[9/27]</small></h1>
+          <p>Давний недруг Кексика Рудольф опять взялся за старое. Он снова нанял хакеров, чтобы испортить сайт Кекса.</p>
+<p>Хакеры внедрили в код страницы зловредные классы с фильтрами, которые испортили на странице о Кексе его портрет. И, что самое ужасное, заблокировали HTML и CSS.</p>
+<p>Теперь остаётся только один выход — с помощью JavaScript удалить лишние или добавить подходящие классы HTML-элементам.</p>
+<p>Удача вам пригодится!</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: строки и переменные <small>[10/27]</small></h1>
+          <p>Вернёмся к JavaScript и немного улучшим наш код. Посмотрите эти строчки:</p>
+
+<pre>var control = document.querySelector('li.toaster');
+photo.classList.add('toaster');</pre>
+
+<p>Название фильтра <code>toaster</code> в коде повторяется <em>два раза, Карл</em>. Чтобы «переключить» фильтр, придётся поменять код в двух местах. А это лишняя работа!</p>
+
+<p>Избавимся от дублирования. В начале кода создадим переменную с названием фильтра:</p>
+
+<pre>var filterName = 'toaster';</pre>
+
+<p>В метод поиска элементов мы передаём строку <code>li.toaster</code>. Чтобы получить такую же строку из переменной, воспользуемся операцией «склеивания» строк:</p>
+
+<pre>'li.' + filterName // результат: 'li.toaster'</pre>
+
+<p>В коде для поиска переключателя заменим строку на выражение с переменной:</p>
+
+<pre><i>Было:</i>  var control = document.querySelector('li.toaster');
+<i>Стало:</i> var control = document.querySelector('li.' + filterName);</pre>
+
+<p>Внутри <code>photo.classList.add</code> находится такое же значение, как и в переменной, поэтому просто заменяем строку на переменную:</p>
+
+<pre><i>Было:</i>  photo.classList.add('toaster');
+<i>Стало:</i> photo.classList.add(filterName);</pre>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Измените значение переменной <code>filterName</code> на <code>kelvin</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Замените значение <code>'selector'</code> в методе поиска активного переключателя на <code>'li.' + filterName</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Затем замените значение <code>'class'</code> в методе добавления класса для большого фото на переменную <code>filterName</code>.</li>
+</ol>
+<p>После этого можете поиграть с переключением фильтров, меняя значение переменной <code>filterName</code>.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: используем функцию <small>[11/27]</small></h1>
+          <p>Продолжим улучшать наш JavaScript. Теперь упакуем весь код, отвечающий за переключение фильтров, в функцию. Это позволит проще его использовать и изменять.</p>
+
+<p>Функция создаётся выражением, начинающимся с ключевого слова <code>function</code>. Например, в этом коде мы создаём функцию для суммирования чисел c именем <code>sum</code>:</p>
+<pre>// Определение функции
+function sum(a, b) {
+    return a + b;
+}
+
+sum(1, 5); // Вызов функции. Результат выполнения: 6.</pre>
+
+<p>У функции есть набор параметров, в нашем случае это переменные <code>a</code> и <code>b</code>, и
+тело, которое выполняется при вызове функции. Тело функции заключается в фигурные скобки. Количество параметров может быть любым, их может и не быть вовсе.</p>
+
+<p>Обернём наш код для переключения фильтров в функцию <code>toggleFilter</code>, у которой будет один параметр — <code>filterName</code>. А затем вызовем функцию с разными названиями фильтра в качестве параметра.</p>
+
+<p>Кстати, переменная <code>filterName</code> нам больше не нужна, так как название фильтра передаётся в функцию в параметре с таким же именем, поэтому в коде создание переменной закомментировано.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> После определения функции <code>toggleFilter</code> вызовите её
+    строкой <code>toggleFilter('kelvin');</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем замените в вызове функции параметр <code>'kelvin'</code> на 
+    <code>'toaster'</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: экспериментируем с вызовом функции <small>[12/27]</small></h1>
+          <p>Мы создали функцию, но она ещё требует серьёзной доработки. Сейчас мы в этом убедимся.</p>
+
+<p>На первый взгляд функция работает правильно. Но только при одном переключении фильтра, когда мы запускаем функцию только один раз. Ведь при каждом обновлении кода страница в мини-браузере обновляется целиком. Поэтому при первом запуске мы имеем дело с «чистым» исходным состоянием.</p>
+
+<p>Если же вызвать созданную функцию несколько раз подряд с разными параметрами:</p>
+
+<pre>toggleFilter('toaster');
+toggleFilter('kelvin');</pre> 
+
+<p>То активными станут сразу несколько переключателей, а к фотографии применятся несколько фильтров одновременно.</p>
+
+<p>Давайте поэкспериментируем.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте второй вызов функции <code>toggleFilter</code> с параметром <code>'kelvin'</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем третий с параметром <code>'walden'</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: добавляем data-атрибуты <small>[13/27]</small></h1>
+          <p>У HTML-элементов есть возможность создавать специальные атрибуты, в которых можно хранить вспомогательную информацию и легко передавать её в JavaScript. Такие атрибуты начинаются с префикса <code>data-</code>.</p>
+
+<p>При этом data-атрибуты валидны и никак не влияют на отображение элементов в браузере.</p>
+
+<p>Давайте добавим переключателям data-атрибуты <code>data-filter</code>, в которых будем хранить название каждого фильтра.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Удалите текст внутри переключателей и добавьте к каждому из них атрибут <code>data-filter</code></p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> со значением <code>walden</code> у первого переключателя,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> со значением <code>toaster</code> у второго,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> со значением <code>kelvin</code> третьего.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: используем data-атрибуты <small>[14/27]</small></h1>
+          <p>Чтобы с помощью JavaScript считать значение data-атрибутов, нужно использовать свойство <code>dataset</code>. Пример:</p>
+<pre><i>HTML:</i>
+&lt;div class="control" data-filtername="walden"&gt;&lt;/div&gt;
+
+<i>JavaScript:</i>
+var control = document.querySelector('.control');
+var filter = control.dataset.filtername;
+// в переменной filter теперь строка «walden»
+</pre>
+
+<p>В свойстве <code>dataset</code> HTML-элемента хранятся все значения его data-атрибутов. Обратиться к ним можно по названию data-атрибута, удалив из названия приставку <code>data-</code>.</p>
+
+<p>Добавлять содержимое в HTML-элемент через JavaScript можно с помощью свойства <code>innerHTML</code>:</p>
+<pre>var control = document.querySelector('.control');
+control.innerHTML = 'walden';
+</pre>
+
+<p>Присвоенная свойству <code>innerHTML</code> строка заменяет всё содержимое HTML-элемента. В этой строке можно использовать любой HTML-код.</p>
+<p>Давайте попробуем получить значение data-атрибута из JavaScript и записать полученную строку в переключатель.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Найдите и сохраните в переменную <code>walden</code> переключатель <code>li.walden</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем замените у <code>walden.dataset</code> свойство <code>attribute</code> на <code>filter</code>, чтобы внутри переключателя появилось его название.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: знакомимся с циклом <small>[15/27]</small></h1>
+          <p>Если нужно совершить несколько однотипных действий, то можно использовать
+цикл <code>for</code>. Вот его синтаксис:</p>
+<pre>for (var num = 0; num &lt;= 5; num++) {
+    console.log(num);
+}
+// Выведет в «консоль» числа 0, 1, 2, 3, 4 и 5
+</pre>
+
+<p>Ранее мы использовали метод <code>querySelector</code>, который возвращает только один элемент: первый элемент, соответствующий селектору.</p>
+
+<p>Другой метод <code>querySelectorAll</code> возвращает все элементы, соответствующие селектору.
+
+</p><p>С помощью <code>for</code> удобно перебирать найденные элементы:</p>
+
+<pre>var controls = document.querySelectorAll('.toggle-controls li');
+for (var i = 0; i &lt; controls.length; i++) {
+    controls[i].innerHTML = 'переключатель';
+}
+// Во все элементы списка переключателей запишется строка «переключатель».
+</pre>
+
+<p>В Кекстаграме может быть много фильтров, количество и названия которых мы можем не знать. Поэтому нельзя искать каждый переключатель по его классу и задавать его название.</p>
+
+<p>Лучше найти все переключатели внутри списка и перебрать их с помощью цикла. И внутри цикла задавать название каждому переключателю.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Найдите и сохраните все переключатели <code>.toggle-controls li</code>
+      в переменную <code>controls</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем замените у объекта dataset свойство <code>attribute</code> на <code>filter</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: используем цикл <small>[16/27]</small></h1>
+          <p>Начнём исправлять ошибки в функции переключения фильтров, которые возникают, когда она запускается несколько раз.</p>
+
+<p>Первая ошибка заключается в том, что все переключатели подсвечиваются как активные. Причина в том, что внутри функции класс <code>active</code> добавляется текущему переключателю, но не удаляется у ставших неактивными.</p>
+
+<p>Простейшим решением проблемы будет сначала удалять класс <code>active</code> у всех переключателей, а затем добавлять его текущему.</p>
+
+<p>На предыдущем шаге мы уже находили все переключатели и сохраняли их в переменную <code>controls</code>:</p>
+
+<pre>var controls = document.querySelectorAll('.toggle-controls li');</pre>
+
+<p>Теперь мы можем использовать эту переменную внутри функции — добавить в начало функции ещё один цикл, который пройдётся по всем переключателям и удалит у них класс.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В цикле внутри функции удалите класс <code>active</code> у всех переключателей.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем переместите вызов <code>toggleFilter('walden');</code> в конец кода.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Потом перенесите <code>toggleFilter('kelvin');</code> в конец кода.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: завершаем функцию переключения <small>[17/27]</small></h1>
+          <p>Ошибку с выделением активного переключателя исправили. Осталась вторая ошибка: фильтр на большой фотографии применяется неправильно. Причина — лишние классы фильтров у большой фотографии. Вот что происходит с HTML, когда функция переключения вызывается несколько раз:</p>
+
+<pre>&lt;div class="photo walden toaster kelvin"&gt;&lt;/div&gt;</pre>
+
+<p>Чтобы исправить ошибку, надо удалять классы фильтров у блока фотографии при каждом переключении. Но класс <code>photo</code> удалять нельзя. Классы фильтров мы знаем, ведь они хранятся в data-атрибутах переключателей.</p>
+
+<p>Поэтому в том же цикле, где сбрасывается класс <code>active</code>, можно у каждого переключателя брать название фильтра и удалять этот класс у большого фото:</p>
+
+<pre>for (var i = 0; i &lt; controls.length; i++) {
+    ...
+    photo.classList.remove(<i>имя фильтра из dataset-атрибута переключателя</i>);
+}
+</pre>
+
+<p>И ещё одна важная деталь. Переменная <code>photo</code> теперь используется в самом начале функции, поэтому мы вынесем строчку поиска переменной из функции в самый верх кода:</p>
+
+<pre>var controls = document.querySelectorAll('.toggle-controls li');
+var photo = document.querySelector('.photo');
+</pre>
+
+<p>А внутри функции переменную <code>photo</code> надо удалить. Заодно мы ускорим работу скрипта, избавившись от ненужного поиска элемента <code>.photo</code>, который происходил при каждом переключении фильтра.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Перенесите переменную <code>photo</code> из функции на <code>2</code> строку кода.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем в цикле внутри функции замените <code>dataset.attribute</code> на <code>dataset.filter</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Поместите <code>toggleFilter('walden');</code> в конец кода.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Поместите <code>toggleFilter('kelvin');</code> в конец кода.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: программируем переключатели, часть 1 <small>[18/27]</small></h1>
+          <p>В предыдущих шагах мы подготовили функцию для переключения фильтров и запускали её из JavaScript-кода. Сейчас мы сделаем так, чтобы пользователь сам мог менять фильтры, щёлкая по переключателям мышкой.</p>
+
+<p>Для этого нам нужно научиться отслеживать и обрабатывать события, которые происходят на веб-странице. Для этого в JavaScript, существует метод <code>addEventListener</code>:</p>
+
+<pre>var toaster = document.querySelector('li.toaster');
+toaster.addEventListener('click', function() {
+    toggleFilter(toaster.dataset.filter);
+});
+</pre>
+
+<p>В этом фрагменте кода мы сделали следующее:</p>
+<ol>
+  <li>Нашли элемент списка и у него вызвали метод <code>addEventListener</code>.</li>
+  <li>Указали отслеживать событие <code>click</code> или «щелчок мыши».</li>
+  <li>Для щелчков указали функцию-обработчик без названия, внутри которой вызвали функцию переключения фильтров.</li>
+</ol>
+<p>Метод <code>addEventListener</code> был вызван у одного элемента, поэтому будут обрабатываться  события только этого элемента. Первый параметр задаёт тип события, второй — функцию-обработчик.</p>
+
+<p>Потренируемся. Сделаем так, чтобы при щелчке на первый переключатель включался первый фильтр.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Найдите и сохраните переключатель <code>li.walden</code>
+      в переменную <code>walden</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а в обработчике щелчка на переключатель <code>walden</code> свойство <code>attribute</code> у <code>dataset</code> замените на <code>filter</code>.</li>
+</ol>
+<p>Нажмите на переключатель <code>walden</code> для проверки работы.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: программируем переключатели, часть 2 <small>[19/27]</small></h1>
+          <p>Мы добавили обработку щелчка для одного переключателя. Не забываем, что переключателей может быть много, их количество и названия наперёд мы знать не можем.</p>
+  
+<p>Поэтому, чтобы обрабатывать щелчки по всем переключателям, лучше воспользоваться циклом. Тем более, что цикл по всем переключателям у нас уже есть.</p>
+
+<p>А чтобы сократить код в цикле, создадим новую функцию:</p>
+
+<pre>function clickControl(control) {
+  control.addEventListener('click', function() {
+      toggleFilter(control.dataset.filter);
+  });
+};
+</pre>
+
+<p>Функция <code>clickControl</code> принимает найденный элемент и добавляет ему обработчик щелчков мыши, в котором вызывается функция переключения фильтра. Название фильтра для функции переключения берётся из data-атрибута самого элемента.</p>
+
+<p>Благодаря <code>clickControl</code> нам нужно добавить только одну строчку в цикл, чтобы все переключатели заработали:</p>
+<pre>for (var i = 0; i &lt; controls.length; i++) {
+    ... 
+    clickControl(controls[i]);
+}
+</pre>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В цикл по элементам <code>controls</code>, который находится вне функции <code>toggleFilter</code>, добавьте вызов функции 
+    <code>clickControl(controls[i])</code>.</li>
+</ol>
+<p>Нажимайте на переключатели для проверки работы.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: завершаем переключатели <small>[20/27]</small></h1>
+          <p>И снова улучшим код. В функции переключения есть проблема: в качестве параметра используются названия фильтра, по которому каждый раз происходит поиск переключателя. Но ведь можно передавать в функцию сами переключатели. Для этого.</p>
+
+<p>1. Изменим обработчик внутри <code>clickControl</code>:</p>
+<pre><em>Было:</em>  toggleFilter(control.dataset.filter);
+<em>Стало:</em> toggleFilter(control);
+</pre>
+
+<p>2. Изменим параметр у <code>toggleFilter</code>, теперь это не строка, а элемент:</p>
+<pre><em>Было:</em>  function toggleFilter(filterName)
+<em>Стало:</em> function toggleFilter(control)
+</pre>
+
+<p>3. В <code>toggleFilter</code> передаётся переключатель и искать его уже не надо, удаляем лишний код: </p>
+<pre><span style="text-decoration:line-through;">var control = document.querySelector('li.' + filterName);</span>
+<span style="text-decoration:line-through;">if (control) {</span>
+    control.classList.add('active');
+<span style="text-decoration:line-through;">}</span>
+</pre>
+
+<p>4. Название фильтра для фото теперь берём из data-атрибута переключателя:</p>
+<pre><em>Было:</em>  photo.classList.add(filterName);
+<em>Стало:</em> photo.classList.add(control.dataset.filter);
+</pre>
+
+<p>А теперь вы самостятельно сделаете последний штрих! При загрузке страницы должен быть выбран фильтр по умолчанию. Для этого нужно в конце кода добавить новую переменную, сохранить в неё нужный переключатель и с этой переменной вызвать функцию переключения.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Добавьте выбор фильтра по умолчанию:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В конце кода в переменную <code>defaultFilter</code> сохраните переключатель <code>li.toaster</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а следующей строкой добавьте вызов функции <code>toggleFilter(defaultFilter);</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: сравнение фото <small>[21/27]</small></h1>
+          <p>Итак, приложение работает! По нажатию на переключатели меняются фильтры.</p>
+
+<p>В последней серии заданий мы добавим возможность сравнивать изображения с фильтром и без фильтра.</p>
+
+<p>Сначала добавим блок с оригинальной фотографией. У этого блока будут такие же размеры, координаты и фотография на фоне, что и у блока с фильтром. Но оригинал будет расположен над «фильтрованным» фото.</p>
+
+<p>Доработаем разметку и стили.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В блок <code>.photos</code> после блока <code>.photo</code> добавьте див
+    с классом <code>photo-original</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем в CSS для <code>.photo-original</code> задайте ширину  <code>50%</code></li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и фоновое изображение <code>url("img/spb-1.jpg")</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: ползунок-разделитель <small>[22/27]</small></h1>
+          <p>Теперь нам нужен специальный ползунок-разделитель на границе двух фотографий.</p>
+
+<p>С помощью этого ползунка мы будем изменять ширину фотографии-оригинала, чтобы сравнивать разные части изображений.</p>
+
+<p>Ползунок мы разместим в том же блоке, что и фотографии, спозиционируем его абсолютно и зададим координаты таким образом, чтобы с помощью JavaScript было удобно его перемещать.</p>
+
+<p>По умолчанию ползунок будет находиться в центре блока с фото. Для центровки мы применим приём с трансформацией перемещения, рассмотренный в курсе <a target="_blank" href="/courses/71/run/18">«Двумерные трансформации»</a>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В блок <code>.photos</code> добавьте див с классом <code>separator</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте для него координаты <code>top</code> и <code>left</code>
+  равные <code>50%</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем трансформацию <code>translate(-50%, -50%)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: двигаем ползунок <small>[23/27]</small></h1>
+          <p>Разберём механику «перемещения» разделителя с помощью JavaScript. Чтобы получить этот эффект, нужно изменять стили двух элементов:</p>
+<ol>
+  <li>Менять левую координату ползунка-разделителя, чтобы он двигался вправо или влево.</li>
+  <li>Менять ширину блока с изображением-оригиналом так, чтобы граница фотографий оставалась под ползунком.</li>
+</ol>
+<p>К счастью, мы подготовили очень удобную вёрстку, в которой начало координат у обоих блоков совпадает. Поэтому достаточно задавать одинаковые значения для левой координаты разделителя и ширины блока с оригиналом фото.</p>
+
+<p>Чтобы изменить CSS-свойство элемента в скрипте, нужно обратиться к свойству <code>style</code> элемента. Например:</p>
+<pre>var element = document.querySelector('.photo-original');
+element.style.width = '10px';</pre>
+<p>В этом коде элементу задаётся ширина <code>10px</code>.</p>
+<p>С помощью <code>element.style</code> можно и получать, и изменять значения свойств.</p>
+  
+<p>Но названия свойств в JavaScript не всегда совпадают с их названиями в CSS. Например, CSS-свойство <code>left</code> совпадает с <code>style.left</code>, но CSS-свойство <code>baсkground-color</code> уже отличается: <code>style.backgroundColor</code>.
+
+</p><p>Давайте подвигаем ползунок.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Cохраните элемент <code>.photo-original</code> в переменную <code>original</code>, элемент <code>.separator</code> в переменную       <code>separator</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте значение <code>25%</code> для ширины <code>original</code> и для левой координаты <code>separator</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем поменяйте оба значения на <code>75%</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: четвёртый фильтр <small>[24/27]</small></h1>
+          <p>Давайте создадим ещё один набор фильтров для большой фотографии.
+Он будет называться <code>oldie</code>.</p>
+<p>Сначала создадим необходимую разметку.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В список <code>.toggle-controls</code> добавьте четвёртый элемент с классом <code>oldie</code></li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и атрибутом <code>data-filter</code> со значением <code>oldie</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> В скрипте замените фильтр по умолчанию на <code>oldie</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: четвёртый фильтр, завершение <small>[25/27]</small></h1>
+          <p>Теперь для класса <code>.oldie</code> создадим набор фильтров.</p>
+  
+<p>Эти фильтры сделают фотографию слегка «сумасшедшей».</p>
+
+<p>Не будем их описывать, лучше просто увидеть.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для класса <code>.oldie</code> задайте фильтр со значением <code>contrast(2)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте в фильтр значение <code>saturate(5)</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> после него значение <code>hue-rotate(-180deg)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Кекстаграм: финал <small>[26/27]</small></h1>
+          <p>Чтобы пользователь мог самостоятельно перемещать разделитель с помощью мыши, нужно добавить обработку событий перетягивания. Это достаточно сложная задача, которую мы будем рассматривать в одном из последующих курсов.</p>
+
+<p>А сейчас мы подготовили скрипт, в котором перетягивание уже реализовано, вам осталось только подключить его к странице.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте перед закрывающим тегом <code>&lt;/body&gt;</code>
+    скрипт <code>separator.js</code></li>
+</ol>
+<p>Попробуйте перетаскивать разделитель на фотографии.</p>
+<ol class="bonus-goal">
+    <li id="bonus"><span class="label ha-goal-label">Бонус</span>Добавьте в список ещё один переключатель для фильтра <code>.willow</code></li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/98">Кекстаграм: Эпилог. JavaScript</a>»</div>
+          <h1>Испытание: игровые фишки <small>[27/27]</small></h1>
+          <p>В последнем испытании вам предстоит с помощью JavaScript пронумеровать игровые фишки, а также задать им нужные цвета.</p>
+<p>Подсказки:</p>
+<ul>
+  <li>в коде есть функции, которые нужно вызывать и передавать в них элементы;</li>
+  <li>порядок вызова функций важен;</li>
+  <li>небольшой участок JS-кода вам нужно написать самостоятельно;</li>
+  <li>номер игровой фишки можно получить из атрибута <code>data-number</code>.</li>
+</ul>
+<hr>
+</div>
+				
+				
+				
+				
+
+				
+	</div>
+<body>

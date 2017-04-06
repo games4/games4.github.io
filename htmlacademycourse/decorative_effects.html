@@ -1,0 +1,634 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мастерская: декоративные эффекты на CSS3</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/workshop/55.svg" alt="Мастерская: декоративные элементы" height="100" width="100">
+	<div class="course-description__content">
+		<h1>Мастерская: декоративные элементы</h1>
+		<p>Создадим с&nbsp;нуля различные декоративные элементы: социальные кнопки, переключатели страниц, блоки комментариев и&nbsp;так далее. Это прикладной курс, в&nbsp;котором вы&nbsp;будете использовать знания и&nbsp;навыки, полученные в&nbsp;предшествующих курсах.</p></p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маска при наведении, шаг 1 <small>[1/31]</small></h1>
+          <p>В этой серии заданий мы реализуем довольно распространённый интерфейсный приём — появление текстового описания по наведению на блок с картинкой — в необычном виде. Сама картинка при этом  имеет нестандартную форму из-за геометрической фигуры-маски, применённой к ней.</p>
+<p>Для начала применим к основным элементам блока с текстом базовый стиль: размер шрифта заголовков и параграфа, цвет фона и текста, общий вид кнопки-ссылки, ведущей к подробной информации.</p>
+<p>В коде пока что нет ничего необычного, кроме полупрозрачного фонового цвета у текстового блока, заданного с помощью <code>rgba</code>, и свойства <code>border-radius</code> для скруглённых углов у кнопки-ссылки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте правило <code>.shape .details</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте блоку <code>.shape .details</code> фоновый цвет <code>rgba(75, 90, 120, 0.9)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Раскомментируйте правила <code>.details header</code> и <code>.details p</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А затем правила <code>.button</code> и <code>.button:hover</code>.</li>
+</ol>
+</div>	
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маска при наведении, шаг 2 <small>[2/31]</small></h1>
+          <p>Получившийся блок с текстовым описанием будет скрыт по умолчанию, а отображаться будет при наведении курсора на контейнер.</p>
+<p>Контейнеру мы присвоим фоновое изображение. С помощью псевдокласса <code>:hover</code> и свойства <code>display</code> будем управлять видимостью текстового блока.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Скройте блок <code>.shape .details</code> с помощью <code>display: none</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Блоку <code>.shape</code> с классом <code>.techmarkt</code> присвойте неповторяющееся фоновое изображение с адресом <code>techmarkt.jpg</code> и позицией фона <code>30% 0%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> В правило <code>.shape:hover .details</code> добавьте свойство <code>display: block</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маска при наведении, шаг 3 <small>[3/31]</small></h1>
+          <p>На этом шаге создадим и применим к картинке маску нестандартной формы.</p>
+<p>Для этого добавим в блок <code>.shape</code> ссылку, которая будет являться верхним слоем над всем контейнером и будет использоваться как маска. В качестве фона слоя-маски используем изображение в формате .svg с непрозрачными краями и прозрачным центром. Спозиционируем этот блок-маску абсолютно, чтобы он располагался поверх блока с текстовым описанием и контентной картинкой. Фоновая контентная картинка будет при этом проглядывать через прозрачную часть слоя-маски.</p>
+
+<p>Также давайте немного оживим блок с маской и будем плавно изменять его форму при наведении с помощью трансформации масштабирования <code>transform: scale</code>.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте в блок <code>.shape</code> ссылку с классом <code>overlay</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для <code>.overlay</code> добавьте свойство <code>transform: scale(1)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Добавьте ссылке <code>.overlay</code> второй класс <code>octagon</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Правилу <code>.overlay.octagon</code> добавьте свойство <code>background-image: url("oct.svg")</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> В правило <code>.shape:hover .overlay</code> добавьте свойство <code>transform: scale(1.07)</code>.</li>
+</ol>
+<p>Проверьте эффект при наведении на блок <code>.shape</code>.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маска при наведении, шаг 4 <small>[4/31]</small></h1>
+          <p>Создадим ещё один подобный блок, имеющий на этот раз форму окружности. Для этого воспользуемся той же техникой, что и в первом случае, но другой «круглой» картинкой-маской <code>round.svg</code>. </p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте блок <code>.shape.nerds</code> в разметке.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Правилу <code>.shape.nerds</code> задайте неповторяющееся фоновое изображение с адресом <code>nerds.jpg</code> и позицией фона <code>30% 0%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> В правило <code>.overlay.round</code> добавьте свойство <code>background-image: url("round.svg")</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Выдвигающееся описание, шаг 1 <small>[5/31]</small></h1>
+          <p>В заданиях этой серии мы создадим интерфейсный блок, похожий на прошлые, но воспользуемся в этот раз другой техникой.</p>
+
+<p>Суть данной техники заключается в том, чтобы не создавать в разметке дополнительные блоки для описания, а хранить тексты в пользовательских <code>data-</code> атрибутах элементов. В HTML5 пользовательские атрибуты, начинающиеся с <code>data-</code>, могут быть добавлены любому HTML-элементу для хранения текстовой информации. </p>
+
+<p>Особой прелестью такого подхода является то, что мы можем обращаться к текстовому значению атрибута HTML-элемента непосредственно из CSS. Делается это с помощью свойства <code>content</code>, задающего генерируемое содержимое псевдоэлементов и функции <code>attr()</code>, которая применяется для добавления значения атрибута HTML-элемента в стилевое свойство. </p>
+
+<p>Например, если у нас есть в разметке элемент <code>&lt;p data-text="hello"&gt;world&lt;/p&gt;</code>, то мы можем получить надпись «hello world», взяв «hello» из атрибута <code>data-text</code> в CSS и отобразив его в псевдоэлементе <code>::before</code>: 
+</p><pre>p::before {
+    content: attr(data-text) " ";
+}</pre><p></p>
+
+<p>В нашем случае давайте хранить тексты в атрибутах ссылки: заголовок блока в тексте атрибута <code>data-title</code>, а описательную часть — в атрибуте <code>data-description</code>. Соответственно заголовок будем выводить в качестве контента псевдоэлемента <code>::before</code>, а описание — содержимым псевдоэлемента <code>::after</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте псевдоэлементу <code>.caption-link::before</code> свойство <code>content</code> со значением <code>attr(data-title)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А псевдоэлементу <code>.caption-link::after</code> — свойство <code>content</code> со значением <code>attr(data-description)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Выдвигающееся описание, шаг 2 <small>[6/31]</small></h1>
+          <p>Теперь давайте реализуем плавное появление и сокрытие блока с текстовой информацией. </p>
+<p>Для этого:</p>
+<ol>
+  <li>Спрячем псевдоэлементы <code>::before</code> и <code>::after</code> под картинку в блоке <code>.caption-link</code> отрицательным значением свойства <code>z-index</code>.</li>
+  <li>По наведению на <code>.caption-link</code> будем сдвигать картинку на расстояние, равное ширине картинки, вправо, так чтобы блок с описанием становился видимым, оставаясь на прежнем месте.</li>
+  <li>Ограничим область видимости за границей блока <code>.caption-link</code> с помощью <code>overflow: hidden</code>, чтобы визуально казалось, что картинка плавно уезжает и скрывается.</li>
+</ol>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементам <code>.caption-link::before</code> и <code>.caption-link::after</code> задайте <code>z-index</code> равный <code>-1</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В правило <code>.caption-link:hover img</code> добавьте свойство <code>transform</code> со значением <code>translateX(100%)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Блоку <code>.caption-link</code> добавьте свойство <code>overflow</code> со значением <code>hidden</code>.</li>
+</ol>
+<p>Проверьте эффект при наведении на блок <code>.caption-link</code>.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Выдвигающееся описание, шаг 3 <small>[7/31]</small></h1>
+          <p>Эффект по наведению уже сейчас выглядит хорошо. Дополним его ещё немного.</p>
+<p>Для этого сдвинем трансформацией немного влево псевдоэлементы с текстом, а при наведении будем двигать их обратно в нормальное положение. Таким образом создастся эффект синхронного появления текстового блока вместе с сокрытием картинки.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементам <code>.caption-link::before</code> и <code>.caption-link::after</code> задайте трансформацию <code>translateX(-80px)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А затем по наведению на <code>.caption-link</code> для псевдоэлементов примените трансформацию <code>translateX(0)</code>.</li>
+</ol>
+<p>Проверьте эффект при наведении на блок <code>.caption-link</code>.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 1 <small>[8/31]</small></h1>
+          <p>В этой серии заданий мы разберём интересные эффекты, которые можно применить к простым текстовым ссылкам, используя стилизацию псевдоэлементов.</p>
+
+<p>В первом примере псевдоэлемент используется как декоративное подчёркивание ссылки. Давайте скроем его по умолчанию и немного опустим, а при наведении курсора на ссылку применим трансформацию, которая приподнимет псевдоэлемент обратно, и одновременно плавно покажем его.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементу ссылки добавьте трансформацию <code>translateY(10px)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А затем сделайте его полностью прозрачным с помощью <code>opacity</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> По наведению на ссылку сделайте псевдоэлемент полностью непрозрачным, а также примените трансформацию <code>translateY(0px)</code>. Наводите курсор на ссылку для проверки.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 2 <small>[9/31]</small></h1>
+          <p>В этом и следующем задании помимо <code>::after</code> задействуем ещё и <code>::before</code>, а также будем по наведению применять к псевдоэлементам более сложные трансформации.</p>
+
+<p>Сначала зададим стиль исходного состояния: спозиционируем и применим к псевдоэлементам трансформацию поворота так, чтобы они стали декоративными вертикальными рамками справа и слева от ссылки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для псевдоэлемента <code>::before</code> задайте <code>top</code> и <code>left</code> равные <code>0</code>, поворот на <code>90°</code> и <code>transform-origin</code> со значением <code>0 0</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для псевдоэлемента <code>::after</code> задайте <code>right</code> и <code>bottom</code> равные <code>0</code>, поворот на <code>90°</code> и <code>transform-origin</code> со значением <code>100% 0</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 3 <small>[10/31]</small></h1>
+          <p>Отлично! А теперь по наведению на ссылку будем плавно менять полупрозрачность псевдоэлементов и перемещать их так, чтобы они вместо левой и правой становились верхней и нижней рамкой соответственно.</p>
+<hr>
+<div class="ha-task-goals">
+<p>При наведении на ссылку:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Сделайте оба псевдоэлемента полностью непрозрачными.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте <code>::before</code> свойство <code>left: 50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Примените к нему трансформации поворота на <code>0°</code> и перемещения <code>translateX</code> на <code>-50%</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Также задайте <code>::after</code> свойство <code>right: 50%</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> И примените к нему трансформации поворота на <code>0°</code> и перемещения <code>translateX</code> на <code>50%</code>.</li>
+</ol>
+<p>После каждого изменения наводите курсор на ссылку для проверки.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 4 <small>[11/31]</small></h1>
+          <p>В этом задании воспользуемся ранее изученным приёмом одновременного использования пользовательского <code>data-</code> атрибута, свойства <code>content</code> и функции <code>attr()</code>.</p>
+
+<p>Сначала с помощью кастомного атрибута зададим псевдоэлементу содержимое идентичное тексту ссылки. Затем спозиционируем псевдоэлемент так, чтобы он перекрыл оригинальный текст ссылки сверху. А при наведению на ссылку будем немного уменьшать и одновременно плавно скрывать её псевдоэлемент, чтобы оригинальный текст снова становился видим.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте ссылке атрибут <code>data-hover</code> со значением <code>Лайм</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Её псевдоэлементу добавьте свойство <code>content</code> со значением <code>attr(data-hover)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем пропишите ему абсолютное позиционирование.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> По наведению на ссылку сделайте псевдоэлемент полностью прозрачным и уменьшите его трансформацией <code>scale</code> со значением <code>0.9</code>. Наводите курсор на ссылку для проверки.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 5 <small>[12/31]</small></h1>
+          <p>Создадим ещё одну эффектную ссылку. На этот раз псевдоэлементы будут играть роль верхней и нижней декоративной рамки. Мы будем по-прежнему управлять их позицией и прозрачностью по наведению на ссылку.</p>
+
+<p>Сначала установим псевдоэлементы в исходную позицию вверху и внизу ссылки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементу <code>.effect-4 a::before</code> задайте свойство <code>top</code> со значением <code>0</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А <code>.effect-4 a::after</code> — <code>bottom</code> со значением <code>0</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Затем <code>.effect-4 a::before</code> переместите ещё на <code>10px</code> вверх свойством <code>translateY</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А <code>.effect-4 a::after</code> — на <code>10px</code> вниз.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки, шаг 6 <small>[13/31]</small></h1>
+          <p>А теперь сделаем псевдоэлементы полностью прозрачными и по наведению на ссылку будем плавно их «проявлять» изменением свойства <code>opacity</code>, а также менять их положение трансформацией для создания эффекта плавного появления.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> При наведении на ссылку трансформируйте её псевдоэлементы <code>::before</code> и <code>::after</code> свойством <code>translateY(0px)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Сделайте оба псевдоэлемента полностью прозрачными с помощью свойства <code>opacity</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А при наведении на ссылку — полностью непрозрачными.</li>
+</ol>
+<p>После каждого изменения наводите курсор на ссылку для проверки.</p>
+</div>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Эффектные ссылки: все вместе <small>[14/31]</small></h1>
+          <p>Это самое простое задание серии. Давайте просто соберём вместе все созданные эффекты и посравниваем их.</p>
+<hr>
+<li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Добавьте дивам классы от <code>effect-1</code> до <code>effect-4</code> в порядке сверху вниз. И наслаждайтесь эффектами при наведении.</li>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Закруглённые внутрь углы, шаг 1 <small>[15/31]</small></h1>
+          <p>С помощью свойства <code>border-radius</code> мы можем легко сглаживать края блоков и даже сделать блок визуально полностью круглым. Но, к сожалению, <code>border-radius</code> может сделать только выпуклые углы, а вогнутые — нет.</p>
+<p>В этой серии заданий мы построим блок с вогнутыми углами.</p>
+<p>Для этого, помимо ранее известных свойств, в текущей серии заданий мы воспользуемся свойством <code>clip</code>.</p>
+<p>Свойство <code>clip</code> определяет прямоугольную область элемента, в которой будет показано его содержимое. Все, что не поместится в эту область, будет невидимым. Свойство <code>clip</code> работает только для абсолютно спозиционированных элементов.</p>
+<p>Синтаксис свойства <code>clip</code> с функцией, вырезающей прямоугольную область:</p>
+<pre>clip: rect(верхняя-координата, правая-координата, нижняя-координата, левая-координата);</pre>
+<p style="float: right; margin-left: 20px;"><img style="width: 300px;" src="/assets/course76/schema-clip.jpg" alt=""></p>
+<p>В качестве значений используется расстояние от края элемента до области вырезки, которое задается в единицах CSS — px, em… Если край области нужно оставить без изменений, устанавливается значение <code>auto</code>.</p>
+<p>Нагляднее о том, как именно применяются координаты, показано на картинке:</p>
+<div style="overflow: hidden;">
+<p>Для построения блока с вогнутыми краями создадим поочерёдно для каждого угла свой маскирующий блок.</p>
+<p>Начнём с нижнего левого угла.</p>
+</div>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.inner</code> задайте внешний отступ <code>0 -20px</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Раскомментируйте правило для псевдоэлемента <code>.inner::before</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Задайте псевдоэлементу скругление углов равное <code>50%</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А затем спозиционируйте его координатами <code>bottom: -60px</code> и <code>left: -40px</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> И задайте свойство <code>clip</code> со значением <code>rect(auto, auto, 40px, 40px)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Закруглённые внутрь углы, шаг 2 <small>[16/31]</small></h1>
+          <p>Продолжим маскировать углы. Аналогично левому нижнему замаскируем правый нижний угол блока.</p>
+<hr>
+</div>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте правило для псевдоэлемента <code>.inner::after</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте псевдоэлементу скругление углов равное <code>50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем спозиционируйте его координатами <code>bottom: -60px</code> и <code>right: -40px</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> И задайте свойство <code>clip</code> со значением <code>rect(auto, 40px, 40px, auto)</code>.</li>
+</ol>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Закруглённые внутрь углы, шаг 3 <small>[17/31]</small></h1>
+          <p>А теперь замаскируем левый верхний угол блока.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте правило для псевдоэлемента <code>.outer::before</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте псевдоэлементу скругление углов равное <code>50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем спозиционируйте его координатами <code>top: -40px</code> и <code>left: -60px</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> И задайте свойство <code>clip</code> со значением <code>rect(40px, auto, auto, 40px)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Закруглённые внутрь углы, шаг 4 <small>[18/31]</small></h1>
+          <p>И, наконец, замаскируем последний правый верхний угол блока, а потом покрасим маскировку в белый цвет.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте правило для псевдоэлемента <code>.outer::after</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте псевдоэлементу скругление углов равное <code>50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем спозиционируйте его координатами <code>top: -40px</code> и <code>right: -60px</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> И задайте свойство <code>clip</code> со значением <code>rect(40px, 40px, auto, auto)</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> Задайте всем четырём псевдоэлементам белый (<code>#ffffff</code>) цвет рамки.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Испытание: статистика браузеров <small>[19/31]</small></h1>
+          <p>В этом испытании вам предстоит реализовать небольшой интерфейс, включающий список браузеров и диаграмму, сделанную с помощью CSS. В решении вам пригодятся некоторые приёмы, рассмотренные раньше. </p>
+<p>Вам нужно подобрать подходящие селекторы в CSS.</p>
+<p>Подсказки:</p>
+<ul>
+  <li>используйте псевдоэлементы <code>::before</code> и <code>::after</code>;</li>
+  <li>центр круговой диаграммы реализован с помощью псевдоэлемента <code>::after</code>;</li>
+  <li>к каждому «кусочку» диаграммы применяются свойства <code>clip</code> и <code>transform</code>.</li>
+</ul>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Слайдер на CSS, шаг 1 <small>[20/31]</small></h1>
+          <p>В этой серии мы будем строить полнофункциональный слайдер на HTML и CSS без применения JavaScript.</p>
+<p>Как такое может быть? Может! Мы воспользуемся приёмом, который возможно встречался вам раньше в <a href="/courses/58/run/17">задании из курса «Селекторы. Часть 3»</a>.</p>
+<p>Но обо всём по порядку. Сначала нужно собрать разметку с картинками в нужном виде: </p>
+  <ul>
+  <li>картинки располагаются в ряд;</li><li>у общего контейнера должно быть задано свойство <code>overflow: hidden</code>, скрывающее всё, кроме текущей видимой картинки;</li><li>а ширина дочернего контейнера должна равняться суммарной ширине всех картинок внутри.</li>
+</ul>
+<p>Поехали!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.slider-slides</code> задайте ширину <code>300%</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Изображениям задайте <code>float</code> влево.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А блоку <code>.slider-inner</code> свойство <code>overflow</code> со значением <code>hidden</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Слайдер на CSS, шаг 2 <small>[21/31]</small></h1>
+          <p>Займёмся кнопками переключения слайдов.</p>
+<p>Для начала внесём кнопки и подписи к ним в HTML, немного декорируем подписи и скроем сами кнопки. </p>
+<p>Кнопки и подписи связаны между собой атрибутами <code>id</code> и <code>for</code>, поэтому клик на подписи будет выделять и соответствующий чекбокс (даже если он невидим).</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте в разметке радио-кнопки.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А также подписи к ним.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Подписям задайте тень без смещения вниз и вправо, с размытием <code>2px</code>, без растяжения, цвета <code>rgba(0, 0, 0, 0.8)</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А также скругление углов равное <code>50%</code>.</li>
+    <li id="goal5"><span class="label ha-goal-label">Цель 5</span> Радио-кнопки скройте свойством <code>display: none</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Слайдер на CSS, шаг 3 <small>[22/31]</small></h1>
+          <p>Теперь нам нужно в зависимости от состояния невидимых радио-кнопок соответствующим образом стилизовать видимые подписи. Для этого воспользуемся подобным селектором:</p>
+<pre>#btn-1:checked ~ .slider-controls label[for="btn-1"] { 
+    ...
+}
+</pre>
+<p>Что он выбирает? Подпись в блоке <code>.slider-controls</code>, идущем в разметке после выделенной радио-кнопки с <code>id="btn-1"</code>. Причём подпись с атрибутом <code>for="btn-1"</code>, то есть связанную с этой радио-кнопкой. То что нужно! </p>
+<p>Стилизуем таким образом все подписи к радио-кнопкам.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Подписям задайте белую <code>white</code> сплошную рамку толщиной <code>4px</code> и цвет фона <code>#ccсссc</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Если отмечена радио-кнопка, то у связанной с ней подписи цвет фона должен становиться <code>#666666</code>. Переключайте радио-кнопки для проверки, щелкая по подписям.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Слайдер на CSS, шаг 4 <small>[23/31]</small></h1>
+          <p>Теперь у нас есть действующие кнопки переключения слайдов. Осталось подобным образом реализовать плавный сдвиг контейнера с картинками, чтобы в зависимости от выделенной радио-кнопки показывать соответствующую по счёту картинку.</p>
+<p>Для этого применим такой селектор:</p>
+<pre>#btn-1:checked ~ .slider-inner .slider-slides { 
+    ...
+}
+</pre>
+<p>И в зависимости от того, какая кнопка выделена, будем сдвигать контейнер с картинками на нужное расстояние.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Если отмечен первый чекбокс, задайте слайдам трансформацию <code>translate(0)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Если отмечен второй&nbsp;— трансформацию <code>translate(-450px)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Если отмечен третий&nbsp;— трансформацию <code>translate(-900px)</code>.</li>
+</ol>
+<p>Проверяйте перемещение слайдов кликом на чекбоксы.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Хлебные крошки, шаг 1 <small>[24/31]</small></h1>
+          <p>В этой серии заданий мы построим необычные хлебные крошки: ссылки в них будут выглядеть как стрелки.</p>
+
+<p>Кстати, «хлебными крошками» называется навигационный блок, который показывает в каком разделе сайта вы находитесь, а также путь к этому разделу от главной страницы сайта. Крошки чем-то похожи на пути в файловой системе.</p>
+
+<p>Этот элемент обычно верстают очень просто&nbsp;— последовательность ссылок внутри блока с классом. А вот вариантов оформления существует много. И мы разберём один из достаточно сложных.</p>
+
+<p>Исходная заготовка включает в себя контейнер <code>.breadcrumbs</code> с тремя ссылками. Контейнер сделан блочно-строчным, а ссылки выстроены в ряд с помощью <code>float</code>. Также заданы некоторые исходные размеры, отступы и другие свойства.</p>
+
+<p>Всё дополнительное оформление ссылок мы будем делать с помощью псевдоэлементов. И начнём с создания «стрелок» на концах ссылок с помощью <code>::after</code>. И для этого на первом шаге зададим псевдоэлементам базовые размеры, позиционирование и фон.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для <code>.breadcrumbs a::after</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Свойство <code>content: ""</code> и абсолютное позиционирование.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Ширину и высоту <code>36px</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Красный <code>red</code> цвет фона и <code>z-index</code> равный <code>1</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Координаты сверху <code>0</code> и справа <code>-18px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Хлебные крошки, шаг 2 <small>[25/31]</small></h1>
+          <p>С помощью псевдоэлемента <code>::after</code> мы создали в каждой ссылке по красному квадрату. Квадраты спозиционировали в правой части ссылок. Сейчас мы будем превращать их в стрелки.</p>
+<p>Первым делом нужно будет добавить квадратам резкую тень со смещением в один пиксель&nbsp;— она будет контуром стрелок.</p>
+<p>Затем мы сильно закруглим один из углов каждого квадрата. Свойство <code>border-radius</code> может работать подобно <code>margin</code> или <code>padding</code> и задавать разные радиусы скругления для каждого угла элемента. Для этого радиусы записываются через пробел:</p>
+<pre>border-radius: 1px 2px 3px 4px;
+/*
+1px - верхний левый угол
+2px - верхний правый угол
+3px - нижний правый угол
+4px - нижний левый угол
+*/
+</pre>
+<p>Обратите внимание, что правый паддинг у ссылок и расположение квадратов подобраны таким образом, чтобы текст ссылок не перекрывался скруглённой стороной квадрата.</p>
+<p>Затем с помощью трансформаций нужно повернуть квадраты на <code>45°</code> и немного уменьшить их, так как диагональ квадрата больше высоты ссылки.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для <code>.breadcrumbs a::after</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Тень со смещением вниз и вправо на <code>1px</code>, без размытия, с растяжением <code>1px</code>, цвета <code>black</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Скругление <code>50px</code> для верхнего левого угла и <code>0</code> для остальных углов.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Поворот на <code>-45°</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А затем ещё и масштабирование на <code>0.73</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Хлебные крошки, шаг 3 <small>[26/31]</small></h1>
+          <p>Перед вами практически готовые стрелки. Осталось только убрать вспомогательные фоны и рамки.</p>
+
+<p>Для начала избавимся от вспомогательных <code>outline</code> у ссылок.</p>
+
+<p>Затем, чтобы стрелки слились со ссылками, изменим цвет фона у <code>::after</code> с красного на белый.</p>
+
+<p>А потом изменим цвет тени псевдоэлементов, чтобы контур стрелок не был таким резким и сливался с тенью контейнера.</p>
+
+<p>Напоследок зададим внешний вид ссылок и стрелок при наведении и в активном состоянии. Для этого зададим фон сразу для нескольких селекторов:</p>
+
+<pre>.breadcrumbs a:hover,
+.breadcrumbs a:hover::after,
+.breadcrumbs a.active,
+.breadcrumbs a.active::after {
+    ...
+}
+</pre>
+
+<p>Это нужно для того, чтобы и ссылка, и её псевдоэлемент меняли фон одновременно и визуально оставались одним целым.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Удалите <code>outline</code> у ссылок.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Псевдоэлементам задайте белый <code>white</code> цвет фона.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> И измените цвет чёрной тени на <code>#dddddd</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Задайте для активного состояния ссылки цвет фона <code>#f1c40f</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Хлебные крошки, шаг 4 <small>[27/31]</small></h1>
+          <p>Теперь давайте добавим нумерацию ссылок. Для этого используем оставшийся свободным псевдоэлемент <code>::before</code>.</p>
+
+<p>Мы будем задавать номера ссылок автоматически с помощью CSS. Для этого используем следующие свойства:</p>
+
+<ul>
+    <li style="margin-bottom:0.5em;"><code>counter-reset</code>, которое позволяет создать переменную-счётчик;</li>
+    <li style="margin-bottom:0.5em;"><code>counter-increment</code>, которое позволяет увеличивать значение счётчика;</li>
+    <li>функцию <code>counter()</code>, которая позволяет передавать значение счётчика свойству <code>content</code> у псевдоэлементов.</li>
+</ul>
+
+<p>В исходном CSS для <code>.breadcrumbs</code> уже добавлено свойство <code>counter-reset: flag</code>. То есть наш счётчик уже создан и называется <code>flag</code>. </p>
+
+<p>Чтобы увеличивать счётчик, нужно добавить свойство <code>counter-increment: flag</code> к каждому элементу, который будет нумероваться. А чтобы считывать значение счётчика и передавать его в псевдоэлементы, нужно задать им свойство <code>content: counter(flag)</code>.</p>
+
+<p>Логично и изменение нумерации, и её отображение производить в самом <code>::before</code> у ссылок:</p>
+
+<pre>.breadcrumbs a::before {
+    content: counter(flag);
+    counter-increment: flag;
+    ...
+}</pre>
+
+<p>Ну и конечно же добавим базовое оформление для номеров ссылок.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для <code>.breadcrumbs a::before</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Свойства <code>content: counter(flag)</code> и <code>counter-increment: flag</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Абсолютное позиционирование, координаты сверху <code>8px</code> и слева <code>30px</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Высоту строки <code>20px</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Тень без смещения и растяжения, с размытием <code>2px</code> и цветом <code>#cccccc</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Хлебные крошки, шаг 5 <small>[28/31]</small></h1>
+          <p>Давайте завершим создание хлебных крошек: дооформим нумерацию, а также немного изменим стиль первой ссылки, избавившись от слишком большого отступа слева.</p>
+
+<p>Соберём резюме интересных приёмов, использованных в этой серии заданий:</p>
+
+<ol>
+    <li>по полной были задействованы оба псевдоэлемента;</li>
+    <li>разные размеры скругления углов в сочетании с трансформациями поворота и масштабирования&nbsp;— для создания стрелок;</li>
+    <li>резкие тени&nbsp;— для имитации рамок, хотя того же эффекта можно было добиться с помощью <code>border</code>;</li>
+    <li>использованы свойства для создания счётчиков и автоматической нумерации: <code>counter-reset</code> и <code>counter-increment</code>;</li>
+    <li>использована функция <code>counter()</code> для отображения значения счётчиков в свойстве <code>content</code>.</li>
+</ol>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.breadcrumbs a::before</code> задайте ширину и высоту <code>20px</code> и белый <code>white</code> цвет фона.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А также скругление углов <code>50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> У первой ссылки уменьшите внутренний отступ слева до <code>46px</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А у её псевдоэлемента <code>::before</code> координату слева измените на <code>14px</code>.</li>
+</ol>
+</div>				
+
+				
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маркер на карте, шаг 1 <small>[29/31]</small></h1>
+          <p>В последней серии заданий мы создадим красивый маркер на карте с использованием уже знакомых приёмов.</p>
+
+<p>Для начала создадим квадратную заготовку маркера и расположим его на карте.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для блока <code>.pin</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Сплошную рамку толщиной <code>10px</code> цветом <code>#f75850</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Ширину и высоту <code>15px</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А также абсолютное позиционирование с координатами сверху <code>150px</code> и слева <code>250px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/76">Мастерская: декоративные эффекты на&nbsp;CSS3</a>»</div>
+          <h1>Маркер на карте, шаг 2 <small>[30/31]</small></h1>
+          <p>Чтобы создать маркер в виде «капли», нужно закруглить все углы, кроме одного. Вы делали это в прошлой серии заданий.</p>
+
+<p>Конечно, нужно добавить аккуратную тень.</p>
+
+<p>И напоследок маркер нужно будет повернуть заострённым углом вниз.</p>
+<hr>
+<div class="ha-task-goals">
+          <span class="btn ha-goals-position-toggle" title="Переместить задачи"><i class="icon-arrow-up"></i></span>
+           <p>Для блока <code>.pin</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Тень со смещением влево и вниз на <code>2px</code>, размытием <code>2px</code>, цвета <code>#aaaaaa</code>, без растяжения.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Закругление углов <code>50%</code>, кроме левого нижнего с закруглением <code>0</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Поворот на <code>-45°</code>.</li>
+</ol>
+</div>
+</div>
+
+				
+				
+	</div>
+<body>

@@ -1,0 +1,17 @@
+body {
+    margin: 20px auto;
+		margin-bottom: 40px;
+}
+
+.container {
+	width: 1200px;
+}
+
+.ha-task-description {
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+
+li {
+    line-height: 24px;
+}

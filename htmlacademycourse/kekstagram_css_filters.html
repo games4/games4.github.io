@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Кекстаграм: Начало. CSS-фильтры</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/decoration/97.svg" alt="Кекстаграм: Начало. CSS-фильтры" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Кекстаграм: Начало. CSS-фильтры</h1>
+		<p>Вместе станем мастерами фильтров в&nbsp;CSS: разберёмся, как применять фильтры к&nbsp;разным элементам, а&nbsp;также комбинировать и&nbsp;анимировать&nbsp;их.</p>
+</div>
+</div>
+				
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Яркость и контрастность, brightness и contrast <small>[1/14]</small></h1>
+          <p>CSS-фильтры позволяют применить визуальные эффекты к&nbsp;элементам страницы. Фильтры обычно применяют к&nbsp;изображениям, фонам или рамкам, а иногда и к&nbsp;другим элементам.</p>
+
+<p>Фильтры применяются к&nbsp;элементу до&nbsp;того, как он&nbsp;будет отображён, поэтому количество фильтров влияет на&nbsp;скорость загрузки страницы.</p>
+
+<p>Фильтры задаются с&nbsp;помощью свойства <code>filter</code>. Начнём знакомство с ними.</p>
+
+<p>Яркость&nbsp;— <code>brightness</code>. Допустимы числовые значения от <code>0</code> и&nbsp;выше или проценты. Со&nbsp;значением фильтра <code>1</code> или <code>100%</code> элемент отображается без изменений.</p>
+<pre>.effect {
+  filter: brightness(2); /* увеличивает яркость вдвое */
+  filter: brightness(10%); /* снижает яркость до 10% */
+  filter: brightness(150%); /* увеличивает яркость на 50% */
+}</pre>
+
+<p>Контрастность&nbsp;— <code>contrast</code>. Как и&nbsp;у&nbsp;фильтра яркости в&nbsp;качестве значения можно использовать числа или проценты.</p>
+<pre> .effect {
+   filter: contrast(0.5); /* снижает контрастность наполовину */
+   filter: contrast(50%); /* тоже снижает контрастность до 50% */
+ }</pre>
+<p class="alert">На&nbsp;момент написания курса не&nbsp;все <a target="_blank" href="http://caniuse.com/css-filters">браузеры поддерживают</a> CSS-фильтры. Для корректной работы фильтров в&nbsp;Chrome и&nbsp;Safari необходимо указывать префикс <code>-webkit-</code>. Но&nbsp;в&nbsp;этом курсе мы&nbsp;позаботились о&nbsp;префиксах — они подставляются в мини-браузере автоматически.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.brightness</code> задайте фильтр
+      <code>filter: brightness(2)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> изображению в блоке <code>.contrast</code> — фильтр
+      <code>contrast(2)</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Бесцветность и сепия, grayscale и sepia <small>[2/14]</small></h1>
+          <p>Следующие два фильтра исторически относятся к&nbsp;фотографии: изначально фотографии были чёрно-белые или коричневатого оттенка краски сепии.</p>
+
+<p>С&nbsp;помощью фильтров бесцветности и&nbsp;сепии фотографиям можно придать эффект «старины».</p>
+
+<p>Бесцветность&nbsp;— <code>grayscale</code>. Допустимы числовые значения от <code>0</code> до <code>1</code> и&nbsp;процентные значения от <code>0%</code> до <code>100%</code>. При значениях <code>0</code> или <code>0%</code> элемент отображается без изменений.</p>
+
+<pre>.effect {
+    filter: grayscale(1); /* полное обесцвечивание */
+    filter: grayscale(50%); /* обесцвечивание наполовину */
+}
+</pre>
+
+<p>Сепия&nbsp;— <code>sepia</code>. Допустимые значения такие&nbsp;же, как у <code>grayscale</code>.</p>
+<pre>.effect {
+    filter: sepia(1); /* полный эффект сепии */
+    filter: sepia(25%); /* эффект сепии применяется на 25% */
+}
+</pre>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.grayscale</code> задайте фильтр
+      <code>grayscale(1)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для картинки в блоке <code>.sepia</code> фильтр
+      <code>sepia(1)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Инверсия и насыщенность, invert и saturate <small>[3/14]</small></h1>
+          <p>Ещё два фильтра для цветовых эффектов&nbsp;— инверсия цвета и&nbsp;цветовая насыщенность. Как понятно
+из&nbsp;названия, при инверсии цвета меняются на&nbsp;противоположные, и&nbsp;мы&nbsp;получаем «негатив» картинки, 
+а&nbsp;цветовая насыщенность делает краски ярче и&nbsp;противоположна по&nbsp;смыслу фильтру обесцвечивания.</p>
+
+<p>Инверсия цвета&nbsp;— <code>invert</code>. Допустимые простые числовые значения от 
+<code>0</code> до <code>1</code> и&nbsp;процентные значения от <code>0%</code> до <code>100%</code>.</p>
+<pre>.effect {
+    filter: invert(1); /* полная инверсия цвета */
+    filter: invert(50%); /* инверсия цвета наполовину, все цвета серые */
+}
+</pre>
+<p>Цветовая насыщенность&nbsp;— <code>saturate</code>. Допустимые простые числовые значения 
+от <code>0</code> и&nbsp;выше и&nbsp;процентные значения от <code>0%</code> и&nbsp;выше. 
+При значении фильтра <code>1</code> или <code>100%</code> элемент отображается без изменений. 
+Если установить нулевое значение, то&nbsp;картинка обесцветится, как при использовании 
+фильтра <code>grayscale</code>.</p>
+<pre>.effect {
+    filter: saturate(2); /* цвета ярче вдвое */
+    filter: saturate(50%); /* цвета вдвое бледнее */
+    filter: saturate(0); /* обесцвеченная картинка */
+}
+</pre>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.invert</code> задайте фильтр
+      <code>invert</code> со значением <code>0.3</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем измените значение инверсии на <code>1</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а для картинки в блоке <code>.saturate</code> фильтр
+      <code>saturate</code> со значением <code>5</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Поворот цвета, hue-rotate <small>[4/14]</small></h1>
+          <p style="float: right; margin: 0 0 10px 10px;"><img src="/assets/course85/wheel-analogous-1.png" alt=""></p>
+<p>Ещё один интересный цветовой фильтр&nbsp;— поворот цвета <code>hue-rotate</code>.
+Если представить все цвета в&nbsp;виде круга, то&nbsp;этим фильтром можно повернуть цвет
+картинки вдоль круга на&nbsp;определённый угол.</p>
+<p>Кстати, похожую функцию цветового поворота мы&nbsp;рассматривали в
+<a href="/courses/85/run/4" target="_blank">курсе по&nbsp;препроцессору LESS</a>.</p>
+<p>Итак, поворот цвета&nbsp;— <code>hue-rotate</code>. Значение задаётся в&nbsp;градусах
+от <code>0deg</code> до <code>360deg</code>. Допускается также использование отрицательного угла. Положительное значение будет вращать цвет по&nbsp;часовой стрелке, а&nbsp;отрицательное&nbsp;— против. При значении фильтра <code>0deg</code> элемент отображается без изменений.</p>
+<p style="clear: both;">Примеры:</p>
+<pre>.effect {
+    filter: hue-rotate(90deg); /* поворот на 90 градусов по часовой */
+    filter: hue-rotate(-90deg); /* поворот на 90 градусов обратно */
+}</pre>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению <code>.hue-rotate img</code> задайте фильтр <code>hue-rotate</code> со значением <code>90deg</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем измените значение на <code>270deg</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Изображению <code>.hue-rotate-reverse img</code> задайте фильтр поворота цвета <code>-180deg</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Размытость и непрозрачность, blur и opacity <small>[5/14]</small></h1>
+          <p>Не&nbsp;все фильтры работают с&nbsp;цветом. Например, фильтр размытости создаёт у&nbsp;фотографии
+эффект расфокусировки, а&nbsp;фильтр непрозрачности может сделать объект частично прозрачным.</p>
+<p>Фильтр <code>blur</code> задаёт размытость объекта. Его значение задаётся в&nbsp;пикселях
+от <code>0px</code> и&nbsp;выше.</p>
+<pre>.effect {
+    filter: blur(5px); /* размытость в 5px */
+}</pre>
+<p>Фильтр <code>opacity</code> задаёт уровень <em>не</em>прозрачности объекта. Работает точно так&nbsp;же, как свойство <code>opacity</code>. Допустимые значения от <code>0</code> до <code>1</code> 
+или от <code>0%</code> до <code>100%</code>.</p>
+<pre>.effect {
+    filter: opacity(0.5); /* объект наполовину непрозрачный */
+    filter: opacity(0%); /* полностью прозрачный объект */
+}</pre>
+<p>Между фильтром и&nbsp;свойством <code>opacity</code> всё&nbsp;же есть «невидимое» отличие. Некоторые браузеры используют аппаратное ускорение для отрисовки фильтров, а&nbsp;для свойства <code>opacity</code> ускорение не&nbsp;используется. Поэтому применение фильтра <code>opacity</code> может существенно улучшить производительность по&nbsp;сравнению с&nbsp;аналогичным свойством. </p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.blur</code> задайте фильтр
+      <code>blur</code> со значением <code>5px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для картинки в блоке <code>.opacity</code> фильтр
+      <code>opacity</code> со значением <code>0.4</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Тень, drop-shadow <small>[6/14]</small></h1>
+          <p>С&nbsp;помощью фильтра <code>drop-shadow</code> можно добавить тень к&nbsp;объекту. Синтаксис фильтра такой&nbsp;же, как и&nbsp;у&nbsp;свойства <code>box-shadow</code>.</p>
+
+<pre>.effect {
+    /* 
+        чёрная тень, смещённая на 10px по горизонтали и 
+        на 5px по вертикали, с радиусом размытия 3px
+    */
+    filter: drop-shadow(10px 5px 3px #000000);
+  
+    /* несмещённая зелёная тень с радиусом размытия 5px */
+    filter: drop-shadow(0px 0px 5px green);
+}</pre>
+<p>В&nbsp;отличие от <code>box-shadow</code> фильтр тени не&nbsp;поддерживает параметр <code>inset</code> для внутренней тени.</p>
+<p>Кроме того, на&nbsp;момент написания курса в&nbsp;фильтре тени не&nbsp;поддерживается растяжение (подробнее о&nbsp;растяжении в&nbsp;свойстве <code>box-shadow</code> рассказано в&nbsp;курсе <a target="_blank" href="/courses/51/run/5">«Игра теней»</a>).</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.shadow-1</code> задайте фильтр <code>drop-shadow</code> со значением <code>15px 15px 15px black</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а блоку <code>.shadow-2</code> — со значением 
+      <code>drop-shadow(0px 0px 20px red)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Отличие box-shadow и drop-shadow <small>[7/14]</small></h1>
+          <p>Фильтр тени имеет преимущества перед свойством <code>box-shadow</code>.</p>
+
+<p>Во-первых, при отрисовке в&nbsp;браузере фильтра <code>drop-shadow</code> используется аппаратное ускорение, что улучшает производительность. А&nbsp;дополнительного ускорения при использовании свойства <code>box-shadow</code> в&nbsp;браузере нет.</p>
+
+<p>Во-вторых, фильтр <code>drop-shadow</code> применяется к&nbsp;непрозрачному контуру картинок, а&nbsp;прозрачные области игнорируются, в&nbsp;то&nbsp;время как <code>box-shadow</code> задает прямоугольную тень по&nbsp;границе всего изображения.</p>
+
+<p>На&nbsp;примере полупрозрачной PNG-картинки можно оценить, как работают эти два свойства. Но стоит задать такой картинке непрозрачный фон, как поведение фильтра изменится.</p>
+
+<p>Нужно заметить, что фильтры пришли в&nbsp;CSS из&nbsp;SVG, поэтому <code>drop-shadow</code> и <code>box-shadow</code> различаются в&nbsp;реализации. То&nbsp;есть с&nbsp;одними и&nbsp;теми&nbsp;же параметрами тени будут выглядеть по-разному.</p>
+
+<p>Давайте сравним эффекты теней на&nbsp;примере.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.box-shadow</code> задайте тень
+      <code>box-shadow: 0 0 10px red</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для картинки в блоке <code>.filter-shadow</code> задайте фильтр
+      <code>drop-shadow</code> со значением <code>0 0 10px red</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем обеим картинкам задайте белый цвет фона: <code>background-color: #ffffff</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Применение CSS-фильтров к тексту <small>[8/14]</small></h1>
+          <p>Фильтры можно применять без ограничений не&nbsp;только к&nbsp;картинкам, но&nbsp;и&nbsp;к&nbsp;другим HTML-элементам. 
+Давайте попробуем применить фильтры тени и&nbsp;размытия к&nbsp;тексту подписей.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Абзацу в блоке <code>.blur</code> задайте фильтр размытия
+    со значением <code>2px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а абзацу в блоке <code>.shadow</code> задайте фильтр тени со
+    значением <code>2px 2px 2px black</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Испытание: разные фильтры <small>[9/14]</small></h1>
+          <p>Итак, мы&nbsp;рассмотрели все существующие CSS-фильтры. Самое время проверить силы в&nbsp;испытании.</p>
+<p>Вам нужно понять, какие фильтры применены к&nbsp;фотографиям и задать фильтрам подходящие значения в CSS.</p>
+<p>Все значения фильтров целые. Если это допустимо, то кратны <code>5</code>.</p>
+<div class="tip">
+  <a class="tip-toggle" href="#tip1">Подсказка</a>
+  <div id="tip1" class="tip-content">
+    <div class="alert alert-info">
+      Например, для полной инверсии цветов фотографии нужно задать фильтр <code>invert</code> со значением <code>1</code> или <code>100%</code>.
+    </div>
+  </div>
+</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Комбинация фильтров <small>[10/14]</small></h1>
+          <p>К&nbsp;одному и&nbsp;тому&nbsp;же блоку можно применить несколько фильтров одновременно. Для
+этого все фильтры просто перечисляются через пробел после слова <code>filter</code>:</p>
+<pre>.effect {
+    filter: sepia(50%);
+    filter: sepia(50%) blur(5px);
+    filter: sepia(50%) blur(5px) opacity(50%);
+}</pre>
+<p>Стоит помнить, что перечисление фильтров в&nbsp;разном порядке даёт разный результат.
+Это так, потому что каждый следующий фильтр применяется уже к&nbsp;изображению с&nbsp;эффектом.</p>
+<p>Опробуем это на&nbsp;практике.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.multi-filter-1</code> задайте фильтр <code>hue-rotate(90deg)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем добавьте второй фильтр <code>saturate(2)</code></li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и затем третий фильтр <code>sepia(0.8)</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Изображению в блоке <code>.multi-filter-2</code> задайте комбинацию из трёх фильтров в таком порядке: <code>sepia(0.8)</code>, <code>hue-rotate(90deg)</code>, <code>saturate(2)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Комбинация фильтров drop-shadow <small>[11/14]</small></h1>
+          <p>Если применить несколько фильтров <code>drop-shadow</code> к&nbsp;одному блоку, то&nbsp;их&nbsp;комбинация даст интересный эффект. Так как каждый следующий фильтр в&nbsp;комбинации применяется к&nbsp;изображению с&nbsp;предыдущими фильтрами, то&nbsp;ещё одна тень у&nbsp;блока с&nbsp;тенью создаст двойную тень.</p>
+<pre>.effect {
+    /* обычная тень */
+    filter: drop-shadow(0px 0px 0px black);
+
+    /* двойная тень */
+    filter: drop-shadow(0px 0px 0px black) drop-shadow(0px 0px 0px black);
+}</pre>
+<p>В&nbsp;этом ещё одно отличие фильтра <code>drop-shadow</code> от&nbsp;свойства <code>box-shadow</code>. Подробнее про множественные тени <code>box-shadow</code> рассказывается в&nbsp;курсе <a href="/courses/51/run/12" target="_blank">«Игра теней»</a>.</p>
+<p>Кстати, фильтр <code>drop-shadow</code> бывает полезно применять не&nbsp;только к&nbsp;изображениям, но&nbsp;и&nbsp;к&nbsp;обычным элементам. Тень будет, как и&nbsp;в&nbsp;случае с&nbsp;картинками, идти по&nbsp;непрозрачному контуру. В&nbsp;область тени включаются также псевдоэлементы блока.</p>
+<p>Убедимся в&nbsp;этом на&nbsp;примере.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для блока <code>.bubble</code> задайте фильтр <code>drop-shadow</code> со значением <code>drop-shadow(20px 20px 0px #0074d9)</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем замените горизонтальное смещение тени в фильтре на <code>200px</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Добавьте в правило второй фильтр <code>drop-shadow(0px 100px 0px #2ecc40)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Анимация CSS-фильтров <small>[12/14]</small></h1>
+          <p>К&nbsp;CSS-фильтрам можно применять анимации и&nbsp;плавные переходы.</p>
+<p>Например, очень оригинальный эффект получится, если применить бесконечную
+анимацию к&nbsp;фильтру поворота цвета <code>hue-rotate</code> на&nbsp;цветной фотографии.</p>
+<p>Кстати, CSS-анимация подробно рассмотрена в&nbsp;курсе 
+<a href="/courses/80" target="_blank">«Анимация»</a>.</p>
+<p>Давайте&nbsp;же попробуем это!</p>
+<hr>
+<ol>
+		<li id="goal1"><span class="label ha-goal-label">Цель 1</span> В кадре <code>100%</code> директивы <code>rotate-colors</code> задайте 
+    фильтр поворота цвета со значением <code>360deg</code>.
+		</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Плавные переходы и CSS-фильтры <small>[13/14]</small></h1>
+          <p>Теперь рассмотрим применение к&nbsp;фильтрам плавных переходов.</p>
+<p>К&nbsp;примеру, можно фильтрами сделать фотографию чёрно-белой и&nbsp;размытой,
+по&nbsp;наведению убрать эффект фильтра, а&nbsp;само визуальное изменение сделать
+плавным.</p>
+<p>Кстати, у&nbsp;свойства <code>filter</code> значение по&nbsp;умолчанию&nbsp;— <code>none</code>.
+Воспользуемся им&nbsp;для отмены эффекта фильтра по&nbsp;наведению на&nbsp;фотографию.</p>
+<p>Свойство <code>transition</code> подробно рассматривается в&nbsp;курсе 
+<a href="/courses/84" target="_blank">«Плавные переходы»</a>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Изображению в блоке <code>.combo</code> задайте комбинацию фильтров
+      <code>grayscale(1)</code></li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и <code>blur(2px)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> По наведению на изображение задайте значение фильтра <code>none</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Затем изображению добавьте плавный переход для всех свойств длительностью 
+    <code>0.6s</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/97">Кекстаграм: Начало. CSS-фильтры</a>»</div>
+          <h1>Испытание: комбинации фильтров <small>[14/14]</small></h1>
+          <p>Пришла пора ещё одного испытания, где нужно понять и&nbsp;подобрать комбинации фильтров, применённых к&nbsp;фотографиям.</p>
+<p>В&nbsp;испытании все значения фильтров кратны <code>5</code> или <code>0.5</code>. Цвет фильтра тени&nbsp;— <code>#000000</code>.</p>
+<p>Этот курс — только начало. В следующем вам предстоит помочь Кексу создать собственный Кекстаграм и запрограммировать его. До встречи на <a href="/courses/98" target="_blank">следующем курсе по фильтрам и JS</a>!</p>
+<hr>
+</div>
+				
+				
+				
+
+				
+	</div>
+<body>

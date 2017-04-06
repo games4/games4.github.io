@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Флексбокс, часть&nbsp;1</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/layout/96.svg" alt="Флексбокс, часть&nbsp;1" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Флексбокс, часть&nbsp;1</h1>
+		<p>Рассмотрим основы нового механизма «гибкой» раскладки&nbsp;— флексбокс. Сначала потренируемся «на&nbsp;котиках» направлять оси флекс-контейнера, выравнивать и&nbsp;переносить флекс-элементы, а&nbsp;затем научимся простому применению флексбокса в&nbsp;реальных интерфейсах.</p>
+	</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Флексбокс, display: flex <small>[1/31]</small></h1>
+          <p>Флексбокс&nbsp;— это первый CSS-механизм, предназначенный для построения сеток и&nbsp;создания сложных раскладок блоков.</p>
+
+<p>Другие механизмы, с&nbsp;помощью которых мы&nbsp;раньше строили сетки, задумывались совсем не&nbsp;для этого: плавающие блоки нужны для создания блоков, которые обтекает текст, а&nbsp;таблицы используются для разметки табличных данных.</p>
+
+<p>Флексбокс задумывался для создания «гибких» раскладок и&nbsp;хранит много тонкостей и&nbsp;чудес, о&nbsp;которых мы&nbsp;поговорим в&nbsp;этой серии курсов. А&nbsp;пока начнём с&nbsp;простого. Как включить флексбокс?</p>
+
+<p>Очень просто: нужно задать элементу свойство <code>display: flex;</code>. После этого происходит два события:</p>
+
+<ol>
+<li>Элемент с <code>display: flex;</code> превращается во&nbsp;<em>«флекс-контейнер»</em> и&nbsp;внутри него начинает происходить вся магия гибкой раскладки.</li>
+<li>Непосредственные потомки этого элемента превращаются во&nbsp;<em>«флекс-элементы»</em> и&nbsp;начинают играть по&nbsp;новым правилам.</li>
+</ol>
+
+<p>Первое, что вы&nbsp;заметите после выполнения этого задания, это&nbsp;то, что блоки растянутся на&nbsp;всю высоту контейнера. Да, внутри флексбокса можно делать элементы одинаковой высоты!</p>
+
+<p>Поэкспериментируем!</p>
+
+<div class="alert">На&nbsp;момент написания курса <a href="http://caniuse.com/#feat=flexbox" target="_blank" rel="nofollow">поддержка флексбокса</a> в&nbsp;современных браузерах довольно хорошая, что позволяет сейчас с&nbsp;уверенностью его использовать.</div>
+<hr>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.room</code> задайте свойство <code>display</code> со значением <code>flex</code>.</li>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Главная ось, flex-direction <small>[2/31]</small></h1>
+          <p>Вспомните, как ведёт себя обычный поток документа. Блоки и&nbsp;текст располагаются слева направо и&nbsp;сверху вниз.</p>
+
+<p>В&nbsp;привычной блочной модели направления «лево», «право», «верх» и&nbsp;«низ» неизменны. Но&nbsp;внутри флекс-контейнера эти понятия могут изменяться, потому что там можно изменять обычное направление потока.</p>
+
+<p>Вместо направлений «лево» и&nbsp;«право» во&nbsp;флексбоксе используется понятие <em>«главная ось»</em>. Поток флекс-элементов «течёт» вдоль главной оси от&nbsp;её&nbsp;начала к&nbsp;её&nbsp;концу.</p>
+
+<p>
+<img src="/assets/course96/img/flexbox-1.png" alt="Поток флекс-элементов «течёт» вдоль главной оси" width="600">
+</p>
+
+<p>По&nbsp;умолчанию главная ось направлена слева направо, но&nbsp;её&nbsp;можно разворачивать во&nbsp;всех направлениях с&nbsp;помощью свойства <code>flex-direction</code>, которое задаётся для флекс-контейнера. Значения свойства:</p>
+
+<ul>
+<li><p><code>row</code> —&nbsp;значение по&nbsp;умолчанию, главная ось направлена слево направо.</p></li>
+<li><p><code>column</code> —&nbsp;главная ось направлена сверху вниз.</p></li>
+<li><p><code>row-reverse</code> —&nbsp;главная ось направлена справа налево.</p></li>
+<li><p><code>column-reverse</code> —&nbsp;главная ось направлена снизу вверх.</p></li>
+</ul>
+
+<p>Флекс-элементы всегда располагаются вдоль главной оси, независимо от&nbsp;её&nbsp;направления.</p>
+
+<div class="alert">Мы&nbsp;добавили в&nbsp;мини-браузер индикатор главной оси. Теперь вы&nbsp;всегда будете знать, куда она направлена.</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Поперечная ось <small>[3/31]</small></h1>
+          <p>Вместо направлений «верх» и&nbsp;«низ» во&nbsp;флексбоксе используется понятие <em>«поперечная ось»</em>. Вдоль этой оси рассчитывается высота элементов и&nbsp;работают «вертикальные» выравнивания.</p>
+
+<p>
+  <img src="/assets/course96/img/flexbox-2.png" alt="Поперечная ось во флексбоксе" width="600">
+</p>
+
+<p>Поперечная ось всегда перпендикулярна главной оси и&nbsp;поворачивается вместе с&nbsp;ней:</p>
+
+<ul>
+<li>Если главная ось направлена горизонтально, то&nbsp;поперечная ось смотрит вниз.</li>
+<li>Если главная ось направлена вертикально, то&nbsp;поперечная ось смотрит направо.</li>
+</ul>
+
+<p>Это не&nbsp;совсем логичное поведение, к&nbsp;которому надо привыкнуть. Получается, что поперечная ось никогда не&nbsp;смотрит вверх или влево. А&nbsp;свойства для поворота поперечной оси нет.</p>
+
+<p>Давайте посмотрим на&nbsp;поведение поперечной оси вживую.</p>
+
+<div class="alert">Мы&nbsp;добавили в&nbsp;мини-браузер индикатор поперечной оси. Теперь вы&nbsp;всегда будете знать, куда она направлена.</div>
+<hr>
+<div class="ha-task-goals">
+<p>Для блока <code>.room</code> задайте ещё раз направление главной оси:</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> сверху вниз,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> справа налево,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем слева направо.</li>
+</ol>
+<p><small>Обращайте внимание на направление поперечной оси.</small></p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Распределение флекс-элементов, justify-content <small>[4/31]</small></h1>
+          <p>Вместо «горизонтального» выравнивания во&nbsp;флексбоксе используется свойство для распределения элементов вдоль главной оси&nbsp;— <code>justify-content</code>. Это свойство задаётся для флекс-контейнера.</p>
+
+<p>Его значением по&nbsp;умолчанию является <code>flex-start</code>. При этом значении элементы располагаются у&nbsp;начала главной оси.</p>
+
+<p>Чтобы элементы располагались по&nbsp;центру главной оси, нужно задать для <code>justify-content</code> значение <code>center</code>.</p>
+
+<p>Давайте разместим коврики по&nbsp;центру комнаты.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте распределение флекс-элементов по центру главной оси в блоке <code>.room</code>.
+</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>В начале и в конце главной оси <small>[5/31]</small></h1>
+          <p>Чтобы флекс-элементы располагались в&nbsp;начале главной оси, свойству <code>justify-content</code> нужно задать значение <code>flex-start</code>. Оно&nbsp;же является и&nbsp;значением по&nbsp;умолчанию.</p>
+
+<p>А&nbsp;значение <code>flex-end</code> расположит элементы в&nbsp;конце главной оси.</p>
+
+<p>Обратите внимание, что <code>justify-content: flex-end</code> не&nbsp;меняет порядок элементов, как это происходит при изменении направления оси <code>flex-direction: row-reverse</code>. Элементы просто прижимаются к&nbsp;концу главной оси.</p>
+
+<p>Давайте опробуем эти значения <code>justify-content</code> и&nbsp;разместим коврики в&nbsp;начале и&nbsp;в&nbsp;конце комнаты.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В блоке <code>.room-2</code> разверните главную ось справа налево.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Обоим блокам задайте распределение элементов в начале главной оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> затем только первому блоку — в конце главной оси,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> и снова обоим блокам — в конце главной оси.</li>  
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Равномерное распределение <small>[6/31]</small></h1>
+          <p style="text-align:justify;margin-left:120px;margin-right:120px;">Помните&nbsp;ли вы&nbsp;<a href="/courses/43/run/11">режим горизонтального выравнивания</a> «по&nbsp;ширине», когда текст распределялся в&nbsp;блоке равномерно, а&nbsp;края текста прижимались к&nbsp;краям блока? Совсем как в&nbsp;этом абзаце.</p>
+
+<p>У&nbsp;флексбокса есть чем-то похожие значения <code>justify-content</code>, которые равномерно распределяют флекс-элементы вдоль главной оси:</p>
+
+<ul>
+<li><p><code>space-between</code> —&nbsp;расстояния между соседними элементами одинаковые, между элементами и&nbsp;краями флекс-контейнера отступов нет.</p></li>
+<li><p><code>space-around</code> —&nbsp;расстояния между соседними элементами одинаковые, между элементами и&nbsp;краями флекс-контейнера есть отступ, равный половине расстояния между соседними элементами.</p></li>
+</ul>
+
+<p>Сейчас мы&nbsp;добавим третьего кота и&nbsp;поэкспериментируем с&nbsp;этими значениями <code>justify-content</code>.</p>
+
+<p>А&nbsp;пока небольшой итог. Свойство <code>justify-content</code> управляет распределением элементов вдоль главной оси и&nbsp;имеет пять значений:</p>
+<ul>
+<li><p>значение по&nbsp;умолчанию <code>flex-start</code>,</p></li>
+<li><p><code>flex-end</code>,</p></li>
+<li><p><code>center</code>,</p></li>
+<li><p><code>space-between</code>,</p></li>
+<li><p><code>space-around</code>.</p></li>
+</ul>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В каждый из блоков <code>.room</code> добавьте кота Семёна: блок с классами <code>rug</code> и <code>simeon</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем блоку <code>.room-1</code> задайте равномерное распределение вдоль главной оси без отступов по краям,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а блоку <code>.room-2</code> — равномерное распределение с половинными отступами по краям.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Выравнивание флекс-элементов, align-items <small>[7/31]</small></h1>
+          <p>Вместо «вертикального» выравнивания во&nbsp;флексбоксе используется свойство для выравнивания элементов вдоль поперечной оси&nbsp;— <code>align-items</code>. Это свойство задаётся для флекс-контейнера.</p>
+
+<p>Его значением по&nbsp;умолчанию является <code>stretch</code>. Именно благодаря этому значению флекс-элементы и&nbsp;растягиваются на&nbsp;всю «высоту» флекс-контейнера. Если флекс-элементам задана высота, то&nbsp;растягиваться они не&nbsp;будут.</p>
+
+<p>Чтобы элементы выровнялись по&nbsp;центру поперечной оси, нужно задать для <code>align-items</code> значение <code>center</code>.</p>
+
+<p>Давайте выровняем коврики по&nbsp;центру комнаты вдоль поперечной оси и&nbsp;убедимся, что элементы действительно центруются, даже если у&nbsp;них разная высота.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Коврикам <code>.rug</code> задайте высоту <code>150px</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем для блока <code>.room</code> задайте выравнивание флекс-элементов по центру поперечной оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а после этого коврику Кекса <code>.keks</code> задайте высоту <code>250px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>В начале и в конце поперечной оси <small>[8/31]</small></h1>
+          <p>Чтобы расположить флекс-элементы в&nbsp;начале или в&nbsp;конце поперечной оси, нужно использовать значения <code>flex-start</code> и <code>flex-end</code> для свойства <code>align-items</code>.</p>
+
+<p>Эти значения аналогичны значениям свойства <code>justify-content</code>, отличается только ось.</p>
+
+<p>Проверим эти значения и&nbsp;разместим коврики сверху и&nbsp;снизу комнаты.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для блока <code>.room</code> задайте выравнивание флекс-элементов:</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> в начале поперечной оси,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем в конце поперечной оси.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Выравнивание элементов по базовой линии <small>[9/31]</small></h1>
+          <p>Ещё одно значение свойства <code>align-items</code> — это <code>baseline</code>. Если задать его контейнеру, то&nbsp;флекс-элементы будут выравниваться по&nbsp;базовой линии текста в&nbsp;них. Эта воображаемая линия проходит по&nbsp;нижней части букв.</p>
+
+<p>Если выровнять флекс-элементы по&nbsp;базовой линии, то&nbsp;они выстроятся так, чтобы текст в&nbsp;них был как&nbsp;бы на&nbsp;«одной строке».</p>
+
+<p>Чтобы лучше понять поведение <code>baseline</code>, сравним его с&nbsp;другим значением&nbsp;— <code>flex-start</code>.</p>
+
+<p>Мини-итог. Свойство <code>align-items</code> управляет выравниванием элементов вдоль поперечной оси и&nbsp;имеет пять значений:</p>
+<ul>
+<li><p>значение по&nbsp;умолчанию <code>stretch</code>,</p></li>
+<li><p><code>flex-start</code>,</p></li>
+<li><p><code>flex-end</code>,</p></li>
+<li><p><code>center</code>,</p></li>
+<li><p><code>baseline</code>.</p></li>
+</ul>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для блока <code>.room-1</code> задайте выравнивание флекс-элементов в начале поперечной оси,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для блока <code>.room-2</code> выравнивание по базовой линии текста.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Эгоистичное выравнивание, align-self <small>[10/31]</small></h1>
+          <p>Распределение элементов по&nbsp;главной оси задаётся для всего флекс-контейнера и&nbsp;на&nbsp;все флекс-элементы действует одинаково. Задать какому-то элементу отличное от&nbsp;других распределение по&nbsp;главной оси нельзя. И&nbsp;это вполне логично, ведь тогда элементы будут «сталкиваться» друг с&nbsp;другом.</p>
+
+<p>C&nbsp;поперечной осью всё проще. Можно сказать, что у&nbsp;каждого элемента она своя, и&nbsp;можно задавать им&nbsp;разное поперечное выравнивание. Для этого используется свойство <code>align-self</code>, которое задаётся для самих флекс-элементов, а&nbsp;не&nbsp;для флекс-контейнера.</p>
+
+<p>У&nbsp;свойства <code>align-self</code> те&nbsp;же самые значения, что и&nbsp;у <code>align-items</code>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для коврика Рудольфа <code>.rudolf</code> задайте выравнивание в начале поперечной оси,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> для Кекса <code>.keks</code> — в конце поперечной оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а для Семёна <code>.simeon</code> — по центру оси <code>center</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Выравнивание одного элемента по базовой линии <small>[11/31]</small></h1>
+          <p>Аналогично <code>align-items</code> для отдельного флекс-элемента можно задать и&nbsp;выравнивание по&nbsp;базовой линии с&nbsp;помощью <code>align-self</code> со&nbsp;значением <code>baseline</code>.</p>
+
+<p>Давайте зададим выравнивание по&nbsp;базовой линии двум отдельным блокам.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Задайте выравнивание флекс-элементов по базовой линии текста:</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> для коврика Семёна <code>.text-simeon</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> для коврика Кекса <code>.text-keks</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Перенос флекс-элементов, flex-wrap <small>[13/31]</small></h1>
+          <p>Что будет, если флекс-элементов в&nbsp;контейнере станет больше, чем может уместиться в&nbsp;один ряд?</p>
+
+<ul>
+<li>Они будут сжиматься до&nbsp;минимально возможной ширины.</li>
+<li>Даже если им&nbsp;задать ширину явно, механизм флексбокса может её&nbsp;уменьшить.</li>
+<li>Если они перестанут помещаться в&nbsp;контейнер и&nbsp;после уменьшения, то&nbsp;они выйдут за&nbsp;его пределы, но&nbsp;продолжат располагаться в&nbsp;один ряд.</li>
+</ul>
+
+<p>Это чем-то похоже на&nbsp;поведение ячеек в&nbsp;таблице.</p>
+
+<p>Такое поведение можно изменить свойством флекс-контейнера <code>flex-wrap</code>. По&nbsp;умолчанию оно имеет значение <code>nowrap</code>, то&nbsp;есть перенос флекс-элементов на&nbsp;новую строку запрещён.</p>
+
+<p>Значение <code>wrap</code> разрешает перенос флекс-элементов на&nbsp;новую строку, если они не&nbsp;помещаются в&nbsp;контейнер.</p>
+
+<p>Давайте посмотрим на&nbsp;практике, как оно работает.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Коврикам <code>.rug</code> задайте ширину <code>120px</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем в блок <code>.room</code> последним добавьте кота Массимо: блок с классами <code>rug</code> и <code>massimo</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а после этого для <code>.room</code> задайте перенос флекс-элементов на новую строку.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Перенос в обратном порядке <small>[14/31]</small></h1>
+          <p>Если перенос флекс-элементов разрешён, то&nbsp;ряды элементов располагаются вдоль поперечной оси. Первый ряд располагается в&nbsp;начале поперечной оси, а&nbsp;последний в&nbsp;конце. Но&nbsp;так работает только значение <code>wrap</code>.</p>
+
+<p>Если для <code>flex-wrap</code> задать значение <code>wrap-reverse</code>, то&nbsp;элементы будут переноситься, а&nbsp;ряды будут располагаться в&nbsp;обратном порядке: первый в&nbsp;конце поперечной оси, а&nbsp;последний в&nbsp;начале.</p>
+
+<p>Давайте добавим в&nbsp;комнату ещё котиков и&nbsp;попробуем переносить их&nbsp;на&nbsp;новую строку в&nbsp;обратном поперечной оси направлению.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте ещё двух котов: Марти — блок с классами <code>rug</code> и <code>marty</code> и Черныша — блок с классами <code>rug</code> и <code>blacky</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем для <code>.room</code> задайте перенос флекс-элементов на новую строку в обратном направлении <code>wrap-reverse</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом задайте всем коврикам ширину <code>180px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Выравнивание строк флекс-контейнера, align-content <small>[15/31]</small></h1>
+          <p>Вспомним свойство <code>justify-content</code>, которое управляет распределением флекс-элементов вдоль главной оси.</p>
+
+<p>Есть очень похожее свойство <code>align-content</code>, которое управляет выравниванием <em>рядов</em> флекс-элементов вдоль <em>поперечной</em> оси. У&nbsp;этих свойств почти одинаковые значения:</p>
+
+<ul>
+<li><p><code>flex-start</code>,</p></li>
+<li><p><code>flex-end</code>,</p></li>
+<li><p><code>center</code>,</p></li>
+<li><p><code>space-between</code>,</p></li>
+<li><p><code>space-around</code>,</p></li>
+<li><p>и <code>stretch</code>, которое есть только у <code>align-content</code> и&nbsp;является значением по&nbsp;умолчанию.</p></li>
+</ul>
+
+<p>Свойство <code>align-content</code> связано и&nbsp;со&nbsp;свойством <code>align-items</code>, которое управляет выравниванием флекс-элементов вдоль поперечной оси.</p>
+
+<p>В&nbsp;чём разница между <code>align-content</code> и <code>align-items</code>, когда работает одно, а&nbsp;когда работает другое? Вот ответы:</p>
+<ul>
+<li><p>Если есть только один ряд флекс-элементов, то&nbsp;работает <code>align-items</code>.</p></li>
+<li><p>Если есть несколько рядов, то&nbsp;работает <code>align-content</code>.</p></li>
+<li><p>Подчеркнём, что <code>align-content</code> влияет на&nbsp;ряды, а&nbsp;не&nbsp;на&nbsp;отдельные элементы.</p></li>
+</ul>
+<p class="alert alert-warning">В последней версии спецификации это поведение изменилось: теперь правильно, когда <code>align-content</code> выравнивает элементы в многострочном флекс-контейнере, даже если строка в контейнере единственная. Это изменение на момент окончания 2015 года применено только в браузерах Safari и Edge.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.room-1</code> задайте <code>align-items</code> в начале поперечной оси,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для <code>.room-2</code> — <code>align-items</code> в конце поперечной оси.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Затем увеличьте ширину коврика <code>.rug</code> до <code>120px</code>, чтобы в блоках стало два ряда элементов.</li>
+</ol>
+<p><small>Смотрите, как выравнивание рядов переопределило выравнивание элементов.</small></p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>align-content: stretch и align-items <small>[16/31]</small></h1>
+          <p>Ранее мы&nbsp;говорили, что как только во&nbsp;флекс-контейнере появляется несколько рядов элементов, вместо <code>align-items</code> начинает действовать свойство <code>align-content</code>.</p>
+
+<p>В&nbsp;этом случае <code>align-items</code> не&nbsp;отключается полностью, а&nbsp;может влиять на&nbsp;отображение флекс-элементов в&nbsp;рядах.</p>
+
+<p>Это происходит, когда мы&nbsp;используем для <code>align-content</code> значение по&nbsp;умолчанию&nbsp;— <code>stretch</code>. Оно растягивает ряды флекс-элементов, при этом оставшееся свободное место между ними делится поровну.</p>
+
+<p>Отображение строк при <code>align-content: stretch</code> зависит от&nbsp;значения <code>align-items</code>:</p>
+
+<ul>
+<li>Если у <code>align-items</code> задано значение <code>stretch</code>, то&nbsp;элементы в&nbsp;строках растягиваются на&nbsp;всю высоту своей строки.</li>
+<li>Если значение отлично от <code>stretch</code>, то&nbsp;элементы в&nbsp;строках ужимаются под своё содержимое и&nbsp;выравниваются в&nbsp;строках в&nbsp;зависимости от&nbsp;значения <code>align-items</code>.</li>
+</ul>
+
+<p>Давайте посмотрим на&nbsp;этот эффект вживую.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте <code>.rug</code> внутри <code>.room-2</code> ширину <code>120px</code>, чтобы там появилось два ряда.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для обеих комнат задайте <code>align-items</code> в начале оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> посередине оси,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> в конце оси.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>align-content:  не-stretch и align-items <small>[17/31]</small></h1>
+          <p>Значение <code>align-items</code> влияет на&nbsp;отображение рядов во&nbsp;флекс-контейнере, если у <code>align-content</code> задано значение <code>stretch</code>. В&nbsp;этом мы&nbsp;убедились в&nbsp;прошлом задании.</p>
+
+<p>Есть&nbsp;ли похожее влияние на&nbsp;остальные значения <code>align-content</code>? Нет.</p>
+
+<p>Убедимся в&nbsp;этом на&nbsp;примере значения <code>center</code>, которое располагает ряды в&nbsp;середине поперечной оси так, что:</p>
+
+<ul>
+<li>отступов между соседними рядами нет (но&nbsp;отступы самих элементов сохраняются),</li>
+<li>расстояние между первым рядом и&nbsp;краем флекс-контейнера равно расстоянию между последним рядом и&nbsp;другим краем.</li>
+</ul>
+
+<p>Давайте поэкспериментируем.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.room-2</code> задайте выравнивание рядов по центру оси.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем для обеих комнат задайте <code>align-items</code> в начале оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и в конце оси.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Остальные значения align-content <small>[18/31]</small></h1>
+          <p>Остальные четыре значения свойства <code>align-content</code> аналогичны значениям свойства <code>justify-content</code>, отличается только ось:</p>
+
+<ul>
+<li><p><code>flex-start</code> располагает ряды в&nbsp;начале поперечной оси.</p></li>
+<li><p><code>flex-end</code> располагает ряды в&nbsp;конце поперечной оси.</p></li>
+<li><p><code>space-between</code> равномерно распределяет ряды вдоль поперечной оси, расстояния между соседними рядами одинаковые, отступов у&nbsp;краёв нет.</p></li>
+<li><p><code>space-around</code> равномерно распределяет ряды вдоль поперечной оси, расстояния между соседними рядами одинаковые, отступы у&nbsp;краёв равны половине расстояния между соседними рядами.</p></li>
+</ul>
+
+<p>Напоследок небольшое резюме.</p>
+
+<p>Свойство <code>align-content</code> — «гибридное». Мы&nbsp;переводим его как «выравнивание», но&nbsp;оно больше похоже на&nbsp;«распределение», <code>justify-content</code>, от&nbsp;которого оно позаимствовало два значения <code>space-between</code> и <code>space-around</code>.</p>
+
+<p>Близость с&nbsp;«распределением» подчёркивает и&nbsp;отсутствие значения <code>baseline</code> — всё-таки свойство работает с&nbsp;рядами, а&nbsp;не&nbsp;с&nbsp;отдельными элементами.</p>
+
+<p>От&nbsp;«выравниваний»&nbsp;же, <code>align-items</code> и <code>align-self</code>, это свойство получило значение по&nbsp;умолчанию <code>stretch</code> и&nbsp;возможность «растягивать» ряды по&nbsp;высоте.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.room</code> задайте выравнивание строк в начале оси,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> в конце оси,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> равномерное выравнивание без отступов по краям,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> равномерное выравнивание с половинными отступами по краям.</li>
+</ol>
+</div>
+				
+				
+
+				
+	</div>
+<body>

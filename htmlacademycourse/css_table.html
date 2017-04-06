@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Таблицы на&nbsp;CSS</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description"><img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/layout/86.svg" alt="Таблицы на&nbsp;CSS" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Таблицы на&nbsp;CSS</h1>
+		<p>Взглянем на&nbsp;таблицы с&nbsp;другой стороны: научимся строить их&nbsp;с&nbsp;помощью CSS, исследуем и&nbsp;опробуем на&nbsp;практике редкие табличные свойства. А&nbsp;также нас ждёт интересное и&nbsp;непростое путешествие за&nbsp;Святым Граалем.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>CSS-таблица <small>[1/18]</small></h1>
+          <p>У&nbsp;таблиц в&nbsp;истории развития HTML непростая судьба. Они, можно сказать, оказались
+не&nbsp;в&nbsp;то&nbsp;время, не&nbsp;в&nbsp;том месте: таблицы долгое время использовали не&nbsp;по&nbsp;назначению для разметки
+каркаса страниц. Но&nbsp;так как таблица&nbsp;— это довольно «тяжёлый» инструмент и&nbsp;предназначена
+для других целей, табличной разметкой
+страниц было сложно управлять. Ситуация осложнялась тем, что на&nbsp;заре
+эпохи интернета, браузеры могли отображать таблицы совсем по-разному,
+что также усложняло контроль разметки.</p>
+
+<p>С&nbsp;тех пор за&nbsp;таблицами закрепилась нехорошая репутация. Некоторые разработчики
+до&nbsp;сих пор боятся использовать таблицы в&nbsp;разметке, даже там, где они вполне
+уместны. Самое время избавляться от&nbsp;этой пагубной привычки. Тем более, что сейчас
+таблицы можно использовать не&nbsp;только в&nbsp;HTML, но&nbsp;и&nbsp;в&nbsp;CSS. 
+Кстати, с&nbsp;HTML-таблицами познакомиться можно
+в&nbsp;курсе «<a href="/courses/39" target="_blank">Знакомство с&nbsp;таблицами</a>».
+А&nbsp;о&nbsp;CSS-таблицах пойдёт речь в&nbsp;этом курсе. Мы&nbsp;разберём по&nbsp;косточкам все части 
+CSS-таблиц, а&nbsp;также соберём вещи в&nbsp;поход за&nbsp;Святым Граалем. Но&nbsp;об&nbsp;этом позднее.</p>
+
+<p>Чтобы из&nbsp;любого элемента сделать таблицу в&nbsp;CSS, нужно его свойству <code>display</code>
+присвоить значение <code>table</code>. Всё просто:</p>
+<pre>.this-is-table {
+    display: table;
+}</pre>
+<p>В&nbsp;этом случае блок <code>.this-is-table</code> станет отображаться равнозначно тегу
+<code>&lt;table&gt;</code>.</p>
+<p>Испробуем это на&nbsp;практике. Представим таблицу и&nbsp;её&nbsp;ячейки стеллажом и&nbsp;полками, чтобы во&nbsp;всём наглядно разобраться.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Блоку <code>.checklist</code> задайте свойство
+    <code>display: table</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Ряды и ячейки таблицы <small>[2/18]</small></h1>
+          <p>Как вы&nbsp;уже поняли, мы&nbsp;можем одновременно и&nbsp;иметь семантическую разметку, и&nbsp;отображать её
+таблицей, если захотим. А&nbsp;в&nbsp;случае необходимости, можно просто отменить <code>display: table</code>,
+назначив другое подходящее значение <code>display</code>: например, <code>block</code>.
+Это ключевое преимущество перед HTML-таблицами, у&nbsp;которых изменить отображение
+на&nbsp;«нетабличное» нельзя.</p>
+
+<p>Давайте продолжим разбираться с&nbsp;таблицей и&nbsp;полками. У&nbsp;HTML-таблиц есть ряды 
+<code>&lt;tr&gt;</code> и&nbsp;ячейки <code>&lt;td&gt;</code>. Их&nbsp;аналоги в&nbsp;мире
+CSS-таблиц&nbsp;— значения свойства
+<code>display</code>: <code>table-row</code> и <code>table-cell</code>.</p>
+<pre>.this-is-table-row {
+    display: table-row;
+}
+.this-is-table-cell {
+    display: table-cell;
+}</pre>
+<p>Ячейки включаются в&nbsp;ряды, ряды в&nbsp;саму таблицу. Давайте сделаем из&nbsp;содержимого
+нашей таблицы ряды и&nbsp;ячейки. Выстроим полки в&nbsp;ряд.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Неупорядоченному списку <code>.checklist ul</code> задайте
+  свойство <code>display: table-row</code>, </li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а элементам списка — свойство <code>display: table-cell</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Заголовок таблицы <small>[3/18]</small></h1>
+          <p>Следующий элемент мира HTML-таблиц&nbsp;— табличный заголовок <code>&lt;caption&gt;</code>.
+Его представление в&nbsp;CSS:</p>
+<pre>.this-is-caption {
+    display: table-caption;
+}</pre>
+<p>В&nbsp;HTML-таблице тег заголовка располагается внутри неё, в&nbsp;CSS-таблице это так&nbsp;же.</p>
+<p>Также к&nbsp;заголовкам CSS-таблиц применимо свойство для вертикального позиционирования заголовка таблицы <code>caption-side</code>. Подробно о&nbsp;нём рассказывается в&nbsp;задании «<a href="/courses/39/run/11" target="_blank">Заголовок таблицы</a>» курса 
+«<a href="/courses/39" target="_blank">Знакомство с&nbsp;таблицами</a>».</p>
+<p>Создадим заголовок нашей CSS-таблицы.</p>
+<p>Для удобства восприятия мы&nbsp;визуально объединили несколько полок в&nbsp;одну.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В блок <code>.checklist</code> первым элементом добавьте
+    заголовок <code>h1</code> с текстом <code>Вещи в дорогу</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте заголовку свойство 
+    <code>display: table-caption</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем задайте свойство 
+    <code>caption-side: bottom</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Группировка верхних рядов и ячеек <small>[4/18]</small></h1>
+          <p>В&nbsp;HTML-таблицах можно группировать табличные ряды «шапки», основного содержания и 
+«подвала».</p>
+
+<p>Для группировки верхних рядов используется тег <code>&lt;thead&gt;</code>.
+В&nbsp;него включаются один или несколько рядов. Можно использовать несколько элементов
+<code>&lt;thead&gt;</code> одновременно.</p>
+
+<p>Аналог группировки верхних рядов в&nbsp;CSS&nbsp;— свойство <code>display: table-header-group</code>. Отметим, что блок, которому задано это свойство, всегда отображается вверху CSS-таблицы, даже если в&nbsp;разметке он&nbsp;идёт не&nbsp;первым. Это поведение идентично тегу <code>&lt;thead&gt;</code>.</p>
+
+<p>Давайте создадим «шапку» нашей CSS-таблицы. Это будет такая&nbsp;же полка, но&nbsp;располагающаяся сверху. Положим на&nbsp;неё одежду&nbsp;— не&nbsp;менее важные вещи для далёкого путешествия. Заметьте, как полка переместится вверх при задании ей&nbsp;свойства <code>display: table-header-group</code>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте блок <code>header</code> в разметке,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте ему свойство <code>display: table-header-group</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем задайте <code>li</code> внутри <code>.checklist header</code> цвет рамки <code>border-color: #3d9970</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Группировка нижних рядов и ячеек <small>[5/18]</small></h1>
+          <p>Аналогично «шапке» у&nbsp;таблицы можно сделать «подвал».</p>
+
+<p>В&nbsp;HTML-таблицах это тег <code>&lt;tfoot&gt;</code>, а&nbsp;в&nbsp;CSS&nbsp;— свойство 
+<code>display: table-footer-group</code>. Как и&nbsp;в&nbsp;случае «шапки», в&nbsp;таблицу можно включать несколько
+«подвалов» одновременно.</p>
+<p>Аналогично «шапке», блок, которому задано свойство <code>display: table-footer-group</code>, всегда отображается снизу CSS-таблицы, даже если в&nbsp;разметке он&nbsp;идёт не&nbsp;последним. Это поведение идентично тегу <code>&lt;tfoot&gt;</code>.</p>
+<p>Создадим ещё одну полку, разместим её&nbsp;внизу. Эта полка будет «подвалом» таблицы. На&nbsp;эту полку положим деньги и&nbsp;драгоценности.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте блок <code>footer</code> в разметке,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте ему свойство <code>display: table-footer-group</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем задайте <code>li</code> внутри <code>.checklist footer</code> цвет рамки <code>#0074d9</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Группировка основных рядов и ячеек, часть 1 <small>[6/18]</small></h1>
+          <p>Мы&nbsp;вернули логичное расположение блоков шапки и&nbsp;подвала в&nbsp;разметке. Рассмотрим теперь основное содержание таблицы.</p>
+
+<p>Ряды содержания таблицы в&nbsp;HTML включаются в&nbsp;тег <code>&lt;tbody&gt;</code>. В&nbsp;CSS&nbsp;же эту задачу выполняет свойство <code>display: table-row-group</code>.</p>
+
+<p>Дополнительные обёртки очень удобны для стилизации элементов таблицы.</p>
+
+<p>Давайте сгруппируем содержимое в&nbsp;отдельный блок и&nbsp;тоже немного стилизуем его. Это наша средняя полка.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Список <code>ul</code> между шапкой и подвалом заключите в <code>section</code> с классом <code>content</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> блоку <code>.content</code> задайте свойство 
+    <code>display: table-row-group</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем задайте <code>li</code> внутри <code>.content</code> цвет рамки <code>#ff851b</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Группировка основных рядов и ячеек, часть 2 <small>[7/18]</small></h1>
+          <p>Так&nbsp;же, как допускается несколько шапок и&nbsp;подвалов таблицы, может быть и 
+несколько групп её&nbsp;содержимого. Это также удобно для стилизации отдельных групп. Давайте добавим ещё одну, очень важную полку с&nbsp;едой для путешествия и&nbsp;особо выделим&nbsp;её.</p>
+
+<p>В&nbsp;итоге мы&nbsp;получим CSS-аналог следующей табличной разметки:</p>
+
+<pre>&lt;table&gt;
+    &lt;caption&gt;Вещи в дорогу&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;…&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody class="content"&gt;
+        &lt;tr&gt;…&lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tbody class="content content-important"&gt;
+        &lt;tr&gt;…&lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;…&lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте блок <code>.content-important</code> в разметке,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем задайте <code>li</code> внутри <code>.checklist .content-important</code> цвет рамки <code>#ff4136</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Колонка таблицы <small>[8/18]</small></h1>
+          <p>Итак, мы&nbsp;разобрались как стилизовать ряды. А&nbsp;что насчёт столбцов?</p>
+
+<p>В&nbsp;HTML-таблицах для стилизации столбцов используется тег 
+<code>&lt;col&gt;</code>. Тег пишется в&nbsp;начале таблицы и&nbsp;не&nbsp;закрывается. Первый <code>&lt;col&gt;</code> в&nbsp;разметке влияет на&nbsp;каждую первую ячейку в&nbsp;рядах таблицы, то&nbsp;есть, на&nbsp;первый столбец. Следующий <code>&lt;col&gt;</code> будет
+стилизовать второй столбец и&nbsp;так далее. </p>
+
+<p>В&nbsp;примере ниже ячейкам 1.1 и&nbsp;1.2 (первый столбец) задаётся
+ширина <code>20%</code>, а&nbsp;ячейкам 2.1 и&nbsp;2.2 (второй столбец) ширина&nbsp;— <code>80%</code>:</p>
+
+<pre>&lt;table&gt;
+    &lt;col width="20%"&gt;
+    &lt;col width="80%"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1.1&lt;/td&gt; &lt;td&gt;2.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1.2&lt;/td&gt; &lt;td&gt;2.2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<p>В&nbsp;CSS-таблицах всё так&nbsp;же: внутри таблицы нужно создать пустой
+тег и&nbsp;задать ему свойство <code>display: table-column</code> — это аналог
+тега <code>&lt;col&gt;</code>. Правила для него
+будут применяться к&nbsp;первому столбцу, следующий элемент с <code>table-column</code> стилизует второй столбец и&nbsp;так далее.</p>
+
+<p>Для практики наклеим на&nbsp;стену позади первого столбца текстурные обои.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> После заголовка <code>h1</code> создайте пустой <code>div</code>
+  с классом <code>column</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте блоку <code>.column</code> свойство <code>display: table-column</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем фоновую картинку с адресом <code>img/wall-1.png</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Группировка колонок таблицы <small>[9/18]</small></h1>
+          <p>Столбцы тоже можно группировать. В&nbsp;HTML-таблицах для этой цели используется тег <code>&lt;colgroup&gt;</code>. Теги <code>&lt;col&gt;</code> просто включаются в <code>&lt;colgroup&gt;</code> и&nbsp;стилизуется уже группа целиком, а&nbsp;не&nbsp;отдельные столбцы.</p>
+<p>В&nbsp;примере ниже ячейкам 1.1 и&nbsp;1.2 (первый столбец) задаётся ширина <code>20%</code>, а&nbsp;ячейкам 2.1, 2.2, 3.1 и&nbsp;3.2 (второй и&nbsp;третий столбец) ширина&nbsp;— <code>80%</code>:</p>
+<pre>&lt;table&gt;
+    &lt;col width="20%"&gt;
+    &lt;colgroup width="80%"&gt;
+        &lt;col&gt;
+        &lt;col&gt;
+    &lt;/colgroup&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1.1&lt;/td&gt; &lt;td&gt;2.1&lt;/td&gt; &lt;td&gt;3.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1.2&lt;/td&gt; &lt;td&gt;2.2&lt;/td&gt; &lt;td&gt;3.2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<p>В&nbsp;CSS-таблицах столбцы группируются аналогично. Группа столбцов создаётся 
+свойством <code>display: table-column-group</code> (аналог
+тега <code>&lt;colgroup&gt;</code>). Стилизуя группу, мы&nbsp;задаём правила
+для каждого дочернего столбца.</p>
+
+<p>Давайте попробуем создать и&nbsp;стилизовать группу столбцов в&nbsp;CSS и&nbsp;наклеим обои позади всех остальных столбцов.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте блок <code>.column-group</code>
+  в разметке,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте блоку <code>.column-group</code> свойство 
+    <code>display: table-column-group</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем задайте колонкам внутри <code>.column-group</code> фоновую картинку с адресом <code>img/wall-2.png</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Испытание: строим таблицу на CSS <small>[10/18]</small></h1>
+          <p>Настало время проверить себя! Вам предстоит превратить разметку с&nbsp;магическими рецептами в&nbsp;CSS-таблицу, не&nbsp;изменяя HTML-код.
+В&nbsp;таблице используется рамка толщиной <code>1px</code> и&nbsp;следующие цвета:</p>
+<ul>
+<li><code style="color: #777777; background-color: #fff;">#777777</code></li>
+<li><code style="color: #ffffff; background-color: #777;">#ffffff</code></li>
+<li><code style="color: #fffebc; background-color: #777;">#fffebc</code></li>
+<li><code style="color: #b2fdd0; background-color: #777;">#b2fdd0</code></li>
+<li><code style="color: #ffbaba; background-color: #777;">#ffbaba</code></li>
+</ul>
+<p>В&nbsp;CSS-коде уже есть небольшие подсказки, его не&nbsp;нужно менять. Значения свойств, как обычно, кратны пяти. Удачи!</p>
+<div class="alert">Картинки в&nbsp;ячейках выровнены горизонтально и&nbsp;вертикально. Подробно этот приём рассмотрен в&nbsp;задании «<a href="/courses/39/run/18" target="_blank">Выравнивание содержимого в&nbsp;ячейках</a>» курса 
+«<a href="/courses/39" target="_blank">Знакомство с&nbsp;таблицами</a>».</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Строчная таблица <small>[11/18]</small></h1>
+          <p>Итак, мы&nbsp;рассмотрели все возможные элементы CSS-таблиц. Во&nbsp;второй части курса мы&nbsp;опробуем эти элементы на&nbsp;практике, а&nbsp;также изучим ещё некоторые особенности CSS-таблиц.</p>
+
+<p>В&nbsp;CSS существуют блочные <code>block</code> и&nbsp;строчные <code>inline</code> элементы. Есть также и&nbsp;блочно-строчные <code>inline-block</code> элементы, сочетающие свойства обоих типов.</p>
+
+<p>Таблицы при этом имеют свой собственный тип <code>table</code>, но&nbsp;ведут себя в&nbsp;потоке документа как блоки, то&nbsp;есть занимают отдельную строку. Существует&nbsp;ли возможность сделать таблицу «строчной», чтобы она располагалась в&nbsp;одной строке с&nbsp;другими строчными элементами? Да! И&nbsp;такое поведение таблицы задаётся свойством <code>display: inline-table</code>.</p>
+
+<p>Попробуем создать строчную таблицу.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте списку <code>ul</code> отображение таблицей,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем отображение строчной таблицей.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Горизонтальное выравнивание таблицы <small>[12/18]</small></h1>
+          <p>Лёгкий способ горизонтально отцентровать блок произвольной ширины на&nbsp;странице&nbsp;— 
+присвоить ему отображение таблицей и&nbsp;задать <code>margin: auto</code>.</p>
+
+<p>В&nbsp;этом таблица схожа по&nbsp;поведению с&nbsp;обычным блочным элементом с&nbsp;фиксированной
+шириной, но&nbsp;при этом ширина таблицы может быть динамической.</p>
+
+<p>Разберём этот приём на&nbsp;примере.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте списку <code>ul</code> выравнивание <code>margin: auto</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> ширину <code>200px</code>. Заметьте, что таблица по-прежнему остаётся по центру.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Выровняйте предметы на полках <code>.checklist li</code> по центру с помощью <code>text-align</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Горизонтальное и вертикальное выравнивание <small>[13/18]</small></h1>
+          <p>Извечная проблема HTML-вёрстки&nbsp;— вертикальное выравнивание элементов. 
+Пользуясь особенностями таблиц можно легко отцентровать по&nbsp;вертикали и&nbsp;горизонтали 
+блок произвольной ширины и&nbsp;высоты.</p>
+
+<p>Трюк строится на&nbsp;той особенности, что ячейка растягивается на&nbsp;всю ширину таблицы, а&nbsp;содержимое ячейки
+просто центруется внутри неё с&nbsp;помощью свойств <code>text-align</code> и
+<code>vertical-align</code>. Для этого нужны:</p>
+
+<p>
+</p><ul>
+<li>контейнер-таблица <code>display: table</code>;</li>
+<li>ячейка с&nbsp;содержимым <code>display: table-cell</code>;</li>
+<li>горизонтальное и&nbsp;вертикальное выравнивание ячейки внутри таблицы.</li>
+</ul>
+<p></p>
+
+<p>Такой приём удобен, если нужно отцентровать какой-либо блок, например, модальное окно на&nbsp;странице.
+Проверим это!</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте блоку <code>.modal-wrapper</code> отображение таблицей, а блоку <code>.modal-cell</code> отображение ячейкой таблицы.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем блоку <code>.modal-cell</code> задайте текстовое выравнивание
+  по центру,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а вертикальное выравнивание посередине.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Удалите из блока <code>.modal-content</code> заголовок и убедитесь, что блок вне зависимости от высоты вертикально выравнивается по центру контейнера.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Ячейки и границы таблицы <small>[14/18]</small></h1>
+          <p>В&nbsp;CSS-таблицах можно управлять отступами и&nbsp;схлопыванием рамок между ячейками.
+Для этого, как и&nbsp;у&nbsp;HTML-таблиц, используются свойства <code>border-collapse</code> и
+<code>border-spacing</code>. Свойство <code>border-collapse</code> «схлопывает» границы ячеек, а <code>border-spacing</code> — определяет расстояние между ячейками внутри таблицы. Подробно свойства разбираются в&nbsp;заданиях 
+«<a target="_blank" href="/courses/39/run/5">Улучшаем отображение рамок</a>» и 
+«<a target="_blank" href="/courses/39/run/8">Отступы между ячейками</a>» курса 
+«<a target="_blank" href="/courses/39">Знакомство с&nbsp;таблицами</a>».</p>
+
+<p>Однако, у&nbsp;свойства <code>border-spacing</code> есть одна тонкость. Если в&nbsp;нём задано одно значение, то&nbsp;расстояние между ячейками устанавливается одновременно по&nbsp;вертикали и&nbsp;горизонтали. Если значений два, то&nbsp;первое определяет горизонтальное расстояние, а&nbsp;второе&nbsp;— вертикальное.</p>
+
+<p>Разберём эти свойства на&nbsp;примере небольшой CSS-таблицы.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Элементам списка <code>li</code> задайте сплошную рамку толщиной
+  <code>2px</code> и цветом <code>#323a47</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Блоку <code>article</code> задайте «схлопнутые» рамки
+  <code>border-collapse: collapse</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> затем задайте ему «несхлопнутые» границы <code>border-collapse: separate</code>
+  и расстояние между ячейками <code>20px 10px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Holy Grail, часть 1 <small>[15/18]</small></h1>
+          <img src="/assets/course86/img/HolyGrail.jpg" style="float: right; width: 300px; margin: 0 0 10px 10px;">
+<p>Итак, теперь у&nbsp;нас есть всё, чтобы заполучить Святой Грааль вёрстки!</p>
+<p>Так называемая разметка «Holy Grail»&nbsp;— это вариант разметки страницы с&nbsp;шапкой, тремя равными по&nbsp;высоте колонками (две фиксированные боковые колонки и&nbsp;тянущийся центр) и&nbsp;прилипающим подвалом. Центральная колонка должна тянуться, а&nbsp;боковые&nbsp;— иметь фиксированную ширину, любая колонка может быть больше остальных по&nbsp;высоте.</p>
+
+<p>Давайте по&nbsp;шагам разберём, как получить Святой Грааль.</p>
+
+<p>Начнём с&nbsp;«прилипающего» подвала. Он&nbsp;назван так, потому что:</p>
+<p>
+</p><ul>
+<li>«прилипает» к&nbsp;самому низу страницы, когда основное содержимое страницы небольшое и&nbsp;не&nbsp;отталкивает подвал ниже экрана,</li>
+<li>«отлипает», когда высота содержимого становится достаточно большой и&nbsp;влияет на&nbsp;высоту страницы.</li>
+</ul>
+<p></p>
+<p>Для реализации «прилипающего» подвала воспользуемся CSS-таблицами. Для начала зададим главному контейнеру табличное отображение и&nbsp;100% ширину и&nbsp;высоту.</p>
+
+<p>Чтобы блок был 100% высоты области просмотра, всем его родительским элементам (в&nbsp;нашем случае <code>html</code> и <code>body</code>) тоже должна быть задана 100% высота.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте блоку <code>.table-layout</code> отображение таблицей,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем ширину и высоту <code>100%</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Holy Grail, часть 2 <small>[16/18]</small></h1>
+          <p>Теперь давайте шапку и&nbsp;подвал сделаем рядами нашей табличной разметки. Это даст особый эффект: ряды растянутся и&nbsp;заполнят всю ширину и&nbsp;высоту таблицы, а&nbsp;последний ряд выровняется по&nbsp;нижней части таблицы&nbsp;— это&nbsp;то, что нам нужно.</p>
+
+<p>Теперь остаётся только задать нужную высоту шапки и&nbsp;подвала. Её&nbsp;можно задать минимально необходимой, например, будет достаточно <code>1px</code>. В&nbsp;результате вычисленная высота ряда станет минимальной, но&nbsp;не&nbsp;будет меньше высоты его содержимого.</p>
+
+<p>Таким образом, наш «прилипающий» подвал будет работать как следует.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блокам <code>header</code> и <code>footer</code> задайте отображение рядами таблицы</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и высоту <code>1px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Holy Grail, часть 3 <small>[17/18]</small></h1>
+          <p>Теперь разберёмся со&nbsp;столбцами нашей разметки.</p>
+
+<p>Блок <code>main</code> также отобразим таблицей, вложенной
+в <code>.table-layout</code>. Дочерние блоки <code>main</code> сделаем ячейками таблицы, чтобы
+расположить их&nbsp;в&nbsp;ряд. И, наконец, растянем <code>main</code> на&nbsp;100% доступной
+ширины и&nbsp;высоты, и&nbsp;вместе с <code>main</code> растянутся ячейки.</p>
+
+<p>Такая разметка <code>main</code> очень гибкая: можно без проблем менять ширину боковых столбцов, при этом 
+основная колонка будет занимать всю оставшуюся ширину.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>main</code> задайте отображение таблицей,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> блокам <code>.content</code> и <code>.side</code> — отображение ячейкой таблицы,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> блоку <code>main</code> задайте ширину и высоту в <code>100%</code>,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а затем боковым колонкам <code>.side</code> — ширину <code>100px</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/86">Таблицы на&nbsp;CSS</a>»</div>
+          <h1>Испытание: ещё одна CSS-таблица <small>[18/18]</small></h1>
+          <p>Итак, вам предстоит ещё одно испытание. Сейчас нужно снова из&nbsp;готовой разметки создать CSS-таблицу. Но&nbsp;на&nbsp;этот раз таблица&nbsp;— это стена, а&nbsp;ячейки&nbsp;— картины в&nbsp;рамках разного размера. Нужно развесить их&nbsp;на&nbsp;стену.</p>
+<p>Фоновые картинки, которые используются в&nbsp;оформлении: <br><code>img/wood.png</code>, <code>img/wall-1.png</code>, <code>img/wall-2.png</code>.</p>
+<p>Цвет: <code style="color: #686868;">#686868</code>.</p>
+<p>Значения свойств, как обычно, кратны пяти. </p>
+<hr>
+</div>				
+				
+				
+				
+
+				
+	</div>
+<body>

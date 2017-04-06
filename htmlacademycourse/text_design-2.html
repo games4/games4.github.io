@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Оформление текста, часть 2</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/content/79.svg" alt="Оформление текста, часть&nbsp;2" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Оформление текста, часть&nbsp;2</h1>
+		<p>Мы&nbsp;в&nbsp;прямом смысле «наиграемся со&nbsp;шрифтами», декоративными текстовыми эффектами и&nbsp;тенями, а&nbsp;ещё узнаем, как повысить читабельность текстов с&nbsp;помощью новых CSS-свойств.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Unicode-символы <small>[1/26]</small></h1>
+          <p>В этом курсе мы продолжим изучать возможности по оформлению текста с помощью CSS, которые не были рассмотрены в <a target="_blank" href="//htmlacademy.ru/courses/43">первом курсе</a>.</p>
+
+<p>Мы будем создавать подписи к фотографиям и красивые текстовые элементы дизайна, а также рассмотрим приёмы оформления длинных текстов.</p>
+
+<p>А для начала давайте создадим небольшой комикс. Он будет состоять всего из четырёх графических символов, которые познакомят нас с историей главного героя комикса — смайлика.</p>
+
+<p>Но где нам взять графические символы? Тут на помощь придёт кодировка Unicode. Помимо тех символов, которые помещаются у нас на клавиатуре, в стандарте кодирования Unicode представлены знаки почти всех письменных языков, а также разные специальные символы. В разметке HTML возможно написать любой символ Unicode, используя специальные ссылки-мнемоники: в виде слова, например, <code>&amp;название;</code> или в числовом обозначении с использованием десятичного или шестнадцатиричного кода, например, <code>&amp;#224;</code>.</p>
+
+<p>Примеры Unicode-символов: </p>
+
+<table class="table table-bordered" style="width:auto;">
+    <tbody><tr>
+        <td><code>&amp;copy;</code></td>
+        <td><code>&amp;#169;</code></td>
+        <td>©</td>
+    </tr>
+    <tr>
+        <td><code>&amp;alpha;</code></td>
+        <td><code>&amp;#945;</code></td>
+        <td>α</td>
+    </tr>
+    <tr>
+        <td><code>&amp;para;</code></td>
+        <td><code>&amp;#182;</code></td>
+        <td>¶</td>
+    </tr>
+</tbody></table>
+
+<p>Есть <a target="_blank" href="http://copypastecharacter.com/">специальный сервис</a>, где можно найти и скопировать нужный символ.</p>
+
+<p>С теорией разобрались, давайте же создадим комикс про приключения смайлика.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В первый <code>span</code> добавьте символ <code>&amp;#9786;</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> во второй — <code>&amp;#9992;</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> в третий — <code>&amp;#9788;</code>,</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> в четвёртый — <code>&amp;hearts;</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Свойство text-shadow <small>[2/26]</small></h1>
+          <p>Сначала познакомимся с текстовыми тенями.</p>
+
+<p>Тени для текста создаются с помощью CSS-свойства <code>text-shadow</code>. Оно очень похоже на <code>box-shadow</code>, рассмотренное в <a target="_blank" href="//htmlacademy.ru/courses/51">одном из предыдущих курсов</a>, но имеет свои особенности:</p>
+
+<ul>
+    <li>свойство <code>text-shadow</code> применяется к тексту;</li>
+    <li>форма тени повторяет форму текстовых символов;</li>
+    <li>можно управлять смещением тени, её цветом, а также размытием;</li>
+    <li>нельзя управлять растяжением текстовой тени;</li>
+    <li>можно создавать множественные тени.</li>
+</ul>
+
+<p>Для начала давайте создадим тень у заголовка и смайлика, а потом рассмотрим все параметры свойства подробнее.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Пропишите свойство <code>text-shadow</code> со значением <code>30px 30px 1px #111111</code></p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> заголовку <code>h1</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> смайлику <code>span</code>.</li>
+</ol>
+</div>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Смещение текстовой тени по горизонтали <small>[3/26]</small></h1>
+          <p>Рассмотрим подробнее параметры текстовой тени:</p>
+
+<p></p><pre>text-shadow: <span style="text-decoration: underline;">0px</span> 0px 0px #333333;</pre><p></p>
+
+<p>Первый параметр свойства <code>text-shadow</code> обязателен и задаёт смещение тени по горизонтали относительно текста. Положительное значение этого параметра сдвигает тень вправо, отрицательное — влево.</p>
+
+<p>Смещение задаётся в абсолютных и относительных единицах измерения: <code>px</code>, <code>em</code>, <code>pt</code> и других.</p>
+
+<p>Попробуем поменять значение первого параметра.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Сместите исходную тень (которую изначально не видно) заголовка <code>h1</code></p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> влево на <code>5px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> а затем вправо на <code>5px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Смещение текстовой тени по вертикали <small>[4/26]</small></h1>
+          <p></p><pre>text-shadow: 0px <span style="text-decoration: underline;">0px</span> 0px #333333;</pre><p></p>
+
+<p>Второй параметр свойства <code>text-shadow</code> тоже обязателен и задаёт смещение тени по вертикали. Положительное значение сдвигает тень вниз, отрицательное — вверх.</p>
+
+<p>Изменим значение второго параметра.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Сместите исходную тень заголовка <code>h1</code></p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> вверх на <code>5px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> а затем вниз на <code>5px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Размытие текстовой тени <small>[5/26]</small></h1>
+          <p></p><pre>text-shadow: 0px 0px <span style="text-decoration: underline;">0px</span> #333333;</pre><p></p>
+
+<p>Третий параметр свойства <code>text-shadow</code> необязателен и задаёт радиус размытия тени. Если этот параметр не задан, то по умолчанию устанавливается равным <code>0</code>. Чем больше значение параметра, тем сильнее тень размывается и становится светлее.</p>
+
+<p>Изменим радиус размытия тени.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Задайте исходной тени (которой изначально не видно) заголовка <code>h1</code></p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> размытие <code>5px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем сместите её вниз на <code>10px</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом увеличьте размытие до <code>15px</code>,</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Цвет текстовой тени <small>[6/26]</small></h1>
+          <p></p><pre>text-shadow: 0px 0px 0px <span style="text-decoration: underline;">#333333</span>;</pre><p></p>
+
+<p>Последний параметр свойства <code>text-shadow</code> необязателен и задаёт цвет тени.</p>
+
+<p>Если цвет тени не указан, то он совпадает с цветом текста. Цвет задаётся в любом цветовом формате, может быть полупрозрачным.</p>
+
+<p>Попробуем задавать разные цвета теням.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Для первого и второго параграфа отдельно <code>p</code> задайте тень:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span>  сначала с горизонтальным и вертикальным смещением <code>2px</code>, размытием <code>8px</code>, цвет не задавайте;</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> для первого параграфа задайте цвет тени <code>#333333</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> для второго — цвет тени <code>#ff9900</code>.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Эффект вдавленного текста <small>[7/26]</small></h1>
+          <p>У текста может быть задано сразу несколько теней. Для этого определения теней нужно перечислить через запятую. При этом тени распределяются по правилу: первая тень в списке — самая верхняя, последняя в списке — самая нижняя.</p>
+
+<pre>text-shadow:
+    1px 1px 1px #111111,
+    2px 2px 2px #222222;</pre>
+
+<p>С помощью множественных теней можно добиваться необычных результатов. Например, можно добавить тексту эффект «вдавленности» с помощью двух однотонных теней: более тёмная смещается немного вверх и влево, а более светлая — вниз и вправо.</p>
+
+<p>Давайте реализуем это!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <p>Заголовку <code>h1</code> задайте тень с горизонтальным и вертикальным смещением <code>-1px</code>, размытием <code>1px</code> и цветом <code>#1e181c</code>,</p></li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем вторую тень с горизонтальным и вертикальным смещением <code>2px</code>, размытием <code>1px</code> и цветом <code>#52424d</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+<div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Декоративная ретро-тень <small>[8/26]</small></h1>
+          <p>Ещё один текстовый эффект создаётся из двух резких теней.</p>
+
+<p>Тени смещены в одну сторону. Нижняя тень смещена чуть сильнее и её цвет отличается от цвета фона, а верхняя тень смещена слабее и цвет её совпадает с цветом фона. Получается интересный эффект обводки.</p>
+
+<p>Такой эффект хорошо подходит для заголовков с винтажным стилем.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <p>Заголовку <code>h1</code> задайте тень с горизонтальным и вертикальным смещением <code>4px</code> без размытия с цветом <code>rgba(0, 0, 0, 0.2)</code>,</p></li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем добавьте перед ней ещё одну тень с горизонтальным и вертикальным смещением <code>2px</code> без размытия с цветом <code>#e5d4c0</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+<div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Испытание: психоделическая тень <small>[9/26]</small></h1>
+          <p>Вот и подошло к концу мексиканское путешествие смайлика.</p>
+<p>Он летит домой и видит во сне надпись со странным психоделическим эффектом…</p>
+<div class="alert">
+    Как обычно, все смещения кратны <code>5</code>
+</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+<div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Логотип: нестандартный шрифт <small>[10/26]</small></h1>
+          <p>Помимо теней, необычных текстовых эффектов можно добиться с помощью подключения нестандартных шрифтов. В <a target="_blank" href="//htmlacademy.ru/courses/73/run/8&quot;">курсе про HTML5</a> уже рассматривался пример подключения шрифтов с помощью  конструкции <code>@font-face</code>. </p>
+
+<p>В этом и следующих двух заданиях мы создадим логотип вымышленной компании «Warm photo» с использованием веб-шрифтов.</p>
+
+<p>Для начала подключим шрифт для надписи логотипа и используем его в CSS.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте подключение веб-шрифта <code>@font-face</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем задайте ссылке шрифт <code>"Montserrat Alternates", sans-serif</code> размером <code>55px</code>.</li>
+</ol>
+</div>		
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Логотип: иконочный шрифт <small>[11/26]</small></h1>
+          <p>Помимо букв шрифт может содержать и другие графические символы. Существуют инструменты, позволяющие собрать свой собственный шрифт из SVG-объектов. Их довольно много: <a target="_blank" href="http://fontcustom.com/">fontcustom.com</a>, <a target="_blank" href="https://icomoon.io/app/">icomoon.io/app</a>, <a target="_blank" href="http://fontastic.me/">fontastic.me</a>, <a target="_blank" href="http://glyphter.com/">glyphter.com</a> и другие.</p>
+
+<p>Для простоты и наглядности в этом задании мы используем сервис Glyphter, чтобы создать шрифт с единственным символом, который будет храниться по адресу латинской буквы <code>A</code>.</p>
+
+<p>Затем мы загрузим и подключим наш шрифт в CSS, напишем в коде букву <code>A</code>, но вместо неё увидим в браузере иконку.</p>
+
+<p>Полученная иконка и будет нашим графическим символом в логотипе.</p>
+
+<p>Преимуществом шрифтовых иконок перед растровыми картинками является то, что их легко смасштабировать или перекрасить в другой цвет с помощью CSS-свойств, применимых к тексту. Также на экранах с большой плотностью пикселей шрифт не «замыливается», как это происходит с обычными картинками.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте подключение иконочного шрифта <code>Glyphter</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем в ссылке перед надписью <code>Warmphoto</code> вставьте <code>span</code> с символом <code>A</code></li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span>  и задайте спану шрифт <code>Glyphter</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Логотип: выравнивание размеров <small>[12/26]</small></h1>
+          <p>Для завершения оформления логотипа нам остаётся задать символам нужные размеры и отступы.</p>
+
+<p>Давайте сделаем надпись «WARMPHOTO» плотнее, уменьшив межсимвольное расстояние.</p>
+
+<p>Это делается c помощью свойства <code>letter-spacing</code>. Браузер по умолчанию устанавливает межсимвольное расстояние автоматически согласно определенному значению у каждого шрифта. Значение по умолчанию соответствует <code>letter-spacing: 0</code>.</p>
+
+<p>Увеличение или уменьшение значения <code>letter-spacing</code> изменит расстояние между символами на заданную величину. Значение задаётся в <code>px</code>, <code>em</code>, <code>pt</code> или других единицах длины CSS.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте ссылке межсимвольное расстояние <code>-3px</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Спану внутри ссылки задайте вертикальное выравнивание <code>middle</code>,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем <code>margin</code> справа <code>18px</code> и размер шрифта <code>78px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Декоративная стилизация строки, шаг 1 <small>[13/26]</small></h1>
+          <p>Давайте создадим ещё один интересный элемент дизайна. Стилизуем надпись «WARMPHOTO» с помощью подключаемого шрифта, размеров и отступов так, чтобы буквы сместились на новую строку и образовали квадрат. </p>
+
+<p>Сначала создадим рамку и зададим тексту нужный шрифт и размер.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Блоку <code>.square</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> сплошную рамку толщиной <code>5px</code> и цветом <code>#333333</code>;</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> шрифт <code>"Montserrat Alternates", sans-serif</code> размером <code>72px</code>;</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> ширину <code>260px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Декоративная стилизация строки, шаг 2 <small>[14/26]</small></h1>
+          <p>Теперь нам нужно изменить правила переноса, чтобы символы, не поместившиеся по ширине в контейнер, переносились на новую строку.</p>
+
+<p>Для этого в CSS существует свойство <code>word-wrap</code>. Оно принимает значения: <code>normal</code> и <code>break-word</code>. В случае <code>normal</code> слова переносятся на новую строку по обычным правилам (то есть по пробелам). А при значении <code>break-word</code> перенос производится браузером в тех местах, где слова перестают помещаться в контейнер. </p>
+
+<p>Это как раз то, что нам нужно: зададим нужный перенос слова, увеличим межсимвольное расстояние и поправим отступ.</p>
+
+<p>Также нужно заметить, что свойство <code>word-wrap</code> — изначально проприетарное расширение Microsoft, а в текущем черновике спецификации CSS3 переименовано в <code>overflow-wrap</code>. Название <code>word-wrap</code> сейчас обозначено как «альтернативное» именование.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Блоку <code>.square</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> правило переноса слова <code>word-wrap</code> со значением <code>break-word</code>;</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> расстояние между символами равное <code>24px</code>;</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>padding</code> слева равный <code>24px</code>.</li>
+</ol>
+</div>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Свойство text-indent <small>[15/26]</small></h1>
+          <p>Рассмотрим свойства, с помощью которых можно улучшить читабельность или украсить большие тексты.</p>
+
+<p>И первым свойством будет <code>text-indent</code>. Оно устанавливает отступ для первой строки блока текста. С помощью этого свойства удобно делать красную строку в абзацах.</p>
+
+<p>Значение свойства может принимать положительное или отрицательное значение, задаётся в <code>px</code>, <code>em</code>, <code>pt</code> или других единицах длины CSS. При задании значения в процентах, отступ первой строки вычисляется в зависимости от ширины блока.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Задайте абзацам красную строку шириной <code>24px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Псевдоэлемент ::first-letter <small>[16/26]</small></h1>
+          <p>В CSS существуют особые псевдоэлементы, позволяющие стилизовать первую букву в слове или первую строку в блоке текста.</p>
+
+<p>Крупная, отличная от прочих, первая буква блока текста называется буквицей. Исторически буквицей украшали главы и разделы печатных книг и рукописей. Для создания буквицы воспользуемся псевдоэлементом <code>::first-letter</code>:</p>
+<p></p><pre>p::first-letter { color: red; }</pre><p></p>
+
+<p>Давайте создадим и оформим буквицу.</p>
+
+<p class="alert">В браузере Mozilla Firefox существует проблема с отрисовкой применённых стилей для псевдоэлемента <code>::first-letter</code>. Поэтому, чтобы увидеть результат, вы можете делать задание в Chrome. Проверка сработает и в Mozilla.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементу <code>::first-letter</code> первого параграфа задайте <code>float: left</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем шрифт <code>"Georgia", serif</code> размером <code>76px</code> и межстрочный интервал <code>60px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Псевдоэлемент ::first-line <small>[17/26]</small></h1>
+          <p>Первую строку блока текста можно стилизовать при помощи псевдоэлемента <code>::first-line</code>.</p>
+<p></p><pre>p::first-line { color: green; }</pre><p></p>
+
+<p>Мы добавили буквице небольшой <code>padding</code> для выравнивания её относительно текста. Давайте завершим стилизацию буквицы и оформим первую строку первого параграфа. </p>
+
+<p class="alert">В браузере Mozilla Firefox существует проблема с отрисовкой применённых стилей для псевдоэлементов <code>::first-letter</code> и <code>::first-line</code>. Поэтому, чтобы увидеть результат, вы можете делать задание в Chrome. Проверка сработает и в Mozilla.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлементу <code>::first-letter</code> первого параграфа задайте цвет текста <code>#8b3333</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем обнулите <code>text-indent</code> первого параграфа,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а потом для псевдоэлемента <code>::first-line</code> первого параграфа задайте полужирный шрифт.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Колоночная разметка: свойство column-count <small>[18/26]</small></h1>
+          <p>Многоколоночная разметка CSS — замечательная возможность, позволяющая разбить блок с текстом на несколько колонок. Обычно очень длинные строки сложно читать: если приходится слишком долго перемещать взгляд с конца одной строки на начало другой, можно легко потерять нужную строку. Чтобы сэкономить место на экране, но при этом сделать текст читабельным, можно разбить один сплошной блок текста на несколько колонок, как это делается в газетах.</p>
+
+<p>Уже сейчас во всех популярных современных браузерах можно использовать многоколоночную разметку CSS. Давайте рассмотрим основные свойства, позволяющие создавать колонки.</p>
+
+<p>Первое из них — <code>column-count</code>. Это свойство принимает в качестве параметра целое число и делит блок текста на заданное число колонок, равных друг другу по ширине.</p>
+
+<div class="alert">Многоколоночная разметка CSS уже поддерживается в <a href="http://caniuse.com/#feat=multicolumn" target="_blank">этих браузерах</a>.</div>
+<hr>
+<div class="ha-task-goals">
+<p>Блоку <code>article</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> количество колонок в многоколоночном тексте равное <code>2</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем равное <code>3</code>.</li>
+</ol>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Колоночная разметка: свойство column-width <small>[19/26]</small></h1>
+          <p>Свойство <code>column-width</code> задаёт минимальную желаемую ширину колонки. Если свойство <code>column-count</code> ещё не было задано, браузер автоматически поделит текст на такое количество колонок, чтобы они уместились во всю доступную ширину.</p>
+
+<p>Значение свойства положительное и задаётся в <code>px</code>, <code>em</code>, <code>pt</code> или других единицах длины CSS.</p>
+
+<p>Следует отметить, что если одиночная строка может включать от <code>45</code> до <code>75</code> символов, чтобы быть читабельной, то для колонок текста рекомендуется придерживаться ширины, включающей <code>40-50</code> символов.</p>
+<hr>
+<div class="ha-task-goals">
+<p>Блоку <code>article</code> задайте:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> ширину колонки в многоколоночном тексте равное <code>200px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем равное <code>150px</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Колоночная разметка: свойство column-gap <small>[20/26]</small></h1>
+          <p>Между колонками есть промежуток. Рекомендованная ширина промежутка по умолчанию равна <code>1em</code>.</p>
+
+<p>Но она может быть изменена при помощи свойства <code>column-gap</code>. Единицы измерения тоже <code>px</code>, <code>em</code>, <code>pt</code> и другие. </p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>article</code> задайте расстояние между колонками равное <code>25px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем увеличьте его до <code>50px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Направление текста <small>[21/26]</small></h1>
+          <p>Ещё одной интересной, но малоиспользуемой возможностью работы с текстом в CSS является управление направлением текста. Обычно эта возможность применяется для корректного отображения арабского языка и иврита, в которых чтение происходит справа налево. В CSS за направление текста отвечает свойство <code>direction</code>, принимающее значения <code>ltr</code> (направление слева направо) и <code>rtl</code> (направление справа налево).</p>
+
+<p>Однако помимо направления текста свойство <code>direction</code> также влияет на позицию полосы прокрутки в блоке.</p>
+
+<p>Если попробовать задать для кириллицы или латиницы обратное направление текста (справа налево) <code>direction: rtl;</code>, мы увидим, что текст в блоке выровнялся наоборот, и полоса прокрутки блока сменила своё положение на противоположное. Но при этом сам текст не стал менять своё направление. Это произошло потому, что браузер автоматически  задал тексту корректное направление, проанализировав используемые символы Unicode. Чтобы повлиять на это решение браузера существует свойство <code>unicode-bidi</code>, принимающее значения:</p>
+<ul>
+  <li><code>normal</code> — браузер самостоятельно определяет, как ему следует отображать текст на основе используемых символов Unicode;</li>
+  <li><code>embed</code> — переопределяет направление текста, располагая его согласно свойству <code>direction</code> (применяется, когда в блоке текст на двух разнонаправленных языках);</li>
+  <li><code>bidi-override</code> — переопределяет порядок символов в тексте согласно значению <code>direction</code>.</li>
+</ul>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>article</code> задайте высоту <code>200px</code> и <code>overflow: auto</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> направление текста <code>direction</code> справа налево,</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем параграфу <code>p</code> свойство <code>unicode-bidi: bidi-override</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Направление текста и таблицы <small>[22/26]</small></h1>
+          <p>Также свойство <code>direction</code> влияет на порядок колонок в таблице, меняя его на соответствующее значение.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Таблице задайте направление текста справа налево.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Переполнение текста <small>[23/26]</small></h1>
+          <p>Ещё одно интересное текстовое свойство — <code>text-overflow</code>. Оно позволяет определить, как будет выглядеть текст, если не поместится в контейнер. Оно принимает разные значения, но универсальными и работающими во всех современных браузерах являются <code>clip</code> и <code>ellipsis</code>.</p>
+
+<p>Значение <code>clip</code> задано по умолчанию, и при нём текст просто обрезается по размеру контейнера, а при <code>ellipsis</code> — обрезается и к концу строки добавляется многоточие.</p>
+
+<p>К сожалению, у этого свойства есть ограничения, которые делают его менее полезным: оно применимо только к однострочным текстам, а также к блокам, значение свойства <code>overflow</code> которых установлено в <code>auto</code>, <code>scroll</code> или <code>hidden</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Абзацу задайте неразрывные пробелы <code>white-space: nowrap</code> и <code>overflow: hidden</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем режим текстового переполнения <code>text-overflow</code> со значением <code>ellipsis</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Интервал между словами <small>[24/26]</small></h1>
+          <p>И, наконец, последнее свойство, которое мы рассмотрим в этом курсе, — <code>word-spacing</code>. Оно задаёт расстояние между отдельными словами и строчными элементами. Значение может быть положительное или отрицательное и задаётся в <code>px</code>, <code>em</code>, <code>pt</code> или других единицах измерения CSS.</p>
+
+<p>Свойство <code>word-spacing</code> также можно использовать для задания отступов между блочно-строчными элементами, а также изображений, ведь изображения тоже являются строчными.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Заголовку <code>h1</code> задайте интервал между словами <code>5px</code>,</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем списку <code>ul</code> — интервал между словами <code>12px</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Испытание: why so serious? <small>[25/26]</small></h1>
+          <p>Теперь вы знаете достаточно, чтобы проверить себя в нелёгком, но увлекательном оформительском деле! </p>
+
+<p>В этом испытании вам предстоит хорошенько поработать с текстовыми тенями.</p>
+
+<div class="alert">
+    Подсказка: значения всех задаваемых свойств кратны <code>5</code>, а используемые цвета закомментированы в CSS-коде.
+</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/79">Оформление текста, часть&nbsp;2</a>»</div>
+          <h1>Испытание: поиграйся со шрифтами <small>[26/26]</small></h1>
+          <p>Кекс не только кот-веб-разработчик, но и авантюрный предприниматель, хотя и не всегда удачливый.</p>
+
+<p>И на этот раз он решил запустить серию спортивной формы для котов. Сайт он как-нибудь сделает сам, форму шить будет хозяйка. Самое сложное оказалось придумать название и логотип для него.</p>
+
+<p>Название было придумано свежее и ультрамодное <code>KEKSOBAS</code>, но вот с логотипом дизайнер подкачал.</p>
+
+<p>В принципе, Кексу, понравилась простота и строгость обычного текстового логотипа, но ему хотелось бы, чтобы дизайнер поигрался со шрифтами: попробовал разные межсимвольные расстояния, немного поэкспериментировал с высотой строки, может быть с толщиной букв и размером, чуточку поработал с тенями, может быть попробовать разбить надпись в несколько строк, какие-нибудь эффекты, ещё бы неплохо добавить интересный текстово-декоративный элемент.</p>
+
+<p>В общем, правки мелкие, работы на пять минут, думаю, вы быстро справитесь.</p>
+
+<p>Да! Ещё можно нарисовать треугольник из трёх красных непересекающихся линий прозрачного цвета. А, впрочем, на ваше усмотрение.</p>
+
+<div class="alert">
+    Подсказка: значения всех задаваемых свойств кратны <code>5</code>.
+</div>
+<hr>
+</div>
+				
+
+
+	</div>
+<body>

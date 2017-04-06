@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Двумерные трансформации</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/dynamic/71.svg" alt="Двумерные трансформации" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Двумерные трансформации</h1>
+		<p>Будем крутить, наклонять, перемещать, уменьшать и&nbsp;увеличивать объекты, а&nbsp;также взрывать их&nbsp;фаерболами, телепортироваться и&nbsp;использовать телекинез. Ну&nbsp;и, конечно, разберём крутые приёмы использования трансформаций для создания декоративных эффектов.</p>
+	</div>
+</div>		
+		
+		
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Перемещение по горизонтали <small>[1/32]</small></h1>
+          <p>В этом курсе мы рассмотрим возможности двухмерных трансформаций в CSS.</p>
+<p>То, что раньше можно было сделать в окне браузера только с помощью JavaScript — плавное перемещение и масштабирование блоков, повороты и наклоны — теперь с лёгкостью реализуется на чистом CSS.</p>
+<p>Для начала давайте разберёмся с системой координат, в которой перемещается объект:</p>
+<p style="float: left; margin-right: 15px;"><img src="/assets/course71/theory/coordinates-trimed.png" alt=""></p>
+<p>её ключевой особенностью является то, что ось Y направлена вниз, а не вверх, так как веб-страница начинается с левого верхнего угла и идет вниз, а в CSS используется <a target="_blank" href="http://ru.wikipedia.org/wiki/Прямоугольная_система_координат">обратная система координат</a>.</p>
+<p>Первое перемещение, которое мы осуществим — горизонтальное. Мы будем двигать объекты влево и вправо.</p>
+<p style="clear: both;">Для этой и других трансформаций используется следующий синтаксис:</p>
+<pre>transform: [функция трансформации]([значение трансформации])</pre>
+<p>Горизонтальное перемещение осуществляется функцией <code>translateX</code>. Значение функции трансформации численное, а возможные единицы измерения — <code>px</code>, <code>%</code>, <code>em</code> или <code>in</code>. <br>Например, такая функция переместит объект на 100 пикселей вправо по оси X:</p>
+<pre>transform: translateX(100px)</pre>
+<p>Кстати, знакомьтесь! Главного героя, которым вам предстоит управлять и трансформировать его заклинаниями окружающий мир, зовут Пендальф Синий. Вместе с ним вас ждёт увлекательное приключение…</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте блоку <code>.wizard</code> свойство <code>transform</code> со значением <code>translateX(250px)</code> и переместите мага вправо.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А затем верните его обратно, добавив к свойству трансформации ещё одно значение перемещения: <br><code>transform: translateX(250px) translateX(-250px);</code></li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Перемещение по вертикали <small>[2/32]</small></h1>
+          <p>Теперь давайте попробуем перемещать объекты по вертикали.</p>
+<p>Для этого воспользуемся похожей на «горизонтальную» функцией <code>translateY</code>:</p>
+<pre>transform: translateY(-100px)</pre>
+<p>Такая функция переместит объект на 100 пикселей вертикально вверх. Заметьте, что для движения вверх используется отрицательное значение трансформации.</p>
+<p>Как вы уже увидели в предыдущем задании, к объекту может быть одновременно применено несколько функций трансформации. При этом функции просто перечисляются через пробел после имени свойства <code>transform</code>, например:</p>
+<pre>transform: translateY(-100px) translateX(100px)</pre>
+<p>Такая трансформация переместит объект на 100 пикселей вправо и вверх по оси координат.</p>
+<p>Давайте попробуем перенести мага по воздуху с помощью функций горизонтальных и вертикальных перемещений.</p>
+<p>И конечно же надо не забыть прочитать заклинание левитации, чтобы волшебник мог лететь!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте блоку <code>.wizard</code> класс <code>levitate</code>, чтобы маг смог взлететь.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Переместите мага на <code>200px</code> вверх с помощью свойства <code>translateY(-200px)</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Продвиньте его вперёд, добавив в цепочку свойств <code>translateX(280px)</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> А затем пропишите ещё <code>translateY(200px)</code> и посадите мага на землю.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Тренировка фаерболов <small>[3/32]</small></h1>
+          <p>В опасном мире фэнтези, где за каждым углом поджидает тролль или оборотень, Пендальф должен уметь постоять за себя. А лучшее средство атаки и защиты для любого уважающего себя боевого мага — это, как известно, фаерболы.</p>
+<p>Давайте научимся бросать фаерболы по мишеням, чтобы в случае необходимости защитить Пендальфа от врагов.</p>
+<p>Для этого применим изученные ранее заклинания перемещения: <code>translateX</code>, <code>translateY</code>, а также новое более лаконичное заклинание, объединяющее перемещение сразу по двум осям в одну функцию — <code>translate</code>:</p>
+<pre>transform: translate(перемещение по оси X [, перемещение по оси Y])</pre>
+<p>Как мы видим, два значения перемещения просто перечисляются через запятую, причём у них могут быть разные единицы измерения.</p>
+<p>Значение перемещения по оси Y является необязательным аргументом, то есть если его не указать, а написать <code>translate(перемещение по оси X)</code>, то значение перемещения по Y будет считаться равным <code>0</code> и функция будет работать аналогично <code>translateX</code>.</p>
+<p>Приступим же наконец к огненным процедурам!</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> С помощью функции <code>translateX</code> переместите <code>.fireball-1</code> вперёд на <code>310px</code>, чтобы попасть в правую мишень снизу.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>.fireball-2</code> переместите вертикально вверх на <code>190px</code>, чтобы поразить верхнюю мишень.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Последний шар <code>.fireball-3</code> бросьте одновременно вперёд на <code>290px</code> и вверх на <code>190px</code> в правую верхнюю мишень.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Увеличение, уменьшение <small>[4/32]</small></h1>
+          <p>Ещё одной возможностью CSS-трансформаций является масштабирование блоков. С помощью функции <code>scale</code> можно увеличивать или уменьшать элементы.</p>
+
+<p>Значением этой функции может быть любое число. При этом значение <code>1</code> считается точкой отсчёта, когда блок имеет оригинальные размеры. Рассмотрим примеры:</p>
+
+<ul>
+  <li style="margin-bottom:0.5em;"><code>scale(0.5)</code> уменьшит объект в 2 раза;</li>
+  <li style="margin-bottom:0.5em;"><code>scale(2)</code> увеличит объект в 2 раза;</li>
+  <li style="margin-bottom:0.5em;"><code>scale(0)</code> полностью «схлопнет» объект, и его не будет видно;</li>
+  <li style="margin-bottom:0.5em;"><code>scale(1)</code> оставит объект без изменений.</li>
+</ul>
+
+<p><img src="/assets/course71/theory/scale.png" alt=""></p>
+<p>Вообще функция <code>scale</code> как и <code>translate</code> принимает 2 аргумента:</p>
+<pre>scale(масштаб-по-X [, масштаб-по-Y])</pre>
+<p>Если <code>масштаб-по-Y</code> не задан, то считается, что он такой же, как <code>масштаб-по-X</code>:</p>
+<pre>transform: scale(2) то же самое, что transform: scale(2, 2)</pre>
+<p>Также в случае, когда необходимо масштабировать объект только по одной оси независимо от другой, существуют функции <code>scaleX(масштаб-по-Х)</code> и <code>scaleY(масштаб-по-Y)</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Уменьшите размеры фигурки бегемота <code>.hippo</code>, добавив ему трансформацию <code>transform: scale(0.25)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Увеличьте мышь <code>.mouse</code> в 3 раза: <code>transform: scale(3)</code>.</li>
+</ol>
+</div>
+				
+				
+		
+<div class="ha-task-description">
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Особенности transform-origin — часть 1 <small>[14/32]</small></h1>
+          <p>Теперь, когда древнее зло побеждено, а Пендальф добрался обратно домой, самое время разобраться с ещё одной тонкостью трансформаций, а именно со свойством <code>transform-origin</code> (а также повесить памятную фотокарточку на стену).</p>
+<p>Это свойство используется совместно со свойством <code>transform</code> и задаёт точку отсчёта системы координат, в рамках которой будет работать трансформация.</p>
+<p>Синтаксис <code>transform-origin</code> для двухмерных трансформаций следующий:</p>
+<pre>transform-origin: точка-отсчёта-по-X [, точка-отсчёта-по-Y]</pre>
+<p>Значения свойства задаётся в единицах измерения ширины в браузере (<code>px</code>, <code>em</code>…), в <code>%</code>, а также ключевыми словами <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code> и <code>center</code>.</p>
+<p>По умолчанию, значение <code>transform-origin</code> равно <code>50% 50%</code>, то есть начало системы координат находится в центре объекта. Если не указывать значение <code>точка-отсчёта-по-Y</code>, то оно считается равным <code>50%</code>.</p>
+<p>Давайте разберёмся на примере функции <code>scale</code>, как ведёт себя трансформация при различных значениях <code>transform-origin</code>: в данном случае блок будет менять размер относительно заданной точки.</p>
+                    <hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Блоку <code>.picture</code> задайте свойство <code>transform</code> со значением <code>scale(0.5)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> Затем задайте свойство <code>transform-origin</code> со значением <code>top left</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label" style="opacity: 1;">Цель 3</span>  и поменяйте значение <code>transform-origin</code> на <code>top right</code>.</li>
+</ol>
+</div>		
+
+
+<div class="ha-task-description">
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Особенности transform-origin — часть 2 <small>[15/32]</small></h1>
+          <p>А теперь попробуем сделать трансформацию плавной. Для этого в CSS предусмотрено свойство <code>transition</code>. Не будем пока вдаваться в подробности, как именно работает и применяется <code>transition</code> — это будет подробно рассмотрено в ближайшем курсе.</p>
+<p>Если в двух словах, <code>transition</code> позволяет изменить значение какого-либо свойства плавно. В нашем случае плавно будет меняться свойство <code>transform</code> с функцией <code>scale</code>, а переход между двумя значениями будет длиться полсекунды.</p>
+<p>Всё это наглядно покажет, как при разных значениях <code>transform-origin</code> меняется точка начала системы координат. Для демонстрации этого давайте задавать значения <code>transform-origin</code> и нажимать кнопку «Запустить», по которой для блока <code>.picture</code> переключается класс <code>active</code>.</p>
+                    <hr>
+<div class="ha-task-goals">
+           <p>У блока <code>.picture</code> меняйте значения <code>transform-origin</code> на:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>top left</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>top right</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>bottom left</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> <code>50% 100%</code>.</li>
+</ol>
+<p>После каждого изменения нажимайте кнопку «Запустить».</p>
+        </div>
+</div>
+
+	
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Особенности transform-origin — часть 3 <small>[16/32]</small></h1>
+          <p>А теперь давайте посмотрим, как меняется поведение трансформации поворота <code>transform: rotate</code> в зависимости от разных значений <code>transform-origin</code>.</p>
+
+<p>В данном случае будет изменяться расположение оси вращения элемента.</p>
+                    <hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Блоку <code>.picture</code> задайте свойство <code>transform</code> со значением <code>rotate(10deg)</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> Задайте свойство <code>transform-origin</code> со значением <code>top left</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label" style="opacity: 1;">Цель 3</span> Поменяйте значение <code>transform</code> на <code>rotate(20deg)</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label" style="opacity: 1;">Цель 4</span> Поменяйте значение <code>transform-origin</code> на <code>right bottom</code>.</li>
+</ol>
+</div>				
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Особенности transform-origin — часть 4 <small>[17/32]</small></h1>
+          <p>На статичном примере не так хорошо видно, как изменяется ось вращения элемента, когда мы изменяем <code>transform-origin</code>.</p>
+
+<p>Поэтому мы сделали ещё одно задание, где элемент будет прокручиваться на <code>360°</code> при нажатии кнопки. И здесь будет отлично видно, как изменяется ось вращения.</p>
+                    <hr>
+<div class="ha-task-goals">
+           <p>У блока <code>.picture</code> меняйте значения <code>transform-origin</code> на:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> <code>top left</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> <code>top right</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> <code>bottom left</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> <code>50% 100%</code>.</li>
+</ol>
+<p>После каждого изменения нажимайте кнопку «Запустить».</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Центровка с помощью transform: translate <small>[18/32]</small></h1>
+          <p>Для центровки одного блока внутри другого блока обычно используют <a target="_blank" href="http://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/">классический трюк</a> с позиционированием, относительными координатами и отрицательными маргинами.</p>
+
+<p>Этот приём хорошо работает, когда центруемый блок имеет фиксированные размеры, но если его размеры могут изменяться, то возникают проблемы.</p>
+
+<p>С помощью трансформаций можно решить эту проблему и центровать блоки с переменными размерами. Делается это с помощью <code>translate</code>.</p>
+                    <hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.picture</code> задайте свойство <code>left: 50%</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> И свойство <code>top: 50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Затем сместите его при помощи <code>translateX</code> на <code>-50%</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> И на <code>-50%</code> с помощью <code>translateY</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Поворот текста в блоках <small>[19/32]</small></h1>
+          <p>На этом приключения волшебника Пендальфа заканчиваются, поэтому давайте вернёмся в реальный мир и рассмотрим техники создания элементов интерфейсов и декоративных эффектов при помощи CSS-трансформаций.</p>
+<p>В этом задании мы перевернём заголовок статьи и поместим его сбоку. Для этого воспользуемся уже знакомыми свойствами <code>transform-origin</code> и <code>transform: rotate</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>h1</code> задайте абсолютное позиционирование, координаты <code>top</code>&nbsp;— <code>10px</code>, <code>left</code>&nbsp;— <code>0</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем <code>article</code> задайте сплошную рамку слева <code>border-left</code> толщиной <code>40px</code> цвета <code style="color: #7fdbff;">#7fdbff</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для <code>h1</code> задайте <code>transform-origin</code> со значением <code>0 0</code> и поверните его на <code>90°</code> по часовой стрелке.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Поворот текста в фоне <small>[20/32]</small></h1>
+          <p>Вот ещё один интересный эффект, создаваемый с помощью трансформации поворота.</p>
+
+<p>На этот раз мы будем поворачивать «фоновый» текст, а также немного наклоним блок с заголовком функцией <code>skew</code>. А чтобы наклонным был только блок, но не текст внутри, — наклоним текст в обратную сторону на тот же угол.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Заголовку <code>h1</code> задайте наклон на <code>15°</code> вправо.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А для <code>span</code> внутри заголовка — наклон влево на <code>15°</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Поверните <code>p</code> внутри <code>article</code> на <code>15°</code> против часовой стрелки.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Нестандартные тени <small>[21/32]</small></h1>
+          <p>Иногда бывает нужно реализовать тени, отличающиеся от стандартных <code>box-shadow</code>, без применения картинок.</p>
+
+<p>Например, тени, наклонённые в разные стороны.</p>
+
+<p>Сделать это с помощью <code>box-shadow</code> невозможно. Поэтому нужно использовать более сложный приём:</p>
+
+<ul>
+    <li>c помощью псевдоэлементов <code>before</code> и <code>after</code> создаём два блока с обычными тенями;</li>
+    <li>наклоняем эти блоки с помощью <code>rotate</code>;</li>
+    <li>задаём им отрицательный <code>z-index</code>.</li>
+</ul>
+
+<p>Это переместит блоки с тенями под родительский контейнер так, что наружу будут выглядывать только кусочки теней.</p>
+                    <hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Псевдоэлемент <code>before</code> блока <code>shadow-box</code> поверните на <code>3°</code> против часовой стрелки.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем псевдоэлемент <code>after</code> — по часовой на <code>3°</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Задайте обоим пседвоэлементам <code>z-index</code> равный <code>-1</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Эффекты при наведении: кнопки — часть 1 <small>[22/32]</small></h1>
+          <p>Довольно много интересных эффектов можно добиться с помощью трансформаций при реализации разных элементов интерфейса, например, кнопок. Им можно добавить немного динамики, используя <code>transform</code> совместно с <code>transition</code> для создания простейшей плавной анимации.</p>
+<p>В следующих нескольких примерах мы создадим эффекты при наведении на кнопку. Во всех случаях будет применяться свойство <code>transition</code> для плавной смены значений трансформации или прозрачности. Детально тема плавных переходов будет разбираться в ближайших курсах.</p>
+<p>В этом задании при наведении на кнопку давайте будем динамически оборачивать вокруг своей оси иконку и одновременно немного её увеличивать.</p>
+                    <hr>
+<div class="ha-task-goals">
+           <p>Добавьте для правила <code>.btn-green:hover .icon</code>:</p>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Трансформацию поворота на <code>360°</code> по часовой стрелке.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> И трансформацию масштабирования со значением <code>1.2</code>.</li>
+</ol>
+<p>После каждого изменения наводите курсор на зелёную кнопку для проверки.</p>
+        </div>
+</div>
+		
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Эффекты при наведении: кнопки — часть 2 <small>[23/32]</small></h1>
+          <p>В этом задании создадим вторую кнопку с немного другим эффектом у иконки: при наведении иконка должна увеличиваться и одновременно становиться полностью прозрачной, а на её месте синхронно будет появляться дополнительный скрытый блок с ценой <code>.hidden</code>.</p>
+<p>Здесь будет использован плавный переход между двумя значениями прозрачности <code>opacity</code> и <code>transform: scale</code>.</p>
+                      
+                    <hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.btn-yellow:hover .hidden</code> задайте <code>opacity</code> равную <code>1</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для <code>.btn-yellow:hover .icon</code> задайте трансформацию <code>scale</code> со значением <code>10</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А также <code>opacity</code> равную <code>0</code>.</li>
+</ol>
+
+<p>После каждого изменения наводите курсор на жёлтую кнопку для проверки.</p>
+</div>
+</div>
+		
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Эффекты при наведении: кнопки — часть 3 <small>[24/32]</small></h1>
+          <p>Ещё одна кнопка и ещё один эффект, похожий на предыдущие: при наведении давайте будем плавно скрывать иконку свойством <code>opacity</code> и одновременно показывать скрытый блок <code>.hidden</code>. При этом можно ещё дополнить эффект тем, что скрытый блок будет изначально «схлопнут» свойством <code>scale</code> до нуля, и при появлении он будет увеличиваться вместе с увеличением непрозрачности.</p>
+<hr>
+<div class="ha-task-goals">
+           <ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.btn-blue:hover .icon</code> задайте <code>opacity</code> равную <code>0</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Для <code>.btn-blue:hover .hidden</code> задайте трансформацию <code>scale</code> со значением <code>1</code> и  <code>opacity</code> равную <code>1</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для <code>.btn-blue .hidden</code> задайте трансформацию <code>scale</code> со значением <code>0</code>.</li>
+</ol>
+<p>После каждого изменения наводите курсор на синюю кнопку для проверки.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Эффекты при наведении: галерея <small>[25/32]</small></h1>
+          <p>В любой ситуации, когда стоит задача плавно менять позицию или размеры блока, а также каким-либо способом менять его внешний вид, встаёт выбор: пользоваться связкой <code>transition</code> + <code>transform</code> или же задействовать javascript и динамически менять ширину/высоту, координаты объектов в скрипте.</p>
+<p>Зачастую выбор падает на js-реализацию с помощью библиотеки jQuery, но в большинстве случаев «чистая» CSS-реализация простых визуальных эффектов намного производительнее аналогичных jQuery-функций. Кроме того, в ряде случаев определённые трансформации в CSS могут для повышения производительности задействовать не только центральный процессор компьютера или мобильного девайса, но и ресурсы графического адаптера, что позволяет разгрузить процессор и избавиться от «тормознутости» эффектов.</p>
+<p>В этом задании с помощью трансформации и плавных переходов давайте реализуем простую мини-галерею картинок, которые увеличиваются и становятся полупрозрачными при наведении.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для <code>.deck img:hover</code> задайте <code>opacity</code> со значением <code>0.6</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> А также увеличение <code>scale</code> до значения <code>1.1</code>.</li>
+</ol>
+<p>После каждого изменения наводите мышь на верхнюю десятку для проверки.</p>
+</div>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>«Стопка» карт <small>[26/32]</small></h1>
+          <p>В этом задании давайте создадим «стопку» карт. Без эффектов эти картинки абсолютно спозиционированы и располагаются слоями друг под другом. Наша задача — немного повернуть нижележащие карты, чтобы они выглядывали из-под верхних. Как обычно воспользуемся <code>transform: rotate</code>.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Поверните карту <code>.queen</code> на <code>10°</code> против часовой стрелки.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем карту <code>.jack</code> — на <code>20°</code> против часовой стрелки.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> И карту <code>.ten</code> — на <code>30°</code> против часовой стрелки.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Круговое меню, подготовка <small>[27/32]</small></h1>
+          <p>В этой серии заданий мы построим сложный элемент интерфейса, в котором ключевую роль играют трансформации. Это круговое меню.</p>
+
+<p>Разметка меню не отличается от обычной. Внутри тэга <code>&lt;nav&gt;</code> расположен обычный список <code>&lt;ul&gt;</code> с несколькими элементами списка со ссылками.</p>
+<p>Мы разберём подход на двух пунктах меню, а потом добавим остальные по аналогии.</p>
+<p>Исходные стили для списка и его пунктов уже подготовлены, а также создан элемент, который обозначает центр меню.</p>
+<p>Для того, чтобы вращать элементы списка в меню, нужно правильно расположить их и задать им ось вращения:</p>
+<ul>
+    <li>ось должна находиться в правом нижнем углу элемента списка;</li>
+    <li>этот угол должен совпадать с центром меню.</li>
+</ul>
+<p>Для решения этой задачи используем свойство <code>transform-origin</code>, а также свойства позиционирования.</p>
+<p>Кстати, чтобы меню получилось ровным, его пункты должны немного выходить за границы контейнера.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте элементам списка абсолютное позиционирование.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Свойства <code>top</code> и <code>left</code> со значением <code>-10px</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А также <code>transform-origin</code> со значением <code>100% 100%</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Круговое меню, шаг 1 <small>[28/32]</small></h1>
+          <p>Теперь можно раcсчитывать углы секторов меню и углы поворота пунктов. Используем такие формулы:</p>
+
+<pre>[угол сектора] = 360° / [количество пунктов меню]
+[поворот пункта n] = (n - 1) * [угол сектора]
+</pre>
+
+<p>В нашем меню может быть максимум <code>6</code> пунктов, поэтому для него получатся такие значения:</p>
+<pre>[угол сектора] = 360° / 6 = 60°
+[поворот 1 пункта] = (1 - 1) * 60° = 0°
+[поворот 2 пункта] = (2 - 1) * 60° = 60°
+</pre>
+
+<p style="float:right; margin-left: 10px; padding:5px; box-shadow:0 0 3px #ccc; background:white;"><img src="/assets/course71/theory/cross-items.png" height="134" width="196"></p>
+<p>Для вращения пунктов, мы используем <code>rotate</code>. Но одного вращения недостаточно, так как элементы списка будут пересекаться, ведь их угол больше <code>60°</code>.</p>
+<p>Чтобы исправить это, мы искривим пункты с помощью <code>skew</code>. А угол наклона посчитаем так:</p>
+<pre style="width:60%">[угол наклона] = 90° - [угол сектора]</pre>
+<p>В нашем случае получится <code>30°</code>.</p>
+<p>Итого: первый элемент списка нужно наклонить на <code>30°</code>, а второй&nbsp;— повернуть на <code>60°</code> и наклонить на <code>30°</code>.</p>
+<p>Кстати, возможны две записи:</p>
+<pre>transform: rotate(60deg) skew(30deg); // 1 вариант
+transform: skew(30deg) rotate(60deg); // 2 вариант
+</pre>
+<p>Их эффект будет отличаться, так как порядок трансформаций важен. И нам нужен первый вариант.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label" style="opacity: 1;">Цель 1</span> Наклоните первый элемент списка на <code>30°</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label" style="opacity: 1;">Цель 2</span> Поверните второй элемент списка на <code>60°</code> и наклоните на <code>30°</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Круговое меню, шаг 2 <small>[29/32]</small></h1>
+          <p>Внутри пунктов меню расположены ссылки. Для них задан блочный тип, размеры и фон&nbsp;— эти исходные стили нужно просто раскомментировать.</p>
+<p>На предыдушем шаге мы повернули и скосили пункты меню, но при этом скосилось и их содержимое, то есть ссылки. Чтобы вернуть им нормальный вид, нужно их «разнаклонить» и развернуть обратно.</p>
+<p>«Разнаклонять» будем на противоположный угол, то есть на <code>-30°</code>.</p>
+<p>Расчёт угла разворота сложнее, вот формула:</p>
+<pre>[угол разворота] = -1 * (90° – ([угол сектора] / 2))</pre>
+<p>В нашем случае получится:</p>
+<pre>[угол разворота] = -1 * (90° - (60° / 2)) = -60°</pre>
+<p>Обратите внимание на порядок трансформаций для ссылок: сначала <code>skew</code>, потом <code>rotate</code>.</p>
+<p>И ещё одна важная деталь. Нам нужно сместить ссылки так, чтобы они располагались во внутренней половине пунктов меню. Для этого используем маргины.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте CSS-правило для ссылок в меню.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Наклоните ссылки на <code>-30°</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем дополнительно поверните их на <code>-60°</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Добавьте ссылкам маргины сверху и слева <code>40px</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Круговое меню, шаг 3 <small>[30/32]</small></h1>
+          <p>Промежуточный результат не очень похож на круглое меню, но ещё несколько строчек CSS-кода и всё изменится.</p>
+<p>Первым делом мы обрежем части ссылок, которые выходят за пределы пунктов меню, и избавимся от избыточных пересечений. Для этого зададим свойство <code>overflow</code> со значением <code>hidden</code> для элементов списка.</p>
+<p>Затем нужно будет придать меню круглую форму.</p>
+<p>Для этого будем работать с самим списком <code>ul</code>, который сейчас выглядит как квадрат с синей рамкой. Добавим ему свойство <code>border-radius</code> со значением <code>50%</code>, и квадрат превратится в круг.</p>
+<p>А дальше останется только обрезать всё, выходящее за пределы круга. И снова используем <code>overflow</code>.</p>
+<p>Круглое меню из двух пунктов готово, можно убрать вспомогательные фоны и рамки.</p>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте для элементов списка <code>overflow: hidden</code>.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте списку <code>border-radius: 50%</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем тоже <code>overflow: hidden</code>.</li>
+    <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Удалите тени и фоны у списка и элементов списка.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Круговое меню, финал <small>[31/32]</small></h1>
+          <p>Вот и вся техника для создания круглого меню:</p>
+
+<ol>
+    <li>Переносим ось вращения пунктов в угол с помощью <code>transform-origin</code> и совмещаем этот угол с центром меню.</li>
+    <li>
+        <p>Наклоняем и поворачиваем пункты меню, используя формулы:</p>
+        <pre>[угол сектора] = 360° / [количество пунктов меню]
+[поворот пункта n] = (n - 1) * [угол сектора]
+[угол наклона] = 90° - [угол сектора]</pre>
+    </li>
+    <li>
+        <p>«Разнаклоняем» и разворачиваем содержимое пунктов меню:</p>
+<pre>[угол наклона содержимого] = -1 * [угол наклона пункта]
+[угол разворота] = -1 * (90° – ([угол сектора] / 2))</pre>
+    </li>
+    <li>Смещаем содержимое пунктов к центру круга.</li>
+    <li>Закругляем контейнер меню с помощью <code>border-radius</code> и обрезаем всё лишнее с помощью <code>overflow: hidden</code>.</li>
+</ol>
+<p>А после этих шагов можно применять дополнительное оформление. Например, задавать разные фоны пунктов, рамку для контейнера меню и так далее.</p>
+<p>Давайте напоследок добавим третий пункт меню, чтобы у нас получился полукруг. Угол поворота третьего пункта будет равен <code>120°</code>:</p>
+<div class="alert">
+    Серия заданий сделана по мотивам этой статьи <a href="http://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/">Building a Circular Navigation with CSS Transforms</a>. Примеры были адаптированы и упрощены для курса.
+</div>
+<hr>
+<ol>
+    <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Добавьте в меню третий элемент списка со ссылкой внутри.</li>
+    <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Поверните третий элемент списка на <code>120°</code>.</li>
+    <li id="goal3"><span class="label ha-goal-label">Цель 3</span> А затем наклоните его на <code>30°</code>.</li>
+</ol>
+</div>
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/71">Двумерные трансформации</a>»</div>
+          <h1>Испытание: раскладка карт <small>[32/32]</small></h1>
+          <p>В этом испытании вам предстоит расположить карты веером, пользуясь функциями <code>translate</code>, <code>scale</code> и <code>rotate</code>.</p>
+<div class="alert">Подсказка: значения функций <code>rotate</code> и <code>translate</code> кратны <code>5</code> (если трансформации прописывать в порядке: rotate, scale, translate), а <code>scale</code> уменьшает карты с шагом <code>10%</code>.</div>
+<hr>
+</div>
+
+		
+		</div>
+<body>
