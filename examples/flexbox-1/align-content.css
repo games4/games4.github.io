@@ -1,0 +1,26 @@
+.room {
+    display: flex;
+    height: 150px;
+    flex-wrap: wrap;
+}
+
+.rug {
+    width: 80px;
+		/* Увеличим ширину коврика до 120px. */
+    width: 120px;
+    min-height: 20px;
+}
+
+.room-1 {
+    align-items: stretch;
+		/* Зададим для первой комнаты расположение элементов в начале поперечной оси flex-start. */
+    align-items: flex-start;
+    align-content: flex-end;
+}
+
+.room-2 {
+    align-items: stretch;
+		/* Для второй – в конце flex-end. */
+    align-items: flex-end;
+    align-content: flex-start;
+}

@@ -1,0 +1,30 @@
+.room {
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+}
+
+.rug {
+    width: 120px;
+    min-height: 20px;
+}
+
+.room-1 {
+    align-items: stretch;
+		/* Для обеих комнат зададим выравнивание элементов в начале поперечной оси. */
+    align-items: flex-start;   
+		/* А затем в конце. */
+    align-items: flex-end;    
+    align-content: stretch;
+}
+
+.room-2 {
+    align-items: stretch;
+		/* Для обеих комнат зададим выравнивание элементов в начале поперечной оси. */
+    align-items: flex-start;
+		/* А затем в конце. */
+    align-items: flex-end;    
+    align-content: stretch;
+		/* Для второй флекс-комнаты зададим выравнивание рядов по центру поперечной оси. */
+    align-content: center;
+}

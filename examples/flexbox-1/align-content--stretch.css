@@ -1,0 +1,37 @@
+.room {
+    display: flex;
+    height: 150px;
+    flex-wrap: wrap;
+}
+
+.rug {
+    width: 80px;
+    min-height: 20px;
+}
+
+.room-1 {
+    align-items: stretch;
+		/* В обеих комнатах расположим элементы в начале оси. */
+    align-items: flex-start;
+		/* Затем посередине. */
+    align-items: center;
+		/* А затем в конце оси. */
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+.room-2 {
+    align-items: stretch;
+		/* В обеих комнатах расположим элементы в начале оси. */
+    align-items: flex-start;
+		/* Затем посередине. */
+    align-items: center;
+		/* А затем в конце оси. */
+     align-items: flex-end;
+    align-content: stretch;
+}
+
+.room-2 .rug {
+		/* Увеличим ширину ковриков во второй комнате до 120px. */
+    width: 120px;
+}

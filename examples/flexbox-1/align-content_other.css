@@ -1,0 +1,19 @@
+.room {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+		/* Расположим ряды в нашей флекс-комнате в начале поперечной оси. */
+    align-content: flex-start;
+		/* Потом в конце.*/
+    align-content: flex-end;
+		/* Затем равномерное выравнивание без отступов по краям.*/
+    align-content: space-between;
+		/* И равномерное выравнивание с половинными отступами по краям.*/
+    align-content: space-around;
+}
+
+.rug {
+    width: 180px;
+    min-height: 40px;
+}
