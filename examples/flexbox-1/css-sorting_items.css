@@ -1,0 +1,12 @@
+/* Блок .sort-list сделаем флекс-контейнером. */
+/* Зададим ему направление главной оси сверху вниз. */
+.sort-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* При выделенном состоянии чекбокса .input-sort зададим направление главной оси снизу вверх.  */
+.input-sort:checked ~ .sort-list {
+    flex-direction: column-reverse;
+}
+

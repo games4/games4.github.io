@@ -10,15 +10,12 @@ body > header {
 	opacity: 0.5;
 }
 
+.subtle {
+		margin: 55px auto;
+
+}
+
 .exam {
 		margin: 55px auto;
 
-}
-
-body > article.checklist {
-	margin: 55px 55px;
-}
-
-.exam-table {
-		margin: 55px auto;
 }

@@ -1,0 +1,16 @@
+/* Блок .pictures сделаем флекс-контейнером. */
+.pictures {
+    display: flex;
+}
+
+/* Отцентруем блок .picture внутри флекс-контейнера. */
+.picture {
+    margin: auto;
+}
+
+.picture img {
+    width: 80px;
+		/* Изменим ширину картинки на 40px. */
+    width: 40px;
+    width: 90px;
+}

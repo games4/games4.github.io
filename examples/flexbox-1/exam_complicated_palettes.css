@@ -1,0 +1,61 @@
+.palette-box:nth-child(1) .palette-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.palette-box:nth-child(1) div.color-2 {
+    order: 1;        
+}
+
+.palette-box:nth-child(1) div.color-4 {
+    order: 2;
+    align-self: center;
+}
+
+.palette-box:nth-child(1) div.color-3 {
+    align-self: center;
+}
+
+.palette-box:nth-child(2) .palette-small {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.palette-box:nth-child(2) div.color-2,
+.palette-box:nth-child(2) div.color-6 {
+    align-self: flex-end;        
+}
+
+.palette-box:nth-child(2) div.color-4,
+.palette-box:nth-child(2) div.color-1 {
+    align-self: flex-start;        
+}
+
+.palette-box:nth-child(3) .palette-small {
+    display: flex;
+    justify-content: space-between;
+}
+
+.palette-box:nth-child(3) .part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.palette-box:nth-child(4) .palette-small {
+    display: flex;
+    justify-content: space-between;
+}
+
+.palette-box:nth-child(4) .part:nth-child(1) {
+    display: flex;    
+}
+
+.palette-box:nth-child(4) .part:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}

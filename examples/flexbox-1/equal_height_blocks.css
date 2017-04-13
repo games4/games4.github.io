@@ -1,0 +1,11 @@
+/* Блок .columns сделаем флекс-контейнером. */
+.columns {
+    display: flex;
+		/* И зададим для него перенос элементов на новую строку.*/
+    flex-wrap: wrap;
+}
+
+.columns section {
+    float: left;
+    width: 140px;
+}
