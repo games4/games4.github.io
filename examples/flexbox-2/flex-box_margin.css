@@ -1,0 +1,27 @@
+.spot {
+    display: flex;
+    justify-content: flex-start;
+		/* Изменим порядок распределения элементов вдоль главной оси и убедимся, что ничего не поменяется. */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.skate {
+    min-width: 40px;
+    min-height: 100px;
+		width: 60px;
+		height: 150px;
+    margin: 0;
+		/* Для всех скейтов зададим внешние отступы 10px.*/
+    margin: 10px;
+}
+
+/* Для второго скейта зададим отступ слева со значением auto. */
+.skate-2 {
+    margin-left: auto;
+}
+
+/* Для последнего – отступ справа также со значением auto.*/ 
+.skate-4 {
+    margin-right: auto; 
+}

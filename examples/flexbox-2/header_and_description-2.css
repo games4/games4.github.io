@@ -1,0 +1,24 @@
+/* теперь заголовок будет длиннее. */
+
+.card {
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.card-title {
+    display: flex;
+    margin-top: 0;
+    align-items: flex-end;
+		/* Флекс-контейнеру зададим перенос элементов на новую строку. */ 
+    flex-wrap: wrap;
+}
+
+/* Уберем у спанов внутри контейнера фоновый цвет и рамку. */
+.card-title span {
+/*    background-color: #c8dcff;
+    border: 1px solid #999999; */
+}
+
+.card-title-main {
+    flex-grow: 1;
+}

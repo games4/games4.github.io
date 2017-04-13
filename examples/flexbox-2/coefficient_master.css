@@ -1,0 +1,44 @@
+.brick-layout {
+    display: flex;
+    width: 300px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.brick {
+    min-width: 0;
+    height: 100px;
+}
+
+.brick-1,
+.brick-2,
+.brick-3 {
+    flex-basis: 25px;
+}
+
+.brick-1 {
+    flex-grow: 1;
+}
+
+.brick-2 {
+    flex-grow: 3;
+}
+
+.brick-3 {
+    flex-grow: 5;
+}
+
+.brick-4 {
+    flex-basis: 200px;
+    flex-grow: 2;
+}
+
+.brick-5 {
+    flex-basis: 400px;
+    flex-shrink: 3;
+}
+
+.brick-6 {
+    flex-basis: 200px;
+    flex-shrink: 3;
+}

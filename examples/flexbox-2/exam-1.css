@@ -1,0 +1,8 @@
+.palette {
+  -webkit-align-items: stretch !important;
+  align-items: stretch !important;
+}
+.palette [class^='color'] {
+  -webkit-align-self: stretch !important;
+  align-self: stretch !important;
+}

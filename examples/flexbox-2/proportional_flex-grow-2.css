@@ -1,0 +1,37 @@
+.spot {
+    display: flex;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.spot-1 {
+    width: 300px;
+}
+
+.spot-1 .skate {
+    flex-basis: 50px;
+}
+
+.spot-1 .racoon-green {
+    flex-grow: 1;
+}
+
+.spot-1 .racoon-brown {
+    flex-grow: 3;
+}
+
+.spot-2 {
+    width: 500px;
+}
+
+.spot-2 .skate {
+    flex-basis: 100px;
+}
+
+.spot-2 .racoon-green {
+    flex-grow: 1;
+}
+
+.spot-2 .racoon-brown {
+    flex-grow: 2;
+}

@@ -1,0 +1,31 @@
+.spot {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skate {
+    min-width: 40px;
+    min-height: 120px;
+		/* Для .skate зададим ширину и высоту. */
+    width: 75px;
+    height: 300px;
+		/* И внутренние отступы. */
+    padding: 10px;
+    background-clip: content-box;
+    border-top-left-radius: 75% 25%;
+    border-top-right-radius: 75% 25%;
+    border-bottom-left-radius: 75% 25%;
+    border-bottom-right-radius: 75% 25%;
+    border-color: white;
+}
+
+.skate::after {
+    left: 50%;
+    margin-left: -10px;
+}
+
+/* Измененим алгоритм расчета ширины элемента, чтобы свойства width и height задавали не ширину и высоту содержания, а общую ширину и высоту, не учитывающие отступы. */
+.skate-2 {
+    box-sizing: border-box;
+}

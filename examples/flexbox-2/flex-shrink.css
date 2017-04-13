@@ -1,0 +1,21 @@
+.spot {
+    display: flex;
+    width: 450px;
+}
+
+.spot-1 .skate {
+    flex-basis: 150px;
+		/* Скейтбордам на первой поляне зададим базовый размер флекс-элементов 300px.*/
+    flex-basis: 300px;
+}
+
+/* Зададим нулевой коэффициент сжатия скейту Коричневого Енота.*/
+.spot-1 .racoon-brown {
+    flex-shrink: 0;
+}
+
+.spot-2 .skate {
+    flex-basis: 150px;
+		/* А также всем скейтам на второй поляне. */
+    flex-shrink: 0;
+}

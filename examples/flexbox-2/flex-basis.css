@@ -1,0 +1,17 @@
+.spot {
+    display: flex;
+    flex-direction: row;
+		/* Изменим направление главной оси на column для .spot.*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Скейту Оранжевого Енота зададим ширину и высоту.
+И базовый размер 100%.
+*/
+.racoon-orange {
+    width: 300px;
+    height: 100px;
+    flex-basis: 100%;
+}

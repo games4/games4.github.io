@@ -1,0 +1,17 @@
+.spot {
+    display: flex;
+    width: 450px;
+    height: auto;
+    flex-wrap: nowrap;
+		/* Разрешим перенос элементов на новую строку для блока .spot. */
+    flex-wrap: wrap;
+}
+
+.skate {
+    flex-basis: 120px;
+}
+
+/* Зелёному Еноту зададим коэффициент растягивания со значением 1. */
+.racoon-green {
+    flex-grow: 1;
+}

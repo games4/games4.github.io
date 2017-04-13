@@ -1,0 +1,8 @@
+.spot {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skate {
+    flex-basis: 100%;
+}

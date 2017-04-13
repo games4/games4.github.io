@@ -1,0 +1,22 @@
+.card {
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Блок .card-title, в котором лежит заголовок с подзаголовком, сделаем флекс-контейнером. */
+.card-title {
+    margin-top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Зададим фоновый цвет и рамку для .card-title span. */
+.card-title span {
+    background-color: #c8dcff;
+    border: 1px solid #999999;
+}
+
+/* Растянем заголовок на все свободное пространство, чтобы прижать подзаголовок к правой части. */
+.card-title-main {
+    flex-grow: 1;
+}

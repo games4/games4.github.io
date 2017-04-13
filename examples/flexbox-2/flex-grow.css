@@ -1,0 +1,16 @@
+.spot {
+    display: flex;
+}
+
+
+/* Зададим коэффициент растягивания flex-grow со значением 1 скейту Зелёного Енота.
+
+И скейту Оранжевого Енота.
+ */
+.racoon-green {
+    flex-grow: 1;
+}
+
+.racoon-orange {
+    flex-grow: 1;
+}

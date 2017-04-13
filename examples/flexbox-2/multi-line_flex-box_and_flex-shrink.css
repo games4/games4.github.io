@@ -1,0 +1,32 @@
+.spot {
+    display: flex;
+    width: 450px;
+    height: auto;
+    flex-wrap: nowrap;
+		/* Разрешим перенос элементов на новую строку для блока .spot. */
+    flex-wrap: wrap;
+}
+
+.skate {
+    flex-basis: 100px;
+		/* Увеличим базовый размер всех скейтбордов до 500px. */
+    flex-basis: 500px;
+    flex-shrink: 1;
+		/* Зададим скейтам нулевой коэффициент сжатия. */
+    flex-shrink: 0;
+}
+
+.spot .racoon-pink {
+    flex-basis: 200px;    
+    flex-shrink: 1;    
+}
+
+.spot .racoon-gray {
+    flex-basis: 150px;    
+    flex-shrink: 1;    
+}
+
+.spot .racoon-orange {
+    flex-basis: 500px;
+    
+}

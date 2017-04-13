@@ -1,0 +1,24 @@
+.spot {
+    display: flex;
+		/* У флекс-контейнера изменим направление главной оси на column. */У флекс-контейнера изменим направление главной оси на column.
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.skate {
+    min-width: 50px;
+    min-height: 50px;
+    margin: 10px;
+}
+
+/* У второго скейта удалим внешний верхний отступ и добавим внешний левый с таким же значением. */
+.skate-2 {
+    margin-left: auto;
+}
+
+/* У третьего скейта удалим внешний нижний отступ и добавим внешний правый с таким же значением. */
+.skate-3 {
+    margin-right: auto;
+    align-self: flex-end;
+}
