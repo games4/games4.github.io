@@ -1,0 +1,12 @@
+.btn-primary {
+  background-color: #6e1bff;
+  /* &-правила добавьте тут */
+}
+.btn-primary-hover,
+.btn-primary:hover {
+  background-color: #af81ff;
+}
+.btn-primary-pressed,
+.btn-primary:active {
+  background-color: #4200b4;
+}

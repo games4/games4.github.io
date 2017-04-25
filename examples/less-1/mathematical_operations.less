@@ -1,0 +1,30 @@
+@base-color: rgb(110, 27, 255);
+
+@distance: 60;
+@error-color: spin(@base-color, @distance);
+
+/* Умножим переменную @distance на -1, чтобы сдвинуть цвет @base-color на 60 градусов против часовой стрелки. */
+@invert-distance: @distance*-1;
+@info-color: #cccccc;
+@info-color: spin(@base-color, @invert-distance);
+
+.color {
+    &-primary {
+        background-color: @base-color;
+    }
+    &-error {
+        background-color: @error-color;
+    }
+    /* &-правило добавьте тут */
+		/* Создадим вложенное правило &-info в правиле .color. А в нем зададим background-color. */
+    &-info {
+        background-color: @info-color;
+    }
+}
+
+.palette-item {
+    display: inline-block;
+    .color {
+        margin: 0.5em;
+    }
+}

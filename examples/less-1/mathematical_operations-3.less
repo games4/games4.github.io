@@ -1,0 +1,43 @@
+/* Первый RGB-параметр базового цвета @base-color заменим на 110 + 50.
+Второй RGB-параметр умножим на 2.
+От третьего RGB-параметра отнимем 30.
+А затем прибавим ко всей RGB-записи цвета 20.
+*/
+
+@base-color: rgb(110, 27, 255);
+@base-color: rgb(110 + 50, 27 * 2, 255 - 30) + 20;
+
+@distance: 60;
+@error-color: spin(@base-color, @distance);
+@info-color: spin(@base-color, @distance * -1);
+@warn-color: spin(@base-color, @distance * 2);
+@success-color: spin(@base-color, @distance * -2);
+
+.color {
+    &-primary {
+        background-color: @base-color;
+    }
+    
+    &-error {
+        background-color: @error-color;
+    }
+    
+    &-info {
+        background-color: @info-color;
+    }
+    
+    &-warning {
+        background-color: @warn-color;
+    }
+    
+    &-success {
+        background-color: @success-color;
+    }
+}
+
+.palette-item {
+    display: inline-block;
+    .color {
+        margin: 0.5em;
+    }
+}

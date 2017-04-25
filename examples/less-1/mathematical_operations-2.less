@@ -1,0 +1,40 @@
+@base-color: rgb(110, 27, 255);
+
+@distance: 60;
+@invert-distance: @distance * -1;
+
+@error-color: spin(@base-color, @distance);
+@info-color: spin(@base-color, @invert-distance);
+/* Вычислим значение функции @warning-color: прямо в функции spin умножим @distance на 2. */
+@warning-color: spin(@base-color, @distance*2);
+/* А также вычислим значение функции @success-color: в функции spin умножим @distance-reverse на 2. */
+@success-color: spin(@base-color, @invert-distance*2);
+
+.color {
+    &-primary {
+        background-color: @base-color;
+    }
+
+    &-error {
+        background-color: @error-color;
+    }
+
+    &-info {
+        background-color: @info-color;
+    }
+
+    &-warning {
+        background-color: @warning-color;
+    }
+
+    &-success {
+        background-color: @success-color;
+    }
+}
+
+.palette-item {
+    display: inline-block;
+    .color {
+        margin: 0.5em;
+    }
+}

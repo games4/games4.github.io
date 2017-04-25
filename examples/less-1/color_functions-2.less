@@ -1,0 +1,19 @@
+@base-color: rgb(110, 27, 255);
+
+.btn {
+    &-primary {
+        background-color: @base-color;
+        /* &-правила добавьте тут */
+				/* Создадим вложенное правило &-hover, &:hover, в котором зададим цвет фона с помощью LESS-функции lighten, которая сделает цвет @base-color светлее на 20%. */
+				&-hover,
+        &:hover {
+            background-color: lighten(@base-color, 20%);    
+        }
+				
+				/* А также создадим вложенное правило &-pressed, &:active, в котором зададим цвет фона с помощью LESS-функции darken, которая сделает цвет @base-color темнее на 20%. */
+        &-pressed,
+        &:active {
+            background-color: darken(@base-color, 20%)    
+        }
+    }
+}

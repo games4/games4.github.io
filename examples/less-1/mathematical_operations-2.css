@@ -1,0 +1,23 @@
+.color-primary {
+  background-color: #6e1bff;
+}
+.color-error {
+  background-color: #ff1bac;
+}
+.color-info {
+  background-color: #1bacff;
+}
+.color-warning {
+  background-color: #cccccc;
+  background-color: #ff6e1b;
+}
+.color-success {
+  background-color: #cccccc;
+  background-color: #1bff6e;
+}
+.palette-item {
+  display: inline-block;
+}
+.palette-item .color {
+  margin: 0.5em;
+}

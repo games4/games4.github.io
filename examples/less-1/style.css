@@ -10,3 +10,9 @@ body > header {
 	opacity: 0.8;
 }
 
+.controls {
+		width: 500px;
+		margin: 55px auto;
+
+}
+

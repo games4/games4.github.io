@@ -1,15 +1,23 @@
 @base-color: rgb(110, 27, 255);
+@distance: 60;
+@error-color: spin(@base-color, @distance);
 
-.color-primary {
-    background-color: @base-color;
+.color {
+    &-primary {
+        background-color: @base-color;
+    }
+
+    &-error {
+        background-color: @error-color;
+    }
 }
 
 .palette-item {
 		/* Блоки .palette-item сделаем блочно-строчными. */
 		display: inline-block;
     /* вложенное правило создайте тут */
-    /* И внутри правила .palette-item обнулим значение border-radius для вложенного правила .color. */
+    }
 		.color {
-        border-radius: 0;    
+        margin: 0.5em;
     }
 }
