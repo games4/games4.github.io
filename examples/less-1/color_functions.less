@@ -1,0 +1,11 @@
+@base-color: rgb(110, 27, 255);
+@distance: 180;
+@complementary-color: spin(@base-color, @distance);
+
+.color-primary {
+    background-color: @base-color;
+}
+
+.color-complementary {
+    background-color: @complementary-color;
+}
