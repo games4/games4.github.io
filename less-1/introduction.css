@@ -1,9 +1,0 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  background: #1d365d url("logo-less.png") 50% 25% no-repeat;
-}
