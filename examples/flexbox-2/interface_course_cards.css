@@ -1,0 +1,100 @@
+/* Блок .cards, в котором находятся карточки курса, сделаем флекс-контейнером. */
+.cards {
+    display: flex;
+		/* Разрешим перенос элементов на новую строку для флекс-контейнера, в котором находятся карточки. */
+    flex-wrap: wrap;
+		/* Уменьшим ширину флекс-контейнера .cards до 700px. */
+    width: 1000px;
+    width: 700px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* Блок .card сделаем флекс-контейнером.
+И зададим направление главной оси сверху вниз. */
+.card {
+    display: flex;
+    flex-direction: column;
+		/* Удалим у карточек .card максимальную ширину и зададим базовый размер 300px. */
+    flex-basis: 300px;
+/*    max-width: 70%; */
+		/* Карточкам .card зададим внешний отступ со всех сторон 10px. */
+    margin: 10px;
+    padding: 20px;
+/*    box-sizing: border-box; */
+		/* А также коэффициент растягивания со значением 1. */
+		flex-grow: 1;
+}
+
+/* .card-meta также сделаем флекс-контейнером. */
+.card-meta {
+    display: flex;    
+}
+
+/* Для .card-category зададим коэффициент растягивания 1. */
+.card-category {
+    flex-grow: 1;    
+}
+
+/* Для .card-content зададим коэффициент растягивания 1.
+И сделаем его флекс-контейнером.
+А также зададим ему направление главной оси сверху вниз. */
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+}
+
+/* Для .card-button зададим внешний отступ сверху со значением auto. */
+.card-button {
+    margin-top: auto;
+}
+
+/* Стили для зума */
+
+.zoomer {
+    position: absolute;
+    top: 55;
+    left: 0;
+    box-sizing: border-box;
+    width: 200%;
+    width: 100%;
+    padding: 20px;
+/*    transform: scale(0.5); */
+    transform: scale(1);
+    transform-origin: 0 0;
+}
+
+/* Декоративные обводки */
+
+/*
+.card {
+    outline: 2px solid rgba(255, 0, 0, 0.3);
+    outline-offset: -2px;
+}
+*/
+
+/*
+.card > * {
+    outline: 2px solid rgba(0, 128, 0, 0.3);
+    outline-offset: 1px;
+}
+*/
+
+/*
+.card-meta > * {
+    outline: 2px solid rgba(0, 0, 0, 0.5);
+    outline-offset: -3px;
+}
+*/
+
+/*
+.card-content > * {
+    outline: 2px solid rgba(0, 0, 0, 0.5);
+    outline-offset: -3px;
+}
+*/

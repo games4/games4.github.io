@@ -1,0 +1,19 @@
+.brick-layout {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.brick {
+    min-height: 80px;
+    min-width: 50px;
+    margin: 5px;
+    flex-basis: 100px;
+}
+
+
+.brick:nth-child(2n) {
+    flex-grow: 1;    
+}

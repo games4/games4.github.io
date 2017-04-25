@@ -1,0 +1,49 @@
+.input-container {
+		/* .input-container сделаем флекс-контейнером. */
+    display: flex;
+    width: 500px;
+		/* Уменьшим ширину .input-container до 200px. */
+    width: 200px;
+    width: auto;
+    margin: 30px 0;
+    outline: 2px dashed rgba(0, 128, 0, 0.2);
+    outline-offset: 5px;
+}
+
+.add-on {
+    display: inline-block;
+    min-width: 40px;
+    min-height: 36px;
+    padding: 8px 12px;
+    vertical-align: top;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 2px solid #cccccc;
+    box-sizing: border-box;
+		/* Для .add-on зададим нулевой коэффициент сжатия. */
+    flex-shrink: 0;
+}
+
+.input {
+		/* А затем для полей ввода минимальную ширину 50px. */
+    min-width: 50px;
+    padding: 8px 12px;
+    border: 2px solid #cccccc;
+		/* Полям ввода .input зададим коэффициент растягивания со значением 1. */
+    flex-grow: 1;
+}
+
+.input:not(:first-child) {
+    border-left: 0;
+}
+
+.input:not(:last-child) {
+    border-right: 0;
+}
+
+.input-container a {
+    margin: 0 10px;
+    font-size: 12px;
+    line-height: 36px;
+    color: #666666;
+}
