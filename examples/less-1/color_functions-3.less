@@ -1,0 +1,24 @@
+@base-color: rgb(110, 27, 255);
+@base-color: spin(rgb(110, 27, 255), 60);
+@alter-color: spin(@base-color, 60);
+
+.btn {
+    &-primary {
+        background-color: @base-color;
+        
+        &-hover, &:hover {
+            background-color: lighten(@base-color, 20%);
+        }
+        
+        &-pressed, &:active {
+            background-color: darken(@base-color, 20%);
+        }
+        /* &-правило добавьте тут */
+				/* Создадим вложенное правило &-disabled, в котором зададим цвет текста и цвет фона светлее @base-color на 20%.
+Уменьшим насыщенность цвета фона с помощью функции desaturate на 70%. */
+        &-disabled {
+            color: rgba(255, 255, 255, 0.8);
+            background-color: desaturate(lighten(@base-color, 20%), 70%);
+        }
+    }
+}

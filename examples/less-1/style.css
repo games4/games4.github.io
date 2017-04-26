@@ -10,9 +10,16 @@ body > header {
 	opacity: 0.8;
 }
 
-.controls {
-		width: 500px;
+.controls,
+.alerts {
+		width: 600px;
 		margin: 55px auto;
 
 }
+
+.palette-case {
+		margin: 55px auto;
+
+}
+
 

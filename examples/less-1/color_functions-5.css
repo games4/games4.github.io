@@ -1,0 +1,23 @@
+/*----- Основные цвета -----*/
+/*----- Цвета сообщений -----*/
+/*----- Правила сообщений -----*/
+.alert-primary {
+  background-color: #e0ceff;
+  border-color: #c3b4ff;
+  color: #4b00cd;
+}
+.alert-error {
+  background-color: #ffceed;
+  border-color: #ffb4f0;
+  color: #cd0083;
+}
+.alert-info {
+  background-color: #ceedff;
+  border-color: #b4f0ff;
+  color: #0083cd;
+}
+.alert-warning {
+  background-color: #ffe0ce;
+  border-color: #ffc3b4;
+  color: #cd4b00;
+}

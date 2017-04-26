@@ -1,0 +1,59 @@
+/*----- Основные цвета -----*/
+
+@base-color: rgb(110, 27, 255);
+@error-color: spin(@base-color, 60);
+@info-color: spin(@base-color, -60);
+@warning-color: spin(@base-color, 120);
+@success-color: spin(@base-color, -120);
+
+/*----- Цвета сообщений -----*/
+
+@alert-primary-bg: lighten(@base-color, 35%);
+@alert-primary-border: darken(spin(@alert-primary-bg, -10), 5%);
+@alert-primary-text: darken(@alert-primary-bg, 50%); 
+
+@alert-error-bg: lighten(@base-color, 35%);
+/* Заменим переменную @base-color на @error-color. */
+@alert-error-bg: lighten(@error-color, 35%);
+@alert-error-border: darken(spin(@alert-error-bg, -10), 5%);
+@alert-error-text: darken(@alert-error-bg, 50%); 
+
+@alert-info-bg: lighten(@base-color, 35%);
+/* Заменим переменную @base-color на @info-color. */
+@alert-info-bg: lighten(@info-color, 35%);
+@alert-info-border: darken(spin(@alert-info-bg, -10), 5%);
+@alert-info-text: darken(@alert-info-bg, 50%); 
+
+@alert-warning-bg: lighten(@base-color, 35%);
+/* Заменим переменную @base-color на @warning-color. */
+@alert-warning-bg: lighten(@warning-color, 35%);
+@alert-warning-border: darken(spin(@alert-warning-bg, -10), 5%);
+@alert-warning-text: darken(@alert-warning-bg, 50%); 
+
+/*----- Правила сообщений -----*/
+
+.alert {
+    &-primary {
+        background-color: @alert-primary-bg;
+        border-color: @alert-primary-border;
+        color: @alert-primary-text;
+    }
+    
+    &-error {
+        background-color: @alert-error-bg;
+        border-color: @alert-error-border;
+        color: @alert-error-text;
+    }
+    
+    &-info {
+        background-color: @alert-info-bg;
+        border-color: @alert-info-border;
+        color: @alert-info-text;
+    }
+    
+    &-warning {
+        background-color: @alert-warning-bg;
+        border-color: @alert-warning-border;
+        color: @alert-warning-text;
+    }
+}

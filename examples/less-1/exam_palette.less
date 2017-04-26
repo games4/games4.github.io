@@ -1,0 +1,45 @@
+@color-1: #0074d9;
+@color-2: white;
+@color-3: #ff4136;
+@color-4: white;
+@color-5: #2ecc40;
+@color-6: white;
+@color-7: #ffdc00;
+@color-8: white;
+@color-9: white;
+
+.color-1 {
+    background-color: @color-1;
+}
+
+.color-2 {
+    background-color: lighten(@color-1, 25%); 
+}
+
+.color-3 {
+    background-color: @color-3;
+}
+
+.color-4 {
+    background-color: desaturate(@color-5, 30%);
+}
+
+.color-5 {
+    background-color: @color-5;
+}
+
+.color-6 {
+    background-color: spin(@color-3, -100);
+}
+
+.color-7 {
+    background-color: @color-7;
+}
+
+.color-9 {
+    background-color: darken(spin(@color-3, -100),20%);
+}
+
+.color-9 {
+    background-color: @color-9;
+}

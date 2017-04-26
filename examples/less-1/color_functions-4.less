@@ -1,0 +1,18 @@
+@base-color: rgb(110, 27, 255);
+@alert-primary-bg: white;
+/* Зададим переменной @alert-primary-bg цвет светлее базового на 35%. */
+@alert-primary-bg: lighten(@base-color, 35%);
+@alert-primary-border: white;
+/* Переменной @alert-primary-border значение, сдвинутое от @alert-primary-bg функцией spin на -10 и затемнённое на 5%. */
+@alert-primary-border: darken(spin(@alert-primary-bg, -10), 5%);
+@alert-primary-text: black; 
+/* А переменной @alert-primary-text – цвет темнее @alert-primary-bg на 50%. */
+@alert-primary-text: darken(@alert-primary-bg, 50%); 
+
+.alert {
+    &-primary {
+        background-color: @alert-primary-bg;
+        border-color: @alert-primary-border;
+        color: @alert-primary-text;
+    }
+}
