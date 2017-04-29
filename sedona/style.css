@@ -1,0 +1,480 @@
+/* --------------- reset.css --------------- */
+html, body {
+	margin: 0;
+	padding: 0;	         
+}
+/* ------------------------------ */
+body {
+	min-width: 1200px;
+	color: #333333;	
+	font-size: 14px; 
+	line-height: 26px;
+	font-weight: 400;
+	font-family: "PT Sans", "Arial", sans-serif;
+	background-color: #f2f2f2;
+	text-transform: uppercase;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.img-main h1,
+.centerblock-place h2 {
+	color: #000000;	
+	font-size: 21px; 
+	font-weight: 700;
+}
+.place h2,
+.feedback h2 {
+	color: #ffffff;	
+	font-size: 21px; 
+	font-weight: 700;
+}
+/* --------------- стили для index.html --------------- */
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}	
+.main-header {
+	position: relative;	
+}
+.logo {
+	position: absolute;
+	top: 0;
+	left: 531px;
+	z-index: 2;
+}	
+.main-navigation { 
+	padding-left: 72px;
+	padding-right: 72px;	
+	outline: 1px solid red;
+}
+.main-navigation ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.main-navigation li {
+	line-height: 26px;
+	font-size: 14px;
+	width: 128px;
+	outline: 1px solid green;
+}	
+.main-navigation a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: 700;
+	display: block;
+	padding: 15px 0;
+}
+.main-navigation a:hover {
+	color: #81b3d2;
+}	
+.main-navigation li:first-child,
+.main-navigation li:nth-child(2)
+ {
+	float: left; 			
+	margin-right: 112px;
+}
+.main-navigation li:nth-child(3),
+.main-navigation li:last-child
+ {
+	float: right;		
+	margin-left: 112px;
+	text-align: right;
+}
+.sedona-text {
+	position: absolute;
+	top: 78px;
+	left: 372px;
+}
+.sedona-main-bottom {
+	position: absolute;
+	top: 454px;
+	left: 0;
+}	
+.img-main{	
+	position: relative;
+	text-align: center;	
+	background: #ffffff url(img/sedona-main.jpg) no-repeat;	
+	outline: 1px solid red;
+	min-height: 716px; 
+	background-size: 1200px 510px;
+	z-index: 1;
+}	
+.img-main-text{
+	position: absolute;
+	width: 100%;
+	top: 572px;
+	text-align: center;	
+	outline: 1px solid green;
+}
+.img-main-text h1{
+	font-size: 21px;	
+	margin-top: 0;
+	margin-bottom: 34px;
+}	
+.img-main-text p{	
+	margin: 0;
+}	
+.place-wrapper-first {
+	float: left;
+	width: 280px;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 48px;
+	padding-left: 60px;
+	padding-right: 60px;
+	background-color: #81b3d2;
+	min-height: 209px;	
+	outline: 1px solid red;
+}
+.place-wrapper-second {
+	float: right;
+	width: 304px;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 48px;
+	min-height: 209px;	
+	padding-left: 48px;
+	padding-right: 48px;
+	background-color: #81b3d2;
+	outline: 1px solid red;
+}
+.place-wrapper-first p{
+	margin-top: 26px;
+	font-size: 14px;
+	line-height: 21px;
+}	
+.place-wrapper-second p{
+	margin-top: 26px;
+	font-size: 14px;
+	line-height: 21px;
+}	
+.place-img1 {
+	float: right;
+}
+.place-img2 {
+	float: left;
+}
+.features {
+	font-size: 0px;	
+}	
+.features-else {
+	font-size: 0px;
+	background-color: #eeeeee;
+}	
+.features-item {
+	display: inline-block;
+	vertical-align: top;	
+	width: 256px;
+	outline: 1px solid red;
+	font-size: 14px;
+	text-align: center;	
+	padding-left: 72px;
+	padding-right: 72px;	
+	padding-bottom: 85px;
+	padding-top: 164px;
+	position: relative;
+}	
+.features-item-else {
+	display: inline-block;
+	vertical-align: top;	
+	width: 256px;
+	outline: 1px solid red;
+	font-size: 14px;
+	text-align: center;	
+	padding-left: 72px;
+	padding-right: 72px;	
+	padding-top: 50px;
+	padding-bottom: 60px;
+	position: relative;
+}	
+.features-item::before {
+	content: "";		
+	position: absolute;	
+	background-image: url(img/sprite.png);
+	background-repeat: no-repeat;	
+	top: 60px;		
+	left: 163px;
+	}	
+.features-item-home::before {
+    width: 75px;
+    height: 72px;
+    background-position: -5px -87px;
+}
+.features-item-food::before {
+    width: 75px;
+    height: 72px;
+    background-position: -5px -5px;
+}
+
+.features-item-present::before {
+    width: 75px;
+    height: 72px;
+    background-position: -5px -169px;
+}
+		
+.features-item b{
+	font-size: 21px;
+	line-height: 21px;	
+	margin-top: 0;
+	margin-bottom: 30px;
+	display: inline-block;
+}	
+.features-item-else b{
+	font-size: 21px;
+	line-height: 21px;	
+	margin-top: 0;	
+	display: inline-block;
+}	
+.features-item p{
+	font-size: 14px;
+	line-height: 21px;
+	margin: 0;
+	padding: 0;
+}	
+
+.feedback {
+	position: relative;
+	padding-top: 57px;
+	text-align: center;	
+	outline: 1px solid red;
+	min-height: 237px;
+}
+.feedback b{
+	font-size: 30px;
+}	
+.feedback p{
+	margin-top: 30px;
+	margin-bottom: 51px;
+	line-height: 24px;
+}	
+.feedback h2{
+	position: absolute;
+	top: 187px;
+	left: 314px;
+	font-size: 21px;
+	font-weight: 700;
+	width: 575px;
+	padding: 32px 0px;
+	text-align: center;
+	background-color: #766357;	
+}	
+.feedback-form {
+	position: absolute;
+	top: 294px;
+	left: 314px;
+	width: 465px;
+	padding-left: 55px;
+	padding-right: 55px;	
+	background-color: #ffffff;
+	padding-top: 64px;	
+	padding-bottom: 57px;
+	text-align: left;
+	font-weight: 700;
+}
+.feedback-form label{
+	text-align: left;
+	outline: 1px solid red;	
+	padding-right: 20px;
+}	
+.feedback-form-group input[type="date"]
+ {
+	width: 345px;
+	height: 36px;
+	background-color: #f2f2f2;
+	margin-bottom: 30px;	
+	border: none;
+	text-align: right;
+}
+.feedback-form-group input[type="number"]
+ {
+	width: 118px;
+	height: 36px;
+	background-color: #f2f2f2;
+	margin-bottom: 30px;	
+	border: none;
+}
+.feedback-form-group button[type="submit"] {
+	width: 457px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #81b3d2;
+	border: none;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 21px;
+	font-weight: 700;
+}	
+.feedback-form-group::before {
+content: "";
+position: absolute;
+background-image: url(img/sprite-form.png);
+background-repeat: no-repeat;
+background-color: red;
+width: 21px;
+height: 20px;
+display: block;
+}
+.feedback-form-date-begin::before {
+    width: 21px;
+    height: 22px;
+    background-position: -10px -10px;	
+	right: 75px;
+	top: 75px;
+}	
+
+
+.feedback-form-group-adults {
+	float: left;	
+	outline: 1px solid red;	
+	position: relative;
+}	
+.feedback-form-group-adults label{
+	margin-right: 20px;
+}	
+.feedback-form-group-adults::before {	
+    width: 21px;
+    height: 22px;
+    background-position: -10px -52px;
+	content: "";
+position: absolute;
+background-image: url(img/sprite-form.png);
+background-repeat: no-repeat;
+}
+
+.feedback-form-group-kids {
+	float: right;
+	outline: 1px solid red;
+	padding-right: 10px;
+}	
+.map {
+	background-image: url(img/map.jpg);	
+	min-height: 470px;
+}	
+.container-footer {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}	
+a.visitsedona {	
+	float: left;
+	width: 400px;
+	text-align: center;
+	outline: 1px solid red;	
+	text-decoration: none;
+	color: #000000;
+}
+.footer-social {
+	float: left;
+	width: 140px;
+	text-align: center;
+	outline: 1px solid red;
+	padding-left: 130px;
+	padding-right: 130px;
+}
+.container-footer a:hover {	
+	color: #81b3d2;
+}
+.footer-social a {
+	float: left;			
+}
+.social-btn {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	font-size: 0;
+	background: #81b3d2;
+	position: relative;
+	outline: 1px solid red;
+}
+.social-btn::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate (-50%, -50%);
+	background-image: url(img/sprite-footer.png);
+	background-repeat: no-repeat;
+}
+.social-btn-fb {
+    width: 20px;
+    height: 20px;
+    background-position: -5px -5px;
+	outline: 1px solid green;
+}
+.social-btn-tw {
+	width: 20px;
+    height: 20px;
+    background-position: -35px -5px;
+}	
+.social-btn-yot {
+	width: 20px;
+    height: 20px;
+    background-position: -65px -5px;
+}	
+.footer-copyright {
+	float: right;
+	width: 400px;
+	text-align: center;
+	outline: 1px solid red;
+	
+}
+/* --------------- стили для inner.html --------------- */
+.booking-form {
+	padding-left: 73px;
+	padding-right: 73px;
+	padding-top: 28px;
+	outline: 1px solid red;
+	min-height: 188px;
+}
+.booking-form fieldset {
+	float: left;
+	width: 241px;
+	outline: 1px solid green;
+}
+.dayscount {
+	float: right;
+	width: 168px;
+	text-align: center;
+	outline: 1px solid green;
+}
+.centerblock {
+	padding-left: 73px;
+	padding-right: 73px;
+	outline: 1px solid red;
+}	
+.centerblock-range {
+	outline: 1px solid green;	
+	padding-top: 28px;
+	padding-bottom: 36px;
+}
+.centerblock-range p,
+.centerblock-range ul {
+	float: left;
+	width: 120px;	
+}
+.centerblock-place {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	outline: 1px solid green;	
+}
+.centerblock-place img {
+	float: left;
+	margin-right: 30px;
+}
+.centerblock-place-hotel {
+	float: left;
+	width: 528px;
+	outline: 1px solid green;	
+	margin-right: 30px;
+}
+.centerblock-place-rank {
+	float: right;
+	vertical-align: top;
+	width: 160px;
+	outline: 1px solid green;	
+}

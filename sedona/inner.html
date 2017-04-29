@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Седона - городок в Аризоне</title>
+</head>
+  <body>
+    <div class="container">
+		<header class="main-header">			
+			<a href="#">
+				<img class="logo" src="img/logo.png" width="138" height="70" alt="Седона логотип">
+			</a>
+			<nav class="main-navigation">
+				<ul class="clearfix">
+					<li>
+						<a href="#">Информация</a>
+					</li>
+					<li>
+						<a href="#">Фото и видео</a>
+					</li>
+					<li>
+						<a href="#">Карта штата</a>
+					</li>
+					<li>
+						<a href="#">Гостиница</a>
+						</li>            
+				</ul>
+			</nav>      	
+		</header>
+		<form class="booking-form clearfix" action="https://echo.htmlacademy.ru" method="post">
+			<fieldset>
+				<legend>Инфраструктура</legend>			
+				<p>
+					<input type="checkbox" name="pool" id="choice-1">					
+					<label for="choice-1">Бассейн</label>
+				</p>
+				<p>
+					<input type="checkbox" name="parking" id="choice-2">				
+					<label for="choice-2">Парковка</label>
+				</p>
+				<p>				
+					<input type="checkbox" name="wi-fi" id="choice-3">
+					<label for="choice-3">Wi-fi</label>		
+				</p>		
+			</fieldset>
+			<fieldset>
+				<legend>Тип жилья</legend>		
+				<p>	
+					<input type="checkbox" name="hotel" id="choice-4">
+					<label for="choice-4">Гостиница</label>
+				</p>	
+				<p>
+					<input type="checkbox" name="motel" id="choice-5">
+					<label for="choice-5">Мотель</label>
+				</p>	
+					<input type="checkbox" name="apartments" id="choice-6">
+					<label for="choice-6">Апартаменты</label>
+				</p>	
+			</fieldset>			
+			<div class="dayscount">				
+				<label for="dayscount">Стоимость в сутки</label>
+                    от 0<input type="range" id="dayscount" name="dayscount" min="0" max="300" step="1">до 300	
+				<p>
+					<button class="btn" type="submit">Показать</button>	
+				</p>	
+			</div>					
+		</form>
+		<section class="centerblock clearfix">			
+			<div class="centerblock-range clearfix">
+				<p><b>Найдено:</b></p>
+				<p>Сортировка:</p>
+				<ul>
+					<li>
+						<a>По цене</a>
+					</li>
+					<li>
+						<a href="#">По типу</a>
+					</li>
+					<li>
+						<a href="#">По рейтингу</a>
+					</li>                 
+				</ul>		
+			</div>	
+			<div class="centerblock-place clearfix">
+				<img src="img/hotel1.jpg" width="135" height="90" alt="Седона гостиница">
+				<div class="centerblock-place-hotel">
+					<h2>Amara resort & SPA</h2>
+					<p>Гостиница</p>
+					<p>От 4000 р.</p>				
+					<a class="btn" href="#">Подробнее</a>
+					<a class="btn" href="#">Забронировать</a>
+				</div>	
+				<div class="centerblock-place-rank">
+					<img src="img/rank.png" width="89" height="17" alt="рейтинг">
+					<p>Рейтинг: 8,5</p>	
+				</div>		
+			</div>
+			<div class="centerblock-place clearfix">
+				<img src="img/hotel2.jpg" width="135" height="90" alt="Седона гостиница">
+				<div class="centerblock-place-hotel">
+					<h2>Desert Quaill Inn</h2>
+					<p>Мотель</p>
+					<p>От 3000 р.</p>				
+					<a class="btn" href="#">Подробнее</a>
+					<a class="btn" href="#">Забронировать</a>
+				</div>	
+				<div class="centerblock-place-rank">
+					<img src="img/rank.png" width="89" height="17" alt="рейтинг">
+					<p>Рейтинг: 8,9</p>	
+				</div>	
+			</div>
+			<div class="centerblock-place clearfix">
+				<img src="img/hotel3.jpg" width="135" height="90" alt="Седона гостиница">
+				<div class="centerblock-place-hotel">
+					<h2>Villas at poko Diablo</h2>
+					<p>Апартаменты</p>
+					<p>От 2000 р.</p>				
+					<a class="btn" href="#">Подробнее</a>
+					<a class="btn" href="#">Забронировать</a>
+				</div>	
+				<div class="centerblock-place-rank">
+					<img src="img/rank.png" width="89" height="17" alt="рейтинг">
+					<p>Рейтинг: 9,2</p>	
+				</div>	
+			</div>
+		</section>
+		<footer class="container-footer clearfix">						  
+			<a href="#">#visitsedona</a>				
+			<section class="footer-social clearfix">			  
+				<a class="social-btn social-btn-vk" href="#">Вконтакте</a>
+				<a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+				<a class="social-btn social-btn-yot" href="#">Ютуб</a>
+			</section>
+			<section class="footer-copyright">				
+				<a class="btn logo-btn" href="https://htmlacademy.ru"><span>Website by:</span>HTML Academy1</a>				
+			</section>			
+		</footer>
+	</div>
+</body>	
