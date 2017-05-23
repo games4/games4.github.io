@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Разметка текста с помощью HTML</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/basic-html/38.svg" alt="Разметка текста с помощью HTML" height="100" width="100">
+	<div class="course-description__content">
+		<h1>Разметка текста с помощью HTML</h1>
+		<p>Научимся добавлять на&nbsp;простейшую HTML-страницу текстовое содержание и&nbsp;правильно размечать его: абзацы, заголовки, подзаголовки, списки и&nbsp;многое другое.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Абзацы <small>[1/17]</small></h1>
+          <p>В&nbsp;курсе «<a href="/courses/26">Структура HTML-документа</a>» вы&nbsp;познакомились с&nbsp;тегами, необходимыми для создания простейшей HTML-страницы, и&nbsp;с&nbsp;некоторыми служебными тегами, которые не&nbsp;отображаются в&nbsp;браузере.</p>
+
+<p>В&nbsp;этом курсе мы&nbsp;будем изучать теги для логической разметки текста. Использовать их&nbsp;можно только внутри тега <code>&lt;body&gt;</code>.</p>
+
+<p>Начнём с&nbsp;простейшего тега <code>&lt;p&gt;</code>, с&nbsp;помощью которого создаются абзацы. По&nbsp;умолчанию абзацы начинаются с&nbsp;новой строки и&nbsp;имеют вертикальные отступы, которыми можно управлять с&nbsp;помощью стилей.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Заголовки и&nbsp;подзаголовки <small>[2/17]</small></h1>
+          <p>Для создания структуры больших текстов обычно используются заголовки. В&nbsp;текстовых редакторах есть возможность выделить часть текста, найти пункт «Заголовок» нужного уровня в&nbsp;меню, и&nbsp;применить его.</p>
+
+<p>В&nbsp;языке HTML для выделения заголовков предусмотрено целое семейство тегов: от <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code>. Тег <code>&lt;h1&gt;</code> обозначает самый важный заголовок (заголовок верхнего уровня), а&nbsp;тег <code>&lt;h6&gt;</code> обозначает подзаголовок самого нижнего уровня.</p>
+
+<p>На&nbsp;практике редко встречаются тексты, в&nbsp;которых встречаются подзаголовки ниже третьего уровня. Поэтому самыми часто используемыми тегами заголовков являются: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> и <code>&lt;h3&gt;</code>.</p>
+
+<p>Стоит отметить, что поисковые системы придают особое значение заголовкам, поэтому необходимо учиться правильно их&nbsp;использовать.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Неупорядоченный список <small>[3/17]</small></h1>
+          <p>Списки часто используются в&nbsp;различных документах. Иногда, чтобы сделать список, пользователь просто нумерует строчки текста. Такой подход не&nbsp;является хорошим, так как в&nbsp;документе отсутствует логическая сущность «список».</p>
+
+<p>В&nbsp;HTML существует семейство тегов для создания списков: неупорядоченных, упорядоченных и&nbsp;списков определений. В&nbsp;последующих заданиях мы&nbsp;будем тренироваться работать с&nbsp;ними.</p>
+
+<p>Неупорядоченные (или маркированные) списки создаются с&nbsp;помощью тега <code>&lt;ul&gt;</code> (Unordered List - неупорядоченный список), который может содержать внутри себя теги <code>&lt;li&gt;</code> (List Item, элемент списка), обозначающие «элемент списка».</p>
+<pre>&lt;ul&gt;
+  &lt;li&gt;черный&lt;/li&gt;
+  &lt;li&gt;белый&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Упорядоченный список <small>[4/17]</small></h1>
+          <p>Упорядоченный список создаётся с&nbsp;помощью тега <code>&lt;ol&gt;</code>, который может содержать внутри себя теги <code>&lt;li&gt;</code>.</p>
+
+<p>Если элементы неупорядоченного списка по&nbsp;умолчанию отмечаются маркерами, то&nbsp;элементы упорядоченного списка&nbsp;— нумеруются.</p>
+
+<p>Для упорядоченного списка можно задать атрибут <code>start</code>, который изменяет начало нумерации. Например, код:</p>
+
+<pre>&lt;ol start="3"&gt;
+  &lt;li&gt;раз&lt;/li&gt;
+  &lt;li&gt;два&lt;/li&gt;
+&lt;/ol&gt;</pre>
+
+<p>Приведёт к&nbsp;такому результату:</p>
+
+<ol start="3">
+  <li>раз</li>
+  <li>два</li>
+</ol>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Многоуровневый список <small>[5/17]</small></h1>
+          <p>Создать многоуровневый список достаточно просто.</p>
+
+<p>Сначала нужно создать список первого уровня, а&nbsp;затем внутрь любого элемента этого списка, между тегами <code>&lt;li&gt;</code> и <code>&lt;/li&gt;</code>, добавить список второго уровня. При этом необходимо аккуратно закрывать все теги.</p>
+
+<div style="display:inline-block;width:250px;margin-right:10px;vertical-align:top;">
+Пример правильного кода:
+<pre>&lt;ul&gt;
+  &lt;li&gt;1
+    &lt;ul&gt;
+      &lt;li&gt;1.1&lt;/li&gt;
+      &lt;li&gt;1.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</div>
+
+<div style="display:inline-block;width:250px;margin-right:10px;vertical-align:top;">
+Пример кода с&nbsp;ошибкой:
+<pre>&lt;ul&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.1&lt;/li&gt;
+    &lt;li&gt;1.2&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li&gt;2&lt;/li&gt;
+&lt;/ul&gt;
+
+</pre>
+</div>
+
+<p>В&nbsp;примере с&nbsp;ошибкой вложенный список вставлен не&nbsp;внутрь элемента списка, а&nbsp;между элементами, что недопустимо.</p>
+
+<p>Количество уровней в&nbsp;списках не&nbsp;ограничено. В&nbsp;многоуровневом списке можно использовать как упорядоченные, так и&nbsp;неупорядоченные списки.</p>
+
+<p>В&nbsp;этом задании мы&nbsp;потренируемся работать с&nbsp;многоуровневыми списками.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Ещё более многоуровневый <small>[6/17]</small></h1>
+          <p>Хорошо. Вы&nbsp;создали двухуровневый список. Теперь задание посложнее.</p>
+
+<p>В&nbsp;этом задании вам нужно будет создать четырёхуровневый список, наподобие этого:</p>
+
+<div style="margin:10px 0;padding:10px;box-shadow:0 0 2px #ccc;border-radius:5px">
+<ol>
+    <li>
+        Разметка
+        <ol>
+            <li>
+                Основы HTML
+                <ol>
+                    <li>
+                        HTML-теги
+                        <ol>
+                            <li>парные</li>
+                            <li>одиночные</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                Основы CSS
+                <ol>
+                    <li>
+                        Селекторы
+                        <ol>
+                            <li>по типу</li>
+                            <li>по классу</li>
+                            <li>вложенные</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>Стиль кодирования</li>
+        </ol>
+    </li>
+    <li>Работа с фотошопом</li>
+    <li>Построение сеток</li>
+    <li>Декоративные элементы</li>
+    <li>Введение в JavaScript</li>
+    <li>Прогрессивное улучшение</li>
+</ol>
+</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Список определений <small>[7/17]</small></h1>
+          <p>Список определений создаётся с&nbsp;помощью трёх тегов:</p>
+<ol>
+  <li style="margin-bottom:0.3em;"><code>&lt;dl&gt;</code> (Definition List) обозначает сам список определений;</li>
+  <li style="margin-bottom:0.3em;"><code>&lt;dt&gt;</code> (Definition Term) обозначает термин;</li>
+  <li style="margin-bottom:0.3em;"><code>&lt;dd&gt;</code> (Definition Definition) обозначает определение термина.</li>
+</ol>
+
+<p>Теги <code>&lt;dt&gt;</code> и <code>&lt;dd&gt;</code> пишутся парами внутри <code>&lt;dl&gt;</code>.</p>
+
+<p>Например:</p><pre>&lt;dl&gt;
+  &lt;dt&gt;Термин&lt;/dt&gt;
+  &lt;dd&gt;Определение&lt;/dd&gt;
+
+  &lt;dt&gt;Второй термин&lt;/dt&gt;
+  &lt;dd&gt;И его определение&lt;/dd&gt;
+
+  &lt;dt&gt;Кошка&lt;/dt&gt;
+  &lt;dd&gt;Шерстяное изделие развлекательного характера&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Важность. Теги strong и&nbsp;b <small>[8/17]</small></h1>
+          <p>Ещё раз отметим, что этот курс посвящён <strong>логической</strong> разметке текста, поэтому уделяется особое внимание смыслу элементов, их&nbsp;предназначению, а&nbsp;не&nbsp;визуальному форматированию.</p>
+
+<p>В&nbsp;предыдущих заданиях вы&nbsp;познакомились с&nbsp;элементами, которые предназначены для разметки крупных блоков текста: заголовков, абзацев и&nbsp;списков. В&nbsp;этом и&nbsp;последующих заданиях мы&nbsp;познакомимся с&nbsp;элементами, предназначенными для разметки небольших фраз и&nbsp;отдельных слов.</p>
+
+<p>Первые два тега предназначены, чтобы указать на&nbsp;важность слова или фразы.</p>
+
+<p>Тег <code>&lt;strong&gt;</code> определяет <strong>важность</strong> отмеченного текста.</p>
+
+<p>Тег <code>&lt;b&gt;</code> предназначен для выделения текста без придания ему особой важности.</p>
+
+<p>Визуально оба тега одинаковы, они выделяют текст полужирным.</p>
+
+<p>Лучше всего отличия этих тегов будут заметны людям, которые используют специальные настройки&nbsp;ОС, в&nbsp;частности, слепым и&nbsp;слабовидящим. Когда они включают функцию чтения текста, то&nbsp;«говорилка» будет интонацией выделять слова с&nbsp;тегом <code>&lt;strong&gt;</code>. То&nbsp;же самое касается и&nbsp;тегов <code>&lt;em&gt;</code> и <code>&lt;i&gt;</code>. Тег <code>&lt;em&gt;</code> «говорилка» будет выделять интонацией.</p>
+
+<div class="alert alert-info">Отметим, что новый смысл тегу <code>&lt;b&gt;</code> придали в&nbsp;HTML5. Раньше это был тег, который просто делает текст полужирным. То&nbsp;есть он&nbsp;был предназначен только для визуального форматирования.</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Акцентируем внимание. Теги em и&nbsp;i <small>[9/17]</small></h1>
+          <p>Следующие два тега предназначены для акцентирования внимания на&nbsp;слово или фразу.</p>
+
+<p>Тег <code>&lt;em&gt;</code> определяет текст, на&nbsp;который сделан <em>особый акцент</em>, меняющий смысл предложения.</p>
+
+<p>Например, если мы&nbsp;хотим подчеркнуть, что Кекс не&nbsp;любит <em>питаться</em> укропом (он&nbsp;больше за&nbsp;тунца), а&nbsp;любит только <em>гонять его по&nbsp;полу</em>, то&nbsp;разметим текст так:</p>
+
+<pre>Инструктор Кекс любит &lt;em&gt;играть&lt;/em&gt; с укропом.</pre>
+
+<p>Тег <code>&lt;i&gt;</code> обозначает текст, который отличается от&nbsp;окружающего текста, но&nbsp;не&nbsp;является более важным. Обычно так выделяют <i>названия</i>, <i>термины</i>, <i>иностранные слова</i>.</p>
+
+<p>Например, если мы&nbsp;хотим указать, что <i>инспектор</i>&nbsp;— это какой-то специальный термин, то&nbsp;разметим текст так:</p>
+
+<pre>Обычно Кекс пользовался &lt;i&gt;инспектором&lt;/i&gt; браузера для поиска ошибок.</pre>
+
+<p>Визуально оба тега одинаковы, они выделяют текст курсивом.</p>
+
+<div class="alert alert-info">Новый смысл тегу <code>&lt;i&gt;</code> придали в&nbsp;HTML5. Раньше это был просто тег для выделения текста курсивом.</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Переносы и&nbsp;разделители. Теги br и&nbsp;hr <small>[10/17]</small></h1>
+          <p>Иногда возникает необходимость вставить в&nbsp;текст перенос строки, не&nbsp;создавая при этом абзац. Например, при разметке стихов или текстов песен.</p>
+
+<p>Для этого в&nbsp;HTML предусмотрен одиночный тег <code>&lt;br&gt;</code>.</p>
+<div class="alert alert-info">Иногда этот тег используется для разбиения текста на&nbsp;«как&nbsp;бы абзацы», что является плохим подходом. Используйте для разметки абзацев тег <code>&lt;p&gt;</code>.</div>
+
+<p>Одиночный тег <code>&lt;hr&gt;</code> используется для того, чтобы создать горизонтальную линию-разделитель. На&nbsp;внешний вид этой линии можно влиять с&nbsp;помощью атрибутов, но&nbsp;правильней делать это с&nbsp;помощью CSS (это будет изучаться в&nbsp;последующих курсах).</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/38">Разметка текста</a>»</div>
+          <h1>Цитаты <small>[11/17]</small></h1>
+          <p>В&nbsp;HTML существует несколько тегов для обозначения цитат:</p>
+
+<ul>
+  <li style="margin-bottom:0.5em;"><code>&lt;blockquote&gt;</code> предназначен для выделения длинных цитат, которые могут состоять из&nbsp;нескольких абзацев. Тег выделяет цитату как отдельный блок текста с&nbsp;отступами.</li>
+  <li style="margin-bottom:0.5em;"><code>&lt;q&gt;</code> предназначен для выделения коротких цитат в&nbsp;предложениях. Текст внутри этого тега автоматически обрамляется кавычками.</li>
+  <li><code>&lt;cite&gt;</code> используется для того, чтобы выделить источник цитаты, название произведения или&nbsp;автора цитаты.</li>
+</ul>
+<hr>
+</div>
+
+
+
+	</div>
+<body>

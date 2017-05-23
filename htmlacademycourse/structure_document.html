@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Структура HTML-документа</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/basic-html/26.svg" alt="Структура HTML-документа" height="100" width="100">
+	<div class="course-description__content">
+		<h1>Структура HTML-документа</h1>
+		<p>Создаём простейшую HTML-страницу, разбираемся из&nbsp;каких тегов она состоит и&nbsp;за&nbsp;что эти теги отвечают. Подключаем к&nbsp;странице CSS-стили и&nbsp;JS-скрипты.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>С&nbsp;чего начинается HTML <small>[1/14]</small></h1>
+          <p>Каждый HTML-документ должен начинаться с&nbsp;декларации типа документа или «доктайпа». Тип документа нужен, чтобы браузер мог определить версию HTML и&nbsp;правильно отобразить страницу.</p>
+
+<p>Например, для старой версии HTML 4.01 доктайп выглядит так:</p>
+
+<pre>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;</pre>
+
+<p>А&nbsp;для последней версии HTML уже намного проще:</p>
+
+<pre>&lt;!DOCTYPE html&gt;</pre>
+
+<p>Последнюю версию HTML ещё называют HTML 5. Но&nbsp;так как эта версия уже принята как стандарт и&nbsp;распространена почти везде, мы&nbsp;будем называть её&nbsp;просто HTML.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Простейшая HTML-страница <small>[2/14]</small></h1>
+          <p>Простейшая HTML-страница состоит как минимум из&nbsp;трёх тегов.</p>
+
+<p>Тег <code>&lt;html&gt;</code> — это контейнер, в котором находится всё содержимое страницы, включая теги <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>. Как правило, тег <code>&lt;html&gt;</code> идёт в&nbsp;документе вторым после доктайпа.</p>
+
+<p> Тег <code>&lt;head&gt;</code> предназначен для хранения других элементов, цель которых&nbsp;— помочь браузеру в&nbsp;работе с&nbsp;данными. Содержимое этого тега не&nbsp;отображается напрямую.</p>
+
+<p>Тег <code>&lt;body&gt;</code> предназначен для хранения содержания веб-страницы (контента), отображаемого в&nbsp;окне браузера.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Заголовок HTML-страницы <small>[3/14]</small></h1>
+          <p>Заголовок страницы&nbsp;— это тот текст, который отображается в&nbsp;левом верхнем углу браузера, а&nbsp;также во&nbsp;вкладках.</p>
+<p>Чтобы задать заголовок страницы, нужно использовать тег <code>&lt;title&gt;</code> внутри тега <code>&lt;head&gt;</code>. Например, вот так:</p>
+<pre>&lt;head&gt;
+  &lt;title&gt;Курсы — HTML Academy&lt;/title&gt;
+&lt;/head&gt;
+</pre>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Кодировка HTML-страницы <small>[4/14]</small></h1>
+          <p>Кодировку HTML-страницы нужно указывать для того, чтобы веб-браузер мог правильно отображать текст на&nbsp;странице. Если браузер неправильно «угадает» кодировку, то&nbsp;вместо текста будут отображаться иероглифы.</p>
+
+<p>Чтобы сообщить браузеру кодировку HTML-страницы, необходимо внутри тега <code>&lt;head&gt;</code> использовать тег:</p>
+
+<pre>&lt;meta charset="имя кодировки"&gt;</pre>
+
+<p>Самая распространённая современная кодировка&nbsp;— <code>utf-8</code>. Используйте её&nbsp;во&nbsp;всех своих проектах.</p>
+
+<p>Для кириллицы в&nbsp;Windows <code>charset</code> часто задавали как <code>windows-1251</code>. Но&nbsp;сейчас это считается плохой практикой.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Ключевые слова <small>[5/14]</small></h1>
+          <p>Есть целое семейство тегов <code>&lt;meta&gt;</code>, называемых мета-тегами. Их&nbsp;можно использовать внутри тега <code>&lt;head&gt;</code>.</p>
+
+<p>Мета-теги различаются набором атрибутов и&nbsp;их&nbsp;значений, вот некоторые из&nbsp;атрибутов: <code>content</code>, <code>http-equiv</code>, <code>name</code> и <code>scheme</code>.</p>
+
+<p>Мета-теги хранят полезную для браузеров и&nbsp;поисковых систем информацию. Один из&nbsp;таких тегов&nbsp;— это описание ключевых слов страницы. Задаётся он&nbsp;так:</p>
+
+<pre>&lt;meta name="keywords" content="разные, ключевые, слова"&gt;</pre>
+
+<p>В&nbsp;атрибуте <code>content</code> через запятую перечисляются самые важные слова из&nbsp;содержания страницы. Раньше этот тег был очень важен для поисковиков. Каково положение дел сейчас&nbsp;— большой секрет Яндекса и&nbsp;Гугла.</p><hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Описание содержания страницы <small>[6/14]</small></h1>
+          <p>Ещё один полезный для поисковых систем мета-тег&nbsp;— краткое описание страницы. Оно задаётся так:</p>
+
+<pre>&lt;meta name="description" content="краткое описание"&gt;</pre>
+
+<p>В&nbsp;атрибуте <code>content</code> должно быть краткое содержание или аннотация страницы. Оно часто используется поисковиками при отображении результатов поиска.</p>
+
+<p style="text-align:center"><img src="/assets/course2/meta_description.png" alt="Описание страницы в результатах поиска" width="600"></p>
+
+<p>Пойманный нами инженер из&nbsp;Яндекса не&nbsp;признался, важен&nbsp;ли этот тег для ранжирования, но&nbsp;дал ссылку на&nbsp;<a href="https://help.yandex.ru/webmaster/recommendations/using-meta-desc.xml" target="_blank" rel="nofollow">рекомендации по&nbsp;составлению описаний</a>. Инженера из&nbsp;Гугла мы&nbsp;ещё только выслеживаем, так что следите за&nbsp;новостями.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>HTML-комментарии <small>[7/14]</small></h1>
+          <p>Комментарий в&nbsp;HTML-коде задаётся так:</p>
+<pre>&lt;!-- любой текст --&gt;</pre>
+<p>Текст внутри комментария не&nbsp;отображается браузером на&nbsp;странице. Комментарии обычно используются в&nbsp;следующих случаях:</p>
+<ul>
+<li>Для комментирования кода. Всегда полезно оставить подсказку.</li>
+<li>Для временного отключения кода. Удалять код неудобно, так как его надо будет восстанавливать, а&nbsp;закомментировать и&nbsp;потом раскомментировать&nbsp;— самое лучшее решение.</li>
+</ul>
+<p>Комментарии можно использовать в&nbsp;любом месте страницы, кроме тега <code>&lt;title&gt;</code> — внутри него они не&nbsp;работают. Внутри тега <code>&lt;style&gt;</code> HTML-комментарии тоже не работают, так как в CSS код комментируется другим способом, о котором вы узнаете в курсе <a href="/courses/41">«Знакомство с CSS»</a>.</p><p>
+
+</p><div class="alert">Чтобы быстро закомментировать или раскомментировать строку кода в&nbsp;HTML или CSS редакторе, можете использовать сочетание клавиш <kbd>ctrl + /</kbd> или <kbd>cmd + /</kbd>.</div>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Подключение стилей <small>[8/14]</small></h1>
+          <p>CSS-стили можно писать внутри HTML-кода страницы или подключать их&nbsp;как внешний файл.</p>
+<p>В&nbsp;первом случае стили называются «встроенными» или «инлайновыми», а&nbsp;писать их&nbsp;нужно внутри тега <code>&lt;style&gt;</code>. Этот тег обычно размещают внутри <code>&lt;head&gt;</code>. Например:</p>
+
+<pre>&lt;head&gt;
+  &lt;style&gt;
+    CSS-код
+  &lt;/style&gt;
+&lt;/head&gt;</pre>
+
+<p>Внутри <code>&lt;style&gt;</code> пишут обычный CSS-код.</p>
+
+<p>Инлайновые стили используют не&nbsp;так часто, например, для оптимизации скорости загрузки страницы. Чаще используют внешние стили, c&nbsp;которыми мы&nbsp;познакомимся позже.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Тайна CSS-редактора <small>[9/14]</small></h1>
+          <p>Теперь вы&nbsp;знаете про встроенные стили и&nbsp;можете узнать тайну нашего CSS-редактора.</p>
+
+<p>CSS-код из&nbsp;редактора незаметно добавляется внутрь тега <code>&lt;style&gt;</code>, а&nbsp;этот тег добавляется в&nbsp;мини-браузер.</p>
+
+<p>В&nbsp;этом задании CSS-стили такие&nbsp;же, как и&nbsp;в&nbsp;предыдущем, но&nbsp;вынесены в&nbsp;CSS-редактор и&nbsp;закомментированы. Комментарии в&nbsp;CSS работают так&nbsp;же, как в&nbsp;HTML&nbsp;— позволяют временно отключить какой-то кусок кода.</p>
+
+<p>CSS-комментарии задаются с&nbsp;помощью символов <code>/*</code> и <code>*/</code>:</p>
+
+<pre>/*
+h1 {
+  color: red; 
+}
+*/</pre>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Подключение внешних стилей <small>[10/14]</small></h1>
+          <p>Чаще всего стили подключают из&nbsp;внешнего файла с&nbsp;расширением <code>.css</code>. Для этого используется тег <code>&lt;link&gt;</code>. Например:</p>
+
+<pre>&lt;head&gt;
+  &lt;link href="style.css" rel="stylesheet"&gt;
+&lt;/head&gt;</pre>
+
+<p>В&nbsp;атрибуте <code>href</code> задают адрес файла, а&nbsp;атрибут <code>rel="stylesheet"</code> говорит браузеру, что мы&nbsp;подключаем стили, а&nbsp;не&nbsp;что-то другое.</p> 
+
+<p>Лучше подключать стили внутри <code>&lt;head&gt;</code>, но&nbsp;это необязательно. Тег <code>&lt;link&gt;</code> будет работать и&nbsp;в&nbsp;другом месте страницы.</p>
+
+<p>В&nbsp;этом задании вы&nbsp;подключите внешний стилевой файл, который расположен по&nbsp;адресу <a href="/assets/course2/style.css" target="_blank">/assets/course2/style.css</a> <small>щёлкните по&nbsp;ссылке, чтобы открыть этот файл в&nbsp;браузере</small>.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Подключение скриптов <small>[11/14]</small></h1>
+          <p>В&nbsp;вебе следующее разделение ролей: HTML отвечает за&nbsp;структуру документа, стили&nbsp;— за&nbsp;его внешний вид, а&nbsp;скрипты&nbsp;— за&nbsp;поведение. С&nbsp;помощью скриптов, например, можно «оживлять» страницу, добавляя анимацию и&nbsp;другие эффекты. Скрипты создаются с&nbsp;помощью языка JavaScript.</p>
+
+<p>Скрипты подключаются так&nbsp;же, как и&nbsp;стили: их&nbsp;либо пишут внутри страницы, либо подключают как внешние файлы.</p>
+
+<p>Встроенные скрипты пишут внутри тега <code>&lt;script&gt;</code>. Например:</p>
+
+<pre>&lt;script&gt;
+  JavaScript-код
+&lt;/script&gt;</pre>
+
+<p>Тег <code>&lt;script&gt;</code> можно использовать в&nbsp;любом месте HTML-документа, но&nbsp;лучше вставлять его в&nbsp;самом конце перед закрывающим тегом <code>&lt;/body&gt;</code>.</p>
+
+<p>Часть возможностей JavaScript постепенно переходит в&nbsp;CSS, например, возможность задавать плавное изменение значений свойств. Вы&nbsp;увидите это в&nbsp;задании.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Подключение внешних скриптов <small>[12/14]</small></h1>
+          <p>Скрипты чаще всего подключают из&nbsp;внешних файлов с&nbsp;расширением <code>.js</code>. Для этого используют тег <code>&lt;script&gt;</code> с&nbsp;атрибутом <code>src</code>, в&nbsp;котором указывается путь к&nbsp;файлу. Например:</p>
+
+<pre>&lt;script src="scripts.js"&gt;&lt;/script&gt;</pre>
+
+<p>Обратите внимание, что тег <code>&lt;script&gt;</code> парный. Если вы&nbsp;подключаете внешние скрипты, то&nbsp;просто ничего не&nbsp;пишите внутри тега.</p>
+
+<p>Внешние скрипты лучше подключать перед закрывающим тегом <code>&lt;/body&gt;</code>.</p>
+
+        <p>Внешние скрипты так же, как и внешние стили, используются намного чаще встроенных.</p>
+        <p>В них удобнее вносить изменения, особенно когда один и тот же скрипт подключён к большому количеству страниц.</p>
+        <p>А ещё внешние ресурсы кешируются браузером, что позволяет ускорить загрузку страниц. А в вебе это важно.</p>
+
+<p>В&nbsp;этом задании вы&nbsp;подключите внешний скрипт, который расположен по&nbsp;адресу: <a href="/assets/course2/scripts.js" target="_blank" rel="nofollow">/assets/course2/scripts.js</a> <small>щёлкните по&nbsp;ссылке, чтобы открыть этот файл в&nbsp;браузере</small>.</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Первое итоговое задание <small>[13/14]</small></h1>
+          <p>Вы&nbsp;познакомились с&nbsp;тегами, необходимыми для создания простейшей HTML-страницы, а&nbsp;также со&nbsp;служебными тегами, которые очень важны для её&nbsp;корректного отображения, оптимизации и&nbsp;продвижения в&nbsp;поисковиках.</p>
+
+<p>Пришло время повторить изученное и&nbsp;выполнить два более сложных задания.</p>
+
+<p>В&nbsp;первом задании закрепим навыки описания мета-информации:</p>
+
+<ul>
+<li>заголовка страницы;</li>
+<li>ключевых слов;</li>
+<li>краткого описания страницы.</li>
+</ul>
+
+<p>Прочитайте анонс статьи в&nbsp;мини-браузере и&nbsp;дополните его важной мета-информацией.</p>
+<hr>
+<div class="ha-task-goals">
+           <p>Самостоятельно задайте мета-информацию страницы:</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Заголовок страницы <code>Вёрстка для не-технарей</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Ключевые слова <code style="white-space:normal">вёрстка, компьютерная грамотность, программирование</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Краткое описание <code style="white-space:normal">Примеры того, что изучение веб-технологий может быть полезно для всех</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/26">Структура HTML-документа</a>»</div>
+          <h1>Второе итоговое задание <small>[14/14]</small></h1>
+          <p>Во&nbsp;втором итоговом задании вам нужно самостоятельно подключить к&nbsp;странице внешние ресурсы:</p>
+
+<ul>
+<li>Стилевой файл <a href="/assets/course2/final.css" target="_blank" rel="nofollow">/assets/course2/final.css</a>.</li>
+<li>Файл со&nbsp;скриптами <a href="/assets/course2/final.js" target="_blank" rel="nofollow">/assets/course2/final.js</a>.</li>
+</ul>
+
+<p>Не&nbsp;забывайте, что хорошим тоном считается подключать внешние стили в <code>&lt;head&gt;</code>, а&nbsp;скрипты перед закрывающим тегом <code>&lt;/body&gt;</code>.</p>
+
+<p>В&nbsp;подключаемых файлах&nbsp;— демонстрация возможностей CSS и&nbsp;JavaScript, которые мы&nbsp;будем изучать в&nbsp;дальнейшем.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label label-warning" style="opacity: 1;">Цель 1</span> Подключите стилевой файл <code>/assets/course2/final.css</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label label-warning" style="opacity: 1;">Цель 2</span> Затем подключите скрипт <code>/assets/course2/final.js</code>.</li>
+</ol>
+</div>
+
+
+
+	</div>
+<body>

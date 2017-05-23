@@ -1,0 +1,1051 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Примеси в&nbsp;LESS</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/less/125.svg" alt="Примеси в&nbsp;LESS" height="100" width="100">
+	<div class="course-description__content">
+		<h1 class="sandglass-mark sandglass-mark--large">Примеси в&nbsp;LESS</h1>
+		<p>Продолжим изучать возможности препроцессора LESS: познакомимся с&nbsp;примесями, научимся применять примеси с&nbsp;условиями, разберёмся, как создавать и&nbsp;использовать циклы. Также мы&nbsp;рассмотрим примеры использования примесей для решения типовых задач вёрстки.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Вспоминаем переменные <small>[1/30]</small></h1>
+          <p>
+  В <a href="/courses/85/">прошлом курсе</a> мы познакомились с базовыми возможностями LESS: переменными, вложенными CSS-правилами, математическими операциями и встроенными функциями. В этом курсе мы продолжим изучать LESS и рассмотрим миксины.
+</p>
+<p>
+  Для начала давайте вспомним, как <a href="/courses/85/run/2">создавать переменные</a> и задавать им значения.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте переменную <code>@red</code> со значением <code>#ff4136</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Создайте класс <code>.red</code>, в нём задайте цвету фона значение <code>@red</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Монстру <code>.monster-happy</code> задайте в HTML класс <code>red</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примеси <small>[2/30]</small></h1>
+          <p>
+  Ещё одна интересная возможность LESS — примеси. Мы можем «примешивать» содержимое одного CSS-правила в другое. Для этого нужно написать имя «примешиваемого» правила внутри другого правила. Рассмотрим пример:
+</p>
+<pre><span class="label" style="float:right;">LESS</span>.white { color: white; } /* объявление примеси */
+.text { .white; }        /* применение примеси */
+</pre>
+<p>Этот LESS-код скомпилируется в такой CSS:</p>
+<pre><span class="label" style="float:right;">CSS</span>.white { color: white; }
+.text { color: white; }
+</pre>
+<p>
+  Как мы видим, в правиле, где была «вызвана» примесь <code>.white</code>, появилось её содержимое.
+</p>
+<p>
+  Чтобы не выводить саму примесь в CSS, нужно после объявления примеси поставить скобки:
+</p>
+<p>
+</p><pre><span class="label" style="float:right;">LESS</span>.white() { color: white; } /* объявление невыводимой примеси */
+.text { .white; }          /* применение примеси */
+</pre>
+<pre><span class="label" style="float:right;">CSS</span>.text { color: white; }</pre>
+<p></p>
+<p>
+  При применении примеси скобки писать необязательно.
+</p>
+<p>
+</p><pre><span class="label" style="float:right;">LESS</span>/* Эти выражения дают один и тот же результат: */
+.mixin();
+.mixin;
+</pre>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для монстра <code>.monster-foolish</code> примените в LESS примесь <code>.red</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Сделайте примесь <code>.red</code> невыводимой в стили.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Несколько примесей <small>[3/30]</small></h1>
+          <p>
+  К одному правилу можно применить несколько примесей одновременно. В таком случае примеси просто «вызываются» по очереди.
+</p>
+<p>
+  Например:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.big() {
+    width: 100500px;
+}
+
+.white() {
+    color: white;
+}
+
+.block {
+    .big();
+    .white();
+}</pre>
+
+<pre><span class="label" style="float:right;">CSS</span>.block {
+    width: 100500px;
+    color: white;
+}</pre>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.paint-blue()</code>, внутри неё задайте цвет фона <code>@blue</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Примените примесь <code>.paint-blue()</code> к монстру <code>.monster-foolish</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Создайте примесь <code>.reduce()</code>, внутри неё задайте ширину и высоту <code>150px</code>.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Примените примесь <code>.reduce()</code> к монстру <code>.monster-foolish</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь с параметром <small>[4/30]</small></h1>
+          <p>
+  В примесь можно передавать параметры. Они указываются внутри скобок объявления примесей. Названия параметров начинаются с символа <code>@</code>. Рассмотрим пример:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.margin(@value) {
+    margin-top: @value;
+    margin-bottom: @value;
+}
+
+.block {
+    .margin(10px);
+}</pre>
+
+<pre><span class="label" style="float:right;">CSS</span>.block {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}</pre>
+
+<p>
+  Параметры позволяют сделать примеси более универсальными.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.paint()</code> с параметром <code>@color</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Внутри примеси задайте свойству <code>background-color</code> значение <code>@color</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Примените примесь <code>.paint()</code> с параметром <code>@green</code> к монстру <code>.monster-happy</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь с параметром, часть 2 <small>[5/30]</small></h1>
+          <p>
+  Параметризованные примеси удобны, когда над разными элементами нужно провести однотипные действия с отличающимися результатами.
+</p>
+
+<p>
+  Давайте попрактикуемся в применении примесей с параметром.
+</p>
+<hr>
+<div class="ha-task-goals">
+<p>
+  С помощью примеси <code>.paint()</code> покрасьте:
+</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> монстра <code>.monster-foolish</code> в красный цвет,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а монстра <code>.monster-friendly</code> в синий цвет.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Значение параметра примеси по умолчанию <small>[6/30]</small></h1>
+          <p>
+  Параметризованные примеси можно сделать ещё универсальнее.
+</p>
+<p>
+  Параметру примеси можно задать значение по умолчанию. Оно указывается через двоеточие после названия параметра. Если в примесь при применении параметр не передаётся, то используется значение по умолчанию.
+</p>
+<p>
+  Рассмотрим пример, в котором значение параметра по умолчанию указано, но не задействуется, так как в примесь передаётся явный параметр.
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.big(@size: 100500px) {
+    width: @size;
+}
+
+.block {
+    .big(10px);
+}
+</pre>
+
+<pre><span class="label" style="float:right;">CSS</span>.block {
+    width: 10px;
+}
+</pre>
+
+<p>
+  В следующем примере примесь применяется без параметров, поэтому используется значение по умолчанию:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.big(@size: 100500px) {
+    width: @size;
+}
+
+.block {
+    .big();
+}
+</pre>
+
+<pre><span class="label" style="float:right;">CSS</span>.block {
+    width: 100500px;
+}
+</pre>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте переменную <code>@yellow</code> со значением <code>#ffdc00</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В примеси <code>.paint()</code> задайте параметру <code>@color</code> значение по умолчанию <code>@yellow</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Примените примесь <code>.paint()</code> без параметров к монстру <code>.monster-friendly</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь с несколькими параметрами <small>[7/30]</small></h1>
+          <p>
+  В примесь можно передавать несколько параметров. Параметры перечисляются через запятую <code>,</code> или через точку с запятой <code>;</code>. Рекомендуется использовать точку с запятой. Пример:
+</p>
+<p></p><pre><span class="label" style="float:right;">LESS</span>.offset(@padding; @margin) {
+    padding: @padding;
+    margin: @margin;
+}
+
+.block {
+    .offset(5px; 10px);
+}
+</pre><p></p>
+<p></p><pre><span class="label" style="float:right;">CSS</span>.block {
+    padding: 5px;
+    margin: 10px;
+}
+</pre><p></p>
+<p>
+</p><p>
+  Попробуем передать в примесь несколько параметров.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.resize</code> с двумя параметрами: <code>@width</code> и <code>@height</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Внутри примеси задайте ширине значение <code>@width</code>, а высоте — <code>@height</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для монстра <code>.monster-happy</code> примените примесь <code>.resize</code> с параметрами <code>150px</code> для ширины и высоты.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Испытание: части головоломки <small>[8/30]</small></h1>
+          <p>
+  Проверим знания в испытании.
+</p>
+<p>
+  В исходном коде созданы разные примеси. Вам нужно применить их к кусочкам головоломки так, чтобы кусочки «закрыли» пустоты частей головоломки. Часть примесей применяется без параметров, а некоторые принимают параметры.
+</p>
+<p>
+  В качестве подсказки мы уже применили несколько примесей ко всем кусочкам <code>.piece</code>. Удачи!
+</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Шаблоны примесей <small>[9/30]</small></h1>
+          <p>
+  Иногда бывает полезным изменить поведение примеси в зависимости от передаваемых параметров. Например, у нас есть примесь, задающая размер шрифта:
+</p>
+
+<p></p><pre><span class="label" style="float:right;">LESS</span>.set-font-size(@size) {
+    font-size: @size;
+}</pre><p></p>
+
+<p>
+  Мы можем создать ещё одну примесь с таким же названием, но передать дополнительно первым параметром название шаблона этой примеси. Имя шаблона указывается первым перед параметрами самой примеси. Добавим примеси дополнительный первый параметр <code>smaller</code> и немного изменим принцип её работы:
+</p>
+
+<p></p><pre><span class="label" style="float:right;">LESS</span>.set-font-size(smaller; @size) {
+    font-size: @size / 2;
+}</pre><p></p>
+
+<p>
+  Теперь можно вызывать эту примесь с названием шаблона и без него и, в зависимости от этого, получать соответствующие результаты:
+</p>
+
+<p></p><pre><span class="label" style="float:right;">LESS</span>.text {
+    .set-font-size(100px);
+}
+
+.small-text {
+    .set-font-size(smaller; 100px);
+}</pre><p></p>
+
+<p></p><pre><span class="label" style="float:right;">CSS</span>.text {
+    font-size: 100px;
+}
+
+.small-text {
+    font-size: 50px;
+}</pre><p></p>
+
+<p>
+  Таким образом можно для схожих действий не создавать несколько примесей с разными названиями. Лучше делать шаблоны одной примеси и просто вызывать её с дополнительным параметром.
+</p>
+
+<p>
+  Давайте попробуем создать шаблон примеси и применить её для окраски монстров.
+</p>
+
+<p class="alert alert-warning">
+  В задании применяется встроенная в LESS функция <code>lighten</code> для работы с цветом. Она рассматривается в <a href="/courses/85/run/10">задании</a> первой части курса по LESS.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.paint()</code> с первым параметром <code>light</code> и со вторым параметром <code>@color</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Внутри примеси задайте свойству <code>background-color</code> значение <code>lighten(@color, 20%)</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Примените примесь <code>.paint()</code> с первым параметром <code>light</code> и вторым параметром <code>@red</code> к монстру <code>.monster-light</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Шаблоны примесей, часть 2 <small>[10/30]</small></h1>
+          <p>
+  Теперь у нас есть примесь, раскрашивающая монстра в определённый цвет, и её шаблон, делающий цвет более светлым.
+</p>
+
+<p>
+  Давайте создадим и применим второй шаблон, в котором цвет будет становиться наоборот чуть темнее, чем в оригинальной примеси.
+</p>
+
+<p class="alert alert-warning">
+  В задании применяются встроенные в LESS функции <code>lighten</code> и <code>darken</code> для работы с цветом. Они рассматриваются в <a href="/courses/85/run/10">задании</a> первой части курса по LESS.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.paint</code> с первым параметром <code>dark</code> и со вторым параметром <code>@color</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Внутри примеси задайте свойству <code>background-color</code> значение <code>darken(@color, 20%)</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Примените примесь <code>.paint</code> с первым параметром <code>dark</code> и со вторым параметром <code>@red</code> к монстру <code>.monster-dark</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Шаблоны примесей, часть 3 (универсальный шаблон) <small>[11/30]</small></h1>
+          <p>
+  Если нужно задать общие свойства для нескольких шаблонов одной и той же примеси, можно создать универсальный шаблон:
+</p>
+<pre><span class="label" style="float:right;">LESS</span>.font-size(bigger; @size)  {
+    font-size: @size * 2;
+}
+
+.font-size(smaller; @size) {
+    font-size: @size / 2;
+}
+
+.font-size(@_; @size) {
+    color: #000000;
+} // универсальный шаблон
+
+.content-bigger {
+    .font-size(bigger, 20px);
+}
+
+.content-smaller {
+    .font-size(smaller, 20px);
+}
+</pre>
+
+<p>Универсальный шаблон применяется вместе с остальными шаблонами:</p>
+
+<pre><span class="label" style="float:right;">CSS</span>.content-bigger {
+    font-size: 40px;
+    color: #000000;
+}
+
+.content-smaller {
+    font-size: 10px;
+    color: #000000;
+}
+</pre>
+
+<p>
+  В качестве имени в универсальный шаблон передаётся специальная переменная <code>@_</code>, за ней следуют параметры. Важно, чтобы универсальный шаблон принимал те же параметры, что и все остальные шаблоны.
+</p>
+<p>
+  Давайте применим к монстрам разные шаблоны и создадим универсальный шаблон, который применится одновременно со всеми остальными.
+</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для монстра <code>.monster-happy</code> примените примесь <code>.transform</code> с первым параметром <code>increase</code> и со вторым параметром <code>50px</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а для <code>.monster-foolish</code> примените примесь <code>.transform</code> с параметрами <code>decrease</code> и <code>50px</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Создайте шаблон примеси <code>.transform</code> с первым параметром <code>@_</code> и со вторым параметром <code>@size</code>. Внутри задайте фоновый цвет <code>@red</code>.</li>
+</ol>
+<p>
+  Обратите внимание, что универсальный шаблон <code>.transform(@_; @size)</code> применился к обоим монстрам.
+</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Испытание: примеси и портреты <small>[12/30]</small></h1>
+          <p>
+  В этом испытании также нужно использовать созданные примеси с шаблонами и трансформировать портреты монстров.
+</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь с условием <small>[13/30]</small></h1>
+          <p>
+  В примесях можно использовать полноценные условия, которые могут изменять поведение примеси в зависимости от значений входных параметров.
+</p>
+
+<p>
+  Чтобы создать условие, нужно после названия примеси поставить ключевое слово <code>when</code>, за которым в скобках написать условную конструкцию. Пример:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.mixin(@variable) when (@variable = 1) {
+    // сделать что-то
+}
+</pre>
+
+<p>
+  Такая примесь применится, если «вызвать» её с параметром <code>1</code>. В противном случае примесь не применится.
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.some-class {
+    .mixin(1);
+}</pre>
+
+<p>
+  В условной конструкции допускаются следующие операторы: <code>&gt;</code>, <code>&gt;=</code>, <code>=</code>, <code>=&lt;</code>, <code>&lt;</code>. Также допустимо использовать встроенные функции LESS, которые возвращают конкретные значения.
+</p>
+
+<p>
+  К примеру, в LESS есть встроенная функция <code>lightness</code>, которая принимает в качестве параметра значение цвета и возвращает степень его светлоты. Чёрный цвет обладает <code>0%</code> светлоты, а белый — <code>100%</code>. Вот пример её использования:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.mixin(@color) when (lightness(@color) &gt; 50%) {
+    // сделать что-то, когда цвет светлее серого
+}
+
+.mixin(@color) when (lightness(@color) = 100%) {
+    // сделать что-то, когда цвет полностью белый
+}
+</pre>
+
+<p>
+  Давайте создадим примесь, которая в зависимости от цвета текста, будет задавать контрастный фоновый цвет блока. Сначала сделаем вариант со светлым текстом и тёмным фоном.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Примените примесь <code>.set-color</code> с параметром <code>white</code> к подписи <code>.note</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Создайте новую примесь <code>.set-color</code> с параметром <code>@color</code> и с условием <code>lightness(@color) &gt;= 50%</code></li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и внутри неё задайте свойству <code>background-color</code> значение <code>black</code>.</li>
+</ol>
+</div>
+
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь с условием, часть 2 <small>[14/30]</small></h1>
+          <p>
+  Можно создать несколько примесей с одинаковыми названиями, но разными условиями. Тогда применяться будут только те примеси, условия которых выполняются.
+</p>
+
+<p>
+  В прошлом задании мы создали примесь, которая добавляет чёрный фон для светлого текста, но если цвет текста будет тёмным, то эта примесь не сработает и у блока совсем не будет фонового цвета.
+</p>
+
+<p>
+  Теперь обработаем второй случай: если цвет текста тёмный, то фоновый цвет должен быть белым.
+</p>
+
+<p>
+  Снова воспользуемся примесью с условием и функцией <code>lightness</code>.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.set-color</code> с параметром <code>@color</code> и с условием <code>lightness(@color) &lt; 50%</code>. Внутри примеси задайте свойству <code>background-color</code> значение <code>white</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В CSS-правиле для <code>.note</code> измените в примеси параметр <code>white</code> на <code>black</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Условия и внешние переменные <small>[15/30]</small></h1>
+          <p>
+  Условия в примесях могут работать не только с параметрами, с которыми «вызвана» примесь, но и с переменными, объявленными вне примесей. Например, если создать примесь с условием, но без параметров:
+</p>
+
+<pre><span class="label" style="float:right;">LESS</span>.text-color() when (@theme = light) {
+    color: white;
+}</pre>
+
+<p>А потом создать внешнюю переменную и вызвать где-то примесь:</p>
+
+<pre><span class="label" style="float:right;">LESS</span>@theme: light;
+  
+.content {
+    .text-color();
+}</pre>
+
+<p>То условие выполнится, созданная примесь отработает:</p>
+<pre><span class="label" style="float:right;">CSS</span>.content {
+    color: white;
+}
+</pre>
+
+<p>
+  То есть можно управлять условиями примесей с помощью внешних переменных.
+</p>
+
+<p>
+  Давайте попробуем покрасить монстра в разные цвета в зависимости от значения одной переменной.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.paint</code> без параметров с условием <code>@type = good</code> и задайте внутри примеси <code>background-color: #7fdbff;</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Примените примесь <code>.paint()</code> к монстру <code>.monster-happy</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Создайте примесь <code>.paint</code> с условием <code>@type = bad</code> и задайте внутри <code>background-color: #ff4136;</code>.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Смените значение переменной <code>@type</code> с <code>good</code> на <code>bad</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Условия и типы параметров <small>[16/30]</small></h1>
+          <p>
+  В LESS есть вcтроенные функции для проверки типа значения. Их можно применять в условиях примесей для проверки типа переданного параметра. Пример:
+</p>
+<p></p><pre><span class="label" style="float:right;">LESS</span>// проверка: значение — цвет
+.mixin(@param) when (iscolor(@param)) { … }
+
+// проверка: значение — число
+.mixin(@param) when (isnumber(@param)) { … }
+
+// проверка: значение — строка
+.mixin(@param) when (isstring(@param)) { … }
+
+// проверка: значение — ключевое слово
+.mixin(@param) when (iskeyword(@param)) { … }
+
+// проверка: значение — url
+.mixin(@param) when (isurl(@param)) { … }
+</pre><p></p>
+<p>
+  Все эти функции возвращают <code>true</code>, если переданный в них параметр соответствует проверяемому типу.
+</p>
+<p>
+  Таким образом можно создать универсальную примесь, которая в зависимости от типа переданных параметров будет работать по-разному.
+</p>
+<p>
+  Попробуем такой подход на практике.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте примесь <code>.magic</code> с параметром <code>@parameter</code> и условием <code>iscolor(@parameter)</code>. В ней задайте фоновый цвет со значением <code>@parameter</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Создайте вторую примесь <code>.magic</code> с параметром <code>@parameter</code> и условием <code>isnumber(@parameter)</code>. В ней задайте ширину и высоту равные <code>@parameter</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> К монстру <code>.monster-happy</code> примените примесь <code>.magic</code> с параметром <code>@red</code>,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а к монстру <code>.monster-foolish</code> — с параметром <code>150px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Испытание: примеси и портреты, часть 2 <small>[17/30]</small></h1>
+          <p>
+  В этом испытании вам вновь предстоит поработать с портретами монстров.
+</p>
+<p>
+  Но на этот раз примеси уже созданы и применены ко всем монстрам. Вам нужно дописать к примесям условия таким образом, чтобы к нужным монстрам применились только нужные примеси.
+</p>
+<p class="alert alert-warning">
+  Пожалуйста, не меняйте применения примесей! Испытание нужно пройти только с помощью условий примесей.
+</p>
+<hr>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Переменные-вставки <small>[18/30]</small></h1>
+          <p>
+  Переменные можно использовать не только в <em>значениях</em> CSS-свойств, но и как составные части селекторов, названий свойств или как «кусочки» значений свойств. С помощью такой <i>подстановки переменных</i>, или <i>Variable Interpolation</i>, можно динамически формировать разные части CSS-правил.
+</p>
+
+<p>Чтобы сделать подстановку значения переменной, нужно использовать фигурные скобки вокруг её имени:</p>
+
+<pre><span class="label" style="float:right;">LESS</span>@state: success;
+@property: color;
+@icon: "question";
+@pixels: 2;
+
+.btn-@{state} {
+    background-color: green;
+}
+.btn-error {
+    background-@{property}: red;
+}
+.btn-help {
+    background-image: url("/img/icons/@{icon}.png");
+}
+.btn-info {
+    border: ~"@{pixels}px" solid blue;
+}
+</pre>
+
+<p>Из примеров выше скомпилируется такой CSS:</p>
+
+<pre><span class="label" style="float:right;">CSS</span>.btn-success {
+    background-color: green;
+}
+
+.btn-error {
+    background-color: red;
+}
+.btn-help {
+    background-image: url("/img/icons/question.png");
+}
+.btn-info {
+    border: 2px solid blue;
+}
+</pre>
+
+<p>Кстати, тильда  <code>~</code> в примере выше нужна для хитрого механизма экранирования LESS. Без неё «склеивание» переменной и единицы измерения не сработает.</p>
+
+<p>
+   С помощью «переменных-вставок» можно формировать имена селекторов динамически в зависимости от определённых условий или в цикле. Эти приёмы мы рассмотрим далее в курсе.
+</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте переменную <code>@number</code> и задайте ей значение <code>1</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Создайте пустое CSS-правило с селектором <code>.monster-@{number}</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> внутри него задайте цвет фона <code>@red</code>.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Затем измените значение переменной <code>@number</code> на <code>2</code>.</li>
+</ol>
+<p>
+  Обратите внимание какие CSS-классы при этом генерируются.
+</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Цикл <small>[19/30]</small></h1>
+          <p>
+  В LESS нет специального синтаксиса для циклов. Но есть возможность вызывать примеси внутри самих себя. Так с помощью рекурсии и реализуются циклы. Рассмотрим пример:
+</p>
+<p></p><pre><span class="label" style="float:right;">LESS</span>.mixin(@n) {
+    .mixin(@n + 1);
+}
+
+.mixin(1);
+</pre><p></p>
+<p>
+  В примере создаётся «бесконечный» цикл с увеличивающейся переменной-счётчиком, который никогда не закончится. Чтобы рекурсия всё таки когда-нибудь прекращалась, к примеси добавляется условие выполнения:
+</p>
+<p></p><pre><span class="label" style="float:right;">LESS</span>.mixin(@n) when (@n &gt; 0) {
+     .mixin(@n - 1);
+}
+
+.mixin(2);
+</pre><p></p>
+<p>
+  Теперь цикл выполнится два раза, сработает условие выполнения примеси и произойдёт выход из рекурсии.
+</p>
+<p>
+  Для чего можно применять циклы? Например, для генерирования целых CSS-правил. Если в цикле в имени селектора использовать переменную-вставку из <a href="15">прошлого задания</a>, то можно на выходе получить набор правил с разными селекторами. В примере ниже цикл исполняется три раза, в каждой итерации создастся правило с переменной-счётчиком <code>@n</code> в качестве суффикса селектора:
+</p>
+<p></p><pre><span class="label" style="float:right;">LESS</span>.mixin(@n) when (@n &gt; 0) {
+    .text-@{n} {
+    }
+    
+    .mixin(@n - 1);
+}
+
+.mixin(3);
+</pre><p></p>
+<p></p><pre><span class="label" style="float:right;">CSS</span>.text-3 {}
+.text-2 {}
+.text-1 {}
+</pre><p></p>
+<p>
+  Опробуем циклы на практике.
+</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Внутри <code>.generate-colors</code> создайте CSS-правило <code>.monster-@{n}</code>, а внутри него задайте цвет фона <code>@red</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Добавьте к примеси условие <code>@n &gt; 0</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> В конце примеси рекурсивно примените её же <code>.generate-colors(@n - 1);</code></li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> В вызове примеси <code>.generate-colors(1)</code> измените параметр <code>1</code> на <code>3</code>.</li>
+</ol>
+<p>
+  Обратите внимание какие CSS-классы при этом генерируются.
+</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Цикл, часть 2 <small>[20/30]</small></h1>
+          <p>
+  Внутри «цикла» переменную-счётчик можно использовать не только в условиях или в селекторах, но и в значениях свойств.
+</p>
+<p>
+  В этом задании мы раскрасим монстров в разные цвета в цикле с помощью функции <code>spin</code>, которая рассматривалась в <a href="/courses/85/run/4">задании</a> первой части курса по LESS.
+</p>
+<p>
+  Давайте подставим в качестве аргумента функции <code>spin</code> переменную-счётчик <code>@n</code>, увеличенную в несколько раз, и посмотрим что будет!
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Внутри <code>.monster-@{n}</code> замените значение фонового цвета на <code>spin(@red, @n * 10)</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем на значение <code>spin(@red, @n * 20)</code></li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и, наконец, на <code>spin(@red, @n * 100)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Испытание: разноцветные ступеньки <small>[21/30]</small></h1>
+          <p>
+  Теперь проверим знания о циклах.
+</p>
+<p>
+  В испытании нужно сгенерировать правила для десяти ступенек (<code>.stair-1 … stair-10</code>) с помощью примеси <code>generate-stairs</code>, которую нужно вызывать рекурсивно.
+</p>
+<p>
+  Цвет отсчитывается от <code>@base-color</code> начиная с первой ступеньки и вычисляется с помощью функции <code>spin</code> в цикле. Шаг изменения цвета кратен <code>5</code>. Кстати, шаг может быть отрицательным или положительным.
+</p>
+<p>
+  Ширина ступенек задаётся в процентах от ширины контейнера <code>.stairs</code> и кратна <code>10</code>.
+</p>
+<hr>
+</div>
+
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Вертикальный ритм текста <small>[22/30]</small></h1>
+          <p>
+  С помощью примесей и небольших вычислений можно красиво и быстро создать «вертикальный ритм» текста с заголовками, параграфами и списками. Мы уже немного рассказывали про «вертикальный ритм» в <a href="/courses/43/run/15">задании</a> курса «Оформление текста с помощью CSS». В этой серии рассмотрим другой подход.
+</p>
+<p>
+  Основу для вертикального ритма будет задавать переменная <code>@line</code>, в которой хранится высота одной «визуальной» строки текста. Крупные блоки текста, например, заголовки первого уровня <code>h1</code> будут занимать три «визуальные» строки. Заголовки <code>h2</code> и <code>h3</code> будут занимать две строки. Обычный текст в параграфах будет однострочным. Размер шрифта при этом подберём так, чтобы текст при заданной высоте строки смотрелся гармонично.
+</p>
+<p>
+  Между блоками текста (заголовками, параграфами, списками) нужно установить соразмерный отступ. По умолчанию сделаем его равным <code>@line</code>.
+</p>
+<p>
+  Итак, в деле нам пригодятся две примеси: <code>.set-font</code>, которая устанавливает размер шрифта и высоту строки, и <code>.set-margin</code> для задания вертикальных отступов.
+</p>
+<p>
+  В примеси <code>.set-font</code> для высоты строки и в <code>.set-margin</code> для верхнего и нижнего отступа зададим значение по умолчанию <code>@line</code>.
+</p>
+<p>
+  Для наглядности мы добавили на страницу вертикальную «сетку», шаг которой тоже зависит от <code>@line</code>. В итоге все блоки текста должны будут «идти в ритм» с вертикальной сеткой.
+</p>
+<p>
+  Начнём с выравнивания заголовков.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> К <code>body</code> примените миксин <code>.set-font</code> с параметром <code>@line * 0.6</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> К <code>h1</code> примените <code>.set-font</code> с параметрами <code>@line * 2, @line * 3</code> и <code>.set-margin</code> без параметров.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> К <code>h2</code> примените <code>.set-font</code> с параметрами <code>@line * 1.5, @line * 2</code> и <code>.set-margin</code>.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> К <code>h3</code> примените <code>.set-font</code> с параметрами <code>@line * 1.2, @line * 2</code> и <code>.set-margin</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Вертикальный ритм текста, часть 2 <small>[23/30]</small></h1>
+          <p>
+  Далее займёмся параграфами и списками.
+</p>
+<p>
+  Для параграфов немного уменьшим размер шрифта относительно <code>@line</code>.
+</p>
+<p>
+  Для списка просто добавим стандартные вертикальные отступы.
+</p>
+<p>
+  А для элементов списка тоже немного уменьшим шрифт, как у параграфов, и зададим вертикальные отступы в половину величины <code>@line</code>
+</p>
+<p>
+  Когда значения размера шрифта, высоты строки и отступов будут заданы, можно легко управлять всеми величинами с помощью одной переменной <code>@line</code>. При этом «вертикальный ритм» будет сохраняться.
+</p>
+<p>
+  В конце можно убрать «сетку», чтобы увидеть, как гармонично смотрится текст.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> К <code>p</code> примените миксин <code>.set-font</code> с параметром <code>@line * 0.8</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> К <code>ul</code> примените <code>.set-margin</code> без параметров, а к <code>li</code> примените <code>.set-font</code> с параметром <code>@line * 0.8</code> и <code>.set-margin</code> с параметрами <code>@line / 2, @line / 2</code>.</li>  
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Переменной <code>@line</code> задайте значение <code>16px</code>.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> У <code>body</code> уберите класс <code>grid</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Цвета блоков-оповещений <small>[24/30]</small></h1>
+          <p>
+  В <a href="/courses/85/run/13">задании</a> первой части курса по LESS мы рассматривали, как с помощью встроенных функций создать палитру и оттенки цветов для отдельных блоков.
+</p>
+<p>
+  Мы создавали для каждого цвета и оттенка отдельную переменную. Недостаток данного подхода — дублирование кода для вычисления искомых цветов.
+</p>
+<p>
+  Избавиться от дублирования нам помогут примеси. Давайте вынесем повторяющий участок LESS-кода в примесь и будем применять её с разными параметрами к соответствующим блокам.
+</p>
+<hr>
+<div class="ha-task-goals">
+<p>
+  В примеси <code>.generate-colors</code>:
+</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> создайте переменную <code>@bg-color</code> и задайте ей  значение <code>lighten(@color, 35%)</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> задайте цвет фона со значением <code>@bg-color</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> цвет текста со значением <code>darken(@bg-color, 50%)</code>,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> цвет рамки со значением <code>darken(spin(@bg-color, -10), 5%)</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Цвета блоков-оповещений, часть 2 <small>[25/30]</small></h1>
+          <p>
+  Итак, примесь готова.
+</p>
+<p>
+  Остаётся только применить её с подходящими параметрами ко всем блокам.
+</p>
+<p>
+  Код стал компактнее, нет повторяющихся участков кода, и не создаются лишние переменные.
+</p>
+<p>
+  Отсюда следует основное предназначение примесей — выделять повторяющийся код в отдельные блоки для последующего использования. Чем меньше дублируется код, тем его меньше. А чем меньше кода, тем ниже вероятность ошибок в нём. Профит!
+</p>
+<hr>
+<div class="ha-task-goals">
+<p>
+  Примените примесь <code>.generate-colors</code>:
+</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> для класса <code>.alert-error</code> с параметром <code>@error-color</code>;</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> для класса <code>.alert-info</code> с параметром <code>@info-color</code>;</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> для класса <code>.alert-warning</code> с параметром <code>@warning-color</code>;</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> для класса <code>.alert-success</code> с параметром <code>@success-color</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь для центровки блока <small>[26/30]</small></h1>
+          <p>
+  Дальше мы рассмотрим несколько полезных примесей, которые могут часто использоваться в повседневной практике.
+</p>
+<p>
+  Одна из самых распространённых задач — горизонтальное и вертикальное выравнивание блока относительно родительского контейнера.
+</p>
+<p>
+  В этом задании давайте создадим примесь для быстрого выравнивания. Особенности этого метода:
+</p>
+<ul>
+    <li>блок позиционируется абсолютно внутри относительно спозиционированного контейнера,</li>
+    <li>у блока должны быть фиксированные ширина и высота,</li>
+    <li>центровка происходит за счёт нулевых координат <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> и автоматических внешних отступов.</li>
+</ul>
+
+<p>
+  Попробуем этот метод на практике.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В примеси <code>.zero-centered</code> задайте абсолютное позиционирование,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> координаты <code>top</code>, <code>right</code>, <code>bottom</code> и <code>left</code> равными <code>0</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Для блока <code>.centered-box</code> задайте ширину и высоту равные <code>100px</code> (так как блок может быть произвольных размеров, не будем включать задание ширины и высоты в примесь).</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> В примеси <code>.zero-centered</code> задайте внешний отступ со всех сторон со значением <code>auto</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь для треугольных форм <small>[27/30]</small></h1>
+          <p>
+  Ещё одна распространённая задача — реализовать блок треугольной формы с помощью CSS. Для её решения подходит управление шириной и цветом рамок, который мы уже рассматривали в <a href="/courses/88/run/25">серии заданий</a> курса «Рамки и фоны, часть 2».
+</p>
+<p>
+  Универсальную примесь для создания «треугольников» на CSS удобно держать в своём арсенале наготове, чтобы при необходимости просто написать одну строчку кода, не вспоминая подробности реализации.
+</p>
+<p>
+  Итак, нам нужна примесь, которая будет принимать в качестве параметров: направление, в которое «смотрит» треугольник, его размер и цвет.
+</p>
+<p>
+  Так как в примеси нужно учесть четыре направления (вверх, вправо, вниз и влево), уместно будет воспользоваться шаблонами примесей. В универсальном шаблоне будут заданы общие для всех сторон свойства, а в специфичных шаблонах — разные.
+</p>
+<p>
+  В задании в LESS-код уже добавлена универсальная примесь <code>.triangle</code>, в которой заданы правила для всех «треугольников»: нулевые ширина и высота (так как мы будем работать с рамками, сами блоки будут невидимы), а также сплошной стиль рамки.
+</p>
+<p>
+  Давайте применим примесь к блоку и зададим оставшиеся параметры рамки — цвет и толщину.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Примените примесь <code>.triangle</code> с параметрами <code>top</code>, <code>100px</code> и <code>#ff4136</code> к блоку <code>.triangle-box</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В универсальном шаблоне примеси <code>.triangle</code> задайте толщину рамки <code>@size</code></li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и цвет рамки <code>@color</code>.</li>  
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь для треугольных форм, часть 2 <small>[28/30]</small></h1>
+          <p>
+  Следующим шагом сделаем шаблон примеси для «треугольника», направленного вверх. Напомним, что к <code>.triangle-box</code> мы уже применили примесь с шаблоном  <code>top</code>:
+</p>
+<pre><span class="label" style="float:right;">LESS</span>.triangle-box {
+    .zero-centered;
+    .triangle(top; 100px; #ff4136);
+}
+</pre>
+<p>
+  Теперь создадим сам шаблон <code>top</code> примеси <code>.triangle</code>. В нём левой и правой рамке зададим прозрачный цвет, а верхнюю часть рамки уберём, чтобы она не занимала место.
+</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Создайте шаблон примеси <code>.triangle</code> с именем <code>top</code> и параметрами <code>@size</code> и <code>@color</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В примеси задайте прозрачный цвет <code>transparent</code> левой и правой рамке,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а верхнюю рамку уберите совсем, задав ей стиль <code>border-top-style</code> со значением <code>none</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Примесь для треугольных форм, часть 3 <small>[29/30]</small></h1>
+          <p>
+  Теперь остаётся создать шаблоны для остальных направлений «треугольной» примеси подобно сделанному варианту.
+</p>
+<p>
+  Мы уже применили эти шаблоны примесей к блокам <code>.triangle-box-top</code>, <code>.triangle-box-right</code>, <code>.triangle-box-bottom</code> и <code>.triangle-box-left</code> с разными параметрами цвета. Вам остаётся написать нужное наполнение этих шаблонов.
+</p>
+<hr>
+<div class="ha-task-goals">
+<p>
+  Создайте шаблоны <code>right</code>, <code>bottom</code> и <code>left</code> примеси <code>.triangle</code>.
+</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В шаблоне <code>right</code> задайте прозрачный цвет верхней и нижней рамке, а правой — стиль <code>none</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> В шаблоне <code>bottom</code> задайте прозрачный цвет левой и правой рамке, а нижней — стиль <code>none</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> В шаблоне <code>left</code> задайте прозрачный цвет верхней и нижней рамке, а левой — стиль <code>none</code>.</li>
+</ol>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/125">Примеси в&nbsp;LESS</a>»</div>
+          <h1>Испытание: круглая стрелка с помощью рамки <small>[30/30]</small></h1>
+          <p>
+  В этом испытании вам предстоит построить уже знакомую вам по курсу <a href="/courses/88">Рамки и фоны, часть 2</a> круглую стрелку с помощью рамки.
+</p>
+<p>
+  Вам дан набор примесей, которые нужно применить для <code>.arrow-round</code> и его псевдоэлемента <code>::after</code>. Все числовые значения примесей кратны <code>5</code> и задаются в пикселях.
+</p>
+<p>
+  Удачи!
+</p>
+<hr>
+</div>
+
+
+
+
+	
+	</div>
+<body>

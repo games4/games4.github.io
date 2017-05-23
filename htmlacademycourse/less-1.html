@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Знакомство с&nbsp;LESS</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.40.css">		
+    <link rel="stylesheet" href="style.css">
+		<base href="https://htmlacademy.ru/">
+  </head>
+  <body>
+		<div class="container">
+
+
+<div class="course-description">
+	<img class="course-description__icon" src="https://assets.htmlacademy.ru/img/achievements/courses/less/85.svg" alt="Знакомство с&nbsp;LESS" height="100" width="100"><div class="course-description__content">
+		<h1>Знакомство с&nbsp;LESS</h1>
+		<p>Познакомимся с&nbsp;основами препроцессора LESS и&nbsp;начнём разрабатывать свою библиотеку визуальных компонентов. Вместе научимся создавать цветовую схему для элементов интерфейса.</p>
+	</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Введение <small>[1/14]</small></h1>
+          <p>CSS-препроцессоры&nbsp;— это «программистский» подход к&nbsp;CSS. Они позволяют при написании стилей использовать свойственные языкам программирования приёмы и&nbsp;конструкции: переменные, вложенность, наследуемость, циклы, функции и&nbsp;математические операции. Синтаксис препроцессоров похож на&nbsp;обычный CSS. Код, написанный на&nbsp;языке препроцессора, не&nbsp;используется прямо в&nbsp;браузере, а&nbsp;преобразуется в&nbsp;чистый CSS-код с&nbsp;помощью специальных библиотек.</p>
+
+<p>Три самых известных препроцессора&nbsp;— это <a target="_blank" href="http://lesscss.org">LESS</a>,
+<a target="_blank" href="http://sass-lang.com">SASS</a> и
+<a target="_blank" href="http://learnboost.github.io/stylus/">Stylus</a>.
+Они во&nbsp;многом похожи между собой, но&nbsp;имеют и&nbsp;ключевые различия. В&nbsp;этом и&nbsp;последующих курсах цикла мы&nbsp;рассмотрим препроцессор LESS.</p>
+
+<p>В&nbsp;курсах по&nbsp;LESS мы&nbsp;будем шаг за&nbsp;шагом строить небольшой <del>велосипед</del> фреймворк компонентов. Когда он&nbsp;будет готов, мы&nbsp;сможем собирать из&nbsp;компонентов цельные интерфейсы. Компонентный подход позволяет структурировать большие объемы кода и&nbsp;легко масштабировать проекты. Препроцессор в&nbsp;этом деле&nbsp;— хорошее подспорье.</p>
+
+<p>В&nbsp;этой серии курсов редактор CSS заменён на&nbsp;редактор LESS. Чтобы увидеть скомпилированный из&nbsp;LESS кода CSS код, можете использовать кнопку <span style="cursor:pointer;" class="label editor-label" title="Показать CSS"><i class="icon-eye-open icon-white"></i> CSS</span>.</p>
+
+<p>Итак, теперь вы&nbsp;знаете всё, чтобы начать!</p>
+<hr>
+ <ol>
+		<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Удалите символы <code>/*</code> и <code>*/</code>
+в&nbsp;редакторе LESS.</li>
+ </ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Переменные, шаг 1 <small>[2/14]</small></h1>
+          <p>Цветовая схема&nbsp;— основа любого дизайна в&nbsp;вебе. Применяя цветовое кодирование, 
+можно сделать интерфейс более понятным. Поэтому первым делом при создании
+нашего мини-фреймворка давайте займёмся цветовой схемой основных 
+элементов интерфейса. В&nbsp;этой задаче LESS нам очень поможет.</p>
+<p>В&nbsp;прошлом задании в&nbsp;коде встречалась подобная запись:</p>
+<pre>@navy: #1d365d;</pre>
+<p>Так в&nbsp;LESS описываются переменные. Синтаксис переменных такой:</p>
+<pre>@название_переменной: значение_переменной;</pre>
+<p>Создав переменную один раз, можно использовать её&nbsp;в&nbsp;любом месте кода. Например:</p>
+<pre>background-color: @navy;
+color: @navy;
+border-color: @navy;</pre>
+<p>Во&nbsp;всех местах, где указана переменная, LESS заменит строку <code>@navy</code>
+на <code>#1d365d</code>. Теперь, если понадобится изменить цвет,
+не&nbsp;нужно искать все его объявления в&nbsp;файле, а&nbsp;достаточно просто
+изменить значение переменной в&nbsp;одном месте.</p>
+<p>Попробуем использовать переменные в&nbsp;коде: зададим с&nbsp;помощью переменной основной цвет нашей цветовой схемы.</p>
+<hr>
+<ol>
+	<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте переменной <code>@base-color</code> 
+на&nbsp;первой строке значение <code>rgb(110, 27, 255)</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Переменные, шаг 2 <small>[3/14]</small></h1>
+          <p>Переменные можно объявлять как «снаружи» правил, так и&nbsp;«внутри».
+В&nbsp;случае «внутреннего» объявления переменная будет доступна только внутри
+правила, в&nbsp;котором она объявлена:</p>
+<pre>.rule-1 {
+    @align: right;
+    text-align: @align; // text-align задаётся значение right
+}
+.rule-2 {
+    text-align: @align; // в этом месте произойдёт ошибка
+}
+</pre>
+<p>Если переменная объявлена и&nbsp;«внутри» правила, и&nbsp;«снаружи»&nbsp;— LESS применит
+«внутреннее» значение.</p>
+<pre>@align: left;
+
+.rule-1 {
+    @align: right;
+    text-align: @align; // text-align задаётся значение right
+}
+.rule-2 {
+    text-align: @align; // text-align задаётся значение left
+}
+</pre>
+<p>Таким образом можно «переопределять» глобальные переменные в&nbsp;локальном
+контексте.</p>
+<p>Проверим это на&nbsp;практике.</p>
+<hr>
+<ol>
+	<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Внутрь правила <code>.color-primary</code> добавьте переменную <code>@base-color</code> и&nbsp;задайте ей&nbsp;значение <code>red</code> .</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Цветовые функции, шаг 1 <small>[4/14]</small></h1>
+          <p style="float: right; margin: 0 0 20px 20px;"><img src="/assets/course85/wheel-complementary.png" alt="Комплементарные цвета на цветовом колесе"></p>
+<p>Итак, мы&nbsp;задали базовый цвет для нашей схемы, от&nbsp;него мы&nbsp;будем отталкиваться при выборе других цветов. Давайте узнаем,
+как это сделать.</p>
+<p>Все цвета модели <code>RGB</code> можно расположить на&nbsp;цветовом колесе, где они плавно переходят друг в&nbsp;друга.</p>
+<p>С&nbsp;помощью LESS-функции <code>spin</code> можно повернуть цветовое колесо на&nbsp;определённый угол относительно заданного цвета и&nbsp;получить новый цвет. Функция принимает два параметра, синтаксис её&nbsp;такой:</p>
+<br>
+<pre>spin(цвет, угол_поворота)</pre>
+<p>Цвет можно задавать в&nbsp;любом цветовом формате. Значение угла может быть как положительным, так и&nbsp;отрицательным. При положительном угле функция повернёт колесо по&nbsp;часовой стрелке, при отрицательном&nbsp;— против. Примеры:</p>
+<pre>color: spin(red, 90); // цвет повернётся от красного на 90° по часовой
+border-color: spin(#f0f, -45); // цвет на 45° от <code>#f0f</code> против часовой</pre>
+<p>Противоположный цвет на&nbsp;колесе называется <i>комплементарным</i>. Он&nbsp;находится под углом <code>180°</code> к&nbsp;заданному цвету. Комплементарные цвета используют для создания контраста.</p>
+<p>Наш основной цвет находится в&nbsp;сине-фиолетовой области цветового круга. Давайте для него вычислим комплементарный цвет с&nbsp;помощью функции <code>spin</code>.</p>
+<hr>
+<ol>
+	<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Переменной <code>@distance</code> задайте значение
+<code>180</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Вложенные правила, шаг 1 <small>[5/14]</small></h1>
+          <p>Отвлечёмся ненадолго от&nbsp;цвета и&nbsp;рассмотрим ещё одну замечательную особенность LESS&nbsp;— 
+вложенные правила. Они позволяют избавиться от&nbsp;дублирования одинаковых названий в&nbsp;коде и&nbsp;делают его более структурированным. Например, вот такой код:</p>
+<pre>.super-class-name {
+    color: #ffffff;
+}
+.super-class-name a {
+    text-decoration: none;
+}
+.super-class-name a span {
+    font-size: 1em;
+}</pre>
+<p>можно более кратко и&nbsp;без повторов написать, используя вложенность:</p>
+<pre>.super-class-name {
+    color: #ffffff;
+    a {
+        text-decoration: none;
+        span {
+            font-size: 1em;
+        }
+    }
+}</pre>
+<p>То&nbsp;есть вложенные правила просто пишутся внутри других правил. Из&nbsp;цепочек вложенных
+правил LESS сам составляет итоговые селекторы.</p>
+<p>Попробуем написать вложенное правило.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блокам <code>.palette-item</code> задайте свойство <code>display</code>
+со&nbsp;значением <code>inline-block</code>.</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем внутри правила <code>.palette-item</code> создайте
+вложенное правило, в&nbsp;котором для <code>.color</code> обнулите значение <code>border-radius</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Вложенные правила, шаг 2 <small>[6/14]</small></h1>
+          <p>С&nbsp;помощью вложенных правил можно не&nbsp;только обращаться к&nbsp;дочерним элементам, но
+и&nbsp;составлять по&nbsp;частям комплексные названия классов. Например, следующий код:</p>
+<pre>.super-button-red {
+    color: red;
+}
+.super-button-blue {
+    color: blue;
+}</pre>
+<p>можно записать проще c&nbsp;помощью вложенных правил:</p>
+<pre>.super-button {
+    &amp;-red { color: red; }
+    &amp;-blue { color: blue; }
+}</pre>
+<div class="clearfix">
+<p style="float: right; margin: 0 0 20px 20px;"><img src="/assets/course85/wheel-analogous-1.png" alt=""></p>
+<p>То&nbsp;есть, если перед вложенным правилом поставить амперсанд <code>&amp;</code>, то
+оно станет <i>родственным</i> родительскому, и&nbsp;LESS подставит родительский селектор вместо амперсанда.</p>
+<p>Воспользуемся этой особенностью для структурирования кода нашей цветовой схемы. Cоздадим второй цвет палитры&nbsp;— яркий акцентный цвет ошибки, повернув цветовое колесо на <code>60°</code> по&nbsp;часовой стрелке относительно базового, чтобы цвет сместился в&nbsp;красную область.</p>
+<p>Сохраним полученный цвет в&nbsp;переменной и&nbsp;зададим с&nbsp;её&nbsp;помощью фон второго контейнера.</p>
+</div>
+<hr>
+<ol>
+	<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Переменной <code>@distance</code> задайте значение
+<code>60</code>. <br>Значение переменной <code>@error-color</code> вычислите 
+с помощью функции <code>spin</code>, повернув базовый цвет
+<code>@base-color</code> на&nbsp;величину <code>@distance</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Математические операции, шаг 1 <small>[7/14]</small></h1>
+          <p style="float: right; margin: 0 0 20px 20px;"><img src="/assets/course85/wheel-analogous-2.png" alt=""></p>
+<p>Теперь давайте создадим третий цвет. Его «сдвинем» по&nbsp;кругу на <code>60°</code>
+в&nbsp;другую сторону от&nbsp;основного. Он&nbsp;светлее и&nbsp;будет использоваться для выделения
+второстепенной информации и&nbsp;элементов.</p>
+<p>Чтобы «сдвинуть» цвет против часовой стрелки, нужно в&nbsp;функцию <code>spin</code>
+передать отрицательное значение переменной <code>@distance</code>.</p>
+<p>Над любыми численными значениями в&nbsp;LESS-коде можно произвести математические операции сложения, 
+вычитания, умножения или деления:</p>
+<pre>padding-top: 10px + 20; // = 30px
+padding-bottom: 100px - 50; // = 50px
+font-size: 2em * 2; // = 4em
+left: 50% / 2; // 25%
+</pre>
+<p>LESS выполнит математическую операцию и&nbsp;вернёт в&nbsp;CSS уже вычисленное значение. 
+Единицы измерения всегда берутся от&nbsp;первого параметра в&nbsp;выражении.</p>
+<p>Чтобы вычислить отрицательное значение <code>@distance</code> просто умножим
+переменную на <code>-1</code>.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Cоздайте внутри правила <code>.color</code> вложенное правило <code>&amp;-info</code>. В&nbsp;нём для <code>background-color</code> задайте переменную <code>@info-color</code>.</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем переменной <code>@invert-distance</code> задайте значение <code>@distance * -1</code>. Значение <code>@info-color</code> вычислите с&nbsp;помощью <code>spin</code>, повернув базовый цвет <code>@base-color</code> на&nbsp;величину <code>@invert-distance</code>.
+</li></ol>
+</div>
+
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Математические операции, шаг 2 <small>[8/14]</small></h1>
+          <p style="float: right; margin: 0 0 20px 20px;"><img src="/assets/course85/wheel-analogous-4.png" alt=""></p>
+<p>Осталось добавить ещё два цвета. Чтобы их&nbsp;вычислить, мы&nbsp;«повернём» круг на&nbsp;двойное расстояние <code>@distance</code> от&nbsp;базового цвета в&nbsp;обе стороны.</p>
+<p>Получившиеся цвета будут комплементарными по&nbsp;отношению к&nbsp;инфо-цвету и&nbsp;цвету ошибки. Это именно&nbsp;то, что нужно: к&nbsp;примеру, по&nbsp;смыслу цвет ошибки полностью противоположен цвету успеха, поэтому они должны быть максимально контрастны.</p>
+<p>Из&nbsp;математических операций используем умножение дистанции на <code>2</code>.</p>
+<p>Давайте&nbsp;же завершим нашу палитру.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Значение переменной
+<code>@warning-color</code> вычислите функцией <code>spin</code>: поверните базовый цвет
+<code>@base-color</code> на&nbsp;двойную величину <code>@distance</code>.</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Значение переменной
+<code>@success-color</code> вычислите функцией <code>spin</code>: поверните базовый цвет
+<code>@base-color</code> на&nbsp;двойную величину <code>@invert-distance</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Математические операции, шаг 3 <small>[9/14]</small></h1>
+          <p>И&nbsp;теперь, когда палитра цветов построена, можно немного «поиграть» <del>со
+шрифтами</del> с&nbsp;базовым цветом и&nbsp;посмотреть, как вместе с&nbsp;ним будут меняться 
+остальные.</p>
+<p>Для этого давайте просто поменяем параметры в <code>RGB</code>-записи цвета в&nbsp;переменной <code>@base-color</code> 
+математическими операциями. Кстати, к&nbsp;значению цвета «целиком» тоже можно применять операции.
+В&nbsp;случае суммы числа и <code>RGB</code>-записи цвета слагаемое будет прибавляться к&nbsp;каждому 
+цветовому каналу одновременно:</p>
+<pre>rgb(10, 10, 10) + 10
+
+// то же самое, что
+
+rgb(20, 20, 20)
+</pre>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Первый RGB-параметр <code>110</code> базового цвета <code>@base-color</code> замените
+на <code>110 + 50</code>,</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> второй RGB-параметр умножьте на <code>2</code>,</li>
+<li id="goal3"><span class="label ha-goal-label">Цель 3</span> от&nbsp;третьего RGB-параметра отнимите <code>30</code>,</li>
+<li id="goal4"><span class="label ha-goal-label">Цель 4</span> а&nbsp;затем прибавьте <code>20</code> к&nbsp;RGB-записи цвета, чтобы получилось <code>rgb(…) + 20</code> .</li>
+</ol>
+</div>
+
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Цветовые функции, шаг 2 <small>[10/14]</small></h1>
+          <p>Продолжим создавать библиотеку компонентов: с&nbsp;помощью цветов из&nbsp;разработанной палитры зададим состояния кнопок. И&nbsp;по&nbsp;ходу дела разберём другие функции LESS для работы с&nbsp;цветом.</p>
+<p>Сначала зададим базовый цвет для фона кнопок и&nbsp;добавим его вариации по&nbsp;наведению и&nbsp;нажатию на&nbsp;кнопку. По&nbsp;наведению будем делать кнопку чуть светлее, а&nbsp;в&nbsp;момент нажатия&nbsp;— темнее. Для этого воспользуемся LESS-функциями <code>lighten</code> и <code>darken</code>. Их&nbsp;синтаксис одинаковый:</p>
+<pre>color: lighten(red, 50%); // светлее red на 50%
+color: darken(blue, 25%); // темнее blue на 25%</pre>
+
+<p>Второе значение задаётся в&nbsp;процентах от <code>0%</code> до <code>100%</code>. При задании <code>100%</code> в <code>lighten</code> функция возвращает полностью белый цвет, а <code>100%</code> для <code>darken</code> — полностью чёрный. То&nbsp;есть эти функции «смешивают» заданный цвет с&nbsp;белым или чёрным.</p>
+
+<p>Итак, давайте зададим кнопкам нужные цвета и&nbsp;снова воспользуемся вложенными правилами. Чтобы задать смену цвета и&nbsp;для демонстрационного класса <code>btn-hover</code>, и&nbsp;для псевдокласса <code>btn:hover</code>, нужно прописать вложенные правила в&nbsp;LESS так:</p>
+<pre>.btn {
+    &amp;-hover,
+    &amp;:hover {
+        color: red;
+    }
+}</pre>
+Этот LESS преобразуется в&nbsp;следующий CSS:
+<pre>.btn-hover,
+.btn:hover {
+    color: red;
+}
+</pre>
+<hr>
+<div class="ha-task-goals">
+<p>Внутри вложенного правила <code>&amp;-primary</code>
+кнопки <code>.btn</code> создайте:</p>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> вложенное правило <code>&amp;-hover, &amp;:hover</code>, в&nbsp;котором
+задайте цвет фона <code>lighten(@base-color, 20%)</code>;</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> вложенное правило <code>&amp;-pressed, &amp;:active</code>, в&nbsp;котором
+задайте цвет фона <code>darken(@base-color, 20%)</code>.</li>
+</ol>
+<p>Проверьте, как меняется цвет кнопки <code>.btn-primary</code> по&nbsp;наведению и
+нажатию на&nbsp;неё.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Цветовые функции, шаг 3 <small>[11/14]</small></h1>
+          <p>Ещё две LESS-функции для работы с&nbsp;цветом: <code>saturate</code> и 
+<code>desaturate</code>. Они увеличивают и&nbsp;уменьшают насыщенность заданного цвета.
+Их&nbsp;синтаксис такой&nbsp;же как и&nbsp;у <code>lighten/darken</code>:</p>
+<pre>color: saturate(green, 20%); // green насыщеннее на 20%
+color: desaturate(blue, 50%); // blue бледнее на 50%</pre>
+<p>Функцию <code>desaturate</code> мы&nbsp;используем для создания стиля «отключенной»
+кнопки. Совместно с&nbsp;<code>desaturate</code> воспользуемся <code>lighten</code>,
+чтобы сделать кнопку бледной и&nbsp;светлой. Одновременно функции цвета можно использовать так:</p>
+<pre>// цвет светлее красного на 50% и насыщеннее на 20%
+color: saturate(lighten(red, 50%), 20%);
+
+//цвет темнее синего на 20% и бледнее на 50%
+color: desaturate(darken(blue, 20%), 50%);</pre>
+<p>То&nbsp;есть функции можно «вкладывать» друг в&nbsp;друга, используя их&nbsp;в&nbsp;качестве аргументов.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Внутри правила <code>&amp;-primary</code>
+кнопки <code>.btn</code> создайте вложенное правило <code>&amp;-disabled</code>, 
+в&nbsp;котором задайте цвет текста <code>rgba(255, 255, 255, 0.8)</code> 
+и&nbsp;цвет фона светлее <code>@base-color</code> на <code>20%</code>.</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем уменьшите насыщенность получившегося цвета фона с&nbsp;помощью 
+функции <code>desaturate</code> на <code>70%</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Цветовые функции, шаг 4 <small>[12/14]</small></h1>
+          <p>Теперь перейдём к&nbsp;созданию цветных информационных сообщений. Они будут кодироваться
+теми&nbsp;же цветами из&nbsp;палитры: основным, контрастным, информационным, предупреждающим и&nbsp;успешным. С&nbsp;помощью цветовых функций и&nbsp;их&nbsp;комбинаций давайте подберём подходящие
+оттенки для элементов сообщений.</p>
+<p>Фоновый цвет блоков сделаем светлее основного. Цвет границ&nbsp;— немного темнее и&nbsp;контрастнее фонового цвета. Цвет текста&nbsp;— ещё более темным, чем цвет фона.</p>
+<p>Воспользуемся уже известными нам функциями <code>lighten</code>,
+<code>darken</code>, <code>spin</code> и&nbsp;их&nbsp;комбинациями.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Задайте переменной <code>@alert-primary-bg</code> цвет светлее базового на 
+<code>35%</code>.</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Задайте переменной <code>@alert-primary-border</code> значение, 
+сдвинутое от <code>@alert-primary-bg</code> функцией <code>spin</code>
+на <code>-10</code> и&nbsp;затемнённое на <code>5%</code>.</li>
+<li id="goal3"><span class="label ha-goal-label">Цель 3</span> Задайте переменной <code>@alert-primary-text</code> цвет темнее 
+<code>@alert-primary-bg</code> на <code>50%</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Цветовые функции, шаг 5 <small>[13/14]</small></h1>
+          <p>Теперь создадим стили для остальных блоков сообщений.</p>
+
+<p>Будем использовать те&nbsp;же функции, но&nbsp;только с&nbsp;другими цветами, от&nbsp;которых ведётся отсчёт.
+В&nbsp;этом задании переменные уже созданы, но&nbsp;они привязаны к&nbsp;базовому цвету. Нужно будет лишь заменить в&nbsp;функциях переменную базового цвета на&nbsp;переменные подходящих цветов.</p>
+
+<p>Вынос всех цветов в&nbsp;переменные&nbsp;— очень прагматичный подход. Переменные можно легко собрать в одном файле, что позволяет гибко конфигурировать внешний вид базовых компонентов.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Замените переменную <code>@base-color</code> на <code>@error-color</code> в&nbsp;функции для расчёта <code>@alert-error-bg</code> (15&nbsp;строка).</li>
+<li id="goal2"><span class="label ha-goal-label">Цель 2</span> Замените переменную <code>@base-color</code> на <code>@info-color</code> в&nbsp;функции для расчёта <code>@alert-info-bg</code> (19&nbsp;строка).</li>
+<li id="goal3"><span class="label ha-goal-label">Цель 3</span> Замените переменную <code>@base-color</code> на <code>@warning-color</code> в&nbsp;функции для расчёта <code>@alert-warning-bg</code> (23&nbsp;строка).</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/85">Знакомство с&nbsp;LESS</a>»</div>
+          <h1>Испытание: палитра <small>[14/14]</small></h1>
+          <p>Итак, мы&nbsp;разобрались как создать палитру цветов, основанную на&nbsp;цветовом кодировании.
+На&nbsp;основе разработанной палитры можно оформить цветом любой элемент интерфейса.
+При этом цвета всех элементов будут консистентны и&nbsp;их&nbsp;можно легко конфигурировать.</p>
+<p>Этот курс&nbsp;— первый из&nbsp;цикла по&nbsp;LESS. В&nbsp;нём затронуты самые базовые понятия и
+приёмы. В&nbsp;последующих курсах мы&nbsp;рассмотрим
+другие возможности препроцессора, а&nbsp;также продолжим создавать нашу библиотеку стилей.</p>
+<p>А&nbsp;напоследок осталась небольшая головоломка. Вам нужно раскрасить белые квадраты.</p>
+<p>В&nbsp;раскрашенных квадратах есть стрелки, которые указывают на&nbsp;соседние пустые квадраты. Это подсказка: цвет для пустого квадрата рассчитывается от&nbsp;цвета указывающего на&nbsp;него квадрата.</p>
+<p>Для вычисления цвета используйте цветовые функции, рассмотренные в&nbsp;курсе: <code>lighten</code>, <code>desaturate</code>, <code>darken</code>, <code>spin</code>. Числовые параметры
+функций кратны <code>5</code>.</p>
+<p>До&nbsp;встречи на&nbsp;следующих курсах по&nbsp;LESS!</p>
+<hr>
+</div>
+
+
+	
+	</div>
+<body>

@@ -74,6 +74,14 @@
 
 <div class="alert">Мы&nbsp;добавили в&nbsp;мини-браузер индикатор главной оси. Теперь вы&nbsp;всегда будете знать, куда она направлена.</div>
 <hr>
+<div class="ha-task-goals">
+<p>Для блока <code>.room</code> задайте направление главной оси:</p>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> справа налево,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> сверху вниз,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а затем снизу вверх.</li>
+</ol>
+</div>
 </div>
 
 
@@ -451,9 +459,246 @@
   <li id="goal4"><span class="label ha-goal-label">Цель 4</span> равномерное выравнивание с половинными отступами по краям.</li>
 </ol>
 </div>
-				
-				
 
-				
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Порядковый номер флекс-элемента, order <small>[19/31]</small></h1>
+          <p>И&nbsp;ещё одно свойство, которое мы&nbsp;рассмотрим в&nbsp;этом курсе,&nbsp;— это <code>order</code>, порядковый номер флекс-элемента.</p>
+
+<p>Это очень полезное свойство, так как с&nbsp;его помощью можно менять порядок следования флекс-элементов в&nbsp;потоке, не&nbsp;меняя HTML-код.</p>
+
+<p>По&nbsp;умолчанию порядковый номер флекс-элементов равен <code>0</code>, а&nbsp;сортировка элементов производится по&nbsp;возрастанию номера.</p>
+
+<p>Порядковый номер задаётся целым числом, положительным или отрицательным. Например:</p>
+
+<pre>.flex-element {
+    order: -1; /* этот элемент станет отображаться первым в контейнере */
+}</pre>
+
+<p>Давайте попробуем перетасовать коврики с&nbsp;котиками с&nbsp;помощью свойства <code>order</code>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Для коврика Кекса <code>.keks</code> задайте порядковый номер <code>-1</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем для коврика Семёна <code>.simeon</code> — порядковый номер <code>-2</code>,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> а для коврика Рудольфа <code>.rudolf</code> — номер <code>1</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Идеальное центрирование, margin: auto <small>[21/31]</small></h1>
+          <p>В&nbsp;следующих заданиях мы&nbsp;разберём примеры из&nbsp;жизни, в&nbsp;которых можно применять флексбокс.</p>
+
+<p>Самый насущный вопрос, который можно легко и&nbsp;изящно решить с&nbsp;помощью флексбокса,&nbsp;— как отцентровать элемент по&nbsp;вертикали и&nbsp;горизонтали так, чтобы центровка сохранялась при изменении размеров элемента или контейнера.</p>
+
+<p>Ответ прост: задать контейнеру раскладку флексбокса, а&nbsp;дочернему флекс-элементу <code>margin: auto</code>.</p>
+
+<p>В&nbsp;этом случае флекс-элемент уменьшит свой размер под содержимое и&nbsp;отцентруется по&nbsp;вертикали и&nbsp;горизонтали.</p>
+
+<p>Стоит обратить внимание на&nbsp;интересный момент. Если центруемых флекс-элементов в&nbsp;контейнере будет несколько, то&nbsp;отступы между ними будут равномерными. То&nbsp;есть будет происходить распределение элементов внутри флекс-контейнера чем-то похожее на <code>justify-content: space-around</code>.</p>
+
+<p>Давайте проверим этот момент на&nbsp;примере карточки товара, в&nbsp;которой картинка центруется внутри блока.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.pictures</code> задайте раскладку флексбокса,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем для блока <code>.picture</code> задайте <code>margin: auto</code>.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Измените размер картинки <code>.picture img</code> на <code>40px</code>,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а потом в HTML-редакторе добавьте ещё один блок <code>.picture</code> с такой же картинкой.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">урс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Идеальное центрирование, флекс-выравнивания <small>[22/31]</small></h1>
+          <p>А&nbsp;теперь давайте отцентруем элементы с&nbsp;помощью свойств флекс-контейнера без <code>margin: auto</code> на&nbsp;дочерних элементах.</p>
+
+<p>Заметьте разницу между тем, как распределяются элементы при разных значениях свойства <code>justify-content</code>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> У блоков <code>.picture</code> уберите <code>margin: auto</code>,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> затем блоку <code>.pictures</code> задайте распределение флекс-элементов по центру главной оси</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> и выравнивание по центру поперечной оси.</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> Затем замените распределение по главной оси на <code>space-around</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>«Гибкое» меню <small>[23/31]</small></h1>
+          <p>Флексбокс полезен при создании блоков с&nbsp;дочерними элементами динамической длины. Хороший пример&nbsp;— меню.</p>
+
+<p>Часто встречаются дизайны, в&nbsp;которых пункты равномерно распределены по&nbsp;блоку меню. Первый пункт примыкает к&nbsp;левой части блока меню, а&nbsp;последний&nbsp;— к&nbsp;правой, причём с&nbsp;небольшими внутренними отступами.</p>
+
+<p>Эту задачу можно попытаться решить, задав фиксированные отступы и&nbsp;ширину пунктам меню. Но&nbsp;такой способ не&nbsp;подойдёт, если количество пунктов меню или подписи внутри них будут изменяться.</p>
+
+<p>И&nbsp;тут на&nbsp;помощь приходит флексбокс. Зададим меню раскладку флексбокса, пункты станут флекс-элементами. С&nbsp;помощью свойства распределения элементов <code>justify-content</code> добьёмся нужного результата.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.menu</code> задайте раскладку флексбокса,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем равномерное распределение элементов по главной оси с половинными отступами по краям.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>«Гибкое» меню, часть 2 <small>[24/31]</small></h1>
+          <p>Теперь можно запросто добавить в&nbsp;меню ещё один пункт или изменить ширину самого контейнера.</p>
+
+<p>Отступы между пунктами меню будут «гибко» меняться, подстраиваясь под новые условия.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> В <code>.menu</code> между двумя <code>div</code> с текстом <code>Рыба</code> и <code>Молоко</code> добавьте ещё один <code>div</code> со ссылкой с текстом <code>Сметана</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем задайте меню ширину <code>80%</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>«Гибкое» меню, часть 3 <small>[25/31]</small></h1>
+          <p>С&nbsp;помощью раскладки флексбокса можно также легко управлять порядком следования элементов, не&nbsp;изменяя при этом HTML-код.</p>
+
+<p>Давайте заменим один из&nbsp;пунктов меню блоком с&nbsp;логотипом, а&nbsp;затем легко попереставляем его на&nbsp;разные места с&nbsp;помощью свойства <code>order</code>.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Вырежьте блок <code>.logo</code> и вставьте его внутрь меню вместо <code>div</code> с текстом <code>Сметана</code>.</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> Затем для <code>.menu</code> задайте центральное выравнивание элементов по поперечной оси.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> Блоку <code>.logo</code> задайте порядковый номер флекс-элемента <code>-1</code>,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а потом <code>1</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Вертикальный ряд иконок <small>[26/31]</small></h1>
+          <p>Давайте используем раскладку флексбокса ещё в&nbsp;одном примере.</p>
+
+<p>Для начала выстроим два блока, идущих друг за&nbsp;другом, в&nbsp;ряд. Затем изменим порядок их&nbsp;отображения.</p>
+
+<p>Заметьте, что флекс-элементами внутри флекс-контейнера становятся только прямые потомки, элементы первого уровня вложенности.</p>
+
+<p>В&nbsp;нашем примере флекс-контейнер <code>.post</code> включает два флекс-элемента <code>section</code> и <code>aside</code>. Блоки внутри флекс-элементов ведут себя как обычно, флекс-поток их&nbsp;не&nbsp;затрагивает.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.post</code> задайте раскладку флексбокса,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> а затем для <code>aside</code> внутри <code>.post</code> задайте порядковый номер флекс-элемента <code>-1</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Вертикальный ряд иконок, часть 2 <small>[27/31]</small></h1>
+          <p>Флекс-элемент внутри флекс-контейнера можно также сделать флекс-контейнером.</p>
+
+<p>Он&nbsp;будет одновременно вести себя и&nbsp;как флекс-элемент, то&nbsp;есть подчиняться правилам распределения и&nbsp;выравнивания своего родителя, и&nbsp;как самостоятельный флекс-контейнер. При этом его вложенные элементы первого уровня будут следовать только его флекс-правилам.</p>
+
+<p>В&nbsp;нашем примере давайте сделаем блок с&nbsp;иконками социальных сетей вложенным флекс-контейнером, а&nbsp;его дочерние флекс-элементы распределим по&nbsp;всей высоте блока.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.post aside</code> задайте раскладку флексбокса,</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> направление главной оси сверху вниз,</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> равномерное распределение флекс-элементов по главной оси без отступов по краям,</li>
+  <li id="goal4"><span class="label ha-goal-label">Цель 4</span> а затем внешний отступ справа <code>20px</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Вертикальный ряд иконок, часть 3 <small>[28/31]</small></h1>
+          <p>Теперь, если изменить высоту флекс-элемента <code>section</code>, то&nbsp;изменится и&nbsp;высота элемента <code>aside</code>. А&nbsp;так как <code>aside</code> сам является флекс-контейнером, то&nbsp;изменение его высоты перераспределит его дочерние флекс-элементы&nbsp;— ссылки с&nbsp;иконками.</p>
+
+<p>Получается, что иконки всегда будут распределяться по&nbsp;высоте содержимого блока <code>section</code>.</p>
+
+<p>Давайте проверим это, добавив ещё немного текста в&nbsp;блок.</p>
+<hr>
+<ol>
+<li id="goal1"><span class="label ha-goal-label">Цель 1</span> Раскомментируйте в разметке два параграфа внутри блока <code>.post</code>.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Сортировка элементов на CSS <small>[29/31]</small></h1>
+          <p>Интересного эффекта можно достичь, если скомбинировать флексбокс и&nbsp;трюк с&nbsp;селектором <code>:checked ~</code>. Подробно <code>:checked ~</code> разбирается в&nbsp;<a href="/courses/58/run/17">задании курса «Селекторы. Часть&nbsp;3»</a>.</p>
+
+<p>Приём заключается в&nbsp;следующем: с&nbsp;помощью селектора по&nbsp;выделению чекбокса можно управлять порядком флекс-элементов, изменяя направление главной оси с&nbsp;помощью <code>flex-direction</code>. Лучше всего эффект работает, когда направление главной оси меняется с&nbsp;«сверху вниз» на&nbsp;«снизу вверх».</p>
+
+<p>При этом флекс-контейнер должен находиться в&nbsp;разметке на&nbsp;одном уровне с&nbsp;чекбоксом.</p>
+
+<p>Таким образом реализуется сортировка на&nbsp;CSS, без использования JavaScript.</p>
+<hr>
+<div class="ha-task-goals">
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.sort-list</code> задайте раскладку флексбокса</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и направление главной оси сверху вниз.</li>
+  <li id="goal3"><span class="label ha-goal-label">Цель 3</span> При выделенном состоянии чекбокса <code>.input-sort</code> для блока <code>.sort-list</code> задайте направление главной оси снизу вверх.</li>
+</ol>
+<p>Переключайте чекбокс, чтобы сортировать элементы списка.</p>
+</div>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Блоки одинаковой высоты <small>[30/31]</small></h1>
+          <p>Ещё одна часто встречающаяся задача&nbsp;— реализовать раскладку с&nbsp;блоками одинаковой высоты.</p>
+
+<p>Надо учитывать, что содержимое блоков может быть разным и&nbsp;их&nbsp;высота может меняться.</p>
+
+<p>В&nbsp;обычной блочной модели есть фундаментальный недостаток&nbsp;— соседние блоки ничего не&nbsp;знают друг о&nbsp;друге, поэтому их&nbsp;высоты нельзя «связать». Получается, что все «стандартные» варианты для решения этой задачи не&nbsp;работают:</p>
+
+<ul>
+<li><p><code>float</code> или <code>inline-block</code> не&nbsp;могут «связывать» высоты соседних блоков;</p></li>
+<li><p>таблицы и&nbsp;CSS-таблицы позволяют делать ячейки одинаковой высоты, но&nbsp;появляются ограничения, связанные с&nbsp;расположением элементов в&nbsp;строках;</p></li>
+<li><p>минимальная высота не&nbsp;подходит, так как какой-то из&nbsp;блоков всегда может стать выше остальных;</p></li>
+<li><p>конечно, можно задать всем блокам фиксированную высоту, но&nbsp;это решение совсем не&nbsp;универсальное.</p></li>
+</ul>
+
+<p>А&nbsp;с&nbsp;помощью флексбоксов эта проблема решается легко и&nbsp;изящно, ведь флекс-элементы по&nbsp;умолчанию растягиваются на&nbsp;всю высоту контейнера.</p>
+
+<p>Попробуем починить раскладку на <code>float</code> с&nbsp;помощью флексбокса.</p>
+<hr>
+<ol>
+  <li id="goal1"><span class="label ha-goal-label">Цель 1</span> Блоку <code>.columns</code> задайте раскладку флексбокса</li>
+  <li id="goal2"><span class="label ha-goal-label">Цель 2</span> и перенос флекс-элементов на новую строку.</li>
+</ol>
+</div>
+
+
+<div class="ha-task-description">
+          <span class="close ha-task-description-close">×</span>
+          <div class="course">Курс «<a href="/courses/96">Флексбокс, часть&nbsp;1</a>»</div>
+          <h1>Испытание: сложные палитры <small>[31/31]</small></h1>
+          <p>Итак, вы&nbsp;подошли к&nbsp;финальному испытанию.</p>
+
+<p>Вам предстоит снова собирать палитру. Да&nbsp;не&nbsp;одну!</p>
+
+<p>На&nbsp;этот раз придётся воспользоваться всем изученным арсеналом свойств флексбокса. Также для прохождения может понадобиться повторение <a href="/courses/42">CSS-селекторов</a>.</p>
+
+<p class="info">Этот курс&nbsp;— первая часть серии о&nbsp;флексбоксе. До&nbsp;встречи на&nbsp;следующих курсах. Продолжение следует!</p>
+<hr>
+</div>
+
+
 	</div>
 <body>
