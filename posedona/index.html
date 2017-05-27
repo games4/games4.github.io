@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Посейдона - городок в Аризоне</title>
+	</head>
+	<body>
+
+	<header class="main-header">
+			<div class="logo">
+				<img src="img/logo-sedona.png" width="138" height="70" alt="Логотип - городка Посейдона">
+			</div>
+			<nav class="main-nav">
+				<ul class="main-nav_list">
+					<li class="main-vav_item"><a href="#">Информация</a></li>
+					<li class="main-vav_item"><a href="#">Фото и видео</a></li>
+					<li class="main-vav_item"><a href="#">Карта штата</a></li>
+					<li class="main-vav_item"><a href="#">Гостиницы</a></li>
+				</ul>
+			</nav>
+			<section class="promo" style=" background-color: grey;">
+				<img src="img/logo-sedona_big.png" width="458" height="352" alt="Логотип и слоган - городка Посейдона">
+			</section>
+		</header>
+
+		<article class="features">
+			<header class="features-header">
+				<h2 class="features-title">
+					Седона - небольшой городок в Аризоне, заслуживающий большего!
+				</h2>
+				<p class="features-description">
+					Рассмотрим 5 причин, по которым седона круче, чем гранд каньйон!
+				</p>
+			</header>
+			
+			<!-- 1 -->
+			<div class="feature-item_presentation">
+				<section class="feature-item_description">
+					<h2 class="feature-title">Настоящий городок</h2>
+					<p class="feature-number">№1</p>
+					<p class="feature-text">Седона - не атракцион для туристов, там течет своя жизнь</p>
+				</section>
+				<figure class="feature-item_image">
+					<img src="img/sedona-photo-1.jpg" width="800" height="256" alt="Городок Посейдона - улица">
+				</figure>
+			</div>
+
+			<div class="feature-item_advantages">
+				<section class="advantages-description advantages-icon_home">
+					<h3 class="advantages-title">Жилье</h3>
+					<p class="advantages-text">Рекомендуем пожить в настоящем мотеле. Все как в кино!</p>
+				</section>
+				<section class="advantages-description advantages-icon_meal">
+					<h3 class="advantages-title">Еда</h3>
+					<p class="advantages-text">Всегда заказывайте фирменный бургер. Вы не разочаруетесь!</p>
+				</section>
+				<section class="advantages-description advantages-icon_souvenir">
+					<h3 class="advantages-title">Сувениры</h3>
+					<p class="advantages-text">Не только китайского, но и местного производства!</p>
+				</section>
+			</div>
+
+			<!-- 2 -->
+			<div class="feature-item_presentation blue-theme">
+				<figure class="feature-item_image">
+					<img src="img/sedona-photo-2.jpg" width="800" height="256" alt="Городок Посейдона - мост «дьявола»">
+				</figure>
+				<section class="feature-item_description">
+					<h2 class="feature-title">Там есть мост дьявола</h2>
+					<p class="feature-number">№2</p>
+					<p class="feature-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+				</section>
+			</div>
+			
+			<div class="feature-item_presentation grey-theme">
+				<!-- 3 -->
+				<section class="feature-item_description">
+					<h2 class="feature-title">Небольшая площадь</h2>
+					<p class="feature-number">№3</p>
+					<p class="feature-text">Все достопримечательности находятся очень близко</p>
+				</section>
+				<!-- 4 -->
+				<section class="feature-item_description">
+					<h2 class="feature-title">Там есть мост дьявола</h2>
+					<p class="feature-number">№4</p>
+					<p class="feature-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+				</section>
+				<!-- 5 -->
+				<section class="feature-item_description">
+					<h2 class="feature-title">Мало туристов</h2>
+					<p class="feature-number">№5</p>
+					<p class="feature-text">Большинство едет в Гранд-каньон и толпится там</p>
+				</section>
+			</div>
+		</article>
+		
+		<div "search">
+			<div class="search-header">
+				<strong class="search-attention">Заинтересовались?</strong>
+				<p class="search-text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+				<h2 class="search-title">Поиск гостиницы в Седоне</h2>
+			</div>
+			<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+				<div class="search-form_row">
+					<label class="search-form_label">Дата заезда:</label>
+					<input class="search-form_field" type="text" name="date-in" value="24 апреля 2017 года">
+					<button class="search-form_calendar" type="button">Календарь</button>
+				</div>
+				<div class="search-form_row">
+					<label class="search-form_label" for="data-out">Дата выезда:</label>
+					<input class="search-form_field" type="text" id="data-out" name="date-out" value="4 июля 2017 года">
+					<button class="search-form_calendar" type="button">Календарь</button>
+				</div>
+				<div class="search-form_row">
+					<div class="search-form_col">
+						<label class="search-form_label" for="adults-count">Взрослые:</label>
+						<button class="set_count count-minus" type="button">Минус</button>
+						<input class="set_count-field" type="text" name="adults-count" value="2">
+						<button class="set_count count-plus" type="button">Плюс</button>
+					</div>
+					<div class="search-form_col">
+						<label class="search-form_label" for="kids-count">Дети:</label>
+						<button class="set_count count-minus" type="button">Минус</button>
+						<input class="set_count-field" type="text" name="kids-count" value="0">
+						<button class="set_count count-plus" type="button">Плюс</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="map">
+			Карта
+		</div>
+		
+		<footer class="site-footer main_footer">
+			<div class="footer_col">
+				<a class="hashtag" href="#">#visitsedona</a>
+			</div>
+			<div class="footer_col">
+				<a class="social-btn social-btn-tv" href="#">Твиттер</a>
+				<a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+				<a class="social-btn social-btn-yt" href="#">Ютуб</a>
+			</div>
+			<div class="footer_col">
+				<a class="copyright" href="#">Website by</a> 
+			</div>
+		</footer>	
+
+	</body>
+</html>
