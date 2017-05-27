@@ -94,7 +94,7 @@
 			</div>
 		</article>
 		
-		<div "search">
+		<div class="search">
 			<div class="search-header">
 				<strong class="search-attention">Заинтересовались?</strong>
 				<p class="search-text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
@@ -102,28 +102,31 @@
 			</div>
 			<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
 				<div class="search-form_row">
-					<label class="search-form_label">Дата заезда:</label>
-					<input class="search-form_field" type="text" name="date-in" value="24 апреля 2017 года">
+					<label class="search-form_label" for="date-in">Дата заезда:</label>
+					<input class="search-form_field" type="text" id="date-in" value="24 апреля 2017 года">
 					<button class="search-form_calendar" type="button">Календарь</button>
 				</div>
 				<div class="search-form_row">
 					<label class="search-form_label" for="data-out">Дата выезда:</label>
-					<input class="search-form_field" type="text" id="data-out" name="date-out" value="4 июля 2017 года">
+					<input class="search-form_field" type="text" id="data-out" value="4 июля 2017 года">
 					<button class="search-form_calendar" type="button">Календарь</button>
 				</div>
 				<div class="search-form_row">
 					<div class="search-form_col">
 						<label class="search-form_label" for="adults-count">Взрослые:</label>
 						<button class="set_count count-minus" type="button">Минус</button>
-						<input class="set_count-field" type="text" name="adults-count" value="2">
+						<input class="set_count-field" type="text" id="adults-count" value="2">
 						<button class="set_count count-plus" type="button">Плюс</button>
 					</div>
 					<div class="search-form_col">
 						<label class="search-form_label" for="kids-count">Дети:</label>
 						<button class="set_count count-minus" type="button">Минус</button>
-						<input class="set_count-field" type="text" name="kids-count" value="0">
+						<input class="set_count-field" type="text" id="kids-count" value="0">
 						<button class="set_count count-plus" type="button">Плюс</button>
 					</div>
+				</div>
+				<div class="search-form_row">
+					<button class="search-button" type="button">Найти</button>
 				</div>
 			</form>
 		</div>
