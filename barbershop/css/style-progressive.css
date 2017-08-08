@@ -1,0 +1,535 @@
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("../fonts/ptsansnarrowbold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 960px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: #000000 url("../img/body-bg.jpg") no-repeat center top;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.main-header {
+  position: relative;
+
+  margin-bottom: 290px;
+
+  color: #ffffff;
+
+  background-color: #000000;
+}
+
+.main-header h1 {
+  position: absolute;
+  left: 50%;
+  bottom: -264px;
+
+  margin: 0;
+  margin-left: -184px;
+}
+
+.main-navigation {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  /*розовый блок*/
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+}
+
+.main-navigation::after {
+  content: "";
+
+  display: table;
+  clear: both;
+}
+
+.main-navigation ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-navigation {
+  float: left;
+//  width: 740px;
+  width: 700px;
+  
+  font-size: 0;
+}
+
+.site-navigation li {
+  display: inline-block;
+  
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: top;
+}
+
+.site-navigation a {
+  display: block;
+  padding: 26px 20px;
+  
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-navigation a:hover {
+  background-color: #242424;
+}
+
+.user-navigation {
+  float: right;
+  max-width: 235px;
+  
+  font-size: 0;
+}
+
+.user-navigation li {
+  display: inline-block;
+  
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: top;
+}
+
+.user-navigation a {
+  display: block;
+  padding: 26px 20px;
+  
+  color: #ffffff;
+  text-decoration: none;
+}
+/*
+.user-navigation .login-link:hover {
+  background-color: #242424;
+}
+*/
+.user-navigation a:hover {
+  background-color: #242424;
+}
+
+.user-navigation .login-link {
+  position: relative;
+  padding-left: 50px;
+}
+
+.user-navigation .login-link::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 20px;
+
+  width: 18px;
+  height: 18px;
+
+  background: transparent url("../img/sprite.png") no-repeat;
+  background-position: -1px -15px;
+  opacity: 0.3;
+}
+
+.user-navigation .login-link:hover::before {
+  opacity: 1;
+}
+
+/* Для центровки основного содержания используем main. */
+main {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Стилизуем преимущества. */
+.features {
+  margin-bottom: 80px;
+
+  /*розовый блок*/
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+}
+
+.features-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.features-list::after {
+  content: "";
+
+  display: table;
+  clear: both;
+}
+
+.feature {
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+
+  text-align: center;
+}
+
+.feature:last-child {
+  margin-right: 0;
+} 
+
+.feature-name {
+  position: relative;
+  
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 35px;
+  
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.feature p {
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.feature-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+
+  background-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+/* Стилизуем обёртки, добавляем им распорки. */
+.index-columns {
+  margin-bottom: 35px;
+  padding: 50px 80px;
+  
+  color: #000000;
+  background: url("../img/index-content-shadow.png") no-repeat center, #f8f5f2 url("../img/pattern-white.jpg");
+}
+
+.index-columns::after {
+  content: "";
+  
+  display: table;
+  clear: both;
+}
+
+/* Задаём колонки и общие стили заголовков и абзацев. */
+.news,
+.contacts {
+  float: left;
+  width: 380px;
+}
+
+.gallery,
+.appointment {
+  float: right;
+  width: 300px;
+}
+
+.news h2,
+.contacts h2,
+.gallery h2,
+.appointment h2 {
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.news p,
+.contacts p,
+.gallery p,
+.appointment p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+/* Стилизуем новости. */
+.news-preview {
+  margin: 0;
+  padding: 0;
+//  padding-right: 35px;
+  
+  list-style: none;
+}
+
+.news-preview li {
+  margin-bottom: 20px;
+}
+
+.news-preview p {
+  margin-bottom: 0;
+}
+
+.news-preview time {
+  text-transform: none;
+}
+
+/* Задаём глобальные стили для кнопок. */
+.btn {
+  display: inline-block;
+  margin-right: 16px;
+  padding: 10px 33px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
+  vertical-align: top;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercsce;
+  text-decoration: none;
+
+  background-color: #000000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #663d15;
+}
+
+.btn.disabled,
+.btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.btn.disabled:hover,
+.btn:disabled:hover {
+  background-color: #000000;
+}
+
+/* Стилизуем галерею. */
+.gallery-content {
+  /*зеленый блок*/
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 2px green;
+
+  margin: 0;
+}
+
+.gallery-content img {
+  width: 143px;
+  height: 82px;
+  margin-right: 5px;
+}
+
+/* Прячем подписи в форме записи. */
+.appointment-form label {
+  display: none;
+}
+
+/* Выстраиваем «микросетку» формы. */
+.appointment-form p {
+  float: left;
+  width: 140px;
+  margin: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.appointment-form p:nth-child(2n) {
+  margin-right: 0;
+}
+
+.appointment-form p:last-child {
+  float: none;
+  clear: both;
+//  width: 100%;
+  width: 300px;
+  margin: 0;
+
+  /*зеленый блок*/
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 2px green;
+}
+
+/* Стилизуем поля формы. */
+.appointment-form input {
+  display: block;
+  box-sizing: content-box;
+  width: 106px;
+  padding: 7px 15px;
+  
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  border: 2px solid #000000;
+  background-color: #f9f6f3;
+  outline: none;
+}
+
+.appointment-form input:focus {
+  border: 2px solid #663d15;
+}
+
+.appointment-form .btn {
+  width: 100%;
+}
+
+/* Переходим к подвалу, задаём тянущийся фон. */
+.main-footer {
+  margin-top: 65px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  
+  color: #ffffff; /* лучше явно прописать везде для футера */
+
+  background: #252525 url("../img/pattern-black.jpg");
+}
+
+/* Задаём стили и распорку для центровщика. */
+.footer-columns {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  /*розовый блок*/
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+}
+
+.footer-columns::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Задаём стили для абзаца с контактной информацией. */
+.footer-contacts {
+  float: left;
+  width: 320px;
+  margin: 0;
+  margin-right: 60px;
+}
+
+.footer-contacts a {
+  color: #ffffff;
+}
+
+.footer-contacts a:hover {
+  text-decoration: none;
+}
+
+/* Стилизуем абзац про социальные сети. */
+.footer-social {
+  float: left;
+  width: 180px;
+  margin: 0;
+//  margin-right: 220px;
+  text-align: center;
+}
+
+.footer-social b {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.social-btn {
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  margin: 0 2px;
+  
+  font-size: 0;
+  vertical-align: top;
+  
+  background: #000000 url("../img/sprite.png") no-repeat center;
+
+  transition:
+    background-position 0.5s,
+    background-color 0.5s;
+}
+
+.social-btn:hover {
+  background-color: #ffffff;
+}
+
+.social-btn-vk {
+  background-position: 9px -447px;
+}
+
+.social-btn-fb {
+  background-position: 15px -171px;
+}
+
+.social-btn-inst {
+  background-position: 12px -313px;
+}
+
+.social-btn-vk:hover {
+  background-position: 9px -381px;
+}
+
+.social-btn-fb:hover {
+  background-position: 15px -100px;
+}
+
+.social-btn-inst:hover {
+  background-position: 12px -242px;
+}
+
+/* Стилизуем абзац про разработчиков. */
+.footer-copyright {
+  float: right;
+  margin: 0;
+  max-width: 180px;
+
+  text-align: center;
+}
+
+.footer-copyright b {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-copyright .btn {
+  margin: 0;
+  padding: 10px 23px;
+}
+
+.footer-copyright .btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* Прячем раздел входа в личный кабинет. */
+.login {
+  display: none;
+}
+
+
