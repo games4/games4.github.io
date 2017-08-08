@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html  lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Барбершоп «Бородянський»</title>
@@ -33,10 +33,11 @@
         <ul class="user-navigation">
           <!-- Меню пользователя -->        
           <li>
-            <a class="login-link" href="#login">Вход</a>
+            <!--<a class="login-link" href="#login">Вход</a>-->
+            <a class="login-link" href="login.html">Вход</a>
           </li>
           <li>
-            <a class="login-link" href="#check in">Регистрация</a>
+            <a href="#check in">Регистрация</a>
           </li>
         </ul>
       </nav>
@@ -46,7 +47,7 @@
       <!-- Основное содержание -->
       <section class="features">
         <h2 class="visually-hidden">Преимущества</h2>
-        <ul class="feature-list">
+        <ul class="features-list">
           <li class="feature">
             <h3 class="feature-name">Быстро</h3>
             <p>Мы делаем свою работу быстро! Два часа пролетят незаметно и вы — счастливый обладатель стильной стрижки-минутки!</p>
@@ -62,92 +63,97 @@
         </ul>
       </section>
       
-      <section class="news">
-        <h2 class="news-title">Новости</h2>
-        <ul class="news-preview">
-          <li>
-            <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропустить стаканчик во время стрижки</p>
-            <time datetime="2016-01-11">11 января</time>
-          </li>
-          <li>
-            <p>В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды</p>
-            <time datetime="2016-01-18">18 января</time>
-          </li>
-        </ul>
-        <a class="btn" href="news.html">Все новости</a>
-      </section>
+      <div class="index-columns">
+        <section class="news">
+          <h2 class="news-title">Новости</h2>
+          <ul class="news-preview">
+            <li>
+              <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропустить стаканчик во время стрижки</p>
+              <time datetime="2016-01-11">11 января</time>
+            </li>
+            <li>
+              <p>В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды</p>
+              <time datetime="2016-01-18">18 января</time>
+            </li>
+          </ul>
+          <a class="btn" href="news.html">Все новости</a>
+        </section>
+        
+        <section class="gallery">
+          <h2 class="gallery-title">Фотогалерея</h2>
+          <figure class="gallery-content">
+            <a href="#"><img src="img/photo-1.jpg" width="286" height="164" alt="Интерьер"></a>
+            <a href="#"><img src="img/photo-2.jpg" width="286" height="164" alt="Кресло для бритья"></a>
+          </figure>
+        </section>
+      </div>
       
-      <section class="gallery">
-        <h2 class="gallery-title">Фотогалерея</h2>
-        <figure class="gallery-content">
-          <a href="#"><img src="img/photo-1.jpg" width="286" height="164" alt="Интерьер"></a>
-          <a href="#"><img src="img/photo-2.jpg" width="286" height="164" alt="Кресло для бритья"></a>
-        </figure>
-      </section>
-      
-      <section class="contacts">
-        <h2 class="contacts-title">Контактная информация</h2>
-        <p>
-          Барбершоп «Бородянський»<br>
-          Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
-          Телефон: +7 (812) 666-02-66
-        </p>
-        <p>
-          Время работы:<br>
-          пн — пт: с 10:00 до 22:00<br>
-          сб — вс: с 10:00 до 19:00
-        </p>
-        <a class="btn" href="map.html">Как проехать</a>
-        <a class="btn" href="contacts.html">Обратная связь</a>
-      </section>
-      
-      <section class="appointment">
-        <h2 class="appointment-title">Записаться</h2>
-        <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
-        <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="index-columns">
+        <section class="contacts">
+          <h2 class="contacts-title">Контактная информация</h2>
           <p>
-            <label for="appointment-date-field">Дата</label>
-            <input id="appointment-date-field" type="text" name="date" value="" placeholder="Дата">
+            Барбершоп «Бородянський»<br>
+            Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+            Телефон: +7 (812) 666-02-66
           </p>
           <p>
-            <label for="appointment-time-field">Время</label>
-            <input id="appointment-time-field" type="text" name="time" value="" placeholder="Время">
+            Время работы:<br>
+            пн — пт: с 10:00 до 22:00<br>
+            сб — вс: с 10:00 до 19:00
           </p>
-          <p>
-            <label for="appointment-name-field">Ваше имя</label>
-            <input id="appointment-name-field" type="text" name="name" value="" placeholder="Ваше имя">
-          </p>
-          <p>
-            <label for="appointment-phone-field">Телефон</label>
-            <input id="appointment-phone-field" type="tel" name="phone" value="" placeholder="Телефон">
-          </p>
-          <p>
-            <button class="btn" type="submit">Отправить</button>
-          </p>
-        </form>
-      </section>
-      
+          <a class="btn" href="map.html">Как проехать</a>
+          <a class="btn" href="contacts.html">Обратная связь</a>
+        </section>
+        
+        <section class="appointment">
+          <h2 class="appointment-title">Записаться</h2>
+          <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+          <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
+            <p>
+              <label for="appointment-date-field">Дата</label>
+              <input id="appointment-date-field" type="text" name="date" value="" placeholder="Дата">
+            </p>
+            <p>
+              <label for="appointment-time-field">Время</label>
+              <input id="appointment-time-field" type="text" name="time" value="" placeholder="Время">
+            </p>
+            <p>
+              <label for="appointment-name-field">Ваше имя</label>
+              <input id="appointment-name-field" type="text" name="name" value="" placeholder="Ваше имя">
+            </p>
+            <p>
+              <label for="appointment-phone-field">Телефон</label>
+              <input id="appointment-phone-field" type="tel" name="phone" value="" placeholder="Телефон">
+            </p>
+            <p>
+              <button class="btn" type="submit">Отправить</button>
+            </p>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer class="main-footer">
       <!-- Нижний колонтитул -->
-      <p class="footer-contacts">
-        Барбершоп «Бородянський»<br>
-        Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
-        <a href="map.html">Как нас найти?</a><br>
-        Телефон: +7 (812) 666-02-66
-      </p>
-      <p class="footer-social">
-        <b>Давайте дружить!</b>
-        <span class="visually-hidden">Подписывайтесь на нас в соцсетях:</span>
-        <a class="social-btn social-btn-vk" href="#">Вконтакте</a><span class="visually-hidden">,</span>
-        <a class="social-btn social-btn-fb" href="#">Фейсбук</a><span class="visually-hidden">,</span>
-        <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
-      </p>
-      <p class="footer-copyright">
-        <b>Разработано:</b> 
-        <a class="btn" href="https://htmlacademy.ru">HTML Academy</a>
-      </p>
+      <div class="footer-columns">
+        <p class="footer-contacts">
+          Барбершоп «Бородянський»<br>
+          Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
+          <a href="map.html">Как нас найти?</a><br>
+          Телефон: +7 (812) 666-02-66
+        </p>
+        <p class="footer-social">
+          <b>Давайте дружить!</b>
+          <span class="visually-hidden">Подписывайтесь на нас в соцсетях:</span>
+          <a class="social-btn social-btn-vk" href="#">Вконтакте</a><span class="visually-hidden">,</span>
+          <a class="social-btn social-btn-fb" href="#">Фейсбук</a><span class="visually-hidden">,</span>
+          <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
+        </p>
+        <p class="footer-copyright">
+          <b>Разработано:</b> 
+          <a class="btn" href="https://htmlacademy.ru">HTMLAcademy.ru</a>
+        </p>
+      </div>
     </footer>
     
     <section class="login" id="login">
