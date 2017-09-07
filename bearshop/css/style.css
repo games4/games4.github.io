@@ -368,9 +368,25 @@ body {
 }
 
 body {
-  /* Временно для сетки */
+  /* Временно для сетки стартовой страницы */
 /*  background-image: url('img/barbershop-index-grid.jpg');
   background-size: 1372px auto;
+  background-repeat: no-repeat;*/
+}
+
+.inner-page {
+  /* Временно для сетки страницы каталога */
+/*  background-image: url('img/barbershop-shop.jpg');
+  background-size: 1200px auto;
+  background-position: top center;
+  background-repeat: no-repeat;*/
+}
+
+.inner-page {
+  /* Временно для сетки страницы карточки товара */
+/*  background-image: url('img/barbershop-item.jpg');
+  background-size: 1200px auto;
+  background-position: top center;
   background-repeat: no-repeat;*/
 }
 
@@ -387,6 +403,16 @@ body {
   min-height: 285px;
 }
 
+.inner-page .main-header {
+  margin-bottom: 50px;
+
+  background-color: #000000;
+
+  /* Временно для сетки */
+  min-height: 70px;
+/*  background-color: transparent;*/
+}
+
 .main-navigation {
   display: flex;
   flex-direction: column;
@@ -397,6 +423,14 @@ body {
   background-color: transparent;
 }
 
+.inner-page .main-navigation {
+  align-items: flex-start;
+  flex-direction: row;
+  
+  /* Временно для сетки */
+  min-height: 70px;
+}
+
 .main-header-logo {
   order: 2;
   width: 368px;
@@ -404,6 +438,14 @@ body {
   
   /* Временно для сетки */
   /* display: block;*/
+}
+
+.inner-page .main-header-logo {
+  order: 0;
+  
+  width: 111px;
+  height: 24px;
+  padding: 23px 20px;
 }
 
 .main-navigation-wrapper {
@@ -443,6 +485,11 @@ body {
   min-height: 70px;
 } 
 
+.inner-page .user-navigation {
+  margin-left: auto;
+}
+
+/* .features можна не стилизовать. Всесто этого использую обертку .features-list 
 /*
 .features {
   margin-bottom: 80px;
@@ -509,13 +556,104 @@ body {
   min-height: 340px;
 }
 
+.page-title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+
+  /* Временно для сетки */
+  min-height: 42px;
+}
+
+.breadcrumbs {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+
+  /* Временно для сетки */
+  min-height: 24px;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  width: 180px;
+
+  /* Временно для сетки */
+  min-height: 687px;
+}
+
+.catalog {
+  width: 700px;
+
+  /* Временно для сетки */
+  min-height: 687px;
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+//  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+  
+  list-style: none;
+}
+
+.catalog-item {
+  width: 220px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  
+  /* Временно для сетки */
+  min-height: 285px;
+/*  background-color: transparent;
+  box-shadow: inset 0 0 0 2px purple;*/
+}
+
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.pagination-list {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  /* Временно для сетки */
+  min-height: 47px;
+}
+
+.product-photos {
+  width: 460px;
+
+  /* Временно для сетки */
+  min-height: 677px;
+}
+
+.product-info {
+  width: 390px;
+
+  /* Временно для сетки */
+  min-height: 667px;
+}
+
 .main-footer {
   margin-top: 65px;
   padding: 60px 0;
 
   /* Временно для сетки */
-/*  background: none;
-  min-height: 180px;*/
+/*  background: none;*/
+/*  min-height: 180px;*/
+}
+
+.inner-page .main-footer {
+  margin-top: 45px;
 }
 
 .main-footer .container {
@@ -525,7 +663,7 @@ body {
 .footer-contacts {
   width: 320px;
   margin: 0;
-  margin-right: 80px;
+  margin-right: 70px;
 
   /* Временно для сетки */
   min-height: 100px;
