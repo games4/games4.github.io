@@ -25,73 +25,25 @@ body {
   background-repeat: repeat;
 }
 
-a {
-  text-decoration: none;
+.main-header {
+  margin-bottom: 75px;
+
+  /* Временно для сетки */
+/*  min-height: 285px;*/
 }
 
-.main-navigation {
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
+.inner-page .main-header {
+  margin-bottom: 50px;
 
   background-color: #000000;
+
+  /* Временно для сетки */
+/*  min-height: 70px;*/
+/*  background-color: transparent;*/
 }
 
-.site-navigation,
-.user-navigation {
-  list-style: none;
-}
-
-.site-navigation a,
-.user-navigation a {
-  color: #ffffff;
-}
-
-.site-navigation a:hover,
-.site-navigation a:focus,
-.user-navigation a:hover,
-.user-navigation a:focus {
-  background-color: #242424;
-}
-
-.features-list {
-  list-style: none;
-}
-
-.feature-item {
-  text-align: center;
-}
-
-.feature-item h3 {
-  font-size: 30px;
-  line-height: 42px;
-}
-
-.index-columns {
-  color: #000000;
-  
-  background-color: #f8f5f2;
-  background-image: url("../img/pattern-light.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
-}
-
-.index-columns h2 {
-  font-size: 30px;
-  line-height: 42px;
-}
-
-.news-item {
-  list-style: none;
-}
-
-.news-item time {
-  text-transform: none;
-}
-
-.gallery-content {
-  background-color: #cccccc;
-  border: 7px solid #ffffff;
+a {
+  text-decoration: none;
 }
 
 .button {
@@ -112,6 +64,200 @@ a {
   background-color: #663d15;
 }
 
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+
+  background-color: #000000;
+  /* Временно для сетки */
+/*  min-height: 285px;*/
+  background-color: transparent;
+}
+
+.inner-page .main-navigation {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  
+  /* Временно для сетки */
+/*  min-height: 70px;*/
+}
+
+.main-header-logo {
+  order: 2;
+  width: 368px;
+  height: 153px;
+  
+  /* Временно для сетки */
+  /* display: block;*/
+}
+
+.inner-page .main-header-logo {
+  order: 0;
+  
+  width: 111px;
+  height: 24px;
+  padding: 23px 20px;
+}
+
+.main-navigation-wrapper {
+  width: 100%;
+  margin-bottom: 60px;
+  
+  /* Временно для сетки */
+/*  min-height: 70px;
+  background-color: transparent;*/
+  background-color: #000000;
+}
+
+.main-navigation-wrapper .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-navigation,
+.user-navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  /* Временно для сетки */
+/*  min-height: 70px;*/
+}
+
+.site-navigation {
+  width: 620px;
+}
+
+.user-navigation {
+  width: 140px;
+} 
+
+.inner-page .user-navigation {
+  margin-left: auto;
+}
+
+.site-navigation a,
+.user-navigation a {
+  color: #ffffff;
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus,
+.user-navigation a:hover,
+.user-navigation a:focus {
+  background-color: #242424;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* .features можна не стилизовать. Всесто этого использую обертку .features-list 
+/*
+.features {
+  margin-bottom: 80px;
+}
+*/
+
+.features-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  /* .features */
+  margin-bottom: 80px;
+  padding: 0;
+
+  list-style: none;
+  
+  /* Временно для сетки */
+/*  min-height: 170px;*/
+}
+
+.feature-item {
+  width: 300px;
+  text-align: center;
+  
+  /* Временно для сетки */
+/*  min-height: 170px;*/
+}
+
+.feature-item h3 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 80px;
+  margin-bottom: 35px;
+  
+  color: #000000;
+  
+  background-color: #f8f5f2;
+  background-image: url("../img/pattern-light.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+
+  /* Временно для сетки */
+/*  background-image: none;
+  background-color: transparent;*/
+}
+
+.index-columns h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.news {
+  width: 380px;
+  
+ /* Временно для сетки */
+/* min-height: 315px;*/
+}
+
+.news-list {
+  list-style: none;
+}
+
+.news-item time {
+  text-transform: none;
+}
+
+.gallery {
+  width: 300px;
+  
+ /* Временно для сетки */
+/* min-height: 315px;*/
+}
+
+.gallery-content {
+  background-color: #cccccc;
+  border: 7px solid #ffffff;
+}
+
+.contacts {
+  width: 380px;
+
+  /* Временно для сетки */
+/*  min-height: 295px;*/
+}
+
+.appointment {
+  width: 300px;
+
+  /* Временно для сетки */
+/*  min-height: 340px;*/
+}
+
 .appointment-item input {
   font: inherit;
   
@@ -124,12 +270,26 @@ a {
 }
 
 .page-title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+
   font-size: 30px;
   line-height: 42px;
+
+  /* Временно для сетки */
+/*  min-height: 42px;*/
 }
 
 .breadcrumbs {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+
   list-style: none;
+
+  /* Временно для сетки */
+  min-height: 24px;
 }
 
 .breadcrumbs a {
@@ -144,6 +304,18 @@ a {
 
 .breadcrumbs-current {
   color: #aba9a7;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  width: 180px;
+
+  /* Временно для сетки */
+/*  min-height: 687px;*/
 }
 
 .filter fieldset {
@@ -170,13 +342,40 @@ a {
   opacity: 0.5;
 }
 
+.catalog {
+  width: 700px;
+
+  /* Временно для сетки */
+/*  min-height: 687px;*/
+}
+
 .catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+//  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+  
   list-style: none;
 }
 
 .catalog-item {
+  width: 220px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  
+  /* Временно для сетки */
+/*  min-height: 285px;*/
+/*  background-color: transparent;
+  box-shadow: inset 0 0 0 2px purple;*/
+
   background-color: #f8f8f8;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .catalog-item:hover {
@@ -211,7 +410,13 @@ a {
 }
 
 .pagination-list {
+  padding: 0;
+  margin: 0;
+
   list-style: none;
+
+  /* Временно для сетки */
+/*  min-height: 47px;*/
 }
 
 .pagination-item a {
@@ -244,6 +449,13 @@ a {
   list-style: none;
 }
 
+.product-photos {
+  width: 460px;
+
+  /* Временно для сетки */
+/*  min-height: 677px;*/
+}
+
 .product-photo-preview li {
   box-shadow: 0 0 15px 0 rgba(1, 0, 0, 0.2);
 }
@@ -253,9 +465,9 @@ a {
 }
 
 .product-article {
+  text-align: right;
   color: #aeaeae;
   line-height: 24px;
-  text-align: right;
 }
 
 .product-price b {
@@ -263,6 +475,13 @@ a {
   text-align: center;
   
   background-color: #e5e5e5;
+}
+
+.product-info {
+  width: 390px;
+
+  /* Временно для сетки */
+/*  min-height: 667px;*/
 }
 
 .product-info h3 {
@@ -275,12 +494,36 @@ a {
 }
 
 .main-footer {
+  margin-top: 65px;
+  padding: 60px 0;
+
   color: #ffffff;
 
   background-color: #212121;
   background-image: url("../img/pattern-dark.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+
+  /* Временно для сетки */
+/*  background: none;*/
+/*  min-height: 180px;*/
+}
+
+.inner-page .main-footer {
+  margin-top: 45px;
+}
+
+.main-footer .container {
+  display: flex;
+}
+
+.footer-contacts {
+  width: 320px;
+  margin: 0;
+  margin-right: 70px;
+
+  /* Временно для сетки */
+/*  min-height: 100px;*/
 }
 
 .footer-contacts a {
@@ -294,7 +537,12 @@ a {
 }
 
 .footer-social {
+  width: 145px;
+
   text-align: center;
+
+  /* Временно для сетки */
+/*  min-height: 100px;*/
 }
 
 .footer-social ul {
@@ -306,7 +554,14 @@ a {
 }
 
 .footer-copyright {
+  width: 150px;
+  margin: 0;
+  margin-left: auto;
+
   text-align: center;
+
+  /* Временно для сетки */
+/*  min-height: 100px;*/
 }
 
 .footer-copyright button:hover,
@@ -358,13 +613,12 @@ a {
   text-decoration: none;
 }
 
-
 /* ----- Сеточные стили ----- */
 
 html,
 body {
-  min-width: 1122px;
-  min-height: 1750px;
+/*  min-width: 1122px;
+  min-height: 1750px;*/
 }
 
 body {
@@ -390,298 +644,5 @@ body {
   background-repeat: no-repeat;*/
 }
 
-.container {
-  width: 940px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
 
-.main-header {
-  margin-bottom: 75px;
-
-  /* Временно для сетки */
-  min-height: 285px;
-}
-
-.inner-page .main-header {
-  margin-bottom: 50px;
-
-  background-color: #000000;
-
-  /* Временно для сетки */
-  min-height: 70px;
-/*  background-color: transparent;*/
-}
-
-.main-navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  /* Временно для сетки */
-/*  min-height: 285px;*/
-  background-color: transparent;
-}
-
-.inner-page .main-navigation {
-  align-items: flex-start;
-  flex-direction: row;
-  
-  /* Временно для сетки */
-  min-height: 70px;
-}
-
-.main-header-logo {
-  order: 2;
-  width: 368px;
-  height: 153px;
-  
-  /* Временно для сетки */
-  /* display: block;*/
-}
-
-.inner-page .main-header-logo {
-  order: 0;
-  
-  width: 111px;
-  height: 24px;
-  padding: 23px 20px;
-}
-
-.main-navigation-wrapper {
-  width: 100%;
-  margin-bottom: 60px;
-  
-  /* Временно для сетки */
-/*  min-height: 70px;
-  background-color: transparent;*/
-  background-color: #000000;
-}
-
-.main-navigation-wrapper .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.site-navigation {
-  width: 620px;
-  margin: 0;
-  padding: 0;
-  
-  list-style: none;
-  
-  /* Временно для сетки */
-  min-height: 70px;
-}
-
-.user-navigation {
-  width: 140px;
-  margin: 0;
-  padding: 0;
-  
-  list-style: none;
-  
-  /* Временно для сетки */
-  min-height: 70px;
-} 
-
-.inner-page .user-navigation {
-  margin-left: auto;
-}
-
-/* .features можна не стилизовать. Всесто этого использую обертку .features-list 
-/*
-.features {
-  margin-bottom: 80px;
-}
-*/
-
-.features-list {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  /* .features */
-  margin-bottom: 80px;
-  padding: 0;
-
-  list-style: none;
-  
-  /* Временно для сетки */
-  min-height: 170px;
-}
-
-.feature-item {
-  width: 300px;
-  
-  /* Временно для сетки */
-  min-height: 170px;
-}
-
-.index-columns {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 80px;
-  margin-bottom: 35px;
-  
-  /* Временно для сетки */
-/*  background-image: none;
-  background-color: transparent;*/
-}
-
-.news {
-  width: 380px;
-  
- /* Временно для сетки */
- min-height: 315px;
-}
-
-.gallery {
-  width: 300px;
-  
- /* Временно для сетки */
- min-height: 315px;
-}
-
-.contacts {
-  width: 380px;
-
-  /* Временно для сетки */
-  min-height: 295px;
-}
-
-.appointment {
-  width: 300px;
-
-  /* Временно для сетки */
-  min-height: 340px;
-}
-
-.page-title {
-  margin: 0;
-  margin-bottom: 15px;
-  padding: 0;
-
-  /* Временно для сетки */
-  min-height: 42px;
-}
-
-.breadcrumbs {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 50px;
-
-  /* Временно для сетки */
-  min-height: 24px;
-}
-
-.catalog-columns {
-  display: flex;
-  justify-content: space-between;
-}
-
-.filters {
-  width: 180px;
-
-  /* Временно для сетки */
-  min-height: 687px;
-}
-
-.catalog {
-  width: 700px;
-
-  /* Временно для сетки */
-  min-height: 687px;
-}
-
-.catalog-list {
-  display: flex;
-  flex-wrap: wrap;
-//  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 25px;
-  
-  list-style: none;
-}
-
-.catalog-item {
-  width: 220px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  
-  /* Временно для сетки */
-  min-height: 285px;
-/*  background-color: transparent;
-  box-shadow: inset 0 0 0 2px purple;*/
-}
-
-.catalog-item:nth-child(3n) {
-  margin-right: 0;
-}
-
-.pagination-list {
-  padding: 0;
-  margin: 0;
-
-  list-style: none;
-
-  /* Временно для сетки */
-  min-height: 47px;
-}
-
-.product-photos {
-  width: 460px;
-
-  /* Временно для сетки */
-  min-height: 677px;
-}
-
-.product-info {
-  width: 390px;
-
-  /* Временно для сетки */
-  min-height: 667px;
-}
-
-.main-footer {
-  margin-top: 65px;
-  padding: 60px 0;
-
-  /* Временно для сетки */
-/*  background: none;*/
-/*  min-height: 180px;*/
-}
-
-.inner-page .main-footer {
-  margin-top: 45px;
-}
-
-.main-footer .container {
-  display: flex;
-}
-
-.footer-contacts {
-  width: 320px;
-  margin: 0;
-  margin-right: 70px;
-
-  /* Временно для сетки */
-  min-height: 100px;
-}
-
-.footer-social {
-  width: 145px;
-
-  /* Временно для сетки */
-  min-height: 100px;
-}
-
-.footer-copyright {
-  width: 150px;
-  margin: 0;
-  margin-left: auto;
-
-  /* Временно для сетки */
-  min-height: 100px;
-}
 
