@@ -24,7 +24,12 @@
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
             <ul class="user-navigation">
-              <li><a class="login-link" href="login.html">Вход</a></li>
+              <li>
+                <a class="login-link" href="login.html">Вход</a>
+              </li>
+              <li>
+                <a class="sign-up-linck" href="login.html">Регистрация</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -176,15 +181,15 @@
     
     <section class="modal modal-login">
       <h2>Личный кабинет</h2>
-      <p>Введите свой логин и пароль.</p>
+      <p class="modal-description">Введите свой логин и пароль.</p>
       <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
         <p>
           <label class="visually-hidden" for="user-login">Логин</label>
-          <input class="icon-login-user" id="user-login" type="text" name="login" value="" placeholder="Логин">
+          <input class="icon-user-login" id="user-login" type="text" name="login" value="" placeholder="Логин">
         </p>
         <p>
           <label class="visually-hidden" for="user-password">Пароль</label>
-          <input class="icon-password-user" id="user-password" type="password" name="password" placeholder="Пароль">
+          <input class="icon-user-password" id="user-password" type="password" name="password" placeholder="Пароль">
         </p>
         <p class="login-password-info">
           <label class="login-checkbox">
@@ -200,9 +205,9 @@
     </section>
     
     <section class="modal modal-map">
-      <h2 class="wisually-hidden">Как до нас добраться</h2>
+      <h2 class="visually-hidden">Как до нас добраться</h2>
       <p>
-        <img src="img/map.jpg" width="780" height="560" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
+        <img src="img/map.jpg" width="766" height="559" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
       </p>
       <button class="modal-close" type="button">Закрыть</button> 
     </section>
