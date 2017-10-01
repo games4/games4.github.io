@@ -543,12 +543,16 @@ input[type="radio"].visually-hidden {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 
   list-style: none;
 
   /* Временно для сетки */
 /*  min-height: 24px;*/
+  /*зеленый блок*/
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 4px green;
+
 }
 
 .breadcrumbs li {
@@ -559,6 +563,11 @@ input[type="radio"].visually-hidden {
 
 .breadcrumbs li:last-child {
   margin-right: 0;
+
+  /*зеленый блок*/
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 4px green;
+
 }
 
 .breadcrumbs li::after {
@@ -594,6 +603,10 @@ input[type="radio"].visually-hidden {
 .catalog-columns {
   display: flex;
   justify-content: space-between;
+  
+  /*зеленый блок*/
+/*  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 4px green;*/
 }
 
 .filters {
@@ -604,19 +617,63 @@ input[type="radio"].visually-hidden {
 }
 
 .filter fieldset {
+  margin: 0;
+  margin-bottom: 55px;
+  padding: 0;
+  
   border: none;
 }
 
 .filter legend {
+  margin-bottom: 30px;
   font-size: 24px;
   line-height: 30px;
+  
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px purple;
+
 }
 
 .filter ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   line-height: 18px;
+  
+/*  background-color: transparent;
+  box-shadow: inset 0 0 0 2px purple;*/
+
 }
 
+.filter li {
+  padding-bottom: 15px;
+}
+
+.filter .filter-option {
+  position: relative;
+
+  display: block;
+
+  padding-left: 40px;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px purple;
+}
+
+.filter-option:focus,
+.filter-option:hover {
+  color: #663d15;
+}
+
+.filter-option.filter-input:disabled {
+  color: #000000;
+  opacity: 0.5;
+}
+
+/* стилизация вариант без <span class="checkbox-indicator"></span> */
+/*
 .filter-input:focus + label,
 .filter-input:hover + label {
   color: #663d15;
@@ -625,6 +682,47 @@ input[type="radio"].visually-hidden {
 .filter-input:disabled + label {
   color: #000000;
   opacity: 0.5;
+}
+*/
+
+.filter-option input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  
+  width: 16px;
+  height: 16px;
+  
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+.filter-option input[type="checkbox"]:hover + .checkbox-indicator,
+.filter-option input[type="checkbox"]:focus + .checkbox-indicator {
+  border-color: #663d15;
+  outline: thin dotted;
+
+  }
+
+.filter-option input[type="checkbox"]:checked + .checkbox-indicator::before,
+.filter-option input[type="checkbox"]:checked + .checkbox-indicator::after {
+  position: absolute;
+  content: "";
+  
+  top: 7px;
+  left: 0;
+  
+  width: 16px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.filter-option .checkbox-indicator::before {
+  transform: rotate(45deg);
+}
+
+.filter-option .checkbox-indicator::after {
+  transform: rotate(-45deg);
 }
 
 .catalog {
@@ -654,9 +752,6 @@ input[type="radio"].visually-hidden {
 /*  min-height: 285px;*/
 /*  background-color: transparent;
   box-shadow: inset 0 0 0 2px purple;*/
-
-  background-color: #f8f8f8;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .catalog-item:nth-child(3n) {
@@ -853,6 +948,11 @@ input[type="radio"].visually-hidden {
   
 /*  background: rgba(255, 45, 82, 0.2);
   box-shadow: 0 0 0 3px rgb(255, 45, 82);*/
+}
+
+.inner-content .login-form {
+  width: 300px;
+  margin: 0 auto;
 }
 
 .big-heading::before,
@@ -1339,6 +1439,29 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
+.inner-map {
+  position: relative;
+}
+
+.inner-map iframe {
+  position: relative;
+  z-index: 2;
+
+  border: none;
+}
+
+
+.inner-map iframe + p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+  margin: 0;
+  padding: 0;
+
+  z-index: 1;
+}
+
 
 /* ----- Сеточные стили ----- */
 
@@ -1371,5 +1494,22 @@ body {
   background-repeat: no-repeat;*/
 }
 
+  /*зеленый блок*/
+/*
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: inset 0 0 0 4px green;
+*/
+
+  /*розовый блок*/
+/*
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+*/
+
+  /*желтый блок*/
+/*
+  background: rgba(234, 255, 45, 0.2);
+  box-shadow: inset 0 0 0 2px rgb(234, 255, 45);
+*/
 
 
